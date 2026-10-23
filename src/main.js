@@ -1,6 +1,5 @@
 import "./style.css";
 import { Preview2D } from "./preview-2d.js";
-import { SceneViewer } from "./scene-viewer.js";
 import { loadReconstruction } from "./reconstruction-data.js";
 
 const base = import.meta.env.BASE_URL;
@@ -51,7 +50,7 @@ document.querySelector("#app").innerHTML = `
         ${spider ? `<button class="tab" data-tab="spider" role="tab">SPIDER</button>` : ""}
       </div>
       <div class="panel active" data-panel="overlay">
-        <div class="stage single overlay-stage"><video id="input-rgb" src="${rgbUrl}" preload="auto" muted playsinline></video><canvas id="overlay-canvas"></canvas><span class="stage-tag">INPUT RGB + ${baseline.label.toUpperCase()}</span></div>
+        <div class="stage single overlay-stage"><video id="input-rgb" src="${rgbUrl}" preload="metadata" muted playsinline></video><canvas id="overlay-canvas"></canvas><span class="stage-tag">INPUT RGB + ${baseline.label.toUpperCase()}</span></div>
         <div class="layer-row"><span><i style="--layer:#8c96a8"></i>input RGB</span><span><i style="--layer:#62e0c5"></i>hand mesh</span><span><i style="--layer:#ff9d66"></i>object mesh</span></div>
       </div>
       <div class="panel" data-panel="scene" hidden>
@@ -63,52 +62,102 @@ document.querySelector("#app").innerHTML = `
           <div class="spider-head"><div><span class="status evaluated">evaluated</span><strong>${spider.robot} · ${spider.embodiment}</strong></div>
             <div class="metrics"><span><small>ADD-AUC10</small>${formatMetric(spider.metrics.addAuc10)}</span><span><small>position error</small>${formatMetric(spider.metrics.positionErrorMeters, " m")}</span><span><small>rotation error</small>${formatMetric(spider.metrics.rotationErrorRadians, " rad")}</span></div>
           </div>
-          <div class="spider-artifact spider-success"><video class="spider-video" src="${experimentAsset(spider.video)}" controls muted playsinline preload="metadata"></video></div>
+          <div class="spider-artifact spider-success"><video class="spider-video" data-src="${experimentAsset(spider.video)}" controls muted playsinline preload="none"></video></div>
         </div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
     </section>
   </main>
 `;
 
-const viewers = [new Preview2D(document.querySelector("#overlay-canvas"), document.querySelector("#input-rgb"), reconstruction), new SceneViewer(document.querySelector("#scene-canvas"), reconstruction)];
+const inputRgb = document.querySelector("#input-rgb");
+const preview2d = new Preview2D(document.querySelector("#overlay-canvas"), inputRgb, reconstruction);
+let sceneViewer = null;
+let sceneLoading = null;
+let activeTab = "overlay";
+function ensureSceneViewer() {
+  if (sceneViewer) return Promise.resolve(sceneViewer);
+  sceneLoading ??= import("./scene-viewer.js").then(({ SceneViewer }) => {
+    sceneViewer = new SceneViewer(document.querySelector("#scene-canvas"), reconstruction);
+    if (activeTab === "scene") sceneViewer.setProgress(currentFrame / Math.max(1, example.frameCount - 1));
+    return sceneViewer;
+  });
+  return sceneLoading;
+}
 const tabs = [...document.querySelectorAll(".tab")];
 const panels = [...document.querySelectorAll(".panel")];
 tabs.forEach((tab) => tab.addEventListener("click", () => {
+  activeTab = tab.dataset.tab;
   tabs.forEach((item) => item.classList.toggle("active", item === tab));
   panels.forEach((panel) => { const active = panel.dataset.panel === tab.dataset.tab; panel.hidden = !active; panel.classList.toggle("active", active); });
-  document.querySelector(".transport").hidden = tab.dataset.tab === "spider";
-  requestAnimationFrame(() => viewers.forEach((viewer) => viewer.render?.()));
+  document.querySelector(".transport").hidden = activeTab === "spider";
+  if (activeTab === "scene") void ensureSceneViewer();
+  if (activeTab === "spider") {
+    stopPlayback();
+    const video = document.querySelector(".spider-video");
+    if (video && !video.src) { video.src = video.dataset.src; video.load(); }
+  } else {
+    setFrame(currentFrame, false, true);
+  }
 }));
 
 const timeline = document.querySelector("#timeline");
-const inputRgb = document.querySelector("#input-rgb");
 const frameLabel = document.querySelector("#frame");
 const timeLabel = document.querySelector("#time");
 const play = document.querySelector("#play");
 let playing = false;
-let lastTick = 0;
-function setFrame(frame, seekVideo = true) {
+let currentFrame = 0;
+let videoCallback = null;
+let animationFrame = null;
+function setFrame(frame, seekVideo = true, force = false) {
   const safeFrame = Math.max(0, Math.min(example.frameCount - 1, Math.round(frame)));
+  if (!force && safeFrame === currentFrame) return;
+  currentFrame = safeFrame;
   timeline.value = safeFrame;
-  viewers.forEach((viewer) => viewer.setProgress(safeFrame / Math.max(1, example.frameCount - 1)));
+  const progress = safeFrame / Math.max(1, example.frameCount - 1);
+  if (activeTab === "overlay") preview2d.setProgress(progress);
+  if (activeTab === "scene") sceneViewer?.setProgress(progress);
   frameLabel.textContent = `${String(safeFrame).padStart(3, "0")} / ${String(example.frameCount - 1).padStart(3, "0")}`;
   timeLabel.textContent = `${(safeFrame / example.fps).toFixed(2)} s`;
-  if (seekVideo && Number.isFinite(inputRgb.duration)) inputRgb.currentTime = Math.min(inputRgb.duration, safeFrame / example.fps);
+  if (seekVideo && Number.isFinite(inputRgb.duration)) inputRgb.currentTime = Math.min(Math.max(0, inputRgb.duration - 0.001), safeFrame / example.fps);
 }
 timeline.addEventListener("input", () => setFrame(Number(timeline.value)));
-play.addEventListener("click", () => {
-  playing = !playing; play.textContent = playing ? "❚❚" : "▶"; lastTick = performance.now();
-  if (playing && inputRgb.ended) inputRgb.currentTime = 0;
-  if (playing) inputRgb.play().catch(() => {}); else inputRgb.pause();
-});
-function animate(now) {
-  if (playing) {
-    if (!inputRgb.paused) {
-      const frame = Math.min(example.frameCount - 1, Math.floor(inputRgb.currentTime * example.fps)); setFrame(frame, false);
-      if (inputRgb.ended || frame >= example.frameCount - 1) { playing = false; inputRgb.pause(); play.textContent = "▶"; }
-    } else if ((now - lastTick) / 1000 >= 1 / example.fps) { setFrame((Number(timeline.value) + 1) % example.frameCount); lastTick = now; }
-  }
-  requestAnimationFrame(animate);
+function cancelFrameUpdates() {
+  if (videoCallback !== null && inputRgb.cancelVideoFrameCallback) inputRgb.cancelVideoFrameCallback(videoCallback);
+  if (animationFrame !== null) cancelAnimationFrame(animationFrame);
+  videoCallback = null;
+  animationFrame = null;
 }
-setFrame(0);
-requestAnimationFrame(animate);
+function scheduleFrameUpdate() {
+  if (!playing || document.hidden) return;
+  if (inputRgb.requestVideoFrameCallback) {
+    videoCallback = inputRgb.requestVideoFrameCallback((_now, metadata) => {
+      videoCallback = null;
+      setFrame(Math.floor(metadata.mediaTime * example.fps), false);
+      scheduleFrameUpdate();
+    });
+  } else {
+    animationFrame = requestAnimationFrame(() => {
+      animationFrame = null;
+      setFrame(Math.floor(inputRgb.currentTime * example.fps), false);
+      scheduleFrameUpdate();
+    });
+  }
+}
+function stopPlayback() {
+  playing = false;
+  inputRgb.pause();
+  play.textContent = "▶";
+  cancelFrameUpdates();
+}
+play.addEventListener("click", () => {
+  if (playing) { stopPlayback(); return; }
+  if (inputRgb.ended || currentFrame >= example.frameCount - 1) { inputRgb.currentTime = 0; setFrame(0, false, true); }
+  playing = true;
+  play.textContent = "❚❚";
+  inputRgb.play().then(scheduleFrameUpdate).catch(stopPlayback);
+});
+inputRgb.addEventListener("ended", stopPlayback);
+inputRgb.addEventListener("loadedmetadata", () => setFrame(currentFrame, true, true), { once: true });
+document.addEventListener("visibilitychange", () => { if (document.hidden) stopPlayback(); });
+window.addEventListener("pagehide", () => { stopPlayback(); sceneViewer?.dispose(); });
+setFrame(0, false, true);

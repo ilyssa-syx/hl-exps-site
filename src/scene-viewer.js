@@ -61,6 +61,8 @@ export class SceneViewer {
     if (!this.actual) return;
     const { metadata, handVertices, objectPoses } = this.actual;
     const frame = Math.min(metadata.frameCount - 1, Math.round(progress * (metadata.frameCount - 1)));
+    if (frame === this.currentFrame) return;
+    this.currentFrame = frame;
     const positions = this.hand.geometry.attributes.position.array;
     const offset = frame * metadata.hand.vertexCount * 3;
     for (let index = 0; index < positions.length; index += 3) {
@@ -107,5 +109,14 @@ export class SceneViewer {
     this.camera.aspect = rect.width / rect.height;
     this.camera.updateProjectionMatrix();
     this.renderer.render(this.scene, this.camera);
+  }
+
+  dispose() {
+    this.resizeObserver.disconnect();
+    this.hand?.geometry.dispose();
+    this.hand?.material.dispose();
+    this.object?.geometry.dispose();
+    this.object?.material.dispose();
+    this.renderer.dispose();
   }
 }

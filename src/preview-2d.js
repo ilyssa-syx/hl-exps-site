@@ -5,6 +5,7 @@ export class Preview2D {
     this.ctx = canvas.getContext("2d");
     this.progress = 0;
     this.data = null;
+    this.projectionBuffers = new Map();
     reconstruction?.then((data) => {
       this.data = data;
       this.draw();
@@ -61,6 +62,7 @@ export class Preview2D {
       intrinsics,
       viewport,
       "#62e0c5",
+      "hand",
     );
   }
 
@@ -82,20 +84,27 @@ export class Preview2D {
       intrinsics,
       viewport,
       "#ff9d66",
+      "object",
     );
   }
 
-  drawMesh(vertexCount, faces, vertexAt, intrinsics, viewport, color) {
+  drawMesh(vertexCount, faces, vertexAt, intrinsics, viewport, color, kind) {
     const [fx, , cx, , fy, cy] = [intrinsics[0][0], 0, intrinsics[0][2], 0, intrinsics[1][1], intrinsics[1][2]];
-    const points = new Float32Array(vertexCount * 2);
+    let points = this.projectionBuffers.get(kind);
+    if (!points || points.length !== vertexCount * 2) {
+      points = new Float32Array(vertexCount * 2);
+      this.projectionBuffers.set(kind, points);
+    }
     for (let index = 0; index < vertexCount; index += 1) {
       const [x, y, z] = vertexAt(index);
       points[index * 2] = viewport.left + ((fx * x / z + cx) / this.data.metadata.imageWidth) * viewport.width;
       points[index * 2 + 1] = viewport.top + ((fy * y / z + cy) / this.data.metadata.imageHeight) * viewport.height;
     }
     const ctx = this.ctx;
+    const faceCount = faces.length / 3;
+    const faceStep = kind === "object" ? Math.max(1, Math.ceil(faceCount / 6000)) : 1;
     ctx.beginPath();
-    for (let index = 0; index < faces.length; index += 3) {
+    for (let index = 0; index < faces.length; index += 3 * faceStep) {
       const a = faces[index] * 2, b = faces[index + 1] * 2, c = faces[index + 2] * 2;
       ctx.moveTo(points[a], points[a + 1]);
       ctx.lineTo(points[b], points[b + 1]);
