@@ -1,36 +1,25 @@
 import "./style.css";
 
 const base = import.meta.env.BASE_URL;
-const response = await fetch(
-  `${base}data/manifest.json?v=${encodeURIComponent(__BUILD_ID__)}`,
-  { cache: "no-store" },
-);
+const response = await fetch(`${base}data/manifest.json?v=${encodeURIComponent(__BUILD_ID__)}`, { cache: "no-store" });
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
 
-const cards = manifest.examples.map((sample) => `
+const card = (sample, index) => `
   <a class="sample-card" href="${base}samples/${encodeURIComponent(sample.id)}/">
-    <div class="eyebrow">${sample.dataset ?? "dataset"} / ${sample.split ?? "split"}</div>
+    <div class="card-number">${String(index + 1).padStart(2, "0")}</div>
+    <div class="eyebrow">${sample.dataset} / ${sample.split}</div>
     <h2>${sample.label}</h2>
-    <p>${sample.description ?? "Sequence-level experiment sample."}</p>
-    <div class="sample-meta">
-      <span>${sample.objectName ?? "unknown object"}</span>
-      <span>${sample.frameCount} frames</span>
-      <span>${sample.fps} fps</span>
-    </div>
-  </a>
-`).join("");
+    <div class="sample-meta"><span>${sample.objectName}</span><span>${sample.frameCount} frames</span><span>2 baselines</span></div>
+  </a>`;
+
+const sections = ["val", "test"].map((split) => {
+  const examples = manifest.examples.filter((sample) => sample.split === split);
+  return `<section class="catalog-section"><div class="section-title"><h2>${split}</h2><span>${examples.length} samples</span></div><div class="sample-grid">${examples.map(card).join("")}</div></section>`;
+}).join("");
 
 document.querySelector("#app").innerHTML = `
   <main class="catalog">
-    <header class="catalog-head">
-      <div class="brand-mark">HL</div>
-      <div>
-        <div class="eyebrow">HOI reconstruction → SPIDER retargeting</div>
-        <h1>Experiment samples</h1>
-        <p>Each sample opens on its own static page with 2D, 3D, and retargeting views.</p>
-      </div>
-    </header>
-    <section class="sample-grid">${cards}</section>
-  </main>
-`;
+    <header class="catalog-head"><div class="brand-mark">HL</div><div><div class="eyebrow">DexYCB · 2026-10-23 evaluation</div><h1>Experiment samples</h1><p>30 sequences · 20 validation + 10 test · input vs refined-20261023</p></div></header>
+    ${sections}
+  </main>`;

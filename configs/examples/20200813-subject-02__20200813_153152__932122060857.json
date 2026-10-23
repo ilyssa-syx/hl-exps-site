@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "id": "20200813-subject-02__20200813_153152__932122060857",
+  "label": "20200813-subject-02 / 20200813_153152 / 932122060857",
+  "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+  "dataset": "DexYCB",
+  "split": "val",
+  "objectName": "019_pitcher_base",
+  "fps": 30,
+  "frameCount": 72,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "refined-20261023",
+      "label": "refined-20261023",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "right",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.25486111111111115,
+            "positionErrorMeters": 0.2131224282590765,
+            "rotationErrorRadians": 1.091797113418579
+          }
+        }
+      }
+    }
+  ]
+}

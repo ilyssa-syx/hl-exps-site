@@ -1,80 +1,1784 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "examples": [
     {
-      "schemaVersion": 1,
-      "id": "20201015-subject-09__20201015_151044__932122060861",
-      "label": "20201015-subject-09 / 20201015_151044 / 932122060861",
-      "description": "DexYCB sample page with its input RGB and exported camera-space hand/object reconstruction. The Sharpa IK completed, but SPIDER physics failed its initial-state sanity check.",
+      "schemaVersion": 2,
+      "id": "20200709-subject-01__20200709_142446__836212060125",
+      "label": "20200709-subject-01 / 20200709_142446 / 836212060125",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
       "dataset": "DexYCB",
-      "split": "train",
-      "objectName": "YCB object 18",
+      "split": "val",
+      "objectName": "003_cracker_box",
       "fps": 30,
       "frameCount": 72,
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "demo/20201015-subject-09__20201015_151044__932122060861/input-rgb.mp4"
-          },
-          "reconstruction": "demo/20201015-subject-09__20201015_151044__932122060861/reconstruction/reconstruction.json",
-          "layers": [
-            {
-              "id": "input",
-              "label": "input RGB",
-              "color": "#8c96a8",
-              "visible": true
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input/reconstruction/reconstruction.json"
             },
-            {
-              "id": "hand",
-              "label": "Dyn-HaMR hand mesh",
-              "color": "#62e0c5",
-              "visible": true
-            },
-            {
-              "id": "object",
-              "label": "FoundationPose++ object",
-              "color": "#ff9d66",
-              "visible": true
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input/reconstruction/reconstruction.json"
             }
-          ]
+          }
         },
-        "scene3d": {
-          "reconstruction": "demo/20201015-subject-09__20201015_151044__932122060861/reconstruction/reconstruction.json",
-          "layers": [
-            {
-              "id": "hand",
-              "label": "Dyn-HaMR hand mesh",
-              "color": "#62e0c5",
-              "visible": true
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/refined-20261023/reconstruction/reconstruction.json"
             },
-            {
-              "id": "object",
-              "label": "FoundationPose++ object",
-              "color": "#ff9d66",
-              "visible": true
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.2719065656565656,
+                "positionErrorMeters": 0.1745764502117839,
+                "rotationErrorRadians": 0.3797995448112488
+              }
             }
-          ]
-        },
-        "spider": {
-          "robot": "sharpa",
-          "embodiment": "left",
-          "status": "failed",
-          "ik": {
-            "status": "trajectory-only",
-            "detail": "trajectory_kinematic.npz exists; no IK video was exported"
-          },
-          "physics": {
-            "status": "failed",
-            "detail": "Initial-state sanity check failed: object rotation drift 0.3595 rad exceeded the 0.3000 rad threshold. No MJWP trajectory or video was produced."
-          },
-          "metrics": {
-            "addAuc10": null,
-            "positionErrorMeters": null,
-            "rotationErrorRadians": null
           }
         }
-      }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200709-subject-01__20200709_142802__932122060857",
+      "label": "20200709-subject-01 / 20200709_142802 / 932122060857",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "004_sugar_box",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.4898358585858586,
+                "positionErrorMeters": 0.05211095457676886,
+                "rotationErrorRadians": 0.3994852602481842
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200709-subject-01__20200709_143125__839512060362",
+      "label": "20200709-subject-01 / 20200709_143125 / 839512060362",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "005_tomato_soup_can",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.13566919191919194,
+                "positionErrorMeters": 0.15326077832124593,
+                "rotationErrorRadians": 0.3189200460910797
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_143125__839512060362/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.12702020202020203,
+                "positionErrorMeters": 0.15685297932405434,
+                "rotationErrorRadians": 0.3335873484611511
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200709-subject-01__20200709_143907__932122060857",
+      "label": "20200709-subject-01 / 20200709_143907 / 932122060857",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "007_tuna_fish_can",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.13768939393939394,
+                "positionErrorMeters": 0.15988920528758296,
+                "rotationErrorRadians": 1.265310525894165
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_143907__932122060857/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.3369318181818183,
+                "positionErrorMeters": 0.1147640554554108,
+                "rotationErrorRadians": 0.8255683779716492
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200709-subject-01__20200709_144735__932122060861",
+      "label": "20200709-subject-01 / 20200709_144735 / 932122060861",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "009_gelatin_box",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.09703282828282829,
+                "positionErrorMeters": 0.15019780812710176,
+                "rotationErrorRadians": 1.572633147239685
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200709-subject-01__20200709_150906__932122062010",
+      "label": "20200709-subject-01 / 20200709_150906 / 932122062010",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "024_bowl",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.32058080808080813,
+                "positionErrorMeters": 0.16073565506890208,
+                "rotationErrorRadians": 1.0458624362945557
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_150906__932122062010/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.3570707070707071,
+                "positionErrorMeters": 0.10903206123559331,
+                "rotationErrorRadians": 0.3378317952156067
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200709-subject-01__20200709_152420__932122060861",
+      "label": "20200709-subject-01 / 20200709_152420 / 932122060861",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "037_scissors",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.21780303030303033,
+                "positionErrorMeters": 0.1638987553088132,
+                "rotationErrorRadians": 0.8579435348510742
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_145612__840412060917",
+      "label": "20200813-subject-02 / 20200813_145612 / 840412060917",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "002_master_chef_can",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.14419191919191918,
+                "positionErrorMeters": 0.18116935974554882,
+                "rotationErrorRadians": 0.8284107446670532
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_150823__932122061900",
+      "label": "20200813-subject-02 / 20200813_150823 / 932122061900",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "006_mustard_bottle",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.2484217171717172,
+                "positionErrorMeters": 0.2259945871501141,
+                "rotationErrorRadians": 0.8554027676582336
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_150823__932122061900/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.2625631313131313,
+                "positionErrorMeters": 0.23693398841067972,
+                "rotationErrorRadians": 1.1604526042938232
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_151925__932122062010",
+      "label": "20200813-subject-02 / 20200813_151925 / 932122062010",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "008_pudding_box",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.29728535353535357,
+                "positionErrorMeters": 0.24836965684031026,
+                "rotationErrorRadians": 1.582585096359253
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_152513__839512060362",
+      "label": "20200813-subject-02 / 20200813_152513 / 839512060362",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "010_potted_meat_can",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.31414141414141417,
+                "positionErrorMeters": 0.21732003371492295,
+                "rotationErrorRadians": 0.8789828419685364
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.29715909090909093,
+                "positionErrorMeters": 0.1966138396760709,
+                "rotationErrorRadians": 0.9005511403083801
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_152842__932122062010",
+      "label": "20200813-subject-02 / 20200813_152842 / 932122062010",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "011_banana",
+      "fps": 30,
+      "frameCount": 70,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.29084595959595955,
+                "positionErrorMeters": 0.22291659409818693,
+                "rotationErrorRadians": 0.6755743026733398
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_153152__932122060857",
+      "label": "20200813-subject-02 / 20200813_153152 / 932122060857",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "019_pitcher_base",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.25486111111111115,
+                "positionErrorMeters": 0.2131224282590765,
+                "rotationErrorRadians": 1.091797113418579
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_153453__840412060917",
+      "label": "20200813-subject-02 / 20200813_153453 / 840412060917",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "021_bleach_cleanser",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.22840909090909092,
+                "positionErrorMeters": 0.1363273396575469,
+                "rotationErrorRadians": 0.8403735160827637
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_153453__840412060917/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.23566919191919194,
+                "positionErrorMeters": 0.11336172166384713,
+                "rotationErrorRadians": 1.5076268911361694
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_154103__836212060125",
+      "label": "20200813-subject-02 / 20200813_154103 / 836212060125",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "025_mug",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.08472222222222223,
+                "positionErrorMeters": 0.2834643090292529,
+                "rotationErrorRadians": 1.5350139141082764
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_154103__836212060125/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.2844065656565657,
+                "positionErrorMeters": 0.18039526872792036,
+                "rotationErrorRadians": 1.0951709747314453
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_154408__841412060263",
+      "label": "20200813-subject-02 / 20200813_154408 / 841412060263",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "035_power_drill",
+      "fps": 30,
+      "frameCount": 68,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.17613636363636365,
+                "positionErrorMeters": 0.17903487009285451,
+                "rotationErrorRadians": 0.9606021642684937
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_154408__841412060263/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.18484848484848485,
+                "positionErrorMeters": 0.2319855550183821,
+                "rotationErrorRadians": 0.9060745239257812
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_154729__840412060917",
+      "label": "20200813-subject-02 / 20200813_154729 / 840412060917",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "036_wood_block",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.12702020202020203,
+                "positionErrorMeters": 0.18077533603549512,
+                "rotationErrorRadians": 0.4417695999145508
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_155314__932122061900",
+      "label": "20200813-subject-02 / 20200813_155314 / 932122061900",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "040_large_marker",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/refined-20261023/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_155633__839512060362",
+      "label": "20200813-subject-02 / 20200813_155633 / 839512060362",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "052_extra_large_clamp",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.12430555555555557,
+                "positionErrorMeters": 0.3561387937686199,
+                "rotationErrorRadians": 1.4477307796478271
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.2894570707070707,
+                "positionErrorMeters": 0.21161966064507057,
+                "rotationErrorRadians": 0.5800930261611938
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200813-subject-02__20200813_155953__841412060263",
+      "label": "20200813-subject-02 / 20200813_155953 / 841412060263",
+      "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "val",
+      "objectName": "061_foam_brick",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.12720959595959597,
+                "positionErrorMeters": 0.2196100551022815,
+                "rotationErrorRadians": 1.1581007242202759
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200820-subject-03__20200820_135810__841412060263",
+      "label": "20200820-subject-03 / 20200820_135810 / 841412060263",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "003_cracker_box",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200908-subject-05__20200908_152221__932122060861",
+      "label": "20200908-subject-05 / 20200908_152221 / 932122060861",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "040_large_marker",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/refined-20261023/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200918-subject-06__20200918_120513__841412060263",
+      "label": "20200918-subject-06 / 20200918_120513 / 841412060263",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "036_wood_block",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.11369949494949495,
+                "positionErrorMeters": 0.2846649969141091,
+                "rotationErrorRadians": 0.15730313956737518
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200928-subject-07__20200928_143944__932122062010",
+      "label": "20200928-subject-07 / 20200928_143944 / 932122062010",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "004_sugar_box",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.396969696969697,
+                "positionErrorMeters": 0.11724260810358995,
+                "rotationErrorRadians": 0.2819141447544098
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20200928-subject-07__20200928_143944__932122062010/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.4111742424242425,
+                "positionErrorMeters": 0.08680545907938216,
+                "rotationErrorRadians": 0.3911624252796173
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201002-subject-08__20201002_105534__932122061900",
+      "label": "20201002-subject-08 / 20201002_105534 / 932122061900",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "005_tomato_soup_can",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.22872474747474747,
+                "positionErrorMeters": 0.09982045411316201,
+                "rotationErrorRadians": 0.6837447881698608
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201002-subject-08__20201002_105534__932122061900/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.22967171717171717,
+                "positionErrorMeters": 0.09682752556576105,
+                "rotationErrorRadians": 0.6137903332710266
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201022-subject-10__20201022_112834__839512060362",
+      "label": "20201022-subject-10 / 20201022_112834 / 839512060362",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "011_banana",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.4510732323232323,
+                "positionErrorMeters": 0.09442215446587401,
+                "rotationErrorRadians": 0.8654283285140991
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201022-subject-10__20201022_113502__836212060125",
+      "label": "20201022-subject-10 / 20201022_113502 / 836212060125",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "024_bowl",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/input/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/input/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.3613636363636364,
+                "positionErrorMeters": 0.13595934788560854,
+                "rotationErrorRadians": 0.3696010708808899
+              }
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201022-subject-10__20201022_113502__836212060125/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.32373737373737377,
+                "positionErrorMeters": 0.14910995615183548,
+                "rotationErrorRadians": 0.45197048783302307
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201022-subject-10__20201022_113909__840412060917",
+      "label": "20201022-subject-10 / 20201022_113909 / 840412060917",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "035_power_drill",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.24917929292929297,
+                "positionErrorMeters": 0.12782149454666436,
+                "rotationErrorRadians": 1.2871850728988647
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201022-subject-10__20201022_114306__932122062010",
+      "label": "20201022-subject-10 / 20201022_114306 / 932122062010",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "037_scissors",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "right",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.3043560606060607,
+                "positionErrorMeters": 0.11148503159014289,
+                "rotationErrorRadians": 0.6526376008987427
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201022-subject-10__20201022_114717__932122060857",
+      "label": "20201022-subject-10 / 20201022_114717 / 932122060857",
+      "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "052_extra_large_clamp",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "refined-20261023",
+          "label": "refined-20261023",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/refined-20261023/reconstruction/reconstruction.json"
+            },
+            "spider": {
+              "robot": "sharpa",
+              "embodiment": "left",
+              "status": "evaluated",
+              "video": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/refined-20261023/spider.mp4",
+              "metrics": {
+                "addAuc10": 0.41875,
+                "positionErrorMeters": 0.128229503116287,
+                "rotationErrorRadians": 1.36455500125885
+              }
+            }
+          }
+        }
+      ]
     }
   ]
 }

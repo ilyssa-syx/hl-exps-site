@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = ROOT / "configs" / "examples"
 OUTPUT = ROOT / "public" / "data" / "manifest.json"
 SAMPLES_DIR = ROOT / "samples"
-REQUIRED = {"schemaVersion", "id", "label", "fps", "frameCount", "views"}
+REQUIRED = {"schemaVersion", "id", "label", "fps", "frameCount", "baselines", "split"}
 SAFE_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 
 
@@ -43,7 +43,7 @@ def main() -> None:
         missing = REQUIRED - payload.keys()
         if missing:
             raise ValueError(f"{path}: missing {sorted(missing)}")
-        if payload["schemaVersion"] != 1:
+        if payload["schemaVersion"] != 2:
             raise ValueError(f"{path}: unsupported schemaVersion")
         if not isinstance(payload["id"], str) or not SAFE_ID.fullmatch(payload["id"]):
             raise ValueError(f"{path}: id is not URL-safe")
@@ -53,6 +53,9 @@ def main() -> None:
             raise ValueError(f"{path}: frameCount must be a positive integer")
         if not isinstance(payload["fps"], (int, float)) or payload["fps"] <= 0:
             raise ValueError(f"{path}: fps must be positive")
+        baseline_ids = [item.get("id") for item in payload["baselines"]]
+        if baseline_ids != ["input", "refined-20261023"]:
+            raise ValueError(f"{path}: expected input and refined-20261023 baselines")
         seen.add(payload["id"])
         examples.append(payload)
         page = SAMPLES_DIR / payload["id"] / "index.html"
@@ -63,7 +66,7 @@ def main() -> None:
         raise ValueError(f"no example configs found below {CONFIG_DIR}")
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
-        json.dumps({"schemaVersion": 1, "examples": examples}, indent=2) + "\n",
+        json.dumps({"schemaVersion": 2, "examples": examples}, indent=2) + "\n",
         encoding="utf-8",
     )
     print(f"Exported {len(examples)} example(s) to {OUTPUT.relative_to(ROOT)}")

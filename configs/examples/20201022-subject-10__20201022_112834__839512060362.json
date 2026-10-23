@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "id": "20201022-subject-10__20201022_112834__839512060362",
+  "label": "20201022-subject-10 / 20201022_112834 / 839512060362",
+  "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+  "dataset": "DexYCB",
+  "split": "test",
+  "objectName": "011_banana",
+  "fps": 30,
+  "frameCount": 72,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "refined-20261023",
+      "label": "refined-20261023",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.4510732323232323,
+            "positionErrorMeters": 0.09442215446587401,
+            "rotationErrorRadians": 0.8654283285140991
+          }
+        }
+      }
+    }
+  ]
+}

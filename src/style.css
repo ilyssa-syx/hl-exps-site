@@ -26,14 +26,18 @@ button, input { font: inherit; }
 .brand small { margin-top: 4px; color: var(--muted); font-size: 10px; }
 .sidebar-label, .eyebrow { color: #68768b; font: 500 10px "DM Mono"; letter-spacing: .13em; text-transform: uppercase; }
 .sidebar-label { padding: 0 8px 10px; }
-.example-link { display: flex; flex-direction: column; gap: 4px; color: #aeb8c8; text-decoration: none; border: 1px solid transparent; border-radius: 10px; padding: 12px 11px; margin-bottom: 5px; }
-.example-link:hover { background: rgba(255,255,255,.035); }
-.example-link.active { color: white; border-color: var(--line); background: linear-gradient(100deg, rgba(98,224,197,.10), rgba(98,224,197,.025)); }
-.example-link span { font-size: 13px; font-weight: 600; }
-.example-link small { font: 400 10px "DM Mono"; color: var(--muted); }
+.baseline-link { display: flex; flex-direction: column; gap: 5px; color: #aeb8c8; text-decoration: none; border: 1px solid transparent; border-radius: 10px; padding: 13px 11px; margin-bottom: 6px; }
+.baseline-link:hover { background: rgba(255,255,255,.035); }
+.baseline-link.active { color: white; border-color: var(--line); background: linear-gradient(100deg, rgba(98,224,197,.10), rgba(98,224,197,.025)); }
+.baseline-link span { font-size: 13px; font-weight: 600; }
+.baseline-link small { font: 400 9px "DM Mono"; color: var(--muted); }
 .repo-link { margin-top: auto; color: var(--muted); font-size: 11px; text-decoration: none; padding: 9px; }
 
 main { min-width: 0; padding: 42px clamp(24px, 4vw, 64px); }
+.sample-nav { max-width: 1440px; margin: 0 auto 22px; display: flex; justify-content: space-between; }
+.sample-nav span { display: flex; gap: 20px; }
+.sample-nav a { color: var(--muted); font: 500 10px "DM Mono"; text-decoration: none; text-transform: uppercase; letter-spacing: .06em; }
+.sample-nav a:hover { color: var(--mint); }
 .topbar { display: flex; justify-content: space-between; gap: 30px; max-width: 1440px; margin: 0 auto 30px; }
 h1 { margin: 8px 0 7px; font-size: clamp(28px, 4vw, 45px); line-height: 1; letter-spacing: -.045em; }
 .topbar p { margin: 0; max-width: 720px; color: var(--muted); font-size: 13px; line-height: 1.6; }
@@ -79,6 +83,7 @@ h1 { margin: 8px 0 7px; font-size: clamp(28px, 4vw, 45px); line-height: 1; lette
 .artifact-empty strong { color: #aab5c5; font-size: 13px; }
 .artifact-empty p { max-width: 480px; color: #68768b; font: 400 10px/1.7 "DM Mono"; }
 .spider-video { display: block; width: 100%; max-height: 520px; background: #05080d; }
+.spider-success { min-height: 0; }
 .failure-note { margin: 12px 2px 0; padding: 11px 13px; border-left: 2px solid #ff7d8c; color: #b78790; background: rgba(255,125,140,.055); font-size: 11px; }
 .transport { display: grid; grid-template-columns: 34px 104px minmax(120px, 1fr) 70px; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding: 13px 16px; background: #0c121b; }
 .transport button { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; color: var(--mint); background: rgba(98,224,197,.06); cursor: pointer; }
@@ -90,7 +95,7 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
   .sidebar { position: static; width: 100%; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 18px; }
   .brand { padding-bottom: 16px; }
   .sidebar nav { display: flex; overflow-x: auto; }
-  .example-link { min-width: 170px; }
+  .baseline-link { min-width: 170px; }
   .repo-link, .sidebar-label { display: none; }
   main { padding: 28px 14px; }
   .topbar { flex-direction: column; }
@@ -107,10 +112,15 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
 .catalog-head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 42px; }
 .catalog-head h1 { margin-top: 9px; }
 .catalog-head p { color: var(--muted); margin: 0; }
+.catalog-section { margin-top: 48px; }
+.section-title { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--line); margin-bottom: 16px; padding-bottom: 10px; }
+.section-title h2 { margin: 0; font: 500 18px "DM Mono"; text-transform: uppercase; }
+.section-title span { color: var(--muted); font: 400 10px "DM Mono"; }
 .sample-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
-.sample-card { display: block; min-height: 210px; padding: 24px; border: 1px solid var(--line); border-radius: 15px; color: inherit; text-decoration: none; background: linear-gradient(145deg, rgba(22,32,48,.9), rgba(11,17,26,.9)); transition: transform .18s ease, border-color .18s ease; }
+.sample-card { position: relative; display: block; min-height: 180px; padding: 24px; border: 1px solid var(--line); border-radius: 15px; color: inherit; text-decoration: none; background: linear-gradient(145deg, rgba(22,32,48,.9), rgba(11,17,26,.9)); transition: transform .18s ease, border-color .18s ease; }
 .sample-card:hover { transform: translateY(-3px); border-color: rgba(98,224,197,.42); }
 .sample-card h2 { margin: 12px 0 10px; font-size: 19px; overflow-wrap: anywhere; }
+.card-number { position: absolute; right: 20px; top: 18px; color: rgba(98,224,197,.45); font: 500 11px "DM Mono"; }
 .sample-card p { min-height: 50px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 .sample-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
 .sample-meta span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; color: #9da9ba; font: 500 9px "DM Mono"; }

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "id": "20201022-subject-10__20201022_113909__840412060917",
+  "label": "20201022-subject-10 / 20201022_113909 / 840412060917",
+  "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+  "dataset": "DexYCB",
+  "split": "test",
+  "objectName": "035_power_drill",
+  "fps": 30,
+  "frameCount": 74,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "refined-20261023",
+      "label": "refined-20261023",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.24917929292929297,
+            "positionErrorMeters": 0.12782149454666436,
+            "rotationErrorRadians": 1.2871850728988647
+          }
+        }
+      }
+    }
+  ]
+}

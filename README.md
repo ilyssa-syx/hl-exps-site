@@ -1,17 +1,18 @@
 # HL Experiment Viewer
 
 Static, sequence-level viewer for HOI reconstruction outputs and their SPIDER
-retargeting results. Each example has one shareable page containing:
+retargeting results. The catalog contains 20 DexYCB validation samples and 10
+test samples. Each sample has one shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
-- SPIDER kinematic and MJWP/physics views with rollout metrics;
+- input and `refined-20261023` baseline selection;
+- a rendered SPIDER MJWP/physics rollout and metrics when evaluation succeeds;
 - one shared sequence timeline.
 
-The checked-in DexYCB sample uses its real input RGB, Dyn-HaMR/MANO hand mesh,
-FoundationPose++ object mesh, and per-frame camera-space transforms. Its Sharpa
-IK completed, while MJWP failed the initial-state sanity check; the page reports
-that failure instead of substituting a synthetic robot visualization.
+All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame
+camera-space transforms. A SPIDER tab is intentionally omitted for a baseline
+when that sample's SPIDER evaluation failed.
 
 ## Development
 
@@ -61,13 +62,9 @@ https://ilyssa-syx.github.io/hl-exps-site/samples/<sample-id>/
 Generated videos and geometry bundles belong in object storage, not Git.
 `scripts/export_reconstruction.py` converts `hand_results.npz`, the object mesh,
 camera intrinsics, and object poses into browser-readable typed-array buffers.
-The SPIDER converter will similarly map `trajectory_kinematic.npz`,
-`trajectory_mjwp.npz`, metrics JSON, and optional IK/MJWP MP4 files into the
-example schema.
-The repository includes one small RGB clip only so the checked-in sample page
-exercises the real video-backed overlay path before object-storage publishing
-is configured.
+`scripts/export_eval_run.py` regenerates the dated 30-sample release, including
+browser geometry and MP4 renders of successful `trajectory_mjwp.npz` rollouts.
 
-`views.overlay2d.rgb` is required for real samples. It points to either a
+`baselines[].views.overlay2d.rgb` is required for real samples. It points to either a
 published input RGB video or, in a future schema revision, an RGB image
 sequence. Camera-space overlay geometry is rendered above that RGB layer.

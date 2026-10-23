@@ -55,16 +55,18 @@ def load_mano_pickle(path: Path) -> dict:
     return {key: item.array() if isinstance(item, _LegacyCh) else item for key, item in value.items()}
 
 
-def decode_hand(bundle: Path, mano_path: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def decode_hand(result_dir: Path, mano_dir: Path, frame_count: int) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     import smplx
     from smplx.utils import Struct
 
-    source = np.load(bundle / "input" / "final" / "hand_results.npz", allow_pickle=False)
+    source = np.load(result_dir / "hand_results.npz", allow_pickle=False)
     if len(source["track_indices"]) != 1:
         raise ValueError("the initial browser exporter requires exactly one hand track")
+    side = str(source["handedness"][0]).lower()
+    mano_path = mano_dir / ("MANO_RIGHT.pkl" if side == "right" else "MANO_LEFT.pkl")
     data = load_mano_pickle(mano_path)
     model = smplx.MANO(
-        str(mano_path), data_struct=Struct(**data), is_rhand=True, use_pca=False,
+        str(mano_path), data_struct=Struct(**data), is_rhand=side == "right", use_pca=False,
         flat_hand_mean=True, create_hand_pose=False,
     ).eval()
     frames = len(source["frame_indices"])
@@ -77,27 +79,29 @@ def decode_hand(bundle: Path, mano_path: Path) -> tuple[np.ndarray, np.ndarray, 
             transl=tensor(source["trans_camera"][0]).reshape(frames, 3),
             return_verts=True,
         )
-    vertices = output.vertices.cpu().numpy().astype("<f4")
-    is_right = source["is_right"][0].astype(bool)
-    vertices[~is_right, :, 0] *= -1
+    decoded = output.vertices.cpu().numpy().astype("<f4")
+    vertices = np.full((frame_count, decoded.shape[1], 3), np.nan, dtype="<f4")
+    frame_indices = np.asarray(source["frame_indices"], dtype=int)
+    vertices[frame_indices] = decoded
     valid = np.isfinite(vertices).all(axis=(1, 2))
     return vertices, np.asarray(model.faces, dtype="<u2"), valid
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--bundle", type=Path, required=True)
-    parser.add_argument("--mano", type=Path, required=True)
+    parser.add_argument("--result-dir", type=Path, required=True)
+    parser.add_argument("--mano-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    bundle = args.bundle.resolve()
+    result_dir = args.result_dir.resolve()
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
 
-    hand_vertices, hand_faces, hand_valid = decode_hand(bundle, args.mano.resolve())
-    scene = np.load(bundle / "input" / "final" / "scene.npz", allow_pickle=False)
-    obj = np.load(bundle / "input" / "final" / "object_results.npz", allow_pickle=False)
-    object_path = next((bundle / "input" / "form").glob("*_obj.obj"))
+    scene = np.load(result_dir / "scene.npz", allow_pickle=False)
+    obj = np.load(result_dir / "object_results.npz", allow_pickle=False)
+    frame_count = len(scene["frame_indices"])
+    hand_vertices, hand_faces, hand_valid = decode_hand(result_dir, args.mano_dir.resolve(), frame_count)
+    object_path = result_dir / "object_mesh" / "mesh.obj"
     object_mesh = trimesh.load(object_path, force="mesh", process=False)
     object_vertices = np.asarray(object_mesh.vertices, dtype="<f4")
     object_faces = np.asarray(object_mesh.faces, dtype="<u2")

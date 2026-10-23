@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "id": "20201022-subject-10__20201022_114306__932122062010",
+  "label": "20201022-subject-10 / 20201022_114306 / 932122062010",
+  "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+  "dataset": "DexYCB",
+  "split": "test",
+  "objectName": "037_scissors",
+  "fps": 30,
+  "frameCount": 74,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "refined-20261023",
+      "label": "refined-20261023",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "right",
+          "status": "evaluated",
+          "video": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.3043560606060607,
+            "positionErrorMeters": 0.11148503159014289,
+            "rotationErrorRadians": 0.6526376008987427
+          }
+        }
+      }
+    }
+  ]
+}

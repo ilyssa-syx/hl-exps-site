@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "id": "20201022-subject-10__20201022_114717__932122060857",
+  "label": "20201022-subject-10 / 20201022_114717 / 932122060857",
+  "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
+  "dataset": "DexYCB",
+  "split": "test",
+  "objectName": "052_extra_large_clamp",
+  "fps": 30,
+  "frameCount": 74,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "refined-20261023",
+      "label": "refined-20261023",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.41875,
+            "positionErrorMeters": 0.128229503116287,
+            "rotationErrorRadians": 1.36455500125885
+          }
+        }
+      }
+    }
+  ]
+}

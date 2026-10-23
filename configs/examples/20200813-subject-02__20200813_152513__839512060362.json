@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "id": "20200813-subject-02__20200813_152513__839512060362",
+  "label": "20200813-subject-02 / 20200813_152513 / 839512060362",
+  "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+  "dataset": "DexYCB",
+  "split": "val",
+  "objectName": "010_potted_meat_can",
+  "fps": 30,
+  "frameCount": 74,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.31414141414141417,
+            "positionErrorMeters": 0.21732003371492295,
+            "rotationErrorRadians": 0.8789828419685364
+          }
+        }
+      }
+    },
+    {
+      "id": "refined-20261023",
+      "label": "refined-20261023",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.29715909090909093,
+            "positionErrorMeters": 0.1966138396760709,
+            "rotationErrorRadians": 0.9005511403083801
+          }
+        }
+      }
+    }
+  ]
+}
