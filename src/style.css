@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "Manrope", sans-serif;
+  color: #edf2f8;
+  background: #090d14;
+  font-synthesis: none;
+  --line: rgba(160, 178, 205, 0.15);
+  --muted: #8c96a8;
+  --panel: #101722;
+  --mint: #62e0c5;
+  --orange: #ff9d66;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at 80% 0%, #182235 0, transparent 35%), #090d14; }
+button, input { font: inherit; }
+#app { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 100vh; }
+
+.sidebar { position: sticky; top: 0; height: 100vh; padding: 26px 18px; border-right: 1px solid var(--line); background: rgba(8, 12, 18, .88); backdrop-filter: blur(18px); display: flex; flex-direction: column; }
+.brand { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; padding: 0 7px 30px; }
+.brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(98,224,197,.45); border-radius: 12px; color: var(--mint); font: 500 14px "DM Mono"; background: rgba(98,224,197,.07); }
+.brand strong, .brand small { display: block; }
+.brand strong { font-size: 14px; letter-spacing: .02em; }
+.brand small { margin-top: 4px; color: var(--muted); font-size: 10px; }
+.sidebar-label, .eyebrow { color: #68768b; font: 500 10px "DM Mono"; letter-spacing: .13em; text-transform: uppercase; }
+.sidebar-label { padding: 0 8px 10px; }
+.example-link { display: flex; flex-direction: column; gap: 4px; color: #aeb8c8; text-decoration: none; border: 1px solid transparent; border-radius: 10px; padding: 12px 11px; margin-bottom: 5px; }
+.example-link:hover { background: rgba(255,255,255,.035); }
+.example-link.active { color: white; border-color: var(--line); background: linear-gradient(100deg, rgba(98,224,197,.10), rgba(98,224,197,.025)); }
+.example-link span { font-size: 13px; font-weight: 600; }
+.example-link small { font: 400 10px "DM Mono"; color: var(--muted); }
+.repo-link { margin-top: auto; color: var(--muted); font-size: 11px; text-decoration: none; padding: 9px; }
+
+main { min-width: 0; padding: 42px clamp(24px, 4vw, 64px); }
+.topbar { display: flex; justify-content: space-between; gap: 30px; max-width: 1440px; margin: 0 auto 30px; }
+h1 { margin: 8px 0 7px; font-size: clamp(28px, 4vw, 45px); line-height: 1; letter-spacing: -.045em; }
+.topbar p { margin: 0; max-width: 720px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.meta, .metrics { display: flex; gap: 8px; }
+.meta { align-self: flex-end; }
+.meta span, .metrics span { min-width: 88px; border: 1px solid var(--line); border-radius: 9px; padding: 9px 11px; font: 500 12px "DM Mono"; background: rgba(15,22,33,.7); }
+.meta small, .metrics small { display: block; color: #68768b; font: 500 8px "DM Mono"; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 5px; }
+
+.workspace { max-width: 1440px; margin: auto; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: rgba(13,19,29,.87); box-shadow: 0 24px 80px rgba(0,0,0,.28); }
+.tabs { display: flex; gap: 4px; padding: 9px; border-bottom: 1px solid var(--line); }
+.tab { color: var(--muted); background: transparent; border: 0; border-radius: 8px; padding: 9px 15px; cursor: pointer; font-size: 12px; font-weight: 600; }
+.tab:hover { color: white; }
+.tab.active { color: #071410; background: var(--mint); }
+.panel { padding: 14px; }
+.stage { min-height: 560px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #0b111a; position: relative; }
+.stage.single canvas { width: 100%; height: 560px; display: block; }
+.stage.split { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; min-height: 480px; background: var(--line); }
+.stage.split > div { min-width: 0; position: relative; background: #0b111a; }
+.stage.split canvas { display: block; width: 100%; height: 480px; }
+.stage-tag { position: absolute; top: 14px; left: 14px; color: rgba(255,255,255,.48); font: 500 10px "DM Mono"; letter-spacing: .08em; }
+.layer-row { display: flex; flex-wrap: wrap; gap: 18px; padding: 13px 5px 0; color: #aab4c3; font-size: 11px; }
+.layer-row span { display: flex; align-items: center; gap: 7px; }
+.layer-row i { width: 8px; height: 8px; border-radius: 50%; background: var(--layer); box-shadow: 0 0 12px var(--layer); }
+
+.spider-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; padding: 4px 2px 14px; }
+.spider-head > div:first-child { display: flex; align-items: center; gap: 10px; }
+.spider-head strong { font: 500 13px "DM Mono"; }
+.status { border: 1px solid rgba(255,255,255,.15); border-radius: 99px; padding: 5px 8px; color: var(--muted); font: 500 9px "DM Mono"; text-transform: uppercase; }
+.status.evaluated { color: var(--mint); border-color: rgba(98,224,197,.45); }
+.status.failed { color: #ff7d8c; border-color: rgba(255,125,140,.45); }
+.note { color: var(--muted); font-size: 11px; line-height: 1.6; margin: 11px 3px 0; }
+.transport { display: grid; grid-template-columns: 34px 104px minmax(120px, 1fr) 70px; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding: 13px 16px; background: #0c121b; }
+.transport button { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; color: var(--mint); background: rgba(98,224,197,.06); cursor: pointer; }
+.transport span { color: #8996a9; font: 500 10px "DM Mono"; }
+input[type="range"] { width: 100%; accent-color: var(--mint); }
+
+@media (max-width: 900px) {
+  #app { grid-template-columns: 1fr; }
+  .sidebar { position: static; width: 100%; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 18px; }
+  .brand { padding-bottom: 16px; }
+  .sidebar nav { display: flex; overflow-x: auto; }
+  .example-link { min-width: 170px; }
+  .repo-link, .sidebar-label { display: none; }
+  main { padding: 28px 14px; }
+  .topbar { flex-direction: column; }
+  .meta { align-self: stretch; overflow-x: auto; }
+  .stage, .stage.single canvas { min-height: 430px; height: 430px; }
+  .stage.split { grid-template-columns: 1fr; }
+  .stage.split canvas { height: 360px; }
+  .spider-head { align-items: flex-start; flex-direction: column; }
+  .metrics { width: 100%; overflow-x: auto; }
+}

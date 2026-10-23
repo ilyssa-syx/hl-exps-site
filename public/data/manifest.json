@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examples": [
+    {
+      "schemaVersion": 1,
+      "id": "schema-preview",
+      "label": "Schema preview",
+      "description": "Interactive placeholder showing the intended per-example layout before experiment assets are published.",
+      "dataset": "DexYCB",
+      "split": "preview",
+      "objectName": "sample object",
+      "fps": 30,
+      "frameCount": 150,
+      "views": {
+        "overlay2d": {
+          "mode": "procedural-preview",
+          "layers": [
+            {
+              "id": "input",
+              "label": "input RGB",
+              "color": "#8c96a8",
+              "visible": true
+            },
+            {
+              "id": "hand",
+              "label": "reconstructed hand",
+              "color": "#62e0c5",
+              "visible": true
+            },
+            {
+              "id": "object",
+              "label": "reconstructed object",
+              "color": "#ff9d66",
+              "visible": true
+            }
+          ]
+        },
+        "scene3d": {
+          "mode": "procedural-preview",
+          "layers": [
+            {
+              "id": "hand",
+              "label": "hand mesh",
+              "color": "#62e0c5",
+              "visible": true
+            },
+            {
+              "id": "object",
+              "label": "object mesh",
+              "color": "#ff9d66",
+              "visible": true
+            }
+          ]
+        },
+        "spider": {
+          "mode": "procedural-preview",
+          "robot": "sharpa",
+          "status": "preview",
+          "metrics": {
+            "addAuc10": null,
+            "positionErrorMeters": null,
+            "rotationErrorRadians": null
+          }
+        }
+      }
+    }
+  ]
+}
