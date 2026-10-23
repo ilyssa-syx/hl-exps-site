@@ -28,6 +28,13 @@ npm run build
 
 The site is deployed from `main` by `.github/workflows/pages.yml`.
 
+## R2 assets
+
+Production visualization assets use the `hl-exps-site` Cloudflare R2 bucket.
+The S3-compatible uploader uses the local `hl-exps-r2` AWS profile with region
+`auto`; credentials are never stored in this repository. The browser origin
+policy is tracked in `configs/r2-cors.json`.
+
 ## Add an example
 
 Add `configs/examples/<example-id>.json`, then run `npm run export`. The config
