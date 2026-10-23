@@ -70,6 +70,16 @@ h1 { margin: 8px 0 7px; font-size: clamp(28px, 4vw, 45px); line-height: 1; lette
 .status.evaluated { color: var(--mint); border-color: rgba(98,224,197,.45); }
 .status.failed { color: #ff7d8c; border-color: rgba(255,125,140,.45); }
 .note { color: var(--muted); font-size: 11px; line-height: 1.6; margin: 11px 3px 0; }
+.spider-media { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.spider-artifact { min-height: 410px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #0b111a; }
+.artifact-title { display: flex; justify-content: space-between; align-items: center; padding: 13px 15px; border-bottom: 1px solid var(--line); font: 500 11px "DM Mono"; text-transform: uppercase; letter-spacing: .06em; }
+.artifact-state { color: var(--muted); font-size: 8px; }
+.artifact-state.failed { color: #ff7d8c; }
+.artifact-empty { min-height: 350px; display: grid; place-content: center; justify-items: center; padding: 35px; text-align: center; background: radial-gradient(circle, rgba(45,58,79,.24), transparent 55%); }
+.artifact-empty strong { color: #aab5c5; font-size: 13px; }
+.artifact-empty p { max-width: 480px; color: #68768b; font: 400 10px/1.7 "DM Mono"; }
+.spider-video { display: block; width: 100%; max-height: 520px; background: #05080d; }
+.failure-note { margin: 12px 2px 0; padding: 11px 13px; border-left: 2px solid #ff7d8c; color: #b78790; background: rgba(255,125,140,.055); font-size: 11px; }
 .transport { display: grid; grid-template-columns: 34px 104px minmax(120px, 1fr) 70px; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding: 13px 16px; background: #0c121b; }
 .transport button { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; color: var(--mint); background: rgba(98,224,197,.06); cursor: pointer; }
 .transport span { color: #8996a9; font: 500 10px "DM Mono"; }
@@ -89,6 +99,7 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
   .stage.split { grid-template-columns: 1fr; }
   .stage.split canvas { height: 360px; }
   .spider-head { align-items: flex-start; flex-direction: column; }
+  .spider-media { grid-template-columns: 1fr; }
   .metrics { width: 100%; overflow-x: auto; }
 }
 

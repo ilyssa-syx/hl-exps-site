@@ -12,12 +12,21 @@ const example = manifest.examples.find((item) => item.id === selectedId);
 if (!example) throw new Error(`Unknown sample page: ${selectedId}`);
 const rgb = example.views.overlay2d.rgb;
 const rgbUrl = rgb?.url ? `${base}${rgb.url}` : null;
+const spider = example.views.spider;
 const reconstructionPath = example.views.overlay2d.reconstruction ?? example.views.scene3d.reconstruction;
 const reconstruction = reconstructionPath
   ? loadReconstruction(`${base}${reconstructionPath}`)
   : Promise.reject(new Error("No reconstruction asset is configured"));
 
 const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
+const spiderArtifact = (title, artifact) => `
+  <div class="spider-artifact">
+    <div class="artifact-title"><span>${title}</span><small class="artifact-state ${artifact?.status ?? "missing"}">${artifact?.status ?? "missing"}</small></div>
+    ${artifact?.video
+      ? `<video class="spider-video" src="${base}${artifact.video}" controls muted playsinline preload="metadata"></video>`
+      : `<div class="artifact-empty"><strong>No rendered video</strong><p>${artifact?.detail ?? "This artifact was not exported."}</p></div>`}
+  </div>
+`;
 const exampleLinks = manifest.examples.map((item) => `
   <a class="example-link ${item.id === example.id ? "active" : ""}" href="${base}samples/${encodeURIComponent(item.id)}/">
     <span>${item.label}</span><small>${item.objectName ?? "unknown object"}</small>
@@ -75,18 +84,18 @@ document.querySelector("#app").innerHTML = `
 
       <div class="panel" data-panel="spider" hidden>
         <div class="spider-head">
-          <div><span class="status ${example.views.spider.status}">${example.views.spider.status}</span><strong>${example.views.spider.robot}</strong></div>
+          <div><span class="status ${spider.status}">${spider.status}</span><strong>${spider.robot} · ${spider.embodiment}</strong></div>
           <div class="metrics">
-            <span><small>ADD-AUC10</small>${formatMetric(example.views.spider.metrics.addAuc10)}</span>
-            <span><small>position error</small>${formatMetric(example.views.spider.metrics.positionErrorMeters, " m")}</span>
-            <span><small>rotation error</small>${formatMetric(example.views.spider.metrics.rotationErrorRadians, " rad")}</span>
+            <span><small>ADD-AUC10</small>${formatMetric(spider.metrics.addAuc10)}</span>
+            <span><small>position error</small>${formatMetric(spider.metrics.positionErrorMeters, " m")}</span>
+            <span><small>rotation error</small>${formatMetric(spider.metrics.rotationErrorRadians, " rad")}</span>
           </div>
         </div>
-        <div class="stage split">
-          <div><canvas id="spider-ik-canvas"></canvas><span class="stage-tag">KINEMATIC / IK</span></div>
-          <div><canvas id="spider-physics-canvas"></canvas><span class="stage-tag">MJWP / PHYSICS</span></div>
+        <div class="spider-media">
+          ${spiderArtifact("Kinematic / IK", spider.ik)}
+          ${spiderArtifact("MJWP / physics", spider.physics)}
         </div>
-        <p class="note">The SPIDER panels use normalized sequence time. Published examples can replace either preview with exported MP4 while keeping this shared timeline.</p>
+        ${spider.status === "failed" ? `<p class="failure-note">This is an evaluated SPIDER failure, not a missing visualization. Failed physics runs score zero ADD-AUC10.</p>` : ""}
       </div>
 
       <div class="transport">
@@ -101,9 +110,7 @@ document.querySelector("#app").innerHTML = `
 
 const viewers = [
   new Preview2D(document.querySelector("#overlay-canvas"), document.querySelector("#input-rgb"), reconstruction),
-  new SceneViewer(document.querySelector("#scene-canvas"), "reconstruction", reconstruction),
-  new SceneViewer(document.querySelector("#spider-ik-canvas"), "spider"),
-  new SceneViewer(document.querySelector("#spider-physics-canvas"), "spider"),
+  new SceneViewer(document.querySelector("#scene-canvas"), reconstruction),
 ];
 const tabs = [...document.querySelectorAll(".tab")];
 const panels = [...document.querySelectorAll(".panel")];
@@ -129,7 +136,7 @@ function setFrame(frame, seekVideo = true) {
   const safeFrame = Math.max(0, Math.min(example.frameCount - 1, Math.round(frame)));
   timeline.value = safeFrame;
   const progress = safeFrame / Math.max(1, example.frameCount - 1);
-  viewers.forEach((viewer, index) => viewer.setProgress(Math.min(1, progress + (index === 3 ? 0.008 : 0))));
+  viewers.forEach((viewer) => viewer.setProgress(progress));
   frameLabel.textContent = `${String(safeFrame).padStart(3, "0")} / ${String(example.frameCount - 1).padStart(3, "0")}`;
   timeLabel.textContent = `${(safeFrame / example.fps).toFixed(2)} s`;
   if (seekVideo && inputRgb && Number.isFinite(inputRgb.duration)) {

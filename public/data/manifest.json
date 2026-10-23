@@ -5,7 +5,7 @@
       "schemaVersion": 1,
       "id": "20201015-subject-09__20201015_151044__932122060861",
       "label": "20201015-subject-09 / 20201015_151044 / 932122060861",
-      "description": "DexYCB sample page with its input RGB and exported camera-space hand/object reconstruction. SPIDER remains a labeled preview until rollout assets are available.",
+      "description": "DexYCB sample page with its input RGB and exported camera-space hand/object reconstruction. The Sharpa IK completed, but SPIDER physics failed its initial-state sanity check.",
       "dataset": "DexYCB",
       "split": "train",
       "objectName": "YCB object 18",
@@ -57,9 +57,17 @@
           ]
         },
         "spider": {
-          "mode": "procedural-preview",
           "robot": "sharpa",
-          "status": "preview",
+          "embodiment": "left",
+          "status": "failed",
+          "ik": {
+            "status": "trajectory-only",
+            "detail": "trajectory_kinematic.npz exists; no IK video was exported"
+          },
+          "physics": {
+            "status": "failed",
+            "detail": "Initial-state sanity check failed: object rotation drift 0.3595 rad exceeded the 0.3000 rad threshold. No MJWP trajectory or video was produced."
+          },
           "metrics": {
             "addAuc10": null,
             "positionErrorMeters": null,

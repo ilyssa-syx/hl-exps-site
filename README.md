@@ -9,8 +9,9 @@ retargeting results. Each example has one shareable page containing:
 - one shared sequence timeline.
 
 The checked-in DexYCB sample uses its real input RGB, Dyn-HaMR/MANO hand mesh,
-FoundationPose++ object mesh, and per-frame camera-space transforms. Its SPIDER
-panel remains explicitly labeled as a preview until rollout assets are added.
+FoundationPose++ object mesh, and per-frame camera-space transforms. Its Sharpa
+IK completed, while MJWP failed the initial-state sanity check; the page reports
+that failure instead of substituting a synthetic robot visualization.
 
 ## Development
 
