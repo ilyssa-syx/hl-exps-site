@@ -4,18 +4,19 @@ import { SceneViewer } from "./scene-viewer.js";
 import { loadReconstruction } from "./reconstruction-data.js";
 
 const base = import.meta.env.BASE_URL;
-const response = await fetch(`${base}data/manifest.json`);
+const versionedAsset = (path) => `${base}${path}?v=${encodeURIComponent(__BUILD_ID__)}`;
+const response = await fetch(versionedAsset("data/manifest.json"), { cache: "no-store" });
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
 const selectedId = document.body.dataset.sampleId;
 const example = manifest.examples.find((item) => item.id === selectedId);
 if (!example) throw new Error(`Unknown sample page: ${selectedId}`);
 const rgb = example.views.overlay2d.rgb;
-const rgbUrl = rgb?.url ? `${base}${rgb.url}` : null;
-const spider = example.views.spider;
+const rgbUrl = rgb?.url ? versionedAsset(rgb.url) : null;
+const spider = example.views.spider ?? {};
 const reconstructionPath = example.views.overlay2d.reconstruction ?? example.views.scene3d.reconstruction;
 const reconstruction = reconstructionPath
-  ? loadReconstruction(`${base}${reconstructionPath}`)
+  ? loadReconstruction(versionedAsset(reconstructionPath))
   : Promise.reject(new Error("No reconstruction asset is configured"));
 
 const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
@@ -23,7 +24,7 @@ const spiderArtifact = (title, artifact) => `
   <div class="spider-artifact">
     <div class="artifact-title"><span>${title}</span><small class="artifact-state ${artifact?.status ?? "missing"}">${artifact?.status ?? "missing"}</small></div>
     ${artifact?.video
-      ? `<video class="spider-video" src="${base}${artifact.video}" controls muted playsinline preload="metadata"></video>`
+      ? `<video class="spider-video" src="${versionedAsset(artifact.video)}" controls muted playsinline preload="metadata"></video>`
       : `<div class="artifact-empty"><strong>No rendered video</strong><p>${artifact?.detail ?? "This artifact was not exported."}</p></div>`}
   </div>
 `;
@@ -84,11 +85,11 @@ document.querySelector("#app").innerHTML = `
 
       <div class="panel" data-panel="spider" hidden>
         <div class="spider-head">
-          <div><span class="status ${spider.status}">${spider.status}</span><strong>${spider.robot} · ${spider.embodiment}</strong></div>
+          <div><span class="status ${spider.status ?? "unavailable"}">${spider.status ?? "unavailable"}</span><strong>${spider.robot ?? "robot unknown"} · ${spider.embodiment ?? "side unknown"}</strong></div>
           <div class="metrics">
-            <span><small>ADD-AUC10</small>${formatMetric(spider.metrics.addAuc10)}</span>
-            <span><small>position error</small>${formatMetric(spider.metrics.positionErrorMeters, " m")}</span>
-            <span><small>rotation error</small>${formatMetric(spider.metrics.rotationErrorRadians, " rad")}</span>
+            <span><small>ADD-AUC10</small>${formatMetric(spider.metrics?.addAuc10)}</span>
+            <span><small>position error</small>${formatMetric(spider.metrics?.positionErrorMeters, " m")}</span>
+            <span><small>rotation error</small>${formatMetric(spider.metrics?.rotationErrorRadians, " rad")}</span>
           </div>
         </div>
         <div class="spider-media">

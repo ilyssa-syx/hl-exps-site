@@ -1,7 +1,10 @@
 import "./style.css";
 
 const base = import.meta.env.BASE_URL;
-const response = await fetch(`${base}data/manifest.json`);
+const response = await fetch(
+  `${base}data/manifest.json?v=${encodeURIComponent(__BUILD_ID__)}`,
+  { cache: "no-store" },
+);
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
 

@@ -18,6 +18,9 @@ const sampleInputs = fs.existsSync(samplesRoot)
 
 export default defineConfig({
   base: "/hl-exps-site/",
+  define: {
+    __BUILD_ID__: JSON.stringify(process.env.GITHUB_SHA ?? "dev"),
+  },
   build: {
     target: "es2022",
     sourcemap: true,
