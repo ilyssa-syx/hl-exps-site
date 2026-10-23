@@ -33,13 +33,20 @@ Add `configs/examples/<example-id>.json`, then run `npm run export`. The config
 is the editable source of truth. `public/data/manifest.json` is regenerated and
 must not be edited manually.
 
-Example pages use a GitHub-Pages-safe query URL:
+Every sample is emitted as its own static HTML page:
 
 ```text
-https://ilyssa-syx.github.io/hl-exps-site/?example=<example-id>
+https://ilyssa-syx.github.io/hl-exps-site/samples/<sample-id>/
 ```
 
 Generated videos and geometry bundles belong in object storage, not Git. The
 next converter pass will map the existing reconstruction outputs and SPIDER
 artifacts (`trajectory_kinematic.npz`, `trajectory_mjwp.npz`, metrics JSON,
 and optional IK/MJWP MP4 files) into the example schema.
+The repository includes one small RGB clip only so the checked-in sample page
+exercises the real video-backed overlay path before object-storage publishing
+is configured.
+
+`views.overlay2d.rgb` is required for real samples. It points to either a
+published input RGB video or, in a future schema revision, an RGB image
+sequence. Camera-space overlay geometry is rendered above that RGB layer.

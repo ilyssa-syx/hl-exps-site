@@ -6,13 +6,15 @@ const base = import.meta.env.BASE_URL;
 const response = await fetch(`${base}data/manifest.json`);
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
-const params = new URLSearchParams(location.search);
-const selectedId = params.get("example");
-const example = manifest.examples.find((item) => item.id === selectedId) ?? manifest.examples[0];
+const selectedId = document.body.dataset.sampleId;
+const example = manifest.examples.find((item) => item.id === selectedId);
+if (!example) throw new Error(`Unknown sample page: ${selectedId}`);
+const rgb = example.views.overlay2d.rgb;
+const rgbUrl = rgb?.url ? `${base}${rgb.url}` : null;
 
 const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
 const exampleLinks = manifest.examples.map((item) => `
-  <a class="example-link ${item.id === example.id ? "active" : ""}" href="?example=${encodeURIComponent(item.id)}">
+  <a class="example-link ${item.id === example.id ? "active" : ""}" href="${base}samples/${encodeURIComponent(item.id)}/">
     <span>${item.label}</span><small>${item.objectName ?? "unknown object"}</small>
   </a>
 `).join("");
@@ -49,7 +51,11 @@ document.querySelector("#app").innerHTML = `
       </div>
 
       <div class="panel active" data-panel="overlay">
-        <div class="stage single"><canvas id="overlay-canvas"></canvas></div>
+        <div class="stage single overlay-stage">
+          ${rgbUrl ? `<video id="input-rgb" src="${rgbUrl}" preload="auto" muted playsinline></video>` : `<div class="missing-rgb">Input RGB is not published for this sample.</div>`}
+          <canvas id="overlay-canvas"></canvas>
+          <span class="stage-tag">INPUT RGB + CAMERA-SPACE OVERLAY</span>
+        </div>
         <div class="layer-row">
           ${example.views.overlay2d.layers.map((layer) => `<span><i style="--layer:${layer.color}"></i>${layer.label}</span>`).join("")}
         </div>
@@ -89,7 +95,7 @@ document.querySelector("#app").innerHTML = `
 `;
 
 const viewers = [
-  new Preview2D(document.querySelector("#overlay-canvas")),
+  new Preview2D(document.querySelector("#overlay-canvas"), document.querySelector("#input-rgb")),
   new SceneViewer(document.querySelector("#scene-canvas")),
   new SceneViewer(document.querySelector("#spider-ik-canvas"), "spider"),
   new SceneViewer(document.querySelector("#spider-physics-canvas"), "spider"),
@@ -107,19 +113,24 @@ tabs.forEach((tab) => tab.addEventListener("click", () => {
 }));
 
 const timeline = document.querySelector("#timeline");
+const inputRgb = document.querySelector("#input-rgb");
 const frameLabel = document.querySelector("#frame");
 const timeLabel = document.querySelector("#time");
 const play = document.querySelector("#play");
 let playing = false;
 let lastTick = 0;
 
-function setFrame(frame) {
+function setFrame(frame, seekVideo = true) {
   const safeFrame = Math.max(0, Math.min(example.frameCount - 1, Math.round(frame)));
   timeline.value = safeFrame;
   const progress = safeFrame / Math.max(1, example.frameCount - 1);
   viewers.forEach((viewer, index) => viewer.setProgress(Math.min(1, progress + (index === 3 ? 0.008 : 0))));
   frameLabel.textContent = `${String(safeFrame).padStart(3, "0")} / ${String(example.frameCount - 1).padStart(3, "0")}`;
   timeLabel.textContent = `${(safeFrame / example.fps).toFixed(2)} s`;
+  if (seekVideo && inputRgb && Number.isFinite(inputRgb.duration)) {
+    const target = Math.min(inputRgb.duration, safeFrame / example.fps);
+    if (Math.abs(inputRgb.currentTime - target) > 1 / example.fps) inputRgb.currentTime = target;
+  }
 }
 
 timeline.addEventListener("input", () => setFrame(Number(timeline.value)));
@@ -127,15 +138,30 @@ play.addEventListener("click", () => {
   playing = !playing;
   play.textContent = playing ? "❚❚" : "▶";
   lastTick = performance.now();
+  if (inputRgb) {
+    if (playing && inputRgb.ended) inputRgb.currentTime = 0;
+    if (playing) inputRgb.play().catch(() => {});
+    else inputRgb.pause();
+  }
 });
 
 function animate(now) {
   if (playing) {
-    const elapsed = (now - lastTick) / 1000;
-    if (elapsed >= 1 / example.fps) {
-      const next = (Number(timeline.value) + Math.max(1, Math.floor(elapsed * example.fps))) % example.frameCount;
-      setFrame(next);
-      lastTick = now;
+    if (inputRgb && !inputRgb.paused) {
+      const videoFrame = Math.min(example.frameCount - 1, Math.floor(inputRgb.currentTime * example.fps));
+      setFrame(videoFrame, false);
+      if (inputRgb.ended || videoFrame >= example.frameCount - 1) {
+        playing = false;
+        inputRgb.pause();
+        play.textContent = "▶";
+      }
+    } else {
+      const elapsed = (now - lastTick) / 1000;
+      if (elapsed >= 1 / example.fps) {
+        const next = (Number(timeline.value) + Math.max(1, Math.floor(elapsed * example.fps))) % example.frameCount;
+        setFrame(next);
+        lastTick = now;
+      }
     }
   }
   requestAnimationFrame(animate);

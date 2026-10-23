@@ -3,17 +3,21 @@
   "examples": [
     {
       "schemaVersion": 1,
-      "id": "schema-preview",
-      "label": "Schema preview",
-      "description": "Interactive placeholder showing the intended per-example layout before experiment assets are published.",
+      "id": "20201015-subject-09__20201015_151044__932122060861",
+      "label": "20201015-subject-09 / 20201015_151044 / 932122060861",
+      "description": "DexYCB sample page with its real input RGB. Reconstruction and SPIDER geometry remain procedural placeholders until exported result assets are connected.",
       "dataset": "DexYCB",
-      "split": "preview",
-      "objectName": "sample object",
+      "split": "train",
+      "objectName": "YCB object 18",
       "fps": 30,
-      "frameCount": 150,
+      "frameCount": 72,
       "views": {
         "overlay2d": {
-          "mode": "procedural-preview",
+          "rgb": {
+            "type": "video",
+            "url": "demo/20201015-subject-09__20201015_151044__932122060861/input-rgb.mp4"
+          },
+          "overlayMode": "procedural-preview",
           "layers": [
             {
               "id": "input",

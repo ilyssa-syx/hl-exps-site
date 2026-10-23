@@ -1,8 +1,9 @@
 const TAU = Math.PI * 2;
 
 export class Preview2D {
-  constructor(canvas) {
+  constructor(canvas, video = null) {
     this.canvas = canvas;
+    this.video = video;
     this.ctx = canvas.getContext("2d");
     this.progress = 0;
     this.resizeObserver = new ResizeObserver(() => this.draw());
@@ -27,25 +28,20 @@ export class Preview2D {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const w = rect.width;
     const h = rect.height;
-    const gradient = ctx.createLinearGradient(0, 0, w, h);
-    gradient.addColorStop(0, "#172235");
-    gradient.addColorStop(0.55, "#0e1521");
-    gradient.addColorStop(1, "#202134");
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, w, h);
+    ctx.clearRect(0, 0, w, h);
 
-    ctx.strokeStyle = "rgba(255,255,255,.055)";
-    ctx.lineWidth = 1;
-    for (let x = 0; x < w; x += 36) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
-    }
-    for (let y = 0; y < h; y += 36) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-    }
+    const videoAspect = this.video?.videoWidth && this.video?.videoHeight
+      ? this.video.videoWidth / this.video.videoHeight
+      : 4 / 3;
+    const stageAspect = w / h;
+    const contentWidth = stageAspect > videoAspect ? h * videoAspect : w;
+    const contentHeight = stageAspect > videoAspect ? h : w / videoAspect;
+    const left = (w - contentWidth) / 2;
+    const top = (h - contentHeight) / 2;
 
     const t = this.progress * TAU;
-    const ox = w * (0.58 + Math.sin(t) * 0.045);
-    const oy = h * (0.52 + Math.cos(t * 0.7) * 0.035);
+    const ox = left + contentWidth * (0.58 + Math.sin(t) * 0.045);
+    const oy = top + contentHeight * (0.52 + Math.cos(t * 0.7) * 0.035);
     ctx.save();
     ctx.translate(ox, oy);
     ctx.rotate(Math.sin(t) * 0.25);
@@ -57,7 +53,7 @@ export class Preview2D {
     ctx.fill(); ctx.stroke();
     ctx.restore();
 
-    const wrist = [w * 0.37, h * 0.72];
+    const wrist = [left + contentWidth * 0.37, top + contentHeight * 0.72];
     ctx.strokeStyle = "#62e0c5";
     ctx.fillStyle = "#62e0c5";
     ctx.lineWidth = 2;
@@ -76,6 +72,6 @@ export class Preview2D {
 
     ctx.fillStyle = "rgba(255,255,255,.56)";
     ctx.font = "500 12px ui-monospace, SFMono-Regular, monospace";
-    ctx.fillText("PROCEDURAL SCHEMA PREVIEW · NOT EXPERIMENT DATA", 18, 26);
+    ctx.fillText("PROCEDURAL OVERLAY PREVIEW · INPUT RGB IS REAL", left + 18, top + 28);
   }
 }
