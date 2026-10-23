@@ -2,6 +2,7 @@ node_modules/
 dist/
 .DS_Store
 public/assets/
+r2_assets/
 configs/examples/*.local.json
 __pycache__/
 *.pyc

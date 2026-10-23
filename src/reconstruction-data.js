@@ -9,12 +9,18 @@ export async function loadReconstruction(manifestUrl) {
   if (!response.ok) throw new Error(`Could not load reconstruction: ${response.status}`);
   const metadata = await response.json();
   const root = new URL(".", response.url);
+  const version = new URL(response.url).searchParams.get("v");
+  const assetUrl = (relative) => {
+    const url = new URL(relative, root);
+    if (version) url.searchParams.set("v", version);
+    return url;
+  };
   const [handVertices, handFaces, objectVertices, objectFaces, objectPoses] = await Promise.all([
-    typedArray(new URL(metadata.hand.vertices, root), Float32Array),
-    typedArray(new URL(metadata.hand.faces, root), Uint16Array),
-    typedArray(new URL(metadata.object.vertices, root), Float32Array),
-    typedArray(new URL(metadata.object.faces, root), Uint16Array),
-    typedArray(new URL(metadata.object.poses, root), Float32Array),
+    typedArray(assetUrl(metadata.hand.vertices), Float32Array),
+    typedArray(assetUrl(metadata.hand.faces), Uint16Array),
+    typedArray(assetUrl(metadata.object.vertices), Float32Array),
+    typedArray(assetUrl(metadata.object.faces), Uint16Array),
+    typedArray(assetUrl(metadata.object.poses), Float32Array),
   ]);
   return { metadata, handVertices, handFaces, objectVertices, objectFaces, objectPoses };
 }

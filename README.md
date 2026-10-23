@@ -35,6 +35,17 @@ The S3-compatible uploader uses the local `hl-exps-r2` AWS profile with region
 `auto`; credentials are never stored in this repository. The browser origin
 policy is tracked in `configs/r2-cors.json`.
 
+Export generated assets below `r2_assets/` and publish them incrementally:
+
+```bash
+python3 scripts/publish_r2.py --dry-run
+python3 scripts/publish_r2.py
+```
+
+The uploader never deletes remote objects. Production and development builds
+resolve experiment assets below the public base URL recorded in the two tracked
+Vite environment files; credentials remain only in the local AWS profile.
+
 ## Add an example
 
 Add `configs/examples/<example-id>.json`, then run `npm run export`. The config
