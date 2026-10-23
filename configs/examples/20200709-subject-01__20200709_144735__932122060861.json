@@ -18,10 +18,10 @@
             "type": "video",
             "url": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         }
       }
     },
@@ -34,10 +34,10 @@
             "type": "video",
             "url": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/refined-20261023/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/refined-20261023/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         },
         "spider": {
           "robot": "sharpa",

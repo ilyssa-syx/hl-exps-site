@@ -55,6 +55,25 @@ def load_mano_pickle(path: Path) -> dict:
     return {key: item.array() if isinstance(item, _LegacyCh) else item for key, item in value.items()}
 
 
+def mano_model_path(mano_dir: Path) -> Path:
+    """Return the MANO model used by the prediction producer.
+
+    Dyn-HaMR represents both handednesses with the right-hand MANO model and
+    mirrors the decoded output for left hands.  Loading MANO_LEFT directly
+    changes the meaning of the exported axis-angle pose parameters.
+    """
+    return mano_dir / "MANO_RIGHT.pkl"
+
+
+def apply_handedness(vertices: np.ndarray, side: str) -> np.ndarray:
+    """Convert the producer's right-hand MANO output to the requested side."""
+    if side not in {"left", "right"}:
+        raise ValueError(f"unsupported hand side: {side!r}")
+    if side == "left":
+        vertices[..., 0] *= -1
+    return vertices
+
+
 def decode_hand(result_dir: Path, mano_dir: Path, frame_count: int) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     import smplx
     from smplx.utils import Struct
@@ -63,10 +82,10 @@ def decode_hand(result_dir: Path, mano_dir: Path, frame_count: int) -> tuple[np.
     if len(source["track_indices"]) != 1:
         raise ValueError("the initial browser exporter requires exactly one hand track")
     side = str(source["handedness"][0]).lower()
-    mano_path = mano_dir / ("MANO_RIGHT.pkl" if side == "right" else "MANO_LEFT.pkl")
+    mano_path = mano_model_path(mano_dir)
     data = load_mano_pickle(mano_path)
     model = smplx.MANO(
-        str(mano_path), data_struct=Struct(**data), is_rhand=side == "right", use_pca=False,
+        str(mano_path), data_struct=Struct(**data), is_rhand=True, use_pca=False,
         flat_hand_mean=True, create_hand_pose=False,
     ).eval()
     frames = len(source["frame_indices"])
@@ -79,7 +98,7 @@ def decode_hand(result_dir: Path, mano_dir: Path, frame_count: int) -> tuple[np.
             transl=tensor(source["trans_camera"][0]).reshape(frames, 3),
             return_verts=True,
         )
-    decoded = output.vertices.cpu().numpy().astype("<f4")
+    decoded = apply_handedness(output.vertices.cpu().numpy().astype("<f4"), side)
     vertices = np.full((frame_count, decoded.shape[1], 3), np.nan, dtype="<f4")
     frame_indices = np.asarray(source["frame_indices"], dtype=int)
     vertices[frame_indices] = decoded

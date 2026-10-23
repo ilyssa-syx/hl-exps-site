@@ -18,6 +18,7 @@ DEFAULT_MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 DEFAULT_PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 DEFAULT_FFMPEG = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/ffmpeg")
 BASELINES = (("input", "input"), ("refined", "refined-20261023"))
+LEFT_HAND_RECONSTRUCTION_VERSION = "20261023-mano-left-v2"
 
 
 def command(*parts: object) -> None:
@@ -77,16 +78,21 @@ def main() -> None:
                         "--result-dir", prediction, "--mano-dir", args.mano_dir,
                         "--output", reconstruction,
                     )
+                reconstruction_url = (
+                    f"experiments/20261023/{sample_id}/{public_name}/reconstruction/reconstruction.json"
+                )
+                if side == "left":
+                    reconstruction_url += f"?v={LEFT_HAND_RECONSTRUCTION_VERSION}"
                 baseline = {
                     "id": public_name,
                     "label": public_name,
                     "views": {
                         "overlay2d": {
                             "rgb": {"type": "video", "url": f"experiments/20261023/{sample_id}/input-rgb.mp4"},
-                            "reconstruction": f"experiments/20261023/{sample_id}/{public_name}/reconstruction/reconstruction.json",
+                            "reconstruction": reconstruction_url,
                         },
                         "scene3d": {
-                            "reconstruction": f"experiments/20261023/{sample_id}/{public_name}/reconstruction/reconstruction.json",
+                            "reconstruction": reconstruction_url,
                         },
                     },
                 }
