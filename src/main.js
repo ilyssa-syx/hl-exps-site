@@ -1,6 +1,7 @@
 import "./style.css";
 import { Preview2D } from "./preview-2d.js";
 import { SceneViewer } from "./scene-viewer.js";
+import { loadReconstruction } from "./reconstruction-data.js";
 
 const base = import.meta.env.BASE_URL;
 const response = await fetch(`${base}data/manifest.json`);
@@ -11,6 +12,10 @@ const example = manifest.examples.find((item) => item.id === selectedId);
 if (!example) throw new Error(`Unknown sample page: ${selectedId}`);
 const rgb = example.views.overlay2d.rgb;
 const rgbUrl = rgb?.url ? `${base}${rgb.url}` : null;
+const reconstructionPath = example.views.overlay2d.reconstruction ?? example.views.scene3d.reconstruction;
+const reconstruction = reconstructionPath
+  ? loadReconstruction(`${base}${reconstructionPath}`)
+  : Promise.reject(new Error("No reconstruction asset is configured"));
 
 const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
 const exampleLinks = manifest.examples.map((item) => `
@@ -54,7 +59,7 @@ document.querySelector("#app").innerHTML = `
         <div class="stage single overlay-stage">
           ${rgbUrl ? `<video id="input-rgb" src="${rgbUrl}" preload="auto" muted playsinline></video>` : `<div class="missing-rgb">Input RGB is not published for this sample.</div>`}
           <canvas id="overlay-canvas"></canvas>
-          <span class="stage-tag">INPUT RGB + CAMERA-SPACE OVERLAY</span>
+          <span class="stage-tag">INPUT RGB + EXPORTED CAMERA-SPACE MESH</span>
         </div>
         <div class="layer-row">
           ${example.views.overlay2d.layers.map((layer) => `<span><i style="--layer:${layer.color}"></i>${layer.label}</span>`).join("")}
@@ -62,7 +67,7 @@ document.querySelector("#app").innerHTML = `
       </div>
 
       <div class="panel" data-panel="scene" hidden>
-        <div class="stage single"><canvas id="scene-canvas"></canvas><span class="stage-tag">FREE CAMERA · PREVIEW</span></div>
+        <div class="stage single"><canvas id="scene-canvas"></canvas><span class="stage-tag">EXPORTED HAND + OBJECT GEOMETRY</span></div>
         <div class="layer-row">
           ${example.views.scene3d.layers.map((layer) => `<span><i style="--layer:${layer.color}"></i>${layer.label}</span>`).join("")}
         </div>
@@ -95,8 +100,8 @@ document.querySelector("#app").innerHTML = `
 `;
 
 const viewers = [
-  new Preview2D(document.querySelector("#overlay-canvas"), document.querySelector("#input-rgb")),
-  new SceneViewer(document.querySelector("#scene-canvas")),
+  new Preview2D(document.querySelector("#overlay-canvas"), document.querySelector("#input-rgb"), reconstruction),
+  new SceneViewer(document.querySelector("#scene-canvas"), "reconstruction", reconstruction),
   new SceneViewer(document.querySelector("#spider-ik-canvas"), "spider"),
   new SceneViewer(document.querySelector("#spider-physics-canvas"), "spider"),
 ];

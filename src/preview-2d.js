@@ -1,11 +1,14 @@
-const TAU = Math.PI * 2;
-
 export class Preview2D {
-  constructor(canvas, video = null) {
+  constructor(canvas, video = null, reconstruction = null) {
     this.canvas = canvas;
     this.video = video;
     this.ctx = canvas.getContext("2d");
     this.progress = 0;
+    this.data = null;
+    reconstruction?.then((data) => {
+      this.data = data;
+      this.draw();
+    }).catch((error) => console.error(error));
     this.resizeObserver = new ResizeObserver(() => this.draw());
     this.resizeObserver.observe(canvas);
   }
@@ -39,39 +42,73 @@ export class Preview2D {
     const left = (w - contentWidth) / 2;
     const top = (h - contentHeight) / 2;
 
-    const t = this.progress * TAU;
-    const ox = left + contentWidth * (0.58 + Math.sin(t) * 0.045);
-    const oy = top + contentHeight * (0.52 + Math.cos(t * 0.7) * 0.035);
-    ctx.save();
-    ctx.translate(ox, oy);
-    ctx.rotate(Math.sin(t) * 0.25);
-    ctx.fillStyle = "rgba(255,157,102,.16)";
-    ctx.strokeStyle = "#ff9d66";
-    ctx.lineWidth = 2.5;
-    ctx.beginPath();
-    ctx.roundRect(-55, -42, 110, 84, 14);
-    ctx.fill(); ctx.stroke();
-    ctx.restore();
+    if (!this.data) return;
+    const { metadata } = this.data;
+    const frame = Math.min(metadata.frameCount - 1, Math.round(this.progress * (metadata.frameCount - 1)));
+    const intrinsics = metadata.intrinsics[Math.min(frame, metadata.intrinsics.length - 1)];
+    const viewport = { left, top, width: contentWidth, height: contentHeight };
+    if (metadata.object.valid[frame]) this.drawObject(frame, intrinsics, viewport);
+    if (metadata.hand.valid[frame]) this.drawHand(frame, intrinsics, viewport);
+  }
 
-    const wrist = [left + contentWidth * 0.37, top + contentHeight * 0.72];
-    ctx.strokeStyle = "#62e0c5";
-    ctx.fillStyle = "#62e0c5";
-    ctx.lineWidth = 2;
-    for (let finger = 0; finger < 5; finger += 1) {
-      let [x, y] = wrist;
-      ctx.beginPath(); ctx.moveTo(x, y);
-      for (let joint = 1; joint <= 4; joint += 1) {
-        x += 22 + finger * 1.5;
-        y -= 20 + finger * 5 + Math.sin(t + finger * 0.6 + joint) * 3;
-        ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-      ctx.beginPath(); ctx.arc(x, y, 3.5, 0, TAU); ctx.fill();
+  drawHand(frame, intrinsics, viewport) {
+    const { metadata, handVertices, handFaces } = this.data;
+    const offset = frame * metadata.hand.vertexCount * 3;
+    this.drawMesh(
+      metadata.hand.vertexCount,
+      handFaces,
+      (index) => handVertices.subarray(offset + index * 3, offset + index * 3 + 3),
+      intrinsics,
+      viewport,
+      "#62e0c5",
+    );
+  }
+
+  drawObject(frame, intrinsics, viewport) {
+    const { metadata, objectVertices, objectFaces, objectPoses } = this.data;
+    const matrix = objectPoses.subarray(frame * 16, frame * 16 + 16);
+    this.drawMesh(
+      metadata.object.vertexCount,
+      objectFaces,
+      (index) => {
+        const offset = index * 3;
+        const x = objectVertices[offset], y = objectVertices[offset + 1], z = objectVertices[offset + 2];
+        return [
+          matrix[0] * x + matrix[1] * y + matrix[2] * z + matrix[3],
+          matrix[4] * x + matrix[5] * y + matrix[6] * z + matrix[7],
+          matrix[8] * x + matrix[9] * y + matrix[10] * z + matrix[11],
+        ];
+      },
+      intrinsics,
+      viewport,
+      "#ff9d66",
+    );
+  }
+
+  drawMesh(vertexCount, faces, vertexAt, intrinsics, viewport, color) {
+    const [fx, , cx, , fy, cy] = [intrinsics[0][0], 0, intrinsics[0][2], 0, intrinsics[1][1], intrinsics[1][2]];
+    const points = new Float32Array(vertexCount * 2);
+    for (let index = 0; index < vertexCount; index += 1) {
+      const [x, y, z] = vertexAt(index);
+      points[index * 2] = viewport.left + ((fx * x / z + cx) / this.data.metadata.imageWidth) * viewport.width;
+      points[index * 2 + 1] = viewport.top + ((fy * y / z + cy) / this.data.metadata.imageHeight) * viewport.height;
     }
-    ctx.beginPath(); ctx.arc(wrist[0], wrist[1], 7, 0, TAU); ctx.fill();
-
-    ctx.fillStyle = "rgba(255,255,255,.56)";
-    ctx.font = "500 12px ui-monospace, SFMono-Regular, monospace";
-    ctx.fillText("PROCEDURAL OVERLAY PREVIEW · INPUT RGB IS REAL", left + 18, top + 28);
+    const ctx = this.ctx;
+    ctx.beginPath();
+    for (let index = 0; index < faces.length; index += 3) {
+      const a = faces[index] * 2, b = faces[index + 1] * 2, c = faces[index + 2] * 2;
+      ctx.moveTo(points[a], points[a + 1]);
+      ctx.lineTo(points[b], points[b + 1]);
+      ctx.lineTo(points[c], points[c + 1]);
+      ctx.closePath();
+    }
+    ctx.globalAlpha = 0.34;
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.globalAlpha = 0.42;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 0.45;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
   }
 }

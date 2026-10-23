@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "20201015-subject-09__20201015_151044__932122060861",
   "label": "20201015-subject-09 / 20201015_151044 / 932122060861",
-  "description": "DexYCB sample page with its real input RGB. Reconstruction and SPIDER geometry remain procedural placeholders until exported result assets are connected.",
+  "description": "DexYCB sample page with its input RGB and exported camera-space hand/object reconstruction. SPIDER remains a labeled preview until rollout assets are available.",
   "dataset": "DexYCB",
   "split": "train",
   "objectName": "YCB object 18",
@@ -14,18 +14,18 @@
         "type": "video",
         "url": "demo/20201015-subject-09__20201015_151044__932122060861/input-rgb.mp4"
       },
-      "overlayMode": "procedural-preview",
+      "reconstruction": "demo/20201015-subject-09__20201015_151044__932122060861/reconstruction/reconstruction.json",
       "layers": [
         { "id": "input", "label": "input RGB", "color": "#8c96a8", "visible": true },
-        { "id": "hand", "label": "reconstructed hand", "color": "#62e0c5", "visible": true },
-        { "id": "object", "label": "reconstructed object", "color": "#ff9d66", "visible": true }
+        { "id": "hand", "label": "Dyn-HaMR hand mesh", "color": "#62e0c5", "visible": true },
+        { "id": "object", "label": "FoundationPose++ object", "color": "#ff9d66", "visible": true }
       ]
     },
     "scene3d": {
-      "mode": "procedural-preview",
+      "reconstruction": "demo/20201015-subject-09__20201015_151044__932122060861/reconstruction/reconstruction.json",
       "layers": [
-        { "id": "hand", "label": "hand mesh", "color": "#62e0c5", "visible": true },
-        { "id": "object", "label": "object mesh", "color": "#ff9d66", "visible": true }
+        { "id": "hand", "label": "Dyn-HaMR hand mesh", "color": "#62e0c5", "visible": true },
+        { "id": "object", "label": "FoundationPose++ object", "color": "#ff9d66", "visible": true }
       ]
     },
     "spider": {

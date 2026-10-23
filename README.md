@@ -8,9 +8,9 @@ retargeting results. Each example has one shareable page containing:
 - SPIDER kinematic and MJWP/physics views with rollout metrics;
 - one shared sequence timeline.
 
-The checked-in `schema-preview` example is deliberately procedural and is
-labeled as such. It exercises the page structure without pretending to be an
-experiment result.
+The checked-in DexYCB sample uses its real input RGB, Dyn-HaMR/MANO hand mesh,
+FoundationPose++ object mesh, and per-frame camera-space transforms. Its SPIDER
+panel remains explicitly labeled as a preview until rollout assets are added.
 
 ## Development
 
@@ -39,10 +39,12 @@ Every sample is emitted as its own static HTML page:
 https://ilyssa-syx.github.io/hl-exps-site/samples/<sample-id>/
 ```
 
-Generated videos and geometry bundles belong in object storage, not Git. The
-next converter pass will map the existing reconstruction outputs and SPIDER
-artifacts (`trajectory_kinematic.npz`, `trajectory_mjwp.npz`, metrics JSON,
-and optional IK/MJWP MP4 files) into the example schema.
+Generated videos and geometry bundles belong in object storage, not Git.
+`scripts/export_reconstruction.py` converts `hand_results.npz`, the object mesh,
+camera intrinsics, and object poses into browser-readable typed-array buffers.
+The SPIDER converter will similarly map `trajectory_kinematic.npz`,
+`trajectory_mjwp.npz`, metrics JSON, and optional IK/MJWP MP4 files into the
+example schema.
 The repository includes one small RGB clip only so the checked-in sample page
 exercises the real video-backed overlay path before object-storage publishing
 is configured.

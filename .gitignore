@@ -3,3 +3,5 @@ dist/
 .DS_Store
 public/assets/
 configs/examples/*.local.json
+__pycache__/
+*.pyc
