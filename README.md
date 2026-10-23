@@ -6,7 +6,7 @@ test samples. Each sample has one shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
-- input and `refined-20261023` baseline selection;
+- independently toggleable input and `refined-20261023` overlays in 2D and 3D;
 - a rendered SPIDER MJWP/physics rollout and metrics when evaluation succeeds;
 - one shared sequence timeline.
 

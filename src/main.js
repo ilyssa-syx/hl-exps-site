@@ -9,105 +9,145 @@ const experimentAsset = (path) => `${assetBase}${path}?v=${encodeURIComponent(__
 const response = await fetch(versionedAsset("data/manifest.json"), { cache: "no-store" });
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
-const selectedId = document.body.dataset.sampleId;
-const example = manifest.examples.find((item) => item.id === selectedId);
-if (!example) throw new Error(`Unknown sample page: ${selectedId}`);
+const example = manifest.examples.find((item) => item.id === document.body.dataset.sampleId);
+if (!example) throw new Error(`Unknown sample page: ${document.body.dataset.sampleId}`);
 
-const requestedBaseline = new URLSearchParams(location.search).get("baseline");
-const baseline = example.baselines.find((item) => item.id === requestedBaseline) ?? example.baselines[0];
-const views = baseline.views;
-const rgbUrl = experimentAsset(views.overlay2d.rgb.url);
-const reconstruction = loadReconstruction(experimentAsset(views.overlay2d.reconstruction));
-const spider = views.spider;
+const colors = { input: "#55a7ff", "refined-20261023": "#ff6f91" };
+const selected = new Set(example.baselines.map((item) => item.id));
+const reconstructionCache = new Map();
+const reconstructionFor = (item) => {
+  if (!reconstructionCache.has(item.id)) {
+    reconstructionCache.set(item.id, loadReconstruction(experimentAsset(item.views.overlay2d.reconstruction)));
+  }
+  return reconstructionCache.get(item.id);
+};
+const layers = example.baselines.map((item) => ({
+  id: item.id, label: item.label, color: colors[item.id], load: () => reconstructionFor(item),
+}));
+const rgbUrl = experimentAsset(example.baselines[0].views.overlay2d.rgb.url);
 const exampleIndex = manifest.examples.findIndex((item) => item.id === example.id);
 const neighbor = (offset) => manifest.examples[(exampleIndex + offset + manifest.examples.length) % manifest.examples.length];
-const sampleHref = (sample) => `${base}samples/${encodeURIComponent(sample.id)}/?baseline=${encodeURIComponent(baseline.id)}`;
+const sampleHref = (sample) => `${base}samples/${encodeURIComponent(sample.id)}/`;
 const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
 
-const baselineLinks = example.baselines.map((item) => `
-  <a class="baseline-link ${item.id === baseline.id ? "active" : ""}" href="?baseline=${encodeURIComponent(item.id)}">
-    <span>${item.label}</span><small>${item.views.spider ? "2D · 3D · SPIDER" : "2D · 3D"}</small>
-  </a>
-`).join("");
+const baselineControls = example.baselines.map((item) => `
+  <button class="baseline-toggle" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}">
+    <i></i><span>${item.label}</span><small>${item.views.spider ? "2D · 3D · SPIDER" : "2D · 3D"}</small>
+  </button>`).join("");
+const layerChips = example.baselines.map((item) => `
+  <button class="layer-chip" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}"><i></i>${item.label}</button>`).join("");
+const spiderCards = example.baselines.filter((item) => item.views.spider).map((item) => {
+  const spider = item.views.spider;
+  return `<article class="spider-run" data-baseline="${item.id}" style="--baseline:${colors[item.id]}">
+    <div class="spider-head">
+      <div><i class="baseline-dot"></i><strong>${item.label}</strong><span class="status evaluated">evaluated</span><small>${spider.robot} · ${spider.embodiment}</small></div>
+      <div class="metrics"><span><small>ADD-AUC10</small>${formatMetric(spider.metrics.addAuc10)}</span><span><small>position error</small>${formatMetric(spider.metrics.positionErrorMeters, " m")}</span><span><small>rotation error</small>${formatMetric(spider.metrics.rotationErrorRadians, " rad")}</span></div>
+    </div>
+    <video class="spider-video" data-src="${experimentAsset(spider.video)}" controls muted playsinline preload="none"></video>
+  </article>`;
+}).join("");
 
 document.querySelector("#app").innerHTML = `
   <aside class="sidebar">
     <a class="brand" href="${base}"><span class="brand-mark">HL</span><span><strong>Experiments</strong><small>reconstruction → retargeting</small></span></a>
-    <div class="sidebar-label">Baselines</div>
-    <nav>${baselineLinks}</nav>
+    <div class="sidebar-label">Visible baselines</div>
+    <nav class="baseline-controls">${baselineControls}</nav>
+    <p class="sidebar-hint">Select either baseline or show both together.</p>
     <a class="repo-link" href="https://github.com/ilyssa-syx/hl-exps-site">GitHub repository ↗</a>
   </aside>
   <main>
     <div class="sample-nav"><a href="${base}">← all samples</a><span><a href="${sampleHref(neighbor(-1))}">← previous</a><a href="${sampleHref(neighbor(1))}">next →</a></span></div>
     <header class="topbar">
-      <div><div class="eyebrow">${example.dataset} / ${example.split} / ${baseline.label}</div><h1>${example.label}</h1><p>${example.description}</p></div>
+      <div><div class="eyebrow">${example.dataset} / ${example.split} / baseline comparison</div><h1>${example.label}</h1><p>${example.description}</p></div>
       <div class="meta"><span><small>object</small>${example.objectName}</span><span><small>frames</small>${example.frameCount}</span><span><small>fps</small>${example.fps}</span></div>
     </header>
     <section class="workspace">
       <div class="tabs" role="tablist" aria-label="Visualization type">
         <button class="tab active" data-tab="overlay" role="tab">2D overlay</button>
         <button class="tab" data-tab="scene" role="tab">3D reconstruction</button>
-        ${spider ? `<button class="tab" data-tab="spider" role="tab">SPIDER</button>` : ""}
+        ${spiderCards ? `<button class="tab" data-tab="spider" role="tab">SPIDER</button>` : ""}
       </div>
       <div class="panel active" data-panel="overlay">
-        <div class="stage single overlay-stage"><video id="input-rgb" src="${rgbUrl}" preload="metadata" muted playsinline></video><canvas id="overlay-canvas"></canvas><span class="stage-tag">INPUT RGB + ${baseline.label.toUpperCase()}</span></div>
-        <div class="layer-row"><span><i style="--layer:#8c96a8"></i>input RGB</span><span><i style="--layer:#62e0c5"></i>hand mesh</span><span><i style="--layer:#ff9d66"></i>object mesh</span></div>
+        <div class="stage single overlay-stage"><video id="input-rgb" src="${rgbUrl}" preload="metadata" muted playsinline></video><canvas id="overlay-canvas"></canvas><span class="stage-tag">INPUT RGB + SELECTED BASELINES</span></div>
+        <div class="layer-row baseline-legend">${layerChips}</div>
       </div>
       <div class="panel" data-panel="scene" hidden>
-        <div class="stage single"><canvas id="scene-canvas"></canvas><span class="stage-tag">${baseline.label.toUpperCase()} · CAMERA-SPACE GEOMETRY</span></div>
-        <div class="layer-row"><span><i style="--layer:#62e0c5"></i>hand mesh</span><span><i style="--layer:#ff9d66"></i>object mesh</span></div>
+        <div class="stage single"><canvas id="scene-canvas"></canvas><span class="stage-tag">SELECTED BASELINES · CAMERA-SPACE GEOMETRY</span></div>
+        <div class="layer-row baseline-legend">${layerChips}</div>
       </div>
-      ${spider ? `
-        <div class="panel" data-panel="spider" hidden>
-          <div class="spider-head"><div><span class="status evaluated">evaluated</span><strong>${spider.robot} · ${spider.embodiment}</strong></div>
-            <div class="metrics"><span><small>ADD-AUC10</small>${formatMetric(spider.metrics.addAuc10)}</span><span><small>position error</small>${formatMetric(spider.metrics.positionErrorMeters, " m")}</span><span><small>rotation error</small>${formatMetric(spider.metrics.rotationErrorRadians, " rad")}</span></div>
-          </div>
-          <div class="spider-artifact spider-success"><video class="spider-video" data-src="${experimentAsset(spider.video)}" controls muted playsinline preload="none"></video></div>
-        </div>` : ""}
+      ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
     </section>
-  </main>
-`;
+  </main>`;
 
 const inputRgb = document.querySelector("#input-rgb");
-const preview2d = new Preview2D(document.querySelector("#overlay-canvas"), inputRgb, reconstruction);
+const preview2d = new Preview2D(document.querySelector("#overlay-canvas"), inputRgb, layers);
 let sceneViewer = null;
 let sceneLoading = null;
 let activeTab = "overlay";
+let currentFrame = 0;
+let playing = false;
+let videoCallback = null;
+let animationFrame = null;
+
 function ensureSceneViewer() {
   if (sceneViewer) return Promise.resolve(sceneViewer);
   sceneLoading ??= import("./scene-viewer.js").then(({ SceneViewer }) => {
-    sceneViewer = new SceneViewer(document.querySelector("#scene-canvas"), reconstruction);
-    if (activeTab === "scene") sceneViewer.setProgress(currentFrame / Math.max(1, example.frameCount - 1));
+    sceneViewer = new SceneViewer(document.querySelector("#scene-canvas"), layers);
+    sceneViewer.setVisible(selected);
+    sceneViewer.setProgress(currentFrame / Math.max(1, example.frameCount - 1));
     return sceneViewer;
   });
   return sceneLoading;
 }
+
+function updateSpider() {
+  const cards = [...document.querySelectorAll(".spider-run")];
+  let visible = 0;
+  cards.forEach((card) => {
+    const show = selected.has(card.dataset.baseline);
+    card.hidden = !show;
+    const video = card.querySelector("video");
+    if (!show) video.pause();
+    if (show && activeTab === "spider" && !video.src) { video.src = video.dataset.src; video.load(); }
+    if (show) visible += 1;
+  });
+  const empty = document.querySelector(".spider-empty");
+  if (empty) empty.hidden = visible !== 0;
+}
+
+function updateBaselineControls() {
+  document.querySelectorAll("[data-baseline]").forEach((control) => {
+    if (control.matches("button")) control.setAttribute("aria-pressed", String(selected.has(control.dataset.baseline)));
+  });
+}
+
+function toggleBaseline(id) {
+  if (selected.has(id)) selected.delete(id); else selected.add(id);
+  updateBaselineControls();
+  preview2d.setVisible(selected);
+  sceneViewer?.setVisible(selected);
+  updateSpider();
+  setFrame(currentFrame, false, true);
+}
+
+document.querySelectorAll(".baseline-toggle, .layer-chip").forEach((button) => button.addEventListener("click", () => toggleBaseline(button.dataset.baseline)));
 const tabs = [...document.querySelectorAll(".tab")];
 const panels = [...document.querySelectorAll(".panel")];
 tabs.forEach((tab) => tab.addEventListener("click", () => {
   activeTab = tab.dataset.tab;
   tabs.forEach((item) => item.classList.toggle("active", item === tab));
-  panels.forEach((panel) => { const active = panel.dataset.panel === tab.dataset.tab; panel.hidden = !active; panel.classList.toggle("active", active); });
+  panels.forEach((panel) => { const active = panel.dataset.panel === activeTab; panel.hidden = !active; panel.classList.toggle("active", active); });
   document.querySelector(".transport").hidden = activeTab === "spider";
   if (activeTab === "scene") void ensureSceneViewer();
-  if (activeTab === "spider") {
-    stopPlayback();
-    const video = document.querySelector(".spider-video");
-    if (video && !video.src) { video.src = video.dataset.src; video.load(); }
-  } else {
-    setFrame(currentFrame, false, true);
-  }
+  if (activeTab === "spider") { stopPlayback(); updateSpider(); }
+  else setFrame(currentFrame, false, true);
 }));
 
 const timeline = document.querySelector("#timeline");
 const frameLabel = document.querySelector("#frame");
 const timeLabel = document.querySelector("#time");
 const play = document.querySelector("#play");
-let playing = false;
-let currentFrame = 0;
-let videoCallback = null;
-let animationFrame = null;
 function setFrame(frame, seekVideo = true, force = false) {
   const safeFrame = Math.max(0, Math.min(example.frameCount - 1, Math.round(frame)));
   if (!force && safeFrame === currentFrame) return;
@@ -120,7 +160,6 @@ function setFrame(frame, seekVideo = true, force = false) {
   timeLabel.textContent = `${(safeFrame / example.fps).toFixed(2)} s`;
   if (seekVideo && Number.isFinite(inputRgb.duration)) inputRgb.currentTime = Math.min(Math.max(0, inputRgb.duration - 0.001), safeFrame / example.fps);
 }
-timeline.addEventListener("input", () => setFrame(Number(timeline.value)));
 function cancelFrameUpdates() {
   if (videoCallback !== null && inputRgb.cancelVideoFrameCallback) inputRgb.cancelVideoFrameCallback(videoCallback);
   if (animationFrame !== null) cancelAnimationFrame(animationFrame);
@@ -130,34 +169,23 @@ function cancelFrameUpdates() {
 function scheduleFrameUpdate() {
   if (!playing || document.hidden) return;
   if (inputRgb.requestVideoFrameCallback) {
-    videoCallback = inputRgb.requestVideoFrameCallback((_now, metadata) => {
-      videoCallback = null;
-      setFrame(Math.floor(metadata.mediaTime * example.fps), false);
-      scheduleFrameUpdate();
-    });
+    videoCallback = inputRgb.requestVideoFrameCallback((_now, metadata) => { videoCallback = null; setFrame(Math.floor(metadata.mediaTime * example.fps), false); scheduleFrameUpdate(); });
   } else {
-    animationFrame = requestAnimationFrame(() => {
-      animationFrame = null;
-      setFrame(Math.floor(inputRgb.currentTime * example.fps), false);
-      scheduleFrameUpdate();
-    });
+    animationFrame = requestAnimationFrame(() => { animationFrame = null; setFrame(Math.floor(inputRgb.currentTime * example.fps), false); scheduleFrameUpdate(); });
   }
 }
-function stopPlayback() {
-  playing = false;
-  inputRgb.pause();
-  play.textContent = "▶";
-  cancelFrameUpdates();
-}
+function stopPlayback() { playing = false; inputRgb.pause(); play.textContent = "▶"; cancelFrameUpdates(); }
+timeline.addEventListener("input", () => setFrame(Number(timeline.value)));
 play.addEventListener("click", () => {
   if (playing) { stopPlayback(); return; }
   if (inputRgb.ended || currentFrame >= example.frameCount - 1) { inputRgb.currentTime = 0; setFrame(0, false, true); }
-  playing = true;
-  play.textContent = "❚❚";
+  playing = true; play.textContent = "❚❚";
   inputRgb.play().then(scheduleFrameUpdate).catch(stopPlayback);
 });
 inputRgb.addEventListener("ended", stopPlayback);
 inputRgb.addEventListener("loadedmetadata", () => setFrame(currentFrame, true, true), { once: true });
 document.addEventListener("visibilitychange", () => { if (document.hidden) stopPlayback(); });
 window.addEventListener("pagehide", () => { stopPlayback(); sceneViewer?.dispose(); });
+updateBaselineControls();
+updateSpider();
 setFrame(0, false, true);

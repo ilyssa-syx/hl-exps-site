@@ -5,13 +5,17 @@ const response = await fetch(`${base}data/manifest.json?v=${encodeURIComponent(_
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
 
-const card = (sample, index) => `
+const card = (sample, index) => {
+  const [subject, sequence, camera] = sample.label.split(" / ");
+  return `
   <a class="sample-card" href="${base}samples/${encodeURIComponent(sample.id)}/">
     <div class="card-number">${String(index + 1).padStart(2, "0")}</div>
-    <div class="eyebrow">${sample.dataset} / ${sample.split}</div>
-    <h2>${sample.label}</h2>
+    <div class="eyebrow">${sample.dataset} / ${sample.split} / ${subject}</div>
+    <h2>${sequence}</h2>
+    <p class="camera-id">camera ${camera}</p>
     <div class="sample-meta"><span>${sample.objectName}</span><span>${sample.frameCount} frames</span><span>2 baselines</span></div>
   </a>`;
+};
 
 const sections = ["val", "test"].map((split) => {
   const examples = manifest.examples.filter((sample) => sample.split === split);
