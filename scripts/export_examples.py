@@ -20,7 +20,10 @@ COLLECTIONS = (
         "samples_dir": ROOT / "samples",
         "manifest_path": "data/manifest.json",
         "catalog_path": "",
-        "expected_baselines": ["input", "refined-20261023"],
+        "expected_baselines": (
+            ["input", "refined-20261023"],
+            ["input", "refined-20261023", "first-e0001-i0002", "third-e0003-i0000", "fourth-e0002-i0001"],
+        ),
         "catalog": {
             "eyebrow": "DexYCB · 2026-10-23 evaluation",
             "title": "Experiment samples",
@@ -35,7 +38,7 @@ COLLECTIONS = (
         "samples_dir": ROOT / "experiments/cd-iou-20261026/samples",
         "manifest_path": "data/cd-iou-20261026.json",
         "catalog_path": "experiments/cd-iou-20261026/",
-        "expected_baselines": ["first-e0001-i0002", "third-e0003-i0000", "fourth-e0002-i0001"],
+        "expected_baselines": (["first-e0001-i0002", "third-e0003-i0000", "fourth-e0002-i0001"],),
         "catalog": {
             "eyebrow": "DexYCB · 2026-10-26 evaluation",
             "title": "CD-H / IoU checkpoint comparison",
@@ -101,7 +104,7 @@ def export_collection(collection: dict) -> int:
         if not isinstance(payload["fps"], (int, float)) or payload["fps"] <= 0:
             raise ValueError(f"{path}: fps must be positive")
         baseline_ids = [item.get("id") for item in payload["baselines"]]
-        if baseline_ids != collection["expected_baselines"]:
+        if baseline_ids not in collection["expected_baselines"]:
             raise ValueError(f"{path}: unexpected baselines {baseline_ids}")
         seen.add(payload["id"])
         examples.append(payload)

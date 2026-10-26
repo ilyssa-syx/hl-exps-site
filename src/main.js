@@ -41,7 +41,8 @@ const formatSpiderMetric = (metrics) => metrics.spiderStatus === "evaluated" && 
   : `<span class="metric-failed">${metrics.spiderStatus || "not evaluated"}</span>`;
 const reconstructionMetrics = example.baselines.map((item) => {
   const metrics = item.metrics ?? {};
-  const values = cdIou
+  const hasAmodalIou = metrics.objectAmodalScoredMeanIou != null;
+  const values = hasAmodalIou
     ? `<span><small>CD-H ↓</small>${formatMetric(metrics.cdHScoredMeanCm, " cm")}<em>${metrics.cdHEvaluatedFrames ?? "—"} / ${metrics.cdHEligibleFrames ?? "—"} evaluated</em></span>
       <span><small>Object amodal IoU ↑</small>${formatMetric(metrics.objectAmodalScoredMeanIou)}<em>${metrics.objectAmodalEvaluatedFrames ?? "—"} / ${metrics.objectAmodalEligibleFrames ?? "—"} evaluated</em></span>
       <span><small>Hand amodal IoU ↑</small>${formatMetric(metrics.handAmodalScoredMeanIou)}<em>${metrics.handAmodalEvaluatedFrames ?? "—"} / ${metrics.handAmodalEligibleFrames ?? "—"} evaluated</em></span>`
@@ -53,6 +54,8 @@ const reconstructionMetrics = example.baselines.map((item) => {
     <div class="metric-values">${values}</div>
   </article>`;
 }).join("");
+const hasMixedMetrics = example.baselines.some((item) => item.metrics?.spiderStatus != null)
+  && example.baselines.some((item) => item.metrics?.objectAmodalScoredMeanIou != null);
 
 const baselineControls = example.baselines.map((item) => `
   <button class="baseline-toggle" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}">
@@ -110,9 +113,9 @@ document.querySelector("#app").innerHTML = `
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
     </section>
     <section class="sequence-metrics" aria-labelledby="sequence-metrics-title">
-      <div class="sequence-metrics-head"><div><div class="eyebrow">Sequence evaluation</div><h2 id="sequence-metrics-title">${cdIou ? "Reconstruction metrics" : "Reconstruction & retargeting metrics"}</h2></div><p>${cdIou ? "CD-H ↓ · amodal IoU ↑" : "WA-MPJPE / CD-H ↓ · SPIDER ↑"}</p></div>
+      <div class="sequence-metrics-head"><div><div class="eyebrow">Sequence evaluation</div><h2 id="sequence-metrics-title">${cdIou ? "Reconstruction metrics" : "Reconstruction & retargeting metrics"}</h2></div><p>${hasMixedMetrics ? "CD-H ↓ · WA-MPJPE / IoU / SPIDER" : cdIou ? "CD-H ↓ · amodal IoU ↑" : "WA-MPJPE / CD-H ↓ · SPIDER ↑"}</p></div>
       <div class="sequence-metric-grid">${reconstructionMetrics}</div>
-      <p class="metric-note">${cdIou ? "CD-H is the coverage-penalized wrist-relative object Chamfer mean. Object and hand IoU use independently rendered amodal silhouettes; missing eligible predictions score zero." : "WA-MPJPE is the evaluated-frame wrist-aligned mean. CD-H is the coverage-penalized wrist-relative object Chamfer mean. SPIDER reports object-translation ADD-AUC10; failed rollouts remain marked as failed rather than scored as zero."}</p>
+      <p class="metric-note">${hasMixedMetrics ? "CD-H is shown for all five baselines. Input/refined retain their WA-MPJPE and SPIDER results; the three added checkpoints show object and hand amodal IoU." : cdIou ? "CD-H is the coverage-penalized wrist-relative object Chamfer mean. Object and hand IoU use independently rendered amodal silhouettes; missing eligible predictions score zero." : "WA-MPJPE is the evaluated-frame wrist-aligned mean. CD-H is the coverage-penalized wrist-relative object Chamfer mean. SPIDER reports object-translation ADD-AUC10; failed rollouts remain marked as failed rather than scored as zero."}</p>
     </section>
   </main>`;
 
