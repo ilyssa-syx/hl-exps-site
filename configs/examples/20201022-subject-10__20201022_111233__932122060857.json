@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "id": "20201022-subject-10__20201022_111233__932122060857",
+  "label": "20201022-subject-10 / 20201022_111233 / 932122060857",
+  "description": "DexYCB checkpoint comparison optimized for CD-H and amodal IoU.",
+  "dataset": "DexYCB",
+  "split": "val",
+  "objectName": "004_sugar_box",
+  "fps": 30,
+  "frameCount": 72,
+  "baselines": [
+    {
+      "id": "first-e0001-i0002",
+      "label": "first \u00b7 epoch 1 / iteration 2",
+      "color": "#55a7ff",
+      "metrics": {
+        "score": 91.49494005814947,
+        "cdHScoredMeanCm": 4.991275746172125,
+        "cdHEvaluatedFrames": 54,
+        "cdHEligibleFrames": 55,
+        "objectAmodalScoredMeanIou": 0.8244293149974611,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.589647660201246,
+        "handAmodalEvaluatedFrames": 54,
+        "handAmodalEligibleFrames": 55
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/first-e0001-i0002/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/first-e0001-i0002/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "third-e0003-i0000",
+      "label": "third \u00b7 epoch 3 / iteration 0",
+      "color": "#ff6f91",
+      "metrics": {
+        "score": 108.41388950775368,
+        "cdHScoredMeanCm": 3.3116896304217254,
+        "cdHEvaluatedFrames": 55,
+        "cdHEligibleFrames": 55,
+        "objectAmodalScoredMeanIou": 0.8244293149974611,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.5908785431222482,
+        "handAmodalEvaluatedFrames": 55,
+        "handAmodalEligibleFrames": 55
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/third-e0003-i0000/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/third-e0003-i0000/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "fourth-e0002-i0001",
+      "label": "fourth \u00b7 epoch 2 / iteration 1",
+      "color": "#62e0c5",
+      "metrics": {
+        "score": 117.60435051839762,
+        "cdHScoredMeanCm": 3.002746191891757,
+        "cdHEvaluatedFrames": 55,
+        "cdHEligibleFrames": 55,
+        "objectAmodalScoredMeanIou": 0.8308057429061996,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.6455123814669522,
+        "handAmodalEvaluatedFrames": 55,
+        "handAmodalEligibleFrames": 55
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/fourth-e0002-i0001/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_111233__932122060857/fourth-e0002-i0001/reconstruction/reconstruction.json"
+        }
+      }
+    }
+  ]
+}

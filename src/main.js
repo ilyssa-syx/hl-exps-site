@@ -12,7 +12,10 @@ const manifest = await response.json();
 const example = manifest.examples.find((item) => item.id === document.body.dataset.sampleId);
 if (!example) throw new Error(`Unknown sample page: ${document.body.dataset.sampleId}`);
 
-const colors = { input: "#55a7ff", "refined-20261023": "#ff6f91" };
+const palette = ["#55a7ff", "#ff6f91", "#62e0c5", "#f6c85f"];
+const colors = Object.fromEntries(example.baselines.map((item, index) => [
+  item.id, item.color || palette[index % palette.length],
+]));
 const selected = new Set(example.baselines.map((item) => item.id));
 const reconstructionCache = new Map();
 const reconstructionFor = (item) => {
@@ -29,17 +32,14 @@ const exampleIndex = manifest.examples.findIndex((item) => item.id === example.i
 const neighbor = (offset) => manifest.examples[(exampleIndex + offset + manifest.examples.length) % manifest.examples.length];
 const sampleHref = (sample) => `${base}samples/${encodeURIComponent(sample.id)}/`;
 const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
-const formatSpiderMetric = (metrics) => metrics.spiderStatus === "evaluated" && metrics.spiderAddAuc10 != null
-  ? Number(metrics.spiderAddAuc10).toFixed(3)
-  : `<span class="metric-failed">${metrics.spiderStatus || "not evaluated"}</span>`;
 const reconstructionMetrics = example.baselines.map((item) => {
   const metrics = item.metrics ?? {};
   return `<article class="sequence-metric" style="--baseline:${colors[item.id]}">
     <div class="metric-baseline"><i></i><strong>${item.label}</strong></div>
     <div class="metric-values">
-      <span><small>WA-MPJPE ↓</small>${formatMetric(metrics.waMpjpeMeanMm, " mm")}<em>${metrics.waMpjpeEvaluatedFrames ?? "—"} evaluated frames</em></span>
       <span><small>CD-H ↓</small>${formatMetric(metrics.cdHScoredMeanCm, " cm")}<em>${metrics.cdHEvaluatedFrames ?? "—"} / ${metrics.cdHEligibleFrames ?? "—"} evaluated</em></span>
-      <span><small>SPIDER ADD-AUC10 ↑</small>${formatSpiderMetric(metrics)}<em>${metrics.spiderStatus || "not evaluated"}</em></span>
+      <span><small>Object amodal IoU ↑</small>${formatMetric(metrics.objectAmodalScoredMeanIou)}<em>${metrics.objectAmodalEvaluatedFrames ?? "—"} / ${metrics.objectAmodalEligibleFrames ?? "—"} evaluated</em></span>
+      <span><small>Hand amodal IoU ↑</small>${formatMetric(metrics.handAmodalScoredMeanIou)}<em>${metrics.handAmodalEvaluatedFrames ?? "—"} / ${metrics.handAmodalEligibleFrames ?? "—"} evaluated</em></span>
     </div>
   </article>`;
 }).join("");
@@ -63,16 +63,16 @@ const spiderCards = example.baselines.filter((item) => item.views.spider).map((i
 
 document.querySelector("#app").innerHTML = `
   <aside class="sidebar">
-    <a class="brand" href="${base}"><span class="brand-mark">HL</span><span><strong>Experiments</strong><small>reconstruction → retargeting</small></span></a>
-    <div class="sidebar-label">Visible baselines</div>
+    <a class="brand" href="${base}"><span class="brand-mark">HL</span><span><strong>Experiments</strong><small>checkpoint comparison</small></span></a>
+    <div class="sidebar-label">Visible checkpoints</div>
     <nav class="baseline-controls">${baselineControls}</nav>
-    <p class="sidebar-hint">Select either baseline or show both together.</p>
+    <p class="sidebar-hint">Toggle checkpoints to compare any combination.</p>
     <a class="repo-link" href="https://github.com/ilyssa-syx/hl-exps-site">GitHub repository ↗</a>
   </aside>
   <main>
     <div class="sample-nav"><a href="${base}">← all samples</a><span><a href="${sampleHref(neighbor(-1))}">← previous</a><a href="${sampleHref(neighbor(1))}">next →</a></span></div>
     <header class="topbar">
-      <div><div class="eyebrow">${example.dataset} / ${example.split} / baseline comparison</div><h1>${example.label}</h1><p>${example.description}</p></div>
+      <div><div class="eyebrow">${example.dataset} / ${example.split} / checkpoint comparison</div><h1>${example.label}</h1><p>${example.description}</p></div>
       <div class="meta"><span><small>object</small>${example.objectName}</span><span><small>frames</small>${example.frameCount}</span><span><small>fps</small>${example.fps}</span></div>
     </header>
     <section class="workspace">
@@ -100,9 +100,9 @@ document.querySelector("#app").innerHTML = `
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
     </section>
     <section class="sequence-metrics" aria-labelledby="sequence-metrics-title">
-      <div class="sequence-metrics-head"><div><div class="eyebrow">Sequence evaluation</div><h2 id="sequence-metrics-title">Reconstruction & retargeting metrics</h2></div><p>WA-MPJPE / CD-H ↓ · SPIDER ↑</p></div>
+      <div class="sequence-metrics-head"><div><div class="eyebrow">Sequence evaluation</div><h2 id="sequence-metrics-title">Reconstruction metrics</h2></div><p>CD-H ↓ · amodal IoU ↑</p></div>
       <div class="sequence-metric-grid">${reconstructionMetrics}</div>
-      <p class="metric-note">WA-MPJPE is the evaluated-frame wrist-aligned mean. CD-H is the coverage-penalized wrist-relative object Chamfer mean. SPIDER reports object-translation ADD-AUC10; failed rollouts remain marked as failed rather than scored as zero.</p>
+      <p class="metric-note">CD-H is the coverage-penalized wrist-relative object Chamfer mean. Object and hand IoU use independently rendered amodal silhouettes; missing eligible predictions score zero.</p>
     </section>
   </main>`;
 
