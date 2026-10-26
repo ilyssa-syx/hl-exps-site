@@ -29,6 +29,16 @@ const exampleIndex = manifest.examples.findIndex((item) => item.id === example.i
 const neighbor = (offset) => manifest.examples[(exampleIndex + offset + manifest.examples.length) % manifest.examples.length];
 const sampleHref = (sample) => `${base}samples/${encodeURIComponent(sample.id)}/`;
 const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
+const reconstructionMetrics = example.baselines.map((item) => {
+  const metrics = item.metrics ?? {};
+  return `<article class="sequence-metric" style="--baseline:${colors[item.id]}">
+    <div class="metric-baseline"><i></i><strong>${item.label}</strong></div>
+    <div class="metric-values">
+      <span><small>WA-MPJPE ↓</small>${formatMetric(metrics.waMpjpeMeanMm, " mm")}<em>${metrics.waMpjpeEvaluatedFrames ?? "—"} evaluated frames</em></span>
+      <span><small>CD-H ↓</small>${formatMetric(metrics.cdHScoredMeanCm, " cm")}<em>${metrics.cdHEvaluatedFrames ?? "—"} / ${metrics.cdHEligibleFrames ?? "—"} evaluated</em></span>
+    </div>
+  </article>`;
+}).join("");
 
 const baselineControls = example.baselines.map((item) => `
   <button class="baseline-toggle" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}">
@@ -84,6 +94,11 @@ document.querySelector("#app").innerHTML = `
       </div>
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
+    </section>
+    <section class="sequence-metrics" aria-labelledby="sequence-metrics-title">
+      <div class="sequence-metrics-head"><div><div class="eyebrow">Sequence evaluation</div><h2 id="sequence-metrics-title">Reconstruction metrics</h2></div><p>Sequence means · lower is better</p></div>
+      <div class="sequence-metric-grid">${reconstructionMetrics}</div>
+      <p class="metric-note">WA-MPJPE is the evaluated-frame wrist-aligned mean. CD-H is the coverage-penalized wrist-relative object Chamfer mean used for sequence scoring.</p>
     </section>
   </main>`;
 

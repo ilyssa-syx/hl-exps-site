@@ -113,6 +113,22 @@ h1 { margin: 8px 0 7px; font-size: clamp(28px, 4vw, 45px); line-height: 1; lette
 .transport span { color: #8996a9; font: 500 10px "DM Mono"; }
 input[type="range"] { width: 100%; accent-color: var(--mint); }
 
+.sequence-metrics { max-width: 1440px; margin: 22px auto 0; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: rgba(13,19,29,.87); }
+.sequence-metrics-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 15px; }
+.sequence-metrics-head h2 { margin: 6px 0 0; font-size: 18px; }
+.sequence-metrics-head p, .metric-note { margin: 0; color: #68768b; font: 400 9px/1.6 "DM Mono"; }
+.sequence-metric-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.sequence-metric { display: grid; grid-template-columns: minmax(130px, .8fr) 1.5fr; align-items: stretch; border: 1px solid color-mix(in srgb, var(--baseline) 28%, var(--line)); border-radius: 11px; overflow: hidden; background: color-mix(in srgb, var(--baseline) 5%, #0b111a); }
+.metric-baseline { display: flex; align-items: center; gap: 9px; padding: 16px; border-right: 1px solid var(--line); font: 600 11px "DM Mono"; }
+.metric-baseline i, .card-metric-row i { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; background: var(--baseline); box-shadow: 0 0 10px color-mix(in srgb, var(--baseline) 70%, transparent); }
+.metric-values { display: grid; grid-template-columns: 1fr 1fr; }
+.metric-values > span { padding: 14px 16px; color: #eef3fa; font: 500 17px "DM Mono"; }
+.metric-values > span + span { border-left: 1px solid var(--line); }
+.metric-values small, .metric-values em { display: block; }
+.metric-values small { margin-bottom: 7px; color: #7f8da2; font: 500 9px "DM Mono"; letter-spacing: .08em; }
+.metric-values em { margin-top: 6px; color: #657287; font: 400 8px "DM Mono"; font-style: normal; }
+.metric-note { margin-top: 12px; }
+
 @media (max-width: 900px) {
   #app { grid-template-columns: 1fr; }
   .sidebar { position: static; width: 100%; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 18px; }
@@ -130,6 +146,7 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
   .spider-media { grid-template-columns: 1fr; }
   .metrics { width: 100%; overflow-x: auto; }
   .scene-controls span { display: none; }
+  .sequence-metric-grid { grid-template-columns: 1fr; }
 }
 
 .catalog { grid-column: 1 / -1; width: min(1380px, calc(100% - 64px)); margin: 0 auto; padding: 70px 0; }
@@ -149,9 +166,19 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
 .sample-card p { min-height: 50px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 .sample-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
 .sample-meta span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; color: #9da9ba; font: 500 9px "DM Mono"; }
+.card-metrics { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.card-metric-head, .card-metric-row { display: grid; grid-template-columns: minmax(130px, 1fr) 100px 80px; gap: 10px; align-items: center; }
+.card-metric-head { padding: 0 8px 6px; color: #657287; font: 500 8px "DM Mono"; letter-spacing: .06em; }
+.card-metric-row { padding: 7px 8px; border-radius: 7px; color: #bfc9d6; font: 500 9px "DM Mono"; }
+.card-metric-row:nth-child(3) { background: rgba(255,255,255,.025); }
+.card-metric-row strong { display: flex; align-items: center; gap: 8px; min-width: 0; color: #dce4ee; font: 500 9px "DM Mono"; overflow-wrap: anywhere; }
 
 @media (max-width: 760px) {
   .catalog { width: min(100% - 28px, 680px); padding: 38px 0; }
   .sample-grid { grid-template-columns: 1fr; }
   .sample-card { min-height: 170px; padding: 22px; }
+  .card-metric-head, .card-metric-row { grid-template-columns: minmax(105px, 1fr) 92px 72px; }
+  .sequence-metrics-head { align-items: flex-start; flex-direction: column; }
+  .sequence-metric { grid-template-columns: 1fr; }
+  .metric-baseline { border-right: 0; border-bottom: 1px solid var(--line); }
 }

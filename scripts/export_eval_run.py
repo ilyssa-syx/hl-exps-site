@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from pathlib import Path
 import shutil
@@ -32,6 +33,52 @@ def find_trial(metrics_dir: Path, sample_id: str) -> Path | None:
     return matches[0].parent if len(matches) == 1 else None
 
 
+def read_sequence_metrics(path: Path) -> dict[str, dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    metrics = {row["sequence_id"]: row for row in rows}
+    if len(metrics) != len(rows):
+        raise ValueError(f"{path}: duplicate sequence_id")
+    return metrics
+
+
+def reconstruction_metrics(row: dict[str, str]) -> dict[str, float | int]:
+    return {
+        "waMpjpeMeanMm": float(row["wa_mpjpe_mean_mm"]),
+        "waMpjpeEvaluatedFrames": int(row["wa_mpjpe_evaluated_frames"]),
+        "cdHMeanCm": float(row["cd_h_mean_cm"]),
+        "cdHScoredMeanCm": float(row["cd_h_scored_mean_cm"]),
+        "cdHEvaluatedFrames": int(row["cd_h_evaluated_frames"]),
+        "cdHEligibleFrames": int(row["cd_h_eligible_frames"]),
+    }
+
+
+def metrics_for_split(run: Path, split: str) -> dict[str, dict[str, dict[str, str]]]:
+    return {
+        source_name: read_sequence_metrics(
+            run / f"{source_name}-{split}-metrics" / "per_sequence.csv"
+        )
+        for source_name, _public_name in BASELINES
+    }
+
+
+def sync_metrics_only(run: Path) -> None:
+    tables = {split: metrics_for_split(run, split) for split in ("validation", "test")}
+    updated = 0
+    for path in sorted((ROOT / "configs" / "examples").glob("*.json")):
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        split = "validation" if payload["split"] == "val" else payload["split"]
+        baselines = {item["id"]: item for item in payload["baselines"]}
+        for source_name, public_name in BASELINES:
+            row = tables[split][source_name].get(payload["id"])
+            if row is None:
+                raise ValueError(f"{path}: no {source_name} {split} metrics")
+            baselines[public_name]["metrics"] = reconstruction_metrics(row)
+            updated += 1
+        path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    print(f"Updated {updated} baseline metric records")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run", type=Path, default=DEFAULT_RUN)
@@ -40,7 +87,15 @@ def main() -> None:
     parser.add_argument("--python", type=Path, default=DEFAULT_PYTHON)
     parser.add_argument("--ffmpeg", type=Path, default=DEFAULT_FFMPEG)
     parser.add_argument("--skip-spider-render", action="store_true")
+    parser.add_argument(
+        "--metrics-only", action="store_true",
+        help="merge per-sequence reconstruction metrics into existing site configs",
+    )
     args = parser.parse_args()
+
+    if args.metrics_only:
+        sync_metrics_only(args.run)
+        return
 
     asset_root = ROOT / "r2_assets" / "experiments" / "20261023"
     config_root = ROOT / "configs" / "examples"
@@ -49,6 +104,7 @@ def main() -> None:
     expected = {"validation": 20, "test": 10}
     written: set[str] = set()
     for split, expected_count in expected.items():
+        metrics_by_source = metrics_for_split(args.run, split)
         samples = sorted((args.run / f"refined-{split}-predictions" / split).glob("*/manifest.json"))
         if len(samples) != expected_count:
             raise ValueError(f"{split}: expected {expected_count} samples, found {len(samples)}")
@@ -86,6 +142,7 @@ def main() -> None:
                 baseline = {
                     "id": public_name,
                     "label": public_name,
+                    "metrics": reconstruction_metrics(metrics_by_source[source_name][sample_id]),
                     "views": {
                         "overlay2d": {
                             "rgb": {"type": "video", "url": f"experiments/20261023/{sample_id}/input-rgb.mp4"},

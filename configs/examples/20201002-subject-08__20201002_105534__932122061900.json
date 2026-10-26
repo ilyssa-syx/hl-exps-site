@@ -34,6 +34,14 @@
             "rotationErrorRadians": 0.6837447881698608
           }
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 11.410788312821905,
+        "waMpjpeEvaluatedFrames": 61,
+        "cdHMeanCm": 7.136381227462018,
+        "cdHScoredMeanCm": 7.136381227462018,
+        "cdHEvaluatedFrames": 61,
+        "cdHEligibleFrames": 61
       }
     },
     {
@@ -61,6 +69,14 @@
             "rotationErrorRadians": 0.6137903332710266
           }
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 11.4107878060661,
+        "waMpjpeEvaluatedFrames": 61,
+        "cdHMeanCm": 4.427818366738617,
+        "cdHScoredMeanCm": 4.427818366738617,
+        "cdHEvaluatedFrames": 61,
+        "cdHEligibleFrames": 61
       }
     }
   ]

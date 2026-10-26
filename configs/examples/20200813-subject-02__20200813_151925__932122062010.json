@@ -23,6 +23,14 @@
         "scene3d": {
           "reconstruction": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 8.491229679139833,
+        "waMpjpeEvaluatedFrames": 72,
+        "cdHMeanCm": 29.93722880548901,
+        "cdHScoredMeanCm": 29.93722880548901,
+        "cdHEvaluatedFrames": 72,
+        "cdHEligibleFrames": 72
       }
     },
     {
@@ -50,6 +58,14 @@
             "rotationErrorRadians": 1.582585096359253
           }
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 8.491229202696887,
+        "waMpjpeEvaluatedFrames": 72,
+        "cdHMeanCm": 8.054878579245674,
+        "cdHScoredMeanCm": 8.054878579245674,
+        "cdHEvaluatedFrames": 72,
+        "cdHEligibleFrames": 72
       }
     }
   ]

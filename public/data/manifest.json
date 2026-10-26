@@ -26,6 +26,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 67.91059010739079,
+            "waMpjpeEvaluatedFrames": 43,
+            "cdHMeanCm": 29.027781797009844,
+            "cdHScoredMeanCm": 57.01682559537216,
+            "cdHEvaluatedFrames": 43,
+            "cdHEligibleFrames": 71
           }
         },
         {
@@ -53,6 +61,14 @@
                 "rotationErrorRadians": 0.3797995448112488
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 52.48741455513067,
+            "waMpjpeEvaluatedFrames": 71,
+            "cdHMeanCm": 26.752351680272064,
+            "cdHScoredMeanCm": 26.752351680272064,
+            "cdHEvaluatedFrames": 71,
+            "cdHEligibleFrames": 71
           }
         }
       ]
@@ -82,6 +98,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142802__932122060857/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 5.771488845983245,
+            "waMpjpeEvaluatedFrames": 38,
+            "cdHMeanCm": 21.13732631582963,
+            "cdHScoredMeanCm": 56.56838260871777,
+            "cdHEvaluatedFrames": 38,
+            "cdHEligibleFrames": 69
           }
         },
         {
@@ -109,6 +133,14 @@
                 "rotationErrorRadians": 0.3994852602481842
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 11.774303433667221,
+            "waMpjpeEvaluatedFrames": 69,
+            "cdHMeanCm": 13.050960768824039,
+            "cdHScoredMeanCm": 13.050960768824039,
+            "cdHEvaluatedFrames": 69,
+            "cdHEligibleFrames": 69
           }
         }
       ]
@@ -149,6 +181,14 @@
                 "rotationErrorRadians": 0.3189200460910797
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 6.857605896949295,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 8.875649200545418,
+            "cdHScoredMeanCm": 8.875649200545418,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         },
         {
@@ -176,6 +216,14 @@
                 "rotationErrorRadians": 0.3335873484611511
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 6.857605896949295,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 9.100320460067856,
+            "cdHScoredMeanCm": 9.100320460067856,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         }
       ]
@@ -216,6 +264,14 @@
                 "rotationErrorRadians": 1.265310525894165
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 15.505643902140534,
+            "waMpjpeEvaluatedFrames": 59,
+            "cdHMeanCm": 20.12311211885032,
+            "cdHScoredMeanCm": 29.660650970330877,
+            "cdHEvaluatedFrames": 59,
+            "cdHEligibleFrames": 67
           }
         },
         {
@@ -243,6 +299,14 @@
                 "rotationErrorRadians": 0.8255683779716492
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 15.494699377325638,
+            "waMpjpeEvaluatedFrames": 67,
+            "cdHMeanCm": 6.852458231484712,
+            "cdHScoredMeanCm": 6.852458231484712,
+            "cdHEvaluatedFrames": 67,
+            "cdHEligibleFrames": 67
           }
         }
       ]
@@ -272,6 +336,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200709-subject-01__20200709_144735__932122060861/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 14.945975978406675,
+            "waMpjpeEvaluatedFrames": 67,
+            "cdHMeanCm": 3.12030666443839,
+            "cdHScoredMeanCm": 9.848063146074614,
+            "cdHEvaluatedFrames": 67,
+            "cdHEligibleFrames": 72
           }
         },
         {
@@ -299,6 +371,14 @@
                 "rotationErrorRadians": 1.572633147239685
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 15.444998743042113,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 4.892424101630847,
+            "cdHScoredMeanCm": 4.892424101630847,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         }
       ]
@@ -339,6 +419,14 @@
                 "rotationErrorRadians": 1.0458624362945557
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.132224906491091,
+            "waMpjpeEvaluatedFrames": 73,
+            "cdHMeanCm": 8.6932591248865,
+            "cdHScoredMeanCm": 8.6932591248865,
+            "cdHEvaluatedFrames": 73,
+            "cdHEligibleFrames": 73
           }
         },
         {
@@ -366,6 +454,14 @@
                 "rotationErrorRadians": 0.3378317952156067
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.132224906491091,
+            "waMpjpeEvaluatedFrames": 73,
+            "cdHMeanCm": 7.534102756683141,
+            "cdHScoredMeanCm": 7.534102756683141,
+            "cdHEvaluatedFrames": 73,
+            "cdHEligibleFrames": 73
           }
         }
       ]
@@ -395,6 +491,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200709-subject-01__20200709_152420__932122060861/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.901756965132138,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 8.472632153614148,
+            "cdHScoredMeanCm": 8.472632153614148,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         },
         {
@@ -422,6 +526,14 @@
                 "rotationErrorRadians": 0.8579435348510742
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.901756965132138,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 8.334452525989429,
+            "cdHScoredMeanCm": 8.334452525989429,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         }
       ]
@@ -451,6 +563,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.26734601950677,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 15.757551259464687,
+            "cdHScoredMeanCm": 18.034374198398076,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 74
           }
         },
         {
@@ -478,6 +598,14 @@
                 "rotationErrorRadians": 0.8284107446670532
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.665977533949848,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 16.298259747994912,
+            "cdHScoredMeanCm": 16.298259747994912,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         }
       ]
@@ -518,6 +646,14 @@
                 "rotationErrorRadians": 0.8554027676582336
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.31091882327877,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 6.2611280878384905,
+            "cdHScoredMeanCm": 6.2611280878384905,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         },
         {
@@ -545,6 +681,14 @@
                 "rotationErrorRadians": 1.1604526042938232
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.310918589708981,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 5.541686637534036,
+            "cdHScoredMeanCm": 5.541686637534036,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         }
       ]
@@ -574,6 +718,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_151925__932122062010/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.491229679139833,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 29.93722880548901,
+            "cdHScoredMeanCm": 29.93722880548901,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         },
         {
@@ -601,6 +753,14 @@
                 "rotationErrorRadians": 1.582585096359253
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.491229202696887,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 8.054878579245674,
+            "cdHScoredMeanCm": 8.054878579245674,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         }
       ]
@@ -641,6 +801,14 @@
                 "rotationErrorRadians": 0.8789828419685364
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.348509108386752,
+            "waMpjpeEvaluatedFrames": 69,
+            "cdHMeanCm": 14.197153512982355,
+            "cdHScoredMeanCm": 14.197153512982355,
+            "cdHEvaluatedFrames": 69,
+            "cdHEligibleFrames": 69
           }
         },
         {
@@ -668,6 +836,14 @@
                 "rotationErrorRadians": 0.9005511403083801
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.348509595507666,
+            "waMpjpeEvaluatedFrames": 69,
+            "cdHMeanCm": 12.296796055807583,
+            "cdHScoredMeanCm": 12.296796055807583,
+            "cdHEvaluatedFrames": 69,
+            "cdHEligibleFrames": 69
           }
         }
       ]
@@ -697,6 +873,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152842__932122062010/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 11.192245168098504,
+            "waMpjpeEvaluatedFrames": 69,
+            "cdHMeanCm": 10.876655008481896,
+            "cdHScoredMeanCm": 10.876655008481896,
+            "cdHEvaluatedFrames": 69,
+            "cdHEligibleFrames": 69
           }
         },
         {
@@ -724,6 +908,14 @@
                 "rotationErrorRadians": 0.6755743026733398
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 11.192245180809225,
+            "waMpjpeEvaluatedFrames": 69,
+            "cdHMeanCm": 10.30557227825773,
+            "cdHScoredMeanCm": 10.30557227825773,
+            "cdHEvaluatedFrames": 69,
+            "cdHEligibleFrames": 69
           }
         }
       ]
@@ -753,6 +945,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_153152__932122060857/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 9.194119213662235,
+            "waMpjpeEvaluatedFrames": 61,
+            "cdHMeanCm": 12.35745692643963,
+            "cdHScoredMeanCm": 20.206042873325632,
+            "cdHEvaluatedFrames": 61,
+            "cdHEligibleFrames": 67
           }
         },
         {
@@ -780,6 +980,14 @@
                 "rotationErrorRadians": 1.091797113418579
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 12.319779351576052,
+            "waMpjpeEvaluatedFrames": 67,
+            "cdHMeanCm": 9.701400080723548,
+            "cdHScoredMeanCm": 9.701400080723548,
+            "cdHEvaluatedFrames": 67,
+            "cdHEligibleFrames": 67
           }
         }
       ]
@@ -820,6 +1028,14 @@
                 "rotationErrorRadians": 0.8403735160827637
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 14.758873562768203,
+            "waMpjpeEvaluatedFrames": 70,
+            "cdHMeanCm": 12.747577333450318,
+            "cdHScoredMeanCm": 15.171255740854475,
+            "cdHEvaluatedFrames": 70,
+            "cdHEligibleFrames": 72
           }
         },
         {
@@ -847,6 +1063,14 @@
                 "rotationErrorRadians": 1.5076268911361694
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 14.830892777356205,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 13.479753182993996,
+            "cdHScoredMeanCm": 13.479753182993996,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         }
       ]
@@ -887,6 +1111,14 @@
                 "rotationErrorRadians": 1.5350139141082764
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 13.311911701925935,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 15.308480639715452,
+            "cdHScoredMeanCm": 15.308480639715452,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         },
         {
@@ -914,6 +1146,14 @@
                 "rotationErrorRadians": 1.0951709747314453
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 13.311911701925935,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 5.043731106294168,
+            "cdHScoredMeanCm": 5.043731106294168,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         }
       ]
@@ -954,6 +1194,14 @@
                 "rotationErrorRadians": 0.9606021642684937
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 12.510571930877859,
+            "waMpjpeEvaluatedFrames": 67,
+            "cdHMeanCm": 11.16715865348702,
+            "cdHScoredMeanCm": 12.47352396740633,
+            "cdHEvaluatedFrames": 67,
+            "cdHEligibleFrames": 68
           }
         },
         {
@@ -981,6 +1229,14 @@
                 "rotationErrorRadians": 0.9060745239257812
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 12.593296929233883,
+            "waMpjpeEvaluatedFrames": 68,
+            "cdHMeanCm": 4.774926816715913,
+            "cdHScoredMeanCm": 4.774926816715913,
+            "cdHEvaluatedFrames": 68,
+            "cdHEligibleFrames": 68
           }
         }
       ]
@@ -1010,6 +1266,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_154729__840412060917/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 16.068975983930862,
+            "waMpjpeEvaluatedFrames": 71,
+            "cdHMeanCm": 30.125978503428716,
+            "cdHScoredMeanCm": 31.096451024214428,
+            "cdHEvaluatedFrames": 71,
+            "cdHEligibleFrames": 72
           }
         },
         {
@@ -1037,6 +1301,14 @@
                 "rotationErrorRadians": 0.4417695999145508
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 16.316274832993273,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 20.726100116968155,
+            "cdHScoredMeanCm": 20.726100116968155,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         }
       ]
@@ -1066,6 +1338,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 7.565632191729976,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 9.182945853955037,
+            "cdHScoredMeanCm": 9.182945853955037,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         },
         {
@@ -1082,6 +1362,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155314__932122061900/refined-20261023/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 7.565633846391736,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 6.914467118881844,
+            "cdHScoredMeanCm": 6.914467118881844,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         }
       ]
@@ -1122,6 +1410,14 @@
                 "rotationErrorRadians": 1.4477307796478271
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.217883266350894,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 37.31522509786818,
+            "cdHScoredMeanCm": 37.31522509786818,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         },
         {
@@ -1149,6 +1445,14 @@
                 "rotationErrorRadians": 0.5800930261611938
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.217883356290047,
+            "waMpjpeEvaluatedFrames": 72,
+            "cdHMeanCm": 7.711587048239178,
+            "cdHScoredMeanCm": 7.711587048239178,
+            "cdHEvaluatedFrames": 72,
+            "cdHEligibleFrames": 72
           }
         }
       ]
@@ -1178,6 +1482,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155953__841412060263/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.775743548397545,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 19.740285670435107,
+            "cdHScoredMeanCm": 19.740285670435107,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         },
         {
@@ -1205,6 +1517,14 @@
                 "rotationErrorRadians": 1.1581007242202759
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.775744008818494,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 8.640280570532825,
+            "cdHScoredMeanCm": 8.640280570532825,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         }
       ]
@@ -1234,6 +1554,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 14.064356706940606,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 4.48426221673553,
+            "cdHScoredMeanCm": 4.48426221673553,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         },
         {
@@ -1250,6 +1578,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200820-subject-03__20200820_135810__841412060263/refined-20261023/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 14.064357109444561,
+            "waMpjpeEvaluatedFrames": 74,
+            "cdHMeanCm": 3.9924994481576457,
+            "cdHScoredMeanCm": 3.9924994481576457,
+            "cdHEvaluatedFrames": 74,
+            "cdHEligibleFrames": 74
           }
         }
       ]
@@ -1279,6 +1615,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 7.654797545456112,
+            "waMpjpeEvaluatedFrames": 63,
+            "cdHMeanCm": 4.55755040759132,
+            "cdHScoredMeanCm": 4.55755040759132,
+            "cdHEvaluatedFrames": 63,
+            "cdHEligibleFrames": 63
           }
         },
         {
@@ -1295,6 +1639,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/refined-20261023/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 7.654797318976483,
+            "waMpjpeEvaluatedFrames": 63,
+            "cdHMeanCm": 4.175046782644968,
+            "cdHScoredMeanCm": 4.175046782644968,
+            "cdHEvaluatedFrames": 63,
+            "cdHEligibleFrames": 63
           }
         }
       ]
@@ -1324,6 +1676,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20200918-subject-06__20200918_120513__841412060263/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.436260577769314,
+            "waMpjpeEvaluatedFrames": 59,
+            "cdHMeanCm": 30.767421661797215,
+            "cdHScoredMeanCm": 30.767421661797215,
+            "cdHEvaluatedFrames": 59,
+            "cdHEligibleFrames": 59
           }
         },
         {
@@ -1351,6 +1711,14 @@
                 "rotationErrorRadians": 0.15730313956737518
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 8.436260580703843,
+            "waMpjpeEvaluatedFrames": 59,
+            "cdHMeanCm": 10.064699597277883,
+            "cdHScoredMeanCm": 10.064699597277883,
+            "cdHEvaluatedFrames": 59,
+            "cdHEligibleFrames": 59
           }
         }
       ]
@@ -1391,6 +1759,14 @@
                 "rotationErrorRadians": 0.2819141447544098
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 7.413679835534655,
+            "waMpjpeEvaluatedFrames": 59,
+            "cdHMeanCm": 8.402100506475417,
+            "cdHScoredMeanCm": 8.402100506475417,
+            "cdHEvaluatedFrames": 59,
+            "cdHEligibleFrames": 59
           }
         },
         {
@@ -1418,6 +1794,14 @@
                 "rotationErrorRadians": 0.3911624252796173
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 7.41367941536761,
+            "waMpjpeEvaluatedFrames": 59,
+            "cdHMeanCm": 7.389100935499547,
+            "cdHScoredMeanCm": 7.389100935499547,
+            "cdHEvaluatedFrames": 59,
+            "cdHEligibleFrames": 59
           }
         }
       ]
@@ -1458,6 +1842,14 @@
                 "rotationErrorRadians": 0.6837447881698608
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 11.410788312821905,
+            "waMpjpeEvaluatedFrames": 61,
+            "cdHMeanCm": 7.136381227462018,
+            "cdHScoredMeanCm": 7.136381227462018,
+            "cdHEvaluatedFrames": 61,
+            "cdHEligibleFrames": 61
           }
         },
         {
@@ -1485,6 +1877,14 @@
                 "rotationErrorRadians": 0.6137903332710266
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 11.4107878060661,
+            "waMpjpeEvaluatedFrames": 61,
+            "cdHMeanCm": 4.427818366738617,
+            "cdHScoredMeanCm": 4.427818366738617,
+            "cdHEvaluatedFrames": 61,
+            "cdHEligibleFrames": 61
           }
         }
       ]
@@ -1514,6 +1914,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20201022-subject-10__20201022_112834__839512060362/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.65269665368576,
+            "waMpjpeEvaluatedFrames": 51,
+            "cdHMeanCm": 10.212976782929664,
+            "cdHScoredMeanCm": 10.212976782929664,
+            "cdHEvaluatedFrames": 51,
+            "cdHEligibleFrames": 51
           }
         },
         {
@@ -1541,6 +1949,14 @@
                 "rotationErrorRadians": 0.8654283285140991
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 10.652696774453341,
+            "waMpjpeEvaluatedFrames": 51,
+            "cdHMeanCm": 9.235615505891687,
+            "cdHScoredMeanCm": 9.235615505891687,
+            "cdHEvaluatedFrames": 51,
+            "cdHEligibleFrames": 51
           }
         }
       ]
@@ -1581,6 +1997,14 @@
                 "rotationErrorRadians": 0.3696010708808899
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 9.473788605596786,
+            "waMpjpeEvaluatedFrames": 57,
+            "cdHMeanCm": 5.465963489130924,
+            "cdHScoredMeanCm": 5.465963489130924,
+            "cdHEvaluatedFrames": 57,
+            "cdHEligibleFrames": 57
           }
         },
         {
@@ -1608,6 +2032,14 @@
                 "rotationErrorRadians": 0.45197048783302307
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 9.473788544747267,
+            "waMpjpeEvaluatedFrames": 57,
+            "cdHMeanCm": 5.327708507839002,
+            "cdHScoredMeanCm": 5.327708507839002,
+            "cdHEvaluatedFrames": 57,
+            "cdHEligibleFrames": 57
           }
         }
       ]
@@ -1637,6 +2069,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 11.093897217099773,
+            "waMpjpeEvaluatedFrames": 53,
+            "cdHMeanCm": 36.31960104996303,
+            "cdHScoredMeanCm": 38.63525192087347,
+            "cdHEvaluatedFrames": 53,
+            "cdHEligibleFrames": 55
           }
         },
         {
@@ -1664,6 +2104,14 @@
                 "rotationErrorRadians": 1.2871850728988647
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 11.435228380831807,
+            "waMpjpeEvaluatedFrames": 55,
+            "cdHMeanCm": 15.55464999892495,
+            "cdHScoredMeanCm": 15.55464999892495,
+            "cdHEvaluatedFrames": 55,
+            "cdHEligibleFrames": 55
           }
         }
       ]
@@ -1693,6 +2141,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114306__932122062010/input/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 14.818504764971797,
+            "waMpjpeEvaluatedFrames": 55,
+            "cdHMeanCm": 16.400950496846978,
+            "cdHScoredMeanCm": 16.400950496846978,
+            "cdHEvaluatedFrames": 55,
+            "cdHEligibleFrames": 55
           }
         },
         {
@@ -1720,6 +2176,14 @@
                 "rotationErrorRadians": 0.6526376008987427
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 14.818504764971797,
+            "waMpjpeEvaluatedFrames": 55,
+            "cdHMeanCm": 10.063180628689853,
+            "cdHScoredMeanCm": 10.063180628689853,
+            "cdHEvaluatedFrames": 55,
+            "cdHEligibleFrames": 55
           }
         }
       ]
@@ -1749,6 +2213,14 @@
             "scene3d": {
               "reconstruction": "experiments/20261023/20201022-subject-10__20201022_114717__932122060857/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 9.747656418131545,
+            "waMpjpeEvaluatedFrames": 55,
+            "cdHMeanCm": 12.867686700820922,
+            "cdHScoredMeanCm": 12.867686700820922,
+            "cdHEvaluatedFrames": 55,
+            "cdHEligibleFrames": 55
           }
         },
         {
@@ -1776,6 +2248,14 @@
                 "rotationErrorRadians": 1.36455500125885
               }
             }
+          },
+          "metrics": {
+            "waMpjpeMeanMm": 9.747656003840559,
+            "waMpjpeEvaluatedFrames": 55,
+            "cdHMeanCm": 9.11714292006059,
+            "cdHScoredMeanCm": 9.11714292006059,
+            "cdHEvaluatedFrames": 55,
+            "cdHEligibleFrames": 55
           }
         }
       ]

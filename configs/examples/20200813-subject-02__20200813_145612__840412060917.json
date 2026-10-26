@@ -23,6 +23,14 @@
         "scene3d": {
           "reconstruction": "experiments/20261023/20200813-subject-02__20200813_145612__840412060917/input/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 8.26734601950677,
+        "waMpjpeEvaluatedFrames": 72,
+        "cdHMeanCm": 15.757551259464687,
+        "cdHScoredMeanCm": 18.034374198398076,
+        "cdHEvaluatedFrames": 72,
+        "cdHEligibleFrames": 74
       }
     },
     {
@@ -50,6 +58,14 @@
             "rotationErrorRadians": 0.8284107446670532
           }
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 8.665977533949848,
+        "waMpjpeEvaluatedFrames": 74,
+        "cdHMeanCm": 16.298259747994912,
+        "cdHScoredMeanCm": 16.298259747994912,
+        "cdHEvaluatedFrames": 74,
+        "cdHEligibleFrames": 74
       }
     }
   ]

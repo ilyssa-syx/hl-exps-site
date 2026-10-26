@@ -4,9 +4,17 @@ const base = import.meta.env.BASE_URL;
 const response = await fetch(`${base}data/manifest.json?v=${encodeURIComponent(__BUILD_ID__)}`, { cache: "no-store" });
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
+const colors = { input: "#55a7ff", "refined-20261023": "#ff6f91" };
+const formatMetric = (value, suffix) => value == null ? "—" : `${Number(value).toFixed(3)} ${suffix}`;
 
 const card = (sample, index) => {
   const [subject, sequence, camera] = sample.label.split(" / ");
+  const metrics = sample.baselines.map((baseline) => `
+    <div class="card-metric-row" style="--baseline:${colors[baseline.id]}">
+      <strong><i></i>${baseline.label}</strong>
+      <span>${formatMetric(baseline.metrics?.waMpjpeMeanMm, "mm")}</span>
+      <span>${formatMetric(baseline.metrics?.cdHScoredMeanCm, "cm")}</span>
+    </div>`).join("");
   return `
   <a class="sample-card" href="${base}samples/${encodeURIComponent(sample.id)}/">
     <div class="card-number">${String(index + 1).padStart(2, "0")}</div>
@@ -14,6 +22,10 @@ const card = (sample, index) => {
     <h2>${sequence}</h2>
     <p class="camera-id">camera ${camera}</p>
     <div class="sample-meta"><span>${sample.objectName}</span><span>${sample.frameCount} frames</span><span>2 baselines</span></div>
+    <div class="card-metrics">
+      <div class="card-metric-head"><span></span><span>WA-MPJPE ↓</span><span>CD-H ↓</span></div>
+      ${metrics}
+    </div>
   </a>`;
 };
 
