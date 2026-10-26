@@ -72,7 +72,14 @@ document.querySelector("#app").innerHTML = `
         <div class="layer-row baseline-legend">${layerChips}</div>
       </div>
       <div class="panel" data-panel="scene" hidden>
-        <div class="stage single"><canvas id="scene-canvas"></canvas><span class="stage-tag">SELECTED BASELINES · CAMERA-SPACE GEOMETRY</span></div>
+        <div class="stage single scene-stage">
+          <canvas id="scene-canvas" tabindex="0" aria-label="Interactive 3D reconstruction. Drag to rotate, scroll to zoom, and right-drag to pan."></canvas>
+          <span class="stage-tag">SELECTED BASELINES · CAMERA-SPACE GEOMETRY</span>
+          <div class="scene-controls" aria-label="3D navigation help">
+            <span><b>drag</b> rotate</span><span><b>scroll</b> zoom</span><span><b>right-drag</b> pan</span>
+            <button id="reset-view" type="button">Reset view</button>
+          </div>
+        </div>
         <div class="layer-row baseline-legend">${layerChips}</div>
       </div>
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
@@ -132,6 +139,7 @@ function toggleBaseline(id) {
 }
 
 document.querySelectorAll(".baseline-toggle, .layer-chip").forEach((button) => button.addEventListener("click", () => toggleBaseline(button.dataset.baseline)));
+document.querySelector("#reset-view").addEventListener("click", () => sceneViewer?.resetView());
 const tabs = [...document.querySelectorAll(".tab")];
 const panels = [...document.querySelectorAll(".panel")];
 tabs.forEach((tab) => tab.addEventListener("click", () => {

@@ -62,6 +62,14 @@ h1 { margin: 8px 0 7px; font-size: clamp(28px, 4vw, 45px); line-height: 1; lette
 .panel { padding: 14px; }
 .stage { min-height: 560px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #0b111a; position: relative; }
 .stage.single canvas { width: 100%; height: 560px; display: block; }
+.scene-stage canvas { cursor: grab; touch-action: none; }
+.scene-stage canvas:active { cursor: grabbing; }
+.scene-stage canvas:focus-visible { outline: 2px solid var(--mint); outline-offset: -3px; }
+.scene-controls { position: absolute; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 10px; padding: 7px 8px 7px 11px; border: 1px solid var(--line); border-radius: 9px; color: #718096; background: rgba(7, 11, 17, .82); backdrop-filter: blur(12px); font: 500 9px "DM Mono"; pointer-events: none; }
+.scene-controls span { white-space: nowrap; }
+.scene-controls b { color: #b7c2d1; font-weight: 500; }
+.scene-controls button { padding: 6px 9px; border: 1px solid rgba(98,224,197,.28); border-radius: 6px; color: var(--mint); background: rgba(98,224,197,.06); font: 500 9px "DM Mono"; cursor: pointer; pointer-events: auto; }
+.scene-controls button:hover { background: rgba(98,224,197,.13); }
 .overlay-stage video, .overlay-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .overlay-stage video { object-fit: contain; background: #05080d; }
 .overlay-stage canvas { z-index: 1; pointer-events: none; }
@@ -121,6 +129,7 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
   .spider-head { align-items: flex-start; flex-direction: column; }
   .spider-media { grid-template-columns: 1fr; }
   .metrics { width: 100%; overflow-x: auto; }
+  .scene-controls span { display: none; }
 }
 
 .catalog { grid-column: 1 / -1; width: min(1380px, calc(100% - 64px)); margin: 0 auto; padding: 70px 0; }
