@@ -6,7 +6,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import re
-import shutil
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,10 +54,8 @@ def main() -> None:
         if not isinstance(payload["fps"], (int, float)) or payload["fps"] <= 0:
             raise ValueError(f"{path}: fps must be positive")
         baseline_ids = [item.get("id") for item in payload["baselines"]]
-        if not baseline_ids or len(baseline_ids) != len(set(baseline_ids)):
-            raise ValueError(f"{path}: baseline IDs must be non-empty and unique")
-        if any(not isinstance(item, str) or not SAFE_ID.fullmatch(item) for item in baseline_ids):
-            raise ValueError(f"{path}: baseline IDs must be URL-safe strings")
+        if baseline_ids != ["input", "refined-20261023"]:
+            raise ValueError(f"{path}: expected input and refined-20261023 baselines")
         seen.add(payload["id"])
         examples.append(payload)
         page = SAMPLES_DIR / payload["id"] / "index.html"
@@ -67,9 +64,6 @@ def main() -> None:
 
     if not examples:
         raise ValueError(f"no example configs found below {CONFIG_DIR}")
-    for page in SAMPLES_DIR.glob("*/index.html"):
-        if page.parent.name not in seen:
-            shutil.rmtree(page.parent)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
         json.dumps({"schemaVersion": 2, "examples": examples}, indent=2) + "\n",

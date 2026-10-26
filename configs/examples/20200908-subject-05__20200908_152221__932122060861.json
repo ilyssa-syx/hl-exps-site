@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200908-subject-05__20200908_152221__932122060861",
   "label": "20200908-subject-05 / 20200908_152221 / 932122060861",
-  "description": "DexYCB checkpoint comparison optimized for CD-H and amodal IoU.",
+  "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "040_large_marker",
@@ -10,90 +10,55 @@
   "frameCount": 74,
   "baselines": [
     {
-      "id": "first-e0001-i0002",
-      "label": "first \u00b7 epoch 1 / iteration 2",
-      "color": "#55a7ff",
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input/reconstruction/reconstruction.json"
+        }
+      },
       "metrics": {
-        "score": 97.17033085957047,
+        "waMpjpeMeanMm": 7.654797545456112,
+        "waMpjpeEvaluatedFrames": 63,
+        "cdHMeanCm": 4.55755040759132,
         "cdHScoredMeanCm": 4.55755040759132,
         "cdHEvaluatedFrames": 63,
         "cdHEligibleFrames": 63,
-        "objectAmodalScoredMeanIou": 0.750300831891395,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.6771575174634419,
-        "handAmodalEvaluatedFrames": 63,
-        "handAmodalEligibleFrames": 63
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/first-e0001-i0002/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/first-e0001-i0002/reconstruction/reconstruction.json"
-        }
+        "spiderStatus": "failed",
+        "spiderAddAuc10": null
       }
     },
     {
-      "id": "third-e0003-i0000",
-      "label": "third \u00b7 epoch 3 / iteration 0",
-      "color": "#ff6f91",
-      "metrics": {
-        "score": 97.17033085957047,
-        "cdHScoredMeanCm": 4.55755040759132,
-        "cdHEvaluatedFrames": 63,
-        "cdHEligibleFrames": 63,
-        "objectAmodalScoredMeanIou": 0.750300831891395,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.6771575174634419,
-        "handAmodalEvaluatedFrames": 63,
-        "handAmodalEligibleFrames": 63
-      },
+      "id": "refined-20261023",
+      "label": "refined-20261023",
       "views": {
         "overlay2d": {
           "rgb": {
             "type": "video",
-            "url": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+            "url": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/third-e0003-i0000/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/refined-20261023/reconstruction/reconstruction.json"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/third-e0003-i0000/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200908-subject-05__20200908_152221__932122060861/refined-20261023/reconstruction/reconstruction.json"
         }
-      }
-    },
-    {
-      "id": "fourth-e0002-i0001",
-      "label": "fourth \u00b7 epoch 2 / iteration 1",
-      "color": "#62e0c5",
+      },
       "metrics": {
-        "score": 97.55940291949068,
-        "cdHScoredMeanCm": 4.604176169350033,
+        "waMpjpeMeanMm": 7.654797318976483,
+        "waMpjpeEvaluatedFrames": 63,
+        "cdHMeanCm": 4.175046782644968,
+        "cdHScoredMeanCm": 4.175046782644968,
         "cdHEvaluatedFrames": 63,
         "cdHEligibleFrames": 63,
-        "objectAmodalScoredMeanIou": 0.7469705850691408,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.6890410610607692,
-        "handAmodalEvaluatedFrames": 63,
-        "handAmodalEligibleFrames": 63
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/fourth-e0002-i0001/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/fourth-e0002-i0001/reconstruction/reconstruction.json"
-        }
+        "spiderStatus": "failed",
+        "spiderAddAuc10": null
       }
     }
   ]

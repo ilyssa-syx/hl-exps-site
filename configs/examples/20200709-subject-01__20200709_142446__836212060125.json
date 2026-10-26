@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "id": "20200709-subject-01__20200709_142446__836212060125",
+  "label": "20200709-subject-01 / 20200709_142446 / 836212060125",
+  "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+  "dataset": "DexYCB",
+  "split": "val",
+  "objectName": "003_cracker_box",
+  "fps": 30,
+  "frameCount": 72,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 67.91059010739079,
+        "waMpjpeEvaluatedFrames": 43,
+        "cdHMeanCm": 29.027781797009844,
+        "cdHScoredMeanCm": 57.01682559537216,
+        "cdHEvaluatedFrames": 43,
+        "cdHEligibleFrames": 71,
+        "spiderStatus": "failed",
+        "spiderAddAuc10": null
+      }
+    },
+    {
+      "id": "refined-20261023",
+      "label": "refined-20261023",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200709-subject-01__20200709_142446__836212060125/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.2719065656565656,
+            "positionErrorMeters": 0.1745764502117839,
+            "rotationErrorRadians": 0.3797995448112488
+          }
+        }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 52.48741455513067,
+        "waMpjpeEvaluatedFrames": 71,
+        "cdHMeanCm": 26.752351680272064,
+        "cdHScoredMeanCm": 26.752351680272064,
+        "cdHEvaluatedFrames": 71,
+        "cdHEligibleFrames": 71,
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.2719065656565656
+      }
+    }
+  ]
+}

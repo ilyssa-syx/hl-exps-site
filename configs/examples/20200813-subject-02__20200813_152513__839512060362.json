@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200813-subject-02__20200813_152513__839512060362",
   "label": "20200813-subject-02 / 20200813_152513 / 839512060362",
-  "description": "DexYCB checkpoint comparison optimized for CD-H and amodal IoU.",
+  "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
   "dataset": "DexYCB",
   "split": "val",
   "objectName": "010_potted_meat_can",
@@ -10,90 +10,77 @@
   "frameCount": 74,
   "baselines": [
     {
-      "id": "first-e0001-i0002",
-      "label": "first \u00b7 epoch 1 / iteration 2",
-      "color": "#55a7ff",
-      "metrics": {
-        "score": -6.465894311397982,
-        "cdHScoredMeanCm": 14.19715344387552,
-        "cdHEvaluatedFrames": 69,
-        "cdHEligibleFrames": 69,
-        "objectAmodalScoredMeanIou": 0.7840725409018027,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.5709838603717693,
-        "handAmodalEvaluatedFrames": 69,
-        "handAmodalEligibleFrames": 69
-      },
+      "id": "input",
+      "label": "input",
       "views": {
         "overlay2d": {
           "rgb": {
             "type": "video",
-            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+            "url": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.31414141414141417,
+            "positionErrorMeters": 0.21732003371492295,
+            "rotationErrorRadians": 0.8789828419685364
+          }
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 10.348509108386752,
+        "waMpjpeEvaluatedFrames": 69,
+        "cdHMeanCm": 14.197153512982355,
+        "cdHScoredMeanCm": 14.197153512982355,
+        "cdHEvaluatedFrames": 69,
+        "cdHEligibleFrames": 69,
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.31414141414141417
       }
     },
     {
-      "id": "third-e0003-i0000",
-      "label": "third \u00b7 epoch 3 / iteration 0",
-      "color": "#ff6f91",
-      "metrics": {
-        "score": -6.465894311397982,
-        "cdHScoredMeanCm": 14.19715344387552,
-        "cdHEvaluatedFrames": 69,
-        "cdHEligibleFrames": 69,
-        "objectAmodalScoredMeanIou": 0.7840725409018027,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.5709838603717693,
-        "handAmodalEvaluatedFrames": 69,
-        "handAmodalEligibleFrames": 69
-      },
+      "id": "refined-20261023",
+      "label": "refined-20261023",
       "views": {
         "overlay2d": {
           "rgb": {
             "type": "video",
-            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+            "url": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200813-subject-02__20200813_152513__839512060362/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.29715909090909093,
+            "positionErrorMeters": 0.1966138396760709,
+            "rotationErrorRadians": 0.9005511403083801
+          }
         }
-      }
-    },
-    {
-      "id": "fourth-e0002-i0001",
-      "label": "fourth \u00b7 epoch 2 / iteration 1",
-      "color": "#62e0c5",
+      },
       "metrics": {
-        "score": 2.6712758399625045,
-        "cdHScoredMeanCm": 13.646883802137513,
+        "waMpjpeMeanMm": 10.348509595507666,
+        "waMpjpeEvaluatedFrames": 69,
+        "cdHMeanCm": 12.296796055807583,
+        "cdHScoredMeanCm": 12.296796055807583,
         "cdHEvaluatedFrames": 69,
         "cdHEligibleFrames": 69,
-        "objectAmodalScoredMeanIou": 0.7987860594246838,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.5926150791886924,
-        "handAmodalEvaluatedFrames": 69,
-        "handAmodalEligibleFrames": 69
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
-        }
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.29715909090909093
       }
     }
   ]

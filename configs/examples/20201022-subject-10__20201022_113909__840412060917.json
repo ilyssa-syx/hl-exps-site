@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20201022-subject-10__20201022_113909__840412060917",
   "label": "20201022-subject-10 / 20201022_113909 / 840412060917",
-  "description": "DexYCB checkpoint comparison optimized for CD-H and amodal IoU.",
+  "description": "DexYCB test sequence comparing input with the 2026-10-23 refinement run.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "035_power_drill",
@@ -10,90 +10,66 @@
   "frameCount": 74,
   "baselines": [
     {
-      "id": "first-e0001-i0002",
-      "label": "first \u00b7 epoch 1 / iteration 2",
-      "color": "#55a7ff",
+      "id": "input",
+      "label": "input",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      },
       "metrics": {
-        "score": -268.68112825122,
-        "cdHScoredMeanCm": 37.49886769718594,
+        "waMpjpeMeanMm": 11.093897217099773,
+        "waMpjpeEvaluatedFrames": 53,
+        "cdHMeanCm": 36.31960104996303,
+        "cdHScoredMeanCm": 38.63525192087347,
         "cdHEvaluatedFrames": 53,
-        "cdHEligibleFrames": 54,
-        "objectAmodalScoredMeanIou": 0.5491354807808593,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.5139400064255353,
-        "handAmodalEvaluatedFrames": 53,
-        "handAmodalEligibleFrames": 54
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
-        }
+        "cdHEligibleFrames": 55,
+        "spiderStatus": "failed",
+        "spiderAddAuc10": null
       }
     },
     {
-      "id": "third-e0003-i0000",
-      "label": "third \u00b7 epoch 3 / iteration 0",
-      "color": "#ff6f91",
-      "metrics": {
-        "score": -2.2907634486665174,
-        "cdHScoredMeanCm": 12.02432761589686,
-        "cdHEvaluatedFrames": 54,
-        "cdHEligibleFrames": 54,
-        "objectAmodalScoredMeanIou": 0.5751759526697365,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.6043491744332843,
-        "handAmodalEvaluatedFrames": 54,
-        "handAmodalEligibleFrames": 54
-      },
+      "id": "refined-20261023",
+      "label": "refined-20261023",
       "views": {
         "overlay2d": {
           "rgb": {
             "type": "video",
-            "url": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+            "url": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+          "reconstruction": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "left",
+          "status": "evaluated",
+          "video": "experiments/20261023/20201022-subject-10__20201022_113909__840412060917/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.24917929292929297,
+            "positionErrorMeters": 0.12782149454666436,
+            "rotationErrorRadians": 1.2871850728988647
+          }
         }
-      }
-    },
-    {
-      "id": "fourth-e0002-i0001",
-      "label": "fourth \u00b7 epoch 2 / iteration 1",
-      "color": "#62e0c5",
-      "metrics": {
-        "score": -238.19859183542815,
-        "cdHScoredMeanCm": 35.8631103877668,
-        "cdHEvaluatedFrames": 54,
-        "cdHEligibleFrames": 54,
-        "objectAmodalScoredMeanIou": 0.5545330744337391,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.6497920459886599,
-        "handAmodalEvaluatedFrames": 54,
-        "handAmodalEligibleFrames": 54
       },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
-        }
+      "metrics": {
+        "waMpjpeMeanMm": 11.435228380831807,
+        "waMpjpeEvaluatedFrames": 55,
+        "cdHMeanCm": 15.55464999892495,
+        "cdHScoredMeanCm": 15.55464999892495,
+        "cdHEvaluatedFrames": 55,
+        "cdHEligibleFrames": 55,
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.24917929292929297
       }
     }
   ]

@@ -1,13 +1,14 @@
 # HL Experiment Viewer
 
-Static, sequence-level viewer for HOI reconstruction checkpoint comparisons.
-The catalog contains 20 DexYCB validation samples and 10 test samples. Each
-sample has one shareable page containing:
+Static, sequence-level viewer for HOI reconstruction outputs and their SPIDER
+retargeting results. The catalog contains 20 DexYCB validation samples and 10
+test samples. Each sample has one shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
-- per-sequence coverage-penalized CD-H and hand/object amodal-IoU metrics;
-- independently toggleable checkpoint overlays in 2D and 3D;
+- per-sequence input/refined WA-MPJPE, coverage-penalized CD-H, and SPIDER ADD-AUC10 metrics;
+- independently toggleable input and `refined-20261023` overlays in 2D and 3D;
+- a rendered SPIDER MJWP/physics rollout and metrics when evaluation succeeds;
 - one shared sequence timeline.
 
 All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame
@@ -62,9 +63,8 @@ https://ilyssa-syx.github.io/hl-exps-site/samples/<sample-id>/
 Generated videos and geometry bundles belong in object storage, not Git.
 `scripts/export_reconstruction.py` converts `hand_results.npz`, the object mesh,
 camera intrinsics, and object poses into browser-readable typed-array buffers.
-`scripts/export_cd_iou_comparison.py` regenerates the current three-checkpoint,
-30-sample release. `scripts/export_eval_run.py` retains support for the earlier
-SPIDER release, including MP4 renders of successful rollouts.
+`scripts/export_eval_run.py` regenerates the dated 30-sample release, including
+browser geometry and MP4 renders of successful `trajectory_mjwp.npz` rollouts.
 
 `baselines[].views.overlay2d.rgb` is required for real samples. It points to either a
 published input RGB video or, in a future schema revision, an RGB image

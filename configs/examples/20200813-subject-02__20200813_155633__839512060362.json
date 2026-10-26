@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200813-subject-02__20200813_155633__839512060362",
   "label": "20200813-subject-02 / 20200813_155633 / 839512060362",
-  "description": "DexYCB checkpoint comparison optimized for CD-H and amodal IoU.",
+  "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
   "dataset": "DexYCB",
   "split": "val",
   "objectName": "052_extra_large_clamp",
@@ -10,90 +10,77 @@
   "frameCount": 72,
   "baselines": [
     {
-      "id": "first-e0001-i0002",
-      "label": "first \u00b7 epoch 1 / iteration 2",
-      "color": "#55a7ff",
-      "metrics": {
-        "score": -19.934702841354813,
-        "cdHScoredMeanCm": 11.780979043907589,
-        "cdHEvaluatedFrames": 72,
-        "cdHEligibleFrames": 72,
-        "objectAmodalScoredMeanIou": 0.4112320719100858,
-        "objectAmodalEvaluatedFrames": 72,
-        "objectAmodalEligibleFrames": 72,
-        "handAmodalScoredMeanIou": 0.567518804067125,
-        "handAmodalEvaluatedFrames": 72,
-        "handAmodalEligibleFrames": 72
-      },
+      "id": "input",
+      "label": "input",
       "views": {
         "overlay2d": {
           "rgb": {
             "type": "video",
-            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/input-rgb.mp4"
+            "url": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/first-e0001-i0002/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input/reconstruction/reconstruction.json"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/first-e0001-i0002/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "right",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.12430555555555557,
+            "positionErrorMeters": 0.3561387937686199,
+            "rotationErrorRadians": 1.4477307796478271
+          }
         }
+      },
+      "metrics": {
+        "waMpjpeMeanMm": 8.217883266350894,
+        "waMpjpeEvaluatedFrames": 72,
+        "cdHMeanCm": 37.31522509786818,
+        "cdHScoredMeanCm": 37.31522509786818,
+        "cdHEvaluatedFrames": 72,
+        "cdHEligibleFrames": 72,
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.12430555555555557
       }
     },
     {
-      "id": "third-e0003-i0000",
-      "label": "third \u00b7 epoch 3 / iteration 0",
-      "color": "#ff6f91",
-      "metrics": {
-        "score": -104.87648331784939,
-        "cdHScoredMeanCm": 20.127951224644978,
-        "cdHEvaluatedFrames": 72,
-        "cdHEligibleFrames": 72,
-        "objectAmodalScoredMeanIou": 0.3965114852188789,
-        "objectAmodalEvaluatedFrames": 72,
-        "objectAmodalEligibleFrames": 72,
-        "handAmodalScoredMeanIou": 0.567518804067125,
-        "handAmodalEvaluatedFrames": 72,
-        "handAmodalEligibleFrames": 72
-      },
+      "id": "refined-20261023",
+      "label": "refined-20261023",
       "views": {
         "overlay2d": {
           "rgb": {
             "type": "video",
-            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/input-rgb.mp4"
+            "url": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/third-e0003-i0000/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/refined-20261023/reconstruction/reconstruction.json"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/third-e0003-i0000/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/refined-20261023/reconstruction/reconstruction.json"
+        },
+        "spider": {
+          "robot": "sharpa",
+          "embodiment": "right",
+          "status": "evaluated",
+          "video": "experiments/20261023/20200813-subject-02__20200813_155633__839512060362/refined-20261023/spider.mp4",
+          "metrics": {
+            "addAuc10": 0.2894570707070707,
+            "positionErrorMeters": 0.21161966064507057,
+            "rotationErrorRadians": 0.5800930261611938
+          }
         }
-      }
-    },
-    {
-      "id": "fourth-e0002-i0001",
-      "label": "fourth \u00b7 epoch 2 / iteration 1",
-      "color": "#62e0c5",
+      },
       "metrics": {
-        "score": -68.80440983292729,
-        "cdHScoredMeanCm": 16.5698143641154,
+        "waMpjpeMeanMm": 8.217883356290047,
+        "waMpjpeEvaluatedFrames": 72,
+        "cdHMeanCm": 7.711587048239178,
+        "cdHScoredMeanCm": 7.711587048239178,
         "cdHEvaluatedFrames": 72,
         "cdHEligibleFrames": 72,
-        "objectAmodalScoredMeanIou": 0.40141853401514205,
-        "objectAmodalEvaluatedFrames": 72,
-        "objectAmodalEligibleFrames": 72,
-        "handAmodalScoredMeanIou": 0.567518804067125,
-        "handAmodalEvaluatedFrames": 72,
-        "handAmodalEligibleFrames": 72
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/fourth-e0002-i0001/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_155633__839512060362/fourth-e0002-i0001/reconstruction/reconstruction.json"
-        }
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.2894570707070707
       }
     }
   ]
