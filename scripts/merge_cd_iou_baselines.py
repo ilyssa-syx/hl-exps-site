@@ -22,9 +22,20 @@ COLORS = {
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--sequence-id", action="append", required=True)
+    selection = parser.add_mutually_exclusive_group(required=True)
+    selection.add_argument("--sequence-id", action="append")
+    selection.add_argument(
+        "--all-common", action="store_true",
+        help="merge every sequence present in both primary and checkpoint configs",
+    )
     args = parser.parse_args()
-    for sequence_id in args.sequence_id:
+    if args.all_common:
+        primary_ids = {path.stem for path in PRIMARY.glob("*.json")}
+        checkpoint_ids = {path.stem for path in CHECKPOINTS.glob("*.json")}
+        sequence_ids = sorted(primary_ids & checkpoint_ids)
+    else:
+        sequence_ids = args.sequence_id
+    for sequence_id in sequence_ids:
         primary_path = PRIMARY / f"{sequence_id}.json"
         checkpoint_path = CHECKPOINTS / f"{sequence_id}.json"
         primary = json.loads(primary_path.read_text(encoding="utf-8"))
@@ -44,6 +55,7 @@ def main() -> None:
         )
         primary_path.write_text(json.dumps(primary, indent=2) + "\n", encoding="utf-8")
         print(f"Merged five baselines into {primary_path.relative_to(ROOT)}")
+    print(f"Merged {len(sequence_ids)} common sequence(s)")
 
 
 if __name__ == "__main__":

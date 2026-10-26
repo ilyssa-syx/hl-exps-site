@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200813-subject-02__20200813_153453__840412060917",
   "label": "20200813-subject-02 / 20200813_153453 / 840412060917",
-  "description": "DexYCB validation sequence comparing input with the 2026-10-23 refinement run.",
+  "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
   "dataset": "DexYCB",
   "split": "val",
   "objectName": "021_bleach_cleanser",
@@ -44,7 +44,8 @@
         "cdHEligibleFrames": 72,
         "spiderStatus": "evaluated",
         "spiderAddAuc10": 0.22840909090909092
-      }
+      },
+      "color": "#55a7ff"
     },
     {
       "id": "refined-20261023",
@@ -81,6 +82,94 @@
         "cdHEligibleFrames": 72,
         "spiderStatus": "evaluated",
         "spiderAddAuc10": 0.23566919191919194
+      },
+      "color": "#ff6f91"
+    },
+    {
+      "id": "first-e0001-i0002",
+      "label": "first \u00b7 epoch 1 / iteration 2",
+      "color": "#f6c85f",
+      "metrics": {
+        "score": -3.8929920441854478,
+        "cdHScoredMeanCm": 13.882335186004639,
+        "cdHEvaluatedFrames": 70,
+        "cdHEligibleFrames": 71,
+        "objectAmodalScoredMeanIou": 0.7954309268130196,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.5538726713455898,
+        "handAmodalEvaluatedFrames": 70,
+        "handAmodalEligibleFrames": 71
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/first-e0001-i0002/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/first-e0001-i0002/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "third-e0003-i0000",
+      "label": "third \u00b7 epoch 3 / iteration 0",
+      "color": "#62e0c5",
+      "metrics": {
+        "score": 4.105926354492972,
+        "cdHScoredMeanCm": 13.245952740521497,
+        "cdHEvaluatedFrames": 71,
+        "cdHEligibleFrames": 71,
+        "objectAmodalScoredMeanIou": 0.8034785232610173,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.5621760143360621,
+        "handAmodalEvaluatedFrames": 71,
+        "handAmodalEligibleFrames": 71
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/third-e0003-i0000/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/third-e0003-i0000/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "fourth-e0002-i0001",
+      "label": "fourth \u00b7 epoch 2 / iteration 1",
+      "color": "#a78bfa",
+      "metrics": {
+        "score": 9.309677199018935,
+        "cdHScoredMeanCm": 13.63367282168966,
+        "cdHEvaluatedFrames": 71,
+        "cdHEligibleFrames": 71,
+        "objectAmodalScoredMeanIou": 0.8036880368987719,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.6527760172603836,
+        "handAmodalEvaluatedFrames": 71,
+        "handAmodalEligibleFrames": 71
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/fourth-e0002-i0001/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/fourth-e0002-i0001/reconstruction/reconstruction.json"
+        }
       }
     }
   ]
