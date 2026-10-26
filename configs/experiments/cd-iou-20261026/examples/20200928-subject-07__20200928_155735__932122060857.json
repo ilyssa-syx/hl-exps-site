@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "id": "20200928-subject-07__20200928_155735__932122060857",
+  "label": "20200928-subject-07 / 20200928_155735 / 932122060857",
+  "description": "DexYCB checkpoint comparison optimized for CD-H and amodal IoU.",
+  "dataset": "DexYCB",
+  "split": "test",
+  "objectName": "052_extra_large_clamp",
+  "fps": 30,
+  "frameCount": 74,
+  "baselines": [
+    {
+      "id": "first-e0001-i0002",
+      "label": "first \u00b7 epoch 1 / iteration 2",
+      "color": "#55a7ff",
+      "metrics": {
+        "score": 97.74252396461884,
+        "cdHScoredMeanCm": 3.4595673177756514,
+        "cdHEvaluatedFrames": 51,
+        "cdHEligibleFrames": 51,
+        "objectAmodalScoredMeanIou": 0.6299262203880258,
+        "objectAmodalEvaluatedFrames": 74,
+        "objectAmodalEligibleFrames": 74,
+        "handAmodalScoredMeanIou": 0.6934557510357277,
+        "handAmodalEvaluatedFrames": 51,
+        "handAmodalEligibleFrames": 51
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      }
+    },
+    {
+      "id": "third-e0003-i0000",
+      "label": "third \u00b7 epoch 3 / iteration 0",
+      "color": "#ff6f91",
+      "metrics": {
+        "score": 102.02826907016262,
+        "cdHScoredMeanCm": 3.506072006973566,
+        "cdHEvaluatedFrames": 51,
+        "cdHEligibleFrames": 51,
+        "objectAmodalScoredMeanIou": 0.6774341403632551,
+        "objectAmodalEvaluatedFrames": 74,
+        "objectAmodalEligibleFrames": 74,
+        "handAmodalScoredMeanIou": 0.6934557510357277,
+        "handAmodalEvaluatedFrames": 51,
+        "handAmodalEligibleFrames": 51
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      }
+    },
+    {
+      "id": "fourth-e0002-i0001",
+      "label": "fourth \u00b7 epoch 2 / iteration 1",
+      "color": "#62e0c5",
+      "metrics": {
+        "score": 106.05986440630268,
+        "cdHScoredMeanCm": 3.530766727877598,
+        "cdHEvaluatedFrames": 51,
+        "cdHEligibleFrames": 51,
+        "objectAmodalScoredMeanIou": 0.6837692276851551,
+        "objectAmodalEvaluatedFrames": 74,
+        "objectAmodalEligibleFrames": 74,
+        "handAmodalScoredMeanIou": 0.7299060891656315,
+        "handAmodalEvaluatedFrames": 51,
+        "handAmodalEligibleFrames": 51
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200928-subject-07__20200928_155735__932122060857/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      }
+    }
+  ]
+}

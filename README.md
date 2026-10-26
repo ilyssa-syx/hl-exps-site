@@ -15,6 +15,11 @@ All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame
 camera-space transforms. A SPIDER tab is intentionally omitted for a baseline
 when that sample's SPIDER evaluation failed.
 
+The original input/refined/SPIDER release remains at the site root. The additive
+three-checkpoint CD-H/amodal-IoU comparison is published under
+`/experiments/cd-iou-20261026/`; it has independent configs, manifest, and sample
+URLs so neither release replaces the other.
+
 ## Development
 
 ```bash

@@ -1,5 +1,18 @@
 {
   "schemaVersion": 2,
+  "catalog": {
+    "eyebrow": "DexYCB \u00b7 2026-10-23 evaluation",
+    "title": "Experiment samples",
+    "description": "30 sequences \u00b7 20 validation + 10 test \u00b7 input vs refined-20261023",
+    "metricSet": "spider",
+    "sampleRoot": "samples",
+    "relatedCatalogs": [
+      {
+        "label": "CD-H / IoU checkpoint comparison \u2192",
+        "url": "experiments/cd-iou-20261026/"
+      }
+    ]
+  },
   "examples": [
     {
       "schemaVersion": 2,

@@ -16,6 +16,25 @@ const sampleInputs = fs.existsSync(samplesRoot)
     )
   : {};
 
+function htmlInputsBelow(directory, prefix) {
+  if (!fs.existsSync(directory)) return {};
+  const inputs = {};
+  const visit = (current) => {
+    for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+      const child = path.join(current, entry.name);
+      if (entry.isDirectory()) visit(child);
+      if (entry.isFile() && entry.name === "index.html") {
+        const relative = path.relative(directory, child).replaceAll(path.sep, "-");
+        inputs[`${prefix}-${relative}`] = child;
+      }
+    }
+  };
+  visit(directory);
+  return inputs;
+}
+
+const experimentInputs = htmlInputsBelow(path.join(root, "experiments"), "experiment");
+
 export default defineConfig({
   base: "/hl-exps-site/",
   define: {
@@ -28,6 +47,7 @@ export default defineConfig({
       input: {
         index: path.join(root, "index.html"),
         ...sampleInputs,
+        ...experimentInputs,
       },
     },
   },

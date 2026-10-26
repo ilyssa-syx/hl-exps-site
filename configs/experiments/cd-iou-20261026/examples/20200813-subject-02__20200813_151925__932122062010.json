@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "id": "20200813-subject-02__20200813_151925__932122062010",
+  "label": "20200813-subject-02 / 20200813_151925 / 932122062010",
+  "description": "DexYCB checkpoint comparison optimized for CD-H and amodal IoU.",
+  "dataset": "DexYCB",
+  "split": "val",
+  "objectName": "008_pudding_box",
+  "fps": 30,
+  "frameCount": 72,
+  "baselines": [
+    {
+      "id": "first-e0001-i0002",
+      "label": "first \u00b7 epoch 1 / iteration 2",
+      "color": "#55a7ff",
+      "metrics": {
+        "score": 19.15926857127082,
+        "cdHScoredMeanCm": 10.980118738280403,
+        "cdHEvaluatedFrames": 72,
+        "cdHEligibleFrames": 72,
+        "objectAmodalScoredMeanIou": 0.7313221564723386,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.55828240306841,
+        "handAmodalEvaluatedFrames": 72,
+        "handAmodalEligibleFrames": 72
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/first-e0001-i0002/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      }
+    },
+    {
+      "id": "third-e0003-i0000",
+      "label": "third \u00b7 epoch 3 / iteration 0",
+      "color": "#ff6f91",
+      "metrics": {
+        "score": 75.00138437582387,
+        "cdHScoredMeanCm": 7.057324464122455,
+        "cdHEvaluatedFrames": 72,
+        "cdHEligibleFrames": 72,
+        "objectAmodalScoredMeanIou": 0.8156348930464851,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.6401113971239991,
+        "handAmodalEvaluatedFrames": 72,
+        "handAmodalEligibleFrames": 72
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/third-e0003-i0000/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      }
+    },
+    {
+      "id": "fourth-e0002-i0001",
+      "label": "fourth \u00b7 epoch 2 / iteration 1",
+      "color": "#62e0c5",
+      "metrics": {
+        "score": -8.990836714704834,
+        "cdHScoredMeanCm": 14.08764153222243,
+        "cdHEvaluatedFrames": 72,
+        "cdHEligibleFrames": 72,
+        "objectAmodalScoredMeanIou": 0.7455123315254847,
+        "objectAmodalEvaluatedFrames": 72,
+        "objectAmodalEligibleFrames": 72,
+        "handAmodalScoredMeanIou": 0.5733434545497099,
+        "handAmodalEvaluatedFrames": 72,
+        "handAmodalEligibleFrames": 72
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+        }
+      }
+    }
+  ]
+}

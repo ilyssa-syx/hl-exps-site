@@ -154,6 +154,9 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
 .catalog-head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 42px; }
 .catalog-head h1 { margin-top: 9px; }
 .catalog-head p { color: var(--muted); margin: 0; }
+.catalog-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+.catalog-link { padding: 7px 10px; border: 1px solid var(--line); border-radius: 7px; color: var(--mint); font: 500 10px "DM Mono"; text-decoration: none; }
+.catalog-link:hover { border-color: rgba(98,224,197,.45); background: rgba(98,224,197,.06); }
 .catalog-section { margin-top: 48px; }
 .section-title { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--line); margin-bottom: 16px; padding-bottom: 10px; }
 .section-title h2 { margin: 0; font: 500 18px "DM Mono"; text-transform: uppercase; }
@@ -168,7 +171,7 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
 .sample-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
 .sample-meta span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; color: #9da9ba; font: 500 9px "DM Mono"; }
 .card-metrics { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
-.card-metric-head, .card-metric-row { display: grid; grid-template-columns: minmax(120px, 1fr) 95px 72px 68px; gap: 9px; align-items: center; }
+.card-metric-head, .card-metric-row { display: grid; grid-template-columns: minmax(170px, 1.4fr) 90px 78px 78px; gap: 9px; align-items: center; }
 .card-metric-head { padding: 0 8px 6px; color: #657287; font: 500 8px "DM Mono"; letter-spacing: .06em; }
 .card-metric-row { padding: 7px 8px; border-radius: 7px; color: #bfc9d6; font: 500 9px "DM Mono"; }
 .card-metric-row:nth-child(3) { background: rgba(255,255,255,.025); }

@@ -74,14 +74,24 @@ def apply_handedness(vertices: np.ndarray, side: str) -> np.ndarray:
     return vertices
 
 
-def decode_hand(result_dir: Path, mano_dir: Path, frame_count: int) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def decode_hand(
+    result_dir: Path, mano_dir: Path, frame_count: int, hand_side: str | None,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     import smplx
     from smplx.utils import Struct
 
     source = np.load(result_dir / "hand_results.npz", allow_pickle=False)
-    if len(source["track_indices"]) != 1:
-        raise ValueError("the initial browser exporter requires exactly one hand track")
-    side = str(source["handedness"][0]).lower()
+    handedness = [str(value).lower() for value in source["handedness"]]
+    if hand_side is None:
+        if len(source["track_indices"]) != 1:
+            raise ValueError("multiple hand tracks require --hand-side")
+        track_index = 0
+    else:
+        matches = [index for index, side in enumerate(handedness) if side == hand_side]
+        if len(matches) != 1:
+            raise ValueError(f"expected exactly one {hand_side!r} hand track, found {len(matches)}")
+        track_index = matches[0]
+    side = handedness[track_index]
     mano_path = mano_model_path(mano_dir)
     data = load_mano_pickle(mano_path)
     model = smplx.MANO(
@@ -92,10 +102,10 @@ def decode_hand(result_dir: Path, mano_dir: Path, frame_count: int) -> tuple[np.
     tensor = lambda value: torch.as_tensor(value, dtype=torch.float32)
     with torch.inference_mode():
         output = model(
-            global_orient=tensor(source["root_orient_camera"][0]).reshape(frames, 3),
-            hand_pose=tensor(source["pose_body"][0]).reshape(frames, 45),
-            betas=tensor(np.broadcast_to(source["betas"][0], (frames, 10)).copy()),
-            transl=tensor(source["trans_camera"][0]).reshape(frames, 3),
+            global_orient=tensor(source["root_orient_camera"][track_index]).reshape(frames, 3),
+            hand_pose=tensor(source["pose_body"][track_index]).reshape(frames, 45),
+            betas=tensor(np.broadcast_to(source["betas"][track_index], (frames, 10)).copy()),
+            transl=tensor(source["trans_camera"][track_index]).reshape(frames, 3),
             return_verts=True,
         )
     decoded = apply_handedness(output.vertices.cpu().numpy().astype("<f4"), side)
@@ -111,6 +121,7 @@ def main() -> None:
     parser.add_argument("--result-dir", type=Path, required=True)
     parser.add_argument("--mano-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--hand-side", choices=("left", "right"))
     args = parser.parse_args()
     result_dir = args.result_dir.resolve()
     output = args.output.resolve()
@@ -119,7 +130,9 @@ def main() -> None:
     scene = np.load(result_dir / "scene.npz", allow_pickle=False)
     obj = np.load(result_dir / "object_results.npz", allow_pickle=False)
     frame_count = len(scene["frame_indices"])
-    hand_vertices, hand_faces, hand_valid = decode_hand(result_dir, args.mano_dir.resolve(), frame_count)
+    hand_vertices, hand_faces, hand_valid = decode_hand(
+        result_dir, args.mano_dir.resolve(), frame_count, args.hand_side,
+    )
     object_path = result_dir / "object_mesh" / "mesh.obj"
     object_mesh = trimesh.load(object_path, force="mesh", process=False)
     object_vertices = np.asarray(object_mesh.vertices, dtype="<f4")
