@@ -42,7 +42,8 @@ def read_sequence_metrics(path: Path) -> dict[str, dict[str, str]]:
     return metrics
 
 
-def reconstruction_metrics(row: dict[str, str]) -> dict[str, float | int]:
+def reconstruction_metrics(row: dict[str, str]) -> dict[str, float | int | str | None]:
+    spider_auc = row["spider_object_translation_auc10"]
     return {
         "waMpjpeMeanMm": float(row["wa_mpjpe_mean_mm"]),
         "waMpjpeEvaluatedFrames": int(row["wa_mpjpe_evaluated_frames"]),
@@ -50,6 +51,8 @@ def reconstruction_metrics(row: dict[str, str]) -> dict[str, float | int]:
         "cdHScoredMeanCm": float(row["cd_h_scored_mean_cm"]),
         "cdHEvaluatedFrames": int(row["cd_h_evaluated_frames"]),
         "cdHEligibleFrames": int(row["cd_h_eligible_frames"]),
+        "spiderStatus": row["spider_status"],
+        "spiderAddAuc10": float(spider_auc) if spider_auc else None,
     }
 
 

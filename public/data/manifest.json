@@ -33,7 +33,9 @@
             "cdHMeanCm": 29.027781797009844,
             "cdHScoredMeanCm": 57.01682559537216,
             "cdHEvaluatedFrames": 43,
-            "cdHEligibleFrames": 71
+            "cdHEligibleFrames": 71,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -68,7 +70,9 @@
             "cdHMeanCm": 26.752351680272064,
             "cdHScoredMeanCm": 26.752351680272064,
             "cdHEvaluatedFrames": 71,
-            "cdHEligibleFrames": 71
+            "cdHEligibleFrames": 71,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.2719065656565656
           }
         }
       ]
@@ -105,7 +109,9 @@
             "cdHMeanCm": 21.13732631582963,
             "cdHScoredMeanCm": 56.56838260871777,
             "cdHEvaluatedFrames": 38,
-            "cdHEligibleFrames": 69
+            "cdHEligibleFrames": 69,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -140,7 +146,9 @@
             "cdHMeanCm": 13.050960768824039,
             "cdHScoredMeanCm": 13.050960768824039,
             "cdHEvaluatedFrames": 69,
-            "cdHEligibleFrames": 69
+            "cdHEligibleFrames": 69,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.4898358585858586
           }
         }
       ]
@@ -188,7 +196,9 @@
             "cdHMeanCm": 8.875649200545418,
             "cdHScoredMeanCm": 8.875649200545418,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.13566919191919194
           }
         },
         {
@@ -223,7 +233,9 @@
             "cdHMeanCm": 9.100320460067856,
             "cdHScoredMeanCm": 9.100320460067856,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.12702020202020203
           }
         }
       ]
@@ -271,7 +283,9 @@
             "cdHMeanCm": 20.12311211885032,
             "cdHScoredMeanCm": 29.660650970330877,
             "cdHEvaluatedFrames": 59,
-            "cdHEligibleFrames": 67
+            "cdHEligibleFrames": 67,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.13768939393939394
           }
         },
         {
@@ -306,7 +320,9 @@
             "cdHMeanCm": 6.852458231484712,
             "cdHScoredMeanCm": 6.852458231484712,
             "cdHEvaluatedFrames": 67,
-            "cdHEligibleFrames": 67
+            "cdHEligibleFrames": 67,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.3369318181818183
           }
         }
       ]
@@ -343,7 +359,9 @@
             "cdHMeanCm": 3.12030666443839,
             "cdHScoredMeanCm": 9.848063146074614,
             "cdHEvaluatedFrames": 67,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -378,7 +396,9 @@
             "cdHMeanCm": 4.892424101630847,
             "cdHScoredMeanCm": 4.892424101630847,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.09703282828282829
           }
         }
       ]
@@ -426,7 +446,9 @@
             "cdHMeanCm": 8.6932591248865,
             "cdHScoredMeanCm": 8.6932591248865,
             "cdHEvaluatedFrames": 73,
-            "cdHEligibleFrames": 73
+            "cdHEligibleFrames": 73,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.32058080808080813
           }
         },
         {
@@ -461,7 +483,9 @@
             "cdHMeanCm": 7.534102756683141,
             "cdHScoredMeanCm": 7.534102756683141,
             "cdHEvaluatedFrames": 73,
-            "cdHEligibleFrames": 73
+            "cdHEligibleFrames": 73,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.3570707070707071
           }
         }
       ]
@@ -498,7 +522,9 @@
             "cdHMeanCm": 8.472632153614148,
             "cdHScoredMeanCm": 8.472632153614148,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -533,7 +559,9 @@
             "cdHMeanCm": 8.334452525989429,
             "cdHScoredMeanCm": 8.334452525989429,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.21780303030303033
           }
         }
       ]
@@ -570,7 +598,9 @@
             "cdHMeanCm": 15.757551259464687,
             "cdHScoredMeanCm": 18.034374198398076,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -605,7 +635,9 @@
             "cdHMeanCm": 16.298259747994912,
             "cdHScoredMeanCm": 16.298259747994912,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.14419191919191918
           }
         }
       ]
@@ -653,7 +685,9 @@
             "cdHMeanCm": 6.2611280878384905,
             "cdHScoredMeanCm": 6.2611280878384905,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.2484217171717172
           }
         },
         {
@@ -688,7 +722,9 @@
             "cdHMeanCm": 5.541686637534036,
             "cdHScoredMeanCm": 5.541686637534036,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.2625631313131313
           }
         }
       ]
@@ -725,7 +761,9 @@
             "cdHMeanCm": 29.93722880548901,
             "cdHScoredMeanCm": 29.93722880548901,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -760,7 +798,9 @@
             "cdHMeanCm": 8.054878579245674,
             "cdHScoredMeanCm": 8.054878579245674,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.29728535353535357
           }
         }
       ]
@@ -808,7 +848,9 @@
             "cdHMeanCm": 14.197153512982355,
             "cdHScoredMeanCm": 14.197153512982355,
             "cdHEvaluatedFrames": 69,
-            "cdHEligibleFrames": 69
+            "cdHEligibleFrames": 69,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.31414141414141417
           }
         },
         {
@@ -843,7 +885,9 @@
             "cdHMeanCm": 12.296796055807583,
             "cdHScoredMeanCm": 12.296796055807583,
             "cdHEvaluatedFrames": 69,
-            "cdHEligibleFrames": 69
+            "cdHEligibleFrames": 69,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.29715909090909093
           }
         }
       ]
@@ -880,7 +924,9 @@
             "cdHMeanCm": 10.876655008481896,
             "cdHScoredMeanCm": 10.876655008481896,
             "cdHEvaluatedFrames": 69,
-            "cdHEligibleFrames": 69
+            "cdHEligibleFrames": 69,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -915,7 +961,9 @@
             "cdHMeanCm": 10.30557227825773,
             "cdHScoredMeanCm": 10.30557227825773,
             "cdHEvaluatedFrames": 69,
-            "cdHEligibleFrames": 69
+            "cdHEligibleFrames": 69,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.29084595959595955
           }
         }
       ]
@@ -952,7 +1000,9 @@
             "cdHMeanCm": 12.35745692643963,
             "cdHScoredMeanCm": 20.206042873325632,
             "cdHEvaluatedFrames": 61,
-            "cdHEligibleFrames": 67
+            "cdHEligibleFrames": 67,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -987,7 +1037,9 @@
             "cdHMeanCm": 9.701400080723548,
             "cdHScoredMeanCm": 9.701400080723548,
             "cdHEvaluatedFrames": 67,
-            "cdHEligibleFrames": 67
+            "cdHEligibleFrames": 67,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.25486111111111115
           }
         }
       ]
@@ -1035,7 +1087,9 @@
             "cdHMeanCm": 12.747577333450318,
             "cdHScoredMeanCm": 15.171255740854475,
             "cdHEvaluatedFrames": 70,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.22840909090909092
           }
         },
         {
@@ -1070,7 +1124,9 @@
             "cdHMeanCm": 13.479753182993996,
             "cdHScoredMeanCm": 13.479753182993996,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.23566919191919194
           }
         }
       ]
@@ -1118,7 +1174,9 @@
             "cdHMeanCm": 15.308480639715452,
             "cdHScoredMeanCm": 15.308480639715452,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.08472222222222223
           }
         },
         {
@@ -1153,7 +1211,9 @@
             "cdHMeanCm": 5.043731106294168,
             "cdHScoredMeanCm": 5.043731106294168,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.2844065656565657
           }
         }
       ]
@@ -1201,7 +1261,9 @@
             "cdHMeanCm": 11.16715865348702,
             "cdHScoredMeanCm": 12.47352396740633,
             "cdHEvaluatedFrames": 67,
-            "cdHEligibleFrames": 68
+            "cdHEligibleFrames": 68,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.17613636363636365
           }
         },
         {
@@ -1236,7 +1298,9 @@
             "cdHMeanCm": 4.774926816715913,
             "cdHScoredMeanCm": 4.774926816715913,
             "cdHEvaluatedFrames": 68,
-            "cdHEligibleFrames": 68
+            "cdHEligibleFrames": 68,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.18484848484848485
           }
         }
       ]
@@ -1273,7 +1337,9 @@
             "cdHMeanCm": 30.125978503428716,
             "cdHScoredMeanCm": 31.096451024214428,
             "cdHEvaluatedFrames": 71,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -1308,7 +1374,9 @@
             "cdHMeanCm": 20.726100116968155,
             "cdHScoredMeanCm": 20.726100116968155,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.12702020202020203
           }
         }
       ]
@@ -1345,7 +1413,9 @@
             "cdHMeanCm": 9.182945853955037,
             "cdHScoredMeanCm": 9.182945853955037,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -1369,7 +1439,9 @@
             "cdHMeanCm": 6.914467118881844,
             "cdHScoredMeanCm": 6.914467118881844,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         }
       ]
@@ -1417,7 +1489,9 @@
             "cdHMeanCm": 37.31522509786818,
             "cdHScoredMeanCm": 37.31522509786818,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.12430555555555557
           }
         },
         {
@@ -1452,7 +1526,9 @@
             "cdHMeanCm": 7.711587048239178,
             "cdHScoredMeanCm": 7.711587048239178,
             "cdHEvaluatedFrames": 72,
-            "cdHEligibleFrames": 72
+            "cdHEligibleFrames": 72,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.2894570707070707
           }
         }
       ]
@@ -1489,7 +1565,9 @@
             "cdHMeanCm": 19.740285670435107,
             "cdHScoredMeanCm": 19.740285670435107,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -1524,7 +1602,9 @@
             "cdHMeanCm": 8.640280570532825,
             "cdHScoredMeanCm": 8.640280570532825,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.12720959595959597
           }
         }
       ]
@@ -1561,7 +1641,9 @@
             "cdHMeanCm": 4.48426221673553,
             "cdHScoredMeanCm": 4.48426221673553,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -1585,7 +1667,9 @@
             "cdHMeanCm": 3.9924994481576457,
             "cdHScoredMeanCm": 3.9924994481576457,
             "cdHEvaluatedFrames": 74,
-            "cdHEligibleFrames": 74
+            "cdHEligibleFrames": 74,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         }
       ]
@@ -1622,7 +1706,9 @@
             "cdHMeanCm": 4.55755040759132,
             "cdHScoredMeanCm": 4.55755040759132,
             "cdHEvaluatedFrames": 63,
-            "cdHEligibleFrames": 63
+            "cdHEligibleFrames": 63,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -1646,7 +1732,9 @@
             "cdHMeanCm": 4.175046782644968,
             "cdHScoredMeanCm": 4.175046782644968,
             "cdHEvaluatedFrames": 63,
-            "cdHEligibleFrames": 63
+            "cdHEligibleFrames": 63,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         }
       ]
@@ -1683,7 +1771,9 @@
             "cdHMeanCm": 30.767421661797215,
             "cdHScoredMeanCm": 30.767421661797215,
             "cdHEvaluatedFrames": 59,
-            "cdHEligibleFrames": 59
+            "cdHEligibleFrames": 59,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -1718,7 +1808,9 @@
             "cdHMeanCm": 10.064699597277883,
             "cdHScoredMeanCm": 10.064699597277883,
             "cdHEvaluatedFrames": 59,
-            "cdHEligibleFrames": 59
+            "cdHEligibleFrames": 59,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.11369949494949495
           }
         }
       ]
@@ -1766,7 +1858,9 @@
             "cdHMeanCm": 8.402100506475417,
             "cdHScoredMeanCm": 8.402100506475417,
             "cdHEvaluatedFrames": 59,
-            "cdHEligibleFrames": 59
+            "cdHEligibleFrames": 59,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.396969696969697
           }
         },
         {
@@ -1801,7 +1895,9 @@
             "cdHMeanCm": 7.389100935499547,
             "cdHScoredMeanCm": 7.389100935499547,
             "cdHEvaluatedFrames": 59,
-            "cdHEligibleFrames": 59
+            "cdHEligibleFrames": 59,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.4111742424242425
           }
         }
       ]
@@ -1849,7 +1945,9 @@
             "cdHMeanCm": 7.136381227462018,
             "cdHScoredMeanCm": 7.136381227462018,
             "cdHEvaluatedFrames": 61,
-            "cdHEligibleFrames": 61
+            "cdHEligibleFrames": 61,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.22872474747474747
           }
         },
         {
@@ -1884,7 +1982,9 @@
             "cdHMeanCm": 4.427818366738617,
             "cdHScoredMeanCm": 4.427818366738617,
             "cdHEvaluatedFrames": 61,
-            "cdHEligibleFrames": 61
+            "cdHEligibleFrames": 61,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.22967171717171717
           }
         }
       ]
@@ -1921,7 +2021,9 @@
             "cdHMeanCm": 10.212976782929664,
             "cdHScoredMeanCm": 10.212976782929664,
             "cdHEvaluatedFrames": 51,
-            "cdHEligibleFrames": 51
+            "cdHEligibleFrames": 51,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -1956,7 +2058,9 @@
             "cdHMeanCm": 9.235615505891687,
             "cdHScoredMeanCm": 9.235615505891687,
             "cdHEvaluatedFrames": 51,
-            "cdHEligibleFrames": 51
+            "cdHEligibleFrames": 51,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.4510732323232323
           }
         }
       ]
@@ -2004,7 +2108,9 @@
             "cdHMeanCm": 5.465963489130924,
             "cdHScoredMeanCm": 5.465963489130924,
             "cdHEvaluatedFrames": 57,
-            "cdHEligibleFrames": 57
+            "cdHEligibleFrames": 57,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.3613636363636364
           }
         },
         {
@@ -2039,7 +2145,9 @@
             "cdHMeanCm": 5.327708507839002,
             "cdHScoredMeanCm": 5.327708507839002,
             "cdHEvaluatedFrames": 57,
-            "cdHEligibleFrames": 57
+            "cdHEligibleFrames": 57,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.32373737373737377
           }
         }
       ]
@@ -2076,7 +2184,9 @@
             "cdHMeanCm": 36.31960104996303,
             "cdHScoredMeanCm": 38.63525192087347,
             "cdHEvaluatedFrames": 53,
-            "cdHEligibleFrames": 55
+            "cdHEligibleFrames": 55,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -2111,7 +2221,9 @@
             "cdHMeanCm": 15.55464999892495,
             "cdHScoredMeanCm": 15.55464999892495,
             "cdHEvaluatedFrames": 55,
-            "cdHEligibleFrames": 55
+            "cdHEligibleFrames": 55,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.24917929292929297
           }
         }
       ]
@@ -2148,7 +2260,9 @@
             "cdHMeanCm": 16.400950496846978,
             "cdHScoredMeanCm": 16.400950496846978,
             "cdHEvaluatedFrames": 55,
-            "cdHEligibleFrames": 55
+            "cdHEligibleFrames": 55,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -2183,7 +2297,9 @@
             "cdHMeanCm": 10.063180628689853,
             "cdHScoredMeanCm": 10.063180628689853,
             "cdHEvaluatedFrames": 55,
-            "cdHEligibleFrames": 55
+            "cdHEligibleFrames": 55,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.3043560606060607
           }
         }
       ]
@@ -2220,7 +2336,9 @@
             "cdHMeanCm": 12.867686700820922,
             "cdHScoredMeanCm": 12.867686700820922,
             "cdHEvaluatedFrames": 55,
-            "cdHEligibleFrames": 55
+            "cdHEligibleFrames": 55,
+            "spiderStatus": "failed",
+            "spiderAddAuc10": null
           }
         },
         {
@@ -2255,7 +2373,9 @@
             "cdHMeanCm": 9.11714292006059,
             "cdHScoredMeanCm": 9.11714292006059,
             "cdHEvaluatedFrames": 55,
-            "cdHEligibleFrames": 55
+            "cdHEligibleFrames": 55,
+            "spiderStatus": "evaluated",
+            "spiderAddAuc10": 0.41875
           }
         }
       ]

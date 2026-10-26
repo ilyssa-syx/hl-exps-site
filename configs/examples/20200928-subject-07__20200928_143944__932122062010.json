@@ -41,7 +41,9 @@
         "cdHMeanCm": 8.402100506475417,
         "cdHScoredMeanCm": 8.402100506475417,
         "cdHEvaluatedFrames": 59,
-        "cdHEligibleFrames": 59
+        "cdHEligibleFrames": 59,
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.396969696969697
       }
     },
     {
@@ -76,7 +78,9 @@
         "cdHMeanCm": 7.389100935499547,
         "cdHScoredMeanCm": 7.389100935499547,
         "cdHEvaluatedFrames": 59,
-        "cdHEligibleFrames": 59
+        "cdHEligibleFrames": 59,
+        "spiderStatus": "evaluated",
+        "spiderAddAuc10": 0.4111742424242425
       }
     }
   ]
