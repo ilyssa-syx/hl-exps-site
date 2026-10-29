@@ -20,6 +20,11 @@ three-checkpoint CD-H/amodal-IoU comparison is published under
 `/experiments/cd-iou-20261026/`; it has independent configs, manifest, and sample
 URLs so neither release replaces the other.
 
+The primary catalog also mixes in `scaled input-20261029`, `exp4-20261029`,
+and `exp5-20261029` on the 8 common validation and 20 new test sequences. The
+17 sequences already present retain their legacy baselines on the same page;
+the other 11 test sequences are added directly to the primary catalog.
+
 ## Development
 
 ```bash

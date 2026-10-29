@@ -79,7 +79,7 @@ document.querySelector("#app").innerHTML = `
     <a class="brand" href="${base}${catalogPath}"><span class="brand-mark">HL</span><span><strong>Experiments</strong><small>${cdIou ? "checkpoint comparison" : "reconstruction → retargeting"}</small></span></a>
     <div class="sidebar-label">Visible baselines</div>
     <nav class="baseline-controls">${baselineControls}</nav>
-    <p class="sidebar-hint">${cdIou ? "Toggle checkpoints to compare any combination." : "Select either baseline or show both together."}</p>
+    <p class="sidebar-hint">${example.baselines.length > 2 ? "Toggle baselines to compare any combination." : "Select either baseline or show both together."}</p>
     <a class="repo-link" href="https://github.com/ilyssa-syx/hl-exps-site">GitHub repository ↗</a>
   </aside>
   <main>
@@ -115,7 +115,7 @@ document.querySelector("#app").innerHTML = `
     <section class="sequence-metrics" aria-labelledby="sequence-metrics-title">
       <div class="sequence-metrics-head"><div><div class="eyebrow">Sequence evaluation</div><h2 id="sequence-metrics-title">${cdIou ? "Reconstruction metrics" : "Reconstruction & retargeting metrics"}</h2></div><p>${hasMixedMetrics ? "CD-H ↓ · WA-MPJPE / IoU / SPIDER" : cdIou ? "CD-H ↓ · amodal IoU ↑" : "WA-MPJPE / CD-H ↓ · SPIDER ↑"}</p></div>
       <div class="sequence-metric-grid">${reconstructionMetrics}</div>
-      <p class="metric-note">${hasMixedMetrics ? "CD-H is shown for all five baselines. Input/refined retain their WA-MPJPE and SPIDER results; the three added checkpoints show object and hand amodal IoU." : cdIou ? "CD-H is the coverage-penalized wrist-relative object Chamfer mean. Object and hand IoU use independently rendered amodal silhouettes; missing eligible predictions score zero." : "WA-MPJPE is the evaluated-frame wrist-aligned mean. CD-H is the coverage-penalized wrist-relative object Chamfer mean. SPIDER reports object-translation ADD-AUC10; failed rollouts remain marked as failed rather than scored as zero."}</p>
+      <p class="metric-note">${hasMixedMetrics ? "Legacy baselines retain their available WA-MPJPE, CD-H, and SPIDER results. Checkpoint and scaled-input baselines show object and hand amodal IoU from their recorded evaluator runs." : cdIou ? "CD-H is the coverage-penalized wrist-relative object Chamfer mean. Object and hand IoU use independently rendered amodal silhouettes; missing eligible predictions score zero." : "WA-MPJPE is the evaluated-frame wrist-aligned mean. CD-H is the coverage-penalized wrist-relative object Chamfer mean. SPIDER reports object-translation ADD-AUC10; failed rollouts remain marked as failed rather than scored as zero."}</p>
     </section>
   </main>`;
 

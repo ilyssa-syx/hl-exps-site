@@ -23,11 +23,14 @@ COLLECTIONS = (
         "expected_baselines": (
             ["input", "refined-20261023"],
             ["input", "refined-20261023", "first-e0001-i0002", "third-e0003-i0000", "fourth-e0002-i0001"],
+            ["scaled-input-20261029", "exp4-20261029", "exp5-20261029"],
+            ["input", "refined-20261023", "scaled-input-20261029", "exp4-20261029", "exp5-20261029"],
+            ["input", "refined-20261023", "first-e0001-i0002", "third-e0003-i0000", "fourth-e0002-i0001", "scaled-input-20261029", "exp4-20261029", "exp5-20261029"],
         ),
         "catalog": {
             "eyebrow": "DexYCB · 2026-10-23 evaluation",
             "title": "Experiment samples",
-            "description": "30 sequences · 20 validation + 10 test · input vs refined-20261023",
+            "description": "41 sequences · legacy and scaled-input baselines · per-sequence 2D/3D comparison",
             "metricSet": "spider", "sampleRoot": "samples",
             "relatedCatalogs": [{"label": "CD-H / IoU checkpoint comparison →", "url": "experiments/cd-iou-20261026/"}],
         },

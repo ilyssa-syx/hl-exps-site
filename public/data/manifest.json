@@ -3,7 +3,7 @@
   "catalog": {
     "eyebrow": "DexYCB \u00b7 2026-10-23 evaluation",
     "title": "Experiment samples",
-    "description": "30 sequences \u00b7 20 validation + 10 test \u00b7 input vs refined-20261023",
+    "description": "41 sequences \u00b7 legacy and scaled-input baselines \u00b7 per-sequence 2D/3D comparison",
     "metricSet": "spider",
     "sampleRoot": "samples",
     "relatedCatalogs": [
@@ -346,7 +346,7 @@
       "schemaVersion": 2,
       "id": "20200709-subject-01__20200709_143907__932122060857",
       "label": "20200709-subject-01 / 20200709_143907 / 932122060857",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "007_tuna_fish_can",
@@ -515,6 +515,81 @@
               "reconstruction": "experiments/20261026-cd-iou/20200709-subject-01__20200709_143907__932122060857/fourth-e0002-i0001/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8398838680651453,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.4151737498740355,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8398838680651453,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.5661363097528617,
+            "handAmodalEvaluatedFrames": 60,
+            "handAmodalEligibleFrames": 60
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8401575436194738,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.4819045662879944,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_143907__932122060857/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -522,7 +597,7 @@
       "schemaVersion": 2,
       "id": "20200709-subject-01__20200709_144735__932122060861",
       "label": "20200709-subject-01 / 20200709_144735 / 932122060861",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "009_gelatin_box",
@@ -680,6 +755,81 @@
               "reconstruction": "experiments/20261026-cd-iou/20200709-subject-01__20200709_144735__932122060861/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5598641588456101,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.10506244882795293,
+            "handAmodalEvaluatedFrames": 67,
+            "handAmodalEligibleFrames": 67
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5622083668907484,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.08365728012929018,
+            "handAmodalEvaluatedFrames": 67,
+            "handAmodalEligibleFrames": 67
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5729781294034587,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.08858623596797906,
+            "handAmodalEvaluatedFrames": 67,
+            "handAmodalEligibleFrames": 67
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_144735__932122060861/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -687,7 +837,7 @@
       "schemaVersion": 2,
       "id": "20200709-subject-01__20200709_150906__932122062010",
       "label": "20200709-subject-01 / 20200709_150906 / 932122062010",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "024_bowl",
@@ -856,6 +1006,81 @@
               "reconstruction": "experiments/20261026-cd-iou/20200709-subject-01__20200709_150906__932122062010/fourth-e0002-i0001/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8752858227974659,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5599978469752337,
+            "handAmodalEvaluatedFrames": 73,
+            "handAmodalEligibleFrames": 73
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8789892373858271,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6740020541091488,
+            "handAmodalEvaluatedFrames": 73,
+            "handAmodalEligibleFrames": 73
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.87499801210455,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5596869691555733,
+            "handAmodalEvaluatedFrames": 73,
+            "handAmodalEligibleFrames": 73
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_150906__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -863,7 +1088,7 @@
       "schemaVersion": 2,
       "id": "20200709-subject-01__20200709_152420__932122060861",
       "label": "20200709-subject-01 / 20200709_152420 / 932122060861",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "037_scissors",
@@ -1019,6 +1244,81 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261026-cd-iou/20200709-subject-01__20200709_152420__932122060861/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+            }
+          }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5568777874514863,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.041994379871096964,
+            "handAmodalEvaluatedFrames": 74,
+            "handAmodalEligibleFrames": 74
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5417769506976411,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.052640630775508845,
+            "handAmodalEvaluatedFrames": 74,
+            "handAmodalEligibleFrames": 74
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5571076926347371,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.04067837551387178,
+            "handAmodalEvaluatedFrames": 74,
+            "handAmodalEligibleFrames": 74
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200709-subject-01__20200709_152420__932122060861/exp5-20261029/reconstruction/reconstruction.json"
             }
           }
         }
@@ -1193,7 +1493,7 @@
       "schemaVersion": 2,
       "id": "20200813-subject-02__20200813_150823__932122061900",
       "label": "20200813-subject-02 / 20200813_150823 / 932122061900",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "006_mustard_bottle",
@@ -1362,6 +1662,81 @@
               "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_150823__932122061900/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7776896216803126,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.4987131282687187,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8076080108682314,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.49989538815700346,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7582633338040776,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.49865864093105,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_150823__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -1369,7 +1744,7 @@
       "schemaVersion": 2,
       "id": "20200813-subject-02__20200813_151925__932122062010",
       "label": "20200813-subject-02 / 20200813_151925 / 932122062010",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "008_pudding_box",
@@ -1527,6 +1902,81 @@
               "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_151925__932122062010/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5833224869436688,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.4030515342148849,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.682369931290547,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.451482695248463,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6626552235749033,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.39797674429104923,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_151925__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -1534,7 +1984,7 @@
       "schemaVersion": 2,
       "id": "20200813-subject-02__20200813_152513__839512060362",
       "label": "20200813-subject-02 / 20200813_152513 / 839512060362",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "010_potted_meat_can",
@@ -1701,6 +2151,81 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_152513__839512060362/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
+            }
+          }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5316461211060979,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5630021867058848,
+            "handAmodalEvaluatedFrames": 69,
+            "handAmodalEligibleFrames": 69
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5310597402764157,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5900939665194871,
+            "handAmodalEvaluatedFrames": 69,
+            "handAmodalEligibleFrames": 69
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5316461211060979,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.631996628868839,
+            "handAmodalEvaluatedFrames": 69,
+            "handAmodalEligibleFrames": 69
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_152513__839512060362/exp5-20261029/reconstruction/reconstruction.json"
             }
           }
         }
@@ -1951,7 +2476,7 @@
       "schemaVersion": 2,
       "id": "20200813-subject-02__20200813_153453__840412060917",
       "label": "20200813-subject-02 / 20200813_153453 / 840412060917",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "val",
       "objectName": "021_bleach_cleanser",
@@ -2118,6 +2643,81 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261026-cd-iou/20200813-subject-02__20200813_153453__840412060917/fourth-e0002-i0001/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8255489758319325,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.29428129674683157,
+            "handAmodalEvaluatedFrames": 70,
+            "handAmodalEligibleFrames": 70
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8238994462622536,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.47003782257227833,
+            "handAmodalEvaluatedFrames": 71,
+            "handAmodalEligibleFrames": 71
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8374230886499087,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.30857124546883813,
+            "handAmodalEvaluatedFrames": 70,
+            "handAmodalEligibleFrames": 70
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200813-subject-02__20200813_153453__840412060917/exp5-20261029/reconstruction/reconstruction.json"
             }
           }
         }
@@ -2783,7 +3383,7 @@
       "schemaVersion": 2,
       "id": "20200820-subject-03__20200820_135810__841412060263",
       "label": "20200820-subject-03 / 20200820_135810 / 841412060263",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "003_cracker_box",
@@ -2930,6 +3530,257 @@
               "reconstruction": "experiments/20261026-cd-iou/20200820-subject-03__20200820_135810__841412060263/fourth-e0002-i0001/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7942981977720518,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5301117435903162,
+            "handAmodalEvaluatedFrames": 74,
+            "handAmodalEligibleFrames": 74
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7958220734789565,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5722644009904282,
+            "handAmodalEvaluatedFrames": 74,
+            "handAmodalEligibleFrames": 74
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7942503892086648,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6147385071459655,
+            "handAmodalEvaluatedFrames": 74,
+            "handAmodalEligibleFrames": 74
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200820-subject-03__20200820_145113__932122062010",
+      "label": "20200820-subject-03 / 20200820_145113 / 932122062010",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "052_extra_large_clamp",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6476826112012606,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5114574437601525,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6547459335745992,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5136798079076567,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6476826112012606,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5311960831545947,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200903-subject-04__20200903_112428__836212060125",
+      "label": "20200903-subject-04 / 20200903_112428 / 836212060125",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "025_mug",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6273524095821712,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.35323717379779146,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7170458883047104,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.38817006114282104,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7018889234297805,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.3551384278556757,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -2937,7 +3788,7 @@
       "schemaVersion": 2,
       "id": "20200908-subject-05__20200908_152221__932122060861",
       "label": "20200908-subject-05 / 20200908_152221 / 932122060861",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "040_large_marker",
@@ -3084,6 +3935,345 @@
               "reconstruction": "experiments/20261026-cd-iou/20200908-subject-05__20200908_152221__932122060861/fourth-e0002-i0001/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7352604310254793,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.4422735519825466,
+            "handAmodalEvaluatedFrames": 63,
+            "handAmodalEligibleFrames": 63
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7366242368479032,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5029219880936637,
+            "handAmodalEvaluatedFrames": 63,
+            "handAmodalEligibleFrames": 63
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7372960399936985,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.49736188706897555,
+            "handAmodalEvaluatedFrames": 63,
+            "handAmodalEligibleFrames": 63
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200918-subject-06__20200918_114258__841412060263",
+      "label": "20200918-subject-06 / 20200918_114258 / 841412060263",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "007_tuna_fish_can",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.46530317152674133,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5174577361329408,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.46530317152674133,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5035659481408232,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.46530317152674133,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5174091916279255,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200918-subject-06__20200918_114717__932122061900",
+      "label": "20200918-subject-06 / 20200918_114717 / 932122061900",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "009_gelatin_box",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6412845858045526,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.22699810478738264,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7790491049354141,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.22929388972554812,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6476687966166316,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.22859580319766937,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200918-subject-06__20200918_114929__840412060917",
+      "label": "20200918-subject-06 / 20200918_114929 / 840412060917",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "010_potted_meat_can",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6923597471134083,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.3248604626978858,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6905559373868478,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5506176834894438,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6906625841920441,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.3247934168173095,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3091,7 +4281,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_120513__841412060263",
       "label": "20200918-subject-06 / 20200918_120513 / 841412060263",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "036_wood_block",
@@ -3249,6 +4439,169 @@
               "reconstruction": "experiments/20261026-cd-iou/20200918-subject-06__20200918_120513__841412060263/fourth-e0002-i0001/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.563016405782184,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6806796369916301,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.563016405782184,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.655444379580223,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5698643914751105,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6806554693286702,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200928-subject-07__20200928_143500__932122061900",
+      "label": "20200928-subject-07 / 20200928_143500 / 932122061900",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "002_master_chef_can",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7946634139563586,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.09798305876565312,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.849514243570534,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.0955823947800111,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7946634139563586,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.09710888141304613,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3256,7 +4609,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_143944__932122062010",
       "label": "20200928-subject-07 / 20200928_143944 / 932122062010",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "004_sugar_box",
@@ -3425,6 +4778,257 @@
               "reconstruction": "experiments/20261026-cd-iou/20200928-subject-07__20200928_143944__932122062010/fourth-e0002-i0001/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8373752767975265,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6083366759752823,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8432432823889965,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.622683034104816,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8371599473663278,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6121835021649377,
+            "handAmodalEvaluatedFrames": 59,
+            "handAmodalEligibleFrames": 59
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200928-subject-07__20200928_145204__932122060861",
+      "label": "20200928-subject-07 / 20200928_145204 / 932122060861",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "008_pudding_box",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6800440336401398,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.4017478318975704,
+            "handAmodalEvaluatedFrames": 66,
+            "handAmodalEligibleFrames": 66
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7652435077203287,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.41990733486326304,
+            "handAmodalEvaluatedFrames": 68,
+            "handAmodalEligibleFrames": 68
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7015517039878948,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.4256538770106785,
+            "handAmodalEvaluatedFrames": 66,
+            "handAmodalEligibleFrames": 66
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20200928-subject-07__20200928_153953__839512060362",
+      "label": "20200928-subject-07 / 20200928_153953 / 839512060362",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "019_pitcher_base",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8395653201474084,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.5691693151990572,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8387149895230929,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.6525586588929096,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.8392804993523492,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.6202970329258177,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3432,7 +5036,7 @@
       "schemaVersion": 2,
       "id": "20201002-subject-08__20201002_105534__932122061900",
       "label": "20201002-subject-08 / 20201002_105534 / 932122061900",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "005_tomato_soup_can",
@@ -3601,6 +5205,257 @@
               "reconstruction": "experiments/20261026-cd-iou/20201002-subject-08__20201002_105534__932122061900/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7179258167743683,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.3412322183000067,
+            "handAmodalEvaluatedFrames": 61,
+            "handAmodalEligibleFrames": 61
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7828466207594484,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.32750762994429783,
+            "handAmodalEvaluatedFrames": 61,
+            "handAmodalEligibleFrames": 61
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7762745856433302,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.31487586599875805,
+            "handAmodalEvaluatedFrames": 61,
+            "handAmodalEligibleFrames": 61
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201002-subject-08__20201002_113227__932122060857",
+      "label": "20201002-subject-08 / 20201002_113227 / 932122060857",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "061_foam_brick",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.2692937009371628,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.34723143956877967,
+            "handAmodalEvaluatedFrames": 34,
+            "handAmodalEligibleFrames": 34
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.27056115142123244,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.3517311228100549,
+            "handAmodalEvaluatedFrames": 38,
+            "handAmodalEligibleFrames": 38
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.2692937009371628,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.3471831220456145,
+            "handAmodalEvaluatedFrames": 34,
+            "handAmodalEligibleFrames": 34
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201015-subject-09__20201015_143825__840412060917",
+      "label": "20201015-subject-09 / 20201015_143825 / 840412060917",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "006_mustard_bottle",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7685654734571775,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.4988314054078526,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7843578002519078,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.5404947402162684,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7685654734571775,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.4642096708218257,
+            "handAmodalEvaluatedFrames": 72,
+            "handAmodalEligibleFrames": 72
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3608,7 +5463,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_112834__839512060362",
       "label": "20201022-subject-10 / 20201022_112834 / 839512060362",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "011_banana",
@@ -3766,6 +5621,169 @@
               "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_112834__839512060362/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.4777259687220471,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.7230111413142261,
+            "handAmodalEvaluatedFrames": 51,
+            "handAmodalEligibleFrames": 51
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.4885011130374753,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.7631790515254525,
+            "handAmodalEvaluatedFrames": 51,
+            "handAmodalEligibleFrames": 51
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5308707345684525,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.7716709013078727,
+            "handAmodalEvaluatedFrames": 51,
+            "handAmodalEligibleFrames": 51
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "20201022-subject-10__20201022_113235__932122060857",
+      "label": "20201022-subject-10 / 20201022_113235 / 932122060857",
+      "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+      "dataset": "DexYCB",
+      "split": "test",
+      "objectName": "021_bleach_cleanser",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7591656624443002,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.25265362182337986,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7595081250700686,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.23066800491391118,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7591656624443002,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.2615678080096187,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3773,7 +5791,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113502__836212060125",
       "label": "20201022-subject-10 / 20201022_113502 / 836212060125",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "024_bowl",
@@ -3942,6 +5960,81 @@
               "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113502__836212060125/fourth-e0002-i0001/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6146491895520335,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.47729826234934625,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.6484307294077654,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.5359142150795251,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.7086662832233641,
+            "objectAmodalEvaluatedFrames": 72,
+            "objectAmodalEligibleFrames": 72,
+            "handAmodalScoredMeanIou": 0.4753008892661647,
+            "handAmodalEvaluatedFrames": 57,
+            "handAmodalEligibleFrames": 57
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3949,7 +6042,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113909__840412060917",
       "label": "20201022-subject-10 / 20201022_113909 / 840412060917",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "035_power_drill",
@@ -4107,6 +6200,81 @@
               "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_113909__840412060917/fourth-e0002-i0001/reconstruction/reconstruction.json?v=20261023-mano-left-v2"
             }
           }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5804749125161687,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.34917295206752086,
+            "handAmodalEvaluatedFrames": 53,
+            "handAmodalEligibleFrames": 53
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5801409033907426,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.38990548970522704,
+            "handAmodalEvaluatedFrames": 54,
+            "handAmodalEligibleFrames": 54
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5804749125161687,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.36519592013899926,
+            "handAmodalEvaluatedFrames": 53,
+            "handAmodalEligibleFrames": 53
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp5-20261029/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -4114,7 +6282,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_114306__932122062010",
       "label": "20201022-subject-10 / 20201022_114306 / 932122062010",
-      "description": "DexYCB sequence comparing input, refined-20261023, and three CD-H/IoU checkpoints.",
+      "description": "DexYCB sequence with legacy and 2026-10-29 scaled-input baselines for side-by-side comparison.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "037_scissors",
@@ -4270,6 +6438,81 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261026-cd-iou/20201022-subject-10__20201022_114306__932122062010/fourth-e0002-i0001/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "scaled-input-20261029",
+          "label": "scaled input-20261029",
+          "color": "#fb923c",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.4976717660555968,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.5969999064098704,
+            "handAmodalEvaluatedFrames": 55,
+            "handAmodalEligibleFrames": 55
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp4-20261029",
+          "label": "exp4-20261029",
+          "color": "#22d3ee",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5180432730027147,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6881535410881042,
+            "handAmodalEvaluatedFrames": 55,
+            "handAmodalEligibleFrames": 55
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp5-20261029",
+          "label": "exp5-20261029",
+          "color": "#ef4444",
+          "metrics": {
+            "objectAmodalScoredMeanIou": 0.5281968793353519,
+            "objectAmodalEvaluatedFrames": 74,
+            "objectAmodalEligibleFrames": 74,
+            "handAmodalScoredMeanIou": 0.6470329994505102,
+            "handAmodalEvaluatedFrames": 55,
+            "handAmodalEligibleFrames": 55
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp5-20261029/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp5-20261029/reconstruction/reconstruction.json"
             }
           }
         }

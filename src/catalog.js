@@ -13,12 +13,19 @@ const formatSpiderMetric = (metrics) => metrics?.spiderStatus === "evaluated" &&
   ? Number(metrics.spiderAddAuc10).toFixed(3)
   : `<span class="metric-failed">${metrics?.spiderStatus || "—"}</span>`;
 const cdIou = catalog.metricSet === "cd-iou";
+const mixedMetrics = !cdIou && manifest.examples.some((sample) =>
+  sample.baselines.some((baseline) => baseline.metrics?.objectAmodalScoredMeanIou != null)
+);
 
 const metricRow = (baseline, baselineIndex) => {
   const metrics = baseline.metrics || {};
   const values = cdIou
     ? `<span>${formatMetric(metrics.cdHScoredMeanCm, " cm")}</span>
        <span>${formatMetric(metrics.objectAmodalScoredMeanIou)}</span>
+       <span>${formatMetric(metrics.handAmodalScoredMeanIou)}</span>`
+    : metrics.objectAmodalScoredMeanIou != null
+    ? `<span>${formatMetric(metrics.objectAmodalScoredMeanIou)}</span>
+       <span>${formatMetric(metrics.cdHScoredMeanCm, " cm")}</span>
        <span>${formatMetric(metrics.handAmodalScoredMeanIou)}</span>`
     : `<span>${formatMetric(metrics.waMpjpeMeanMm, " mm")}</span>
        <span>${formatMetric(metrics.cdHScoredMeanCm, " cm")}</span>
@@ -33,6 +40,8 @@ const card = (sample, index) => {
   const metrics = sample.baselines.map(metricRow).join("");
   const headings = cdIou
     ? "<span></span><span>CD-H ↓</span><span>OBJ IoU ↑</span><span>HAND IoU ↑</span>"
+    : mixedMetrics
+    ? "<span></span><span>WA ↓ / OBJ ↑</span><span>CD-H ↓</span><span>SPIDER / HAND ↑</span>"
     : "<span></span><span>WA-MPJPE ↓</span><span>CD-H ↓</span><span>SPIDER ↑</span>";
   return `<a class="sample-card" href="${base}${catalog.sampleRoot || "samples"}/${encodeURIComponent(sample.id)}/">
     <div class="card-number">${String(index + 1).padStart(2, "0")}</div>
