@@ -225,7 +225,7 @@ play.addEventListener("click", () => {
 inputRgb.addEventListener("ended", () => { setFrame(example.frameCount - 1, false, true); stopPlayback(); });
 inputRgb.addEventListener("loadedmetadata", () => setFrame(currentFrame, true, true), { once: true });
 document.addEventListener("visibilitychange", () => { if (document.hidden) stopPlayback(); });
-window.addEventListener("pagehide", () => { stopPlayback(); sceneViewer?.dispose(); });
+window.addEventListener("pagehide", () => { stopPlayback(); preview2d.dispose(); sceneViewer?.dispose(); });
 updateBaselineControls();
 updateSpider();
 setFrame(0, false, true);
