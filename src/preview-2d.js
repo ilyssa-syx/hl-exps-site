@@ -31,7 +31,9 @@ export class Preview2D {
 
   draw() {
     const rect = this.canvas.getBoundingClientRect();
-    const dpr = Math.min(devicePixelRatio, 1.5);
+    const visibleLayerCount = Math.max(1, [...this.visible].filter((id) => this.layers.get(id)?.data).length);
+    const dprLimit = visibleLayerCount >= 4 ? 1 : visibleLayerCount >= 2 ? 1.25 : 1.5;
+    const dpr = Math.min(devicePixelRatio, dprLimit);
     const width = Math.max(1, Math.round(rect.width * dpr));
     const height = Math.max(1, Math.round(rect.height * dpr));
     if (this.canvas.width !== width || this.canvas.height !== height) { this.canvas.width = width; this.canvas.height = height; }
@@ -58,30 +60,35 @@ export class Preview2D {
   drawHand(layer, frame, intrinsics, viewport) {
     const { metadata, handVertices, handFaces } = layer.data;
     const offset = frame * metadata.hand.vertexCount * 3;
-    this.drawMesh(layer.id, metadata, metadata.hand.vertexCount, handFaces, (index) => handVertices.subarray(offset + index * 3, offset + index * 3 + 3), intrinsics, viewport, layer.color, "hand");
+    this.drawMesh(layer.id, metadata, metadata.hand.vertexCount, handFaces, handVertices, offset, null, intrinsics, viewport, layer.color, "hand");
   }
 
   drawObject(layer, frame, intrinsics, viewport) {
     const { metadata, objectVertices, objectFaces, objectPoses } = layer.data;
     const matrix = objectPoses.subarray(frame * 16, frame * 16 + 16);
-    this.drawMesh(layer.id, metadata, metadata.object.vertexCount, objectFaces, (index) => {
-      const offset = index * 3;
-      const x = objectVertices[offset], y = objectVertices[offset + 1], z = objectVertices[offset + 2];
-      return [matrix[0] * x + matrix[1] * y + matrix[2] * z + matrix[3], matrix[4] * x + matrix[5] * y + matrix[6] * z + matrix[7], matrix[8] * x + matrix[9] * y + matrix[10] * z + matrix[11]];
-    }, intrinsics, viewport, layer.color, "object");
+    this.drawMesh(layer.id, metadata, metadata.object.vertexCount, objectFaces, objectVertices, 0, matrix, intrinsics, viewport, layer.color, "object");
   }
 
-  drawMesh(layerId, metadata, vertexCount, faces, vertexAt, intrinsics, viewport, color, kind) {
+  drawMesh(layerId, metadata, vertexCount, faces, vertices, vertexOffset, matrix, intrinsics, viewport, color, kind) {
     const [fx, cx, fy, cy] = [intrinsics[0][0], intrinsics[0][2], intrinsics[1][1], intrinsics[1][2]];
     const key = `${layerId}:${kind}`;
     let points = this.projectionBuffers.get(key);
     if (!points || points.length !== vertexCount * 2) { points = new Float32Array(vertexCount * 2); this.projectionBuffers.set(key, points); }
     for (let index = 0; index < vertexCount; index += 1) {
-      const [x, y, z] = vertexAt(index);
+      const offset = vertexOffset + index * 3;
+      const sourceX = vertices[offset], sourceY = vertices[offset + 1], sourceZ = vertices[offset + 2];
+      const x = matrix ? matrix[0] * sourceX + matrix[1] * sourceY + matrix[2] * sourceZ + matrix[3] : sourceX;
+      const y = matrix ? matrix[4] * sourceX + matrix[5] * sourceY + matrix[6] * sourceZ + matrix[7] : sourceY;
+      const z = matrix ? matrix[8] * sourceX + matrix[9] * sourceY + matrix[10] * sourceZ + matrix[11] : sourceZ;
       points[index * 2] = viewport.left + ((fx * x / z + cx) / metadata.imageWidth) * viewport.width;
       points[index * 2 + 1] = viewport.top + ((fy * y / z + cy) / metadata.imageHeight) * viewport.height;
     }
-    const faceStep = kind === "object" ? Math.max(1, Math.ceil((faces.length / 3) / 4500)) : 1;
+    const visibleLayerCount = Math.max(1, this.visible.size);
+    const layerBudget = Math.max(900, Math.floor(7000 / visibleLayerCount));
+    const faceBudget = kind === "hand"
+      ? Math.max(320, Math.floor(layerBudget * 0.3))
+      : Math.min(4500, Math.max(580, Math.floor(layerBudget * 0.7)));
+    const faceStep = Math.max(1, Math.ceil((faces.length / 3) / faceBudget));
     const ctx = this.ctx;
     ctx.beginPath();
     for (let index = 0; index < faces.length; index += 3 * faceStep) {

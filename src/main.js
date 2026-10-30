@@ -95,7 +95,7 @@ document.querySelector("#app").innerHTML = `
         ${spiderCards ? `<button class="tab" data-tab="spider" role="tab">SPIDER</button>` : ""}
       </div>
       <div class="panel active" data-panel="overlay">
-        <div class="stage single overlay-stage"><video id="input-rgb" src="${rgbUrl}" preload="metadata" muted playsinline></video><canvas id="overlay-canvas"></canvas><span class="stage-tag">INPUT RGB + SELECTED BASELINES</span></div>
+        <div class="stage single overlay-stage"><video id="input-rgb" src="${rgbUrl}" preload="auto" muted playsinline></video><canvas id="overlay-canvas"></canvas><span class="stage-tag">INPUT RGB + SELECTED BASELINES</span></div>
         <div class="layer-row baseline-legend">${layerChips}</div>
       </div>
       <div class="panel" data-panel="scene" hidden>
@@ -209,9 +209,9 @@ function cancelFrameUpdates() {
 function scheduleFrameUpdate() {
   if (!playing || document.hidden) return;
   if (inputRgb.requestVideoFrameCallback) {
-    videoCallback = inputRgb.requestVideoFrameCallback((_now, metadata) => { videoCallback = null; setFrame(Math.floor(metadata.mediaTime * example.fps), false); scheduleFrameUpdate(); });
+    videoCallback = inputRgb.requestVideoFrameCallback((_now, metadata) => { videoCallback = null; setFrame(Math.round(metadata.mediaTime * example.fps), false); scheduleFrameUpdate(); });
   } else {
-    animationFrame = requestAnimationFrame(() => { animationFrame = null; setFrame(Math.floor(inputRgb.currentTime * example.fps), false); scheduleFrameUpdate(); });
+    animationFrame = requestAnimationFrame(() => { animationFrame = null; setFrame(Math.round(inputRgb.currentTime * example.fps), false); scheduleFrameUpdate(); });
   }
 }
 function stopPlayback() { playing = false; inputRgb.pause(); play.textContent = "▶"; cancelFrameUpdates(); }
@@ -222,7 +222,7 @@ play.addEventListener("click", () => {
   playing = true; play.textContent = "❚❚";
   inputRgb.play().then(scheduleFrameUpdate).catch(stopPlayback);
 });
-inputRgb.addEventListener("ended", stopPlayback);
+inputRgb.addEventListener("ended", () => { setFrame(example.frameCount - 1, false, true); stopPlayback(); });
 inputRgb.addEventListener("loadedmetadata", () => setFrame(currentFrame, true, true), { once: true });
 document.addEventListener("visibilitychange", () => { if (document.hidden) stopPlayback(); });
 window.addEventListener("pagehide", () => { stopPlayback(); sceneViewer?.dispose(); });
