@@ -8,6 +8,7 @@ differentiable-first-run checkpoint. Each sample has one shareable page containi
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
+- per-sequence evaluation-v12 metric tables for every baseline;
 - independently toggleable `input`, `cd-iou-fourth-run-20261029`, and
   `successful-differentiable-first-run-20261102` overlays in 2D and 3D;
 - one shared sequence timeline.

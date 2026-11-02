@@ -13,6 +13,46 @@
       "id": "input",
       "label": "input",
       "color": "#fb923c",
+      "metrics": {
+        "addAligned": {
+          "count": 72,
+          "mean": 2.582127501567205,
+          "median": 1.1809337139129639
+        },
+        "objectAmodalIou": {
+          "count": 72,
+          "mean": 0.8395653201474084,
+          "median": 0.9067355394363403,
+          "scoredMean": 0.8395653201474084
+        },
+        "handAmodalIou": {
+          "count": 72,
+          "mean": 0.6759433336555958,
+          "median": 0.6677038669586182,
+          "scoredMean": 0.6759433336555958
+        },
+        "cdH": {
+          "count": 72,
+          "mean": 12.45362412929535,
+          "median": 11.990287780761719,
+          "scoredMean": 12.45362412929535
+        },
+        "objRel": {
+          "count": 71,
+          "mean": 4.535131184148117,
+          "median": 2.6880080699920654
+        },
+        "wristTranslation": {
+          "count": 72,
+          "mean": 30.84961371951633,
+          "median": 28.423909187316895
+        },
+        "wristRotation": {
+          "count": 72,
+          "mean": 10.203702006075117,
+          "median": 8.937009334564209
+        }
+      },
       "views": {
         "overlay2d": {
           "rgb": {
@@ -30,6 +70,46 @@
       "id": "cd-iou-fourth-run-20261029",
       "label": "cd-iou-fourth-run-20261029",
       "color": "#22d3ee",
+      "metrics": {
+        "addAligned": {
+          "count": 72,
+          "mean": 2.6316282153129578,
+          "median": 1.2555352449417114
+        },
+        "objectAmodalIou": {
+          "count": 72,
+          "mean": 0.8387149895230929,
+          "median": 0.8970675468444824,
+          "scoredMean": 0.8387149895230929
+        },
+        "handAmodalIou": {
+          "count": 72,
+          "mean": 0.6978316472636329,
+          "median": 0.7147275805473328,
+          "scoredMean": 0.6978316472636329
+        },
+        "cdH": {
+          "count": 72,
+          "mean": 12.421091000239054,
+          "median": 12.455712795257568,
+          "scoredMean": 12.421091000239054
+        },
+        "objRel": {
+          "count": 71,
+          "mean": 4.631946270839429,
+          "median": 3.105482578277588
+        },
+        "wristTranslation": {
+          "count": 72,
+          "mean": 30.56316727399826,
+          "median": 28.939295768737793
+        },
+        "wristRotation": {
+          "count": 72,
+          "mean": 10.203702006075117,
+          "median": 8.937009334564209
+        }
+      },
       "views": {
         "overlay2d": {
           "rgb": {
@@ -47,6 +127,46 @@
       "id": "successful-differentiable-first-run-20261102",
       "label": "successful-differentiable-first-run-20261102",
       "color": "#a78bfa",
+      "metrics": {
+        "addAligned": {
+          "count": 72,
+          "mean": 0.8884969709648026,
+          "median": 0.707354336977005
+        },
+        "objectAmodalIou": {
+          "count": 72,
+          "mean": 0.921692276166545,
+          "median": 0.9382777810096741,
+          "scoredMean": 0.921692276166545
+        },
+        "handAmodalIou": {
+          "count": 72,
+          "mean": 0.7260392444829146,
+          "median": 0.7503294944763184,
+          "scoredMean": 0.7260392444829146
+        },
+        "cdH": {
+          "count": 72,
+          "mean": 15.989694714546204,
+          "median": 14.156920433044434,
+          "scoredMean": 15.989694714546204
+        },
+        "objRel": {
+          "count": 71,
+          "mean": 1.187097856696223,
+          "median": 0.8085982203483582
+        },
+        "wristTranslation": {
+          "count": 72,
+          "mean": 24.412165328860283,
+          "median": 26.023683547973633
+        },
+        "wristRotation": {
+          "count": 72,
+          "mean": 9.942498847842216,
+          "median": 8.203048706054688
+        }
+      },
       "views": {
         "overlay2d": {
           "rgb": {

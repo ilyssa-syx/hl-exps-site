@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 import shutil
@@ -17,6 +18,18 @@ DIFF_FIRST_RESULTS = (
     HOI_ROOT
     / "eval_runs/successful-differentiable-first-run-0002-0001-dexycb-test/test"
 )
+INPUT_METRICS = (
+    HOI_ROOT
+    / "eval_runs/dexycb-hl-v3-100-20-20-cleaned-test-input-eval-v12/per_sequence.csv"
+)
+FOURTH_METRICS = (
+    HOI_ROOT
+    / "eval_runs/cd-iou-fourth-run-0005-0004-dexycb-test-eval-v12/per_sequence.csv"
+)
+DIFF_FIRST_METRICS = (
+    HOI_ROOT
+    / "eval_runs/successful-differentiable-first-run-0002-0001-dexycb-test-eval-v12/per_sequence.csv"
+)
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 RELEASE = "20261029-amodal-iou"
@@ -29,6 +42,7 @@ BASELINES = (
         "result_id": "scaled",
         "asset_id": "scaled-input-20261029",
         "color": "#fb923c",
+        "metrics": INPUT_METRICS,
     },
     {
         "id": "cd-iou-fourth-run-20261029",
@@ -36,6 +50,7 @@ BASELINES = (
         "result_id": "old",
         "asset_id": "exp4-20261029",
         "color": "#22d3ee",
+        "metrics": FOURTH_METRICS,
     },
     {
         "id": "successful-differentiable-first-run-20261102",
@@ -43,8 +58,52 @@ BASELINES = (
         "result_id": "diff-first",
         "asset_id": "exp7-20261102",
         "color": "#a78bfa",
+        "metrics": DIFF_FIRST_METRICS,
     },
 )
+
+
+def _stat(
+    row: dict[str, str],
+    prefix: str,
+    unit: str,
+    *,
+    scored: bool = False,
+) -> dict[str, int | float]:
+    result: dict[str, int | float] = {
+        "count": int(row[f"{prefix}_count"]),
+        "mean": float(row[f"{prefix}_mean_{unit}"]),
+        "median": float(row[f"{prefix}_median_{unit}"]),
+    }
+    if scored:
+        result["scoredMean"] = float(row[f"{prefix}_scored_mean_{unit}"])
+    return result
+
+
+def load_metrics(path: Path) -> dict[str, dict]:
+    with path.open(newline="", encoding="utf-8") as stream:
+        rows = list(csv.DictReader(stream))
+    result = {}
+    for row in rows:
+        sequence_id = row["sequence_id"]
+        result[sequence_id] = {
+            "addAligned": _stat(row, "add_aligned", "cm"),
+            "objectAmodalIou": _stat(row, "object_amodal", "iou", scored=True),
+            "handAmodalIou": _stat(row, "hand_amodal", "iou", scored=True),
+            "cdH": _stat(row, "cd_h", "cm", scored=True),
+            "objRel": _stat(row, "obj_rel", "cm"),
+            "wristTranslation": {
+                "count": int(row["wrist_pose_translation_count"]),
+                "mean": float(row["wrist_pose_translation_mean_mm"]),
+                "median": float(row["wrist_pose_translation_median_mm"]),
+            },
+            "wristRotation": {
+                "count": int(row["wrist_pose_rotation_count"]),
+                "mean": float(row["wrist_pose_rotation_mean_deg"]),
+                "median": float(row["wrist_pose_rotation_median_deg"]),
+            },
+        }
+    return result
 
 
 def result_dir(result_id: str, sample_id: str) -> Path:
@@ -90,6 +149,15 @@ def main() -> None:
         raise ValueError(
             "differentiable-first-run result sequence set differs from dataset test split"
         )
+    metrics_by_baseline = {
+        item["id"]: load_metrics(item["metrics"])
+        for item in BASELINES
+    }
+    for baseline_id, rows in metrics_by_baseline.items():
+        if sorted(rows) != dataset_ids:
+            raise ValueError(
+                f"{baseline_id} metric sequence set differs from dataset test split"
+            )
 
     for sample_id in dataset_ids:
         source_root = DATA / SPLIT / sample_id
@@ -115,6 +183,7 @@ def main() -> None:
                 "id": item["id"],
                 "label": item["label"],
                 "color": item["color"],
+                "metrics": metrics_by_baseline[item["id"]][sample_id],
                 "views": {
                     "overlay2d": {
                         "rgb": {

@@ -51,6 +51,30 @@ const spiderCards = example.baselines.filter((item) => item.views.spider).map((i
   </article>`;
 }).join("");
 
+const metricColumns = [
+  { label: "ADD-S", unit: "cm", direction: "min", value: (m) => m.addAligned.mean },
+  { label: "Object amodal IoU", unit: "", direction: "max", value: (m) => m.objectAmodalIou.mean, digits: 4 },
+  { label: "Hand amodal IoU", unit: "", direction: "max", value: (m) => m.handAmodalIou.mean, digits: 4 },
+  { label: "Hand scored IoU", unit: "", direction: "max", value: (m) => m.handAmodalIou.scoredMean, digits: 4 },
+  { label: "CD-H", unit: "cm", direction: "min", value: (m) => m.cdH.mean },
+  { label: "CD-H scored", unit: "cm", direction: "min", value: (m) => m.cdH.scoredMean },
+  { label: "Obj-rel", unit: "cm", direction: "min", value: (m) => m.objRel.mean },
+  { label: "Wrist trans.", unit: "mm", direction: "min", value: (m) => m.wristTranslation.mean },
+  { label: "Wrist rot.", unit: "deg", direction: "min", value: (m) => m.wristRotation.mean },
+];
+const metricBest = metricColumns.map((metric) => {
+  const values = example.baselines.map((item) => metric.value(item.metrics));
+  return metric.direction === "max" ? Math.max(...values) : Math.min(...values);
+});
+const metricTable = `<div class="metric-scroll"><table class="metric-table">
+  <thead><tr><th>Baseline</th>${metricColumns.map((metric) => `<th>${metric.label}<small>${metric.direction === "max" ? "↑" : "↓"}${metric.unit ? ` · ${metric.unit}` : ""}</small></th>`).join("")}</tr></thead>
+  <tbody>${example.baselines.map((item) => `<tr data-baseline="${item.id}" style="--baseline:${colors[item.id]}">
+    <th><i></i>${item.label}</th>${metricColumns.map((metric, index) => {
+      const value = metric.value(item.metrics);
+      return `<td class="${value === metricBest[index] ? "best" : ""}">${value.toFixed(metric.digits ?? 3)}</td>`;
+    }).join("")}</tr>`).join("")}</tbody>
+</table></div><p class="metric-note">Per-sequence means from evaluation v12. Missing eligible hand predictions score 0 in scored metrics; raw means include evaluated frames only.</p>`;
+
 document.querySelector("#app").innerHTML = `
   <aside class="sidebar">
     <a class="brand" href="${base}${catalogPath}"><span class="brand-mark">HL</span><span><strong>Experiments</strong><small>test comparison</small></span></a>
@@ -69,6 +93,7 @@ document.querySelector("#app").innerHTML = `
       <div class="tabs" role="tablist" aria-label="Visualization type">
         <button class="tab active" data-tab="overlay" role="tab">2D overlay</button>
         <button class="tab" data-tab="scene" role="tab">3D reconstruction</button>
+        <button class="tab" data-tab="metrics" role="tab">Metrics</button>
         ${spiderCards ? `<button class="tab" data-tab="spider" role="tab">SPIDER</button>` : ""}
       </div>
       <div class="panel active" data-panel="overlay">
@@ -86,6 +111,7 @@ document.querySelector("#app").innerHTML = `
         </div>
         <div class="layer-row baseline-legend">${layerChips}</div>
       </div>
+      <div class="panel metrics-panel" data-panel="metrics" hidden>${metricTable}</div>
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
     </section>
@@ -130,6 +156,7 @@ function updateSpider() {
 function updateBaselineControls() {
   document.querySelectorAll("[data-baseline]").forEach((control) => {
     if (control.matches("button")) control.setAttribute("aria-pressed", String(selected.has(control.dataset.baseline)));
+    if (control.matches("tr")) control.hidden = !selected.has(control.dataset.baseline);
   });
 }
 
@@ -150,7 +177,7 @@ tabs.forEach((tab) => tab.addEventListener("click", () => {
   activeTab = tab.dataset.tab;
   tabs.forEach((item) => item.classList.toggle("active", item === tab));
   panels.forEach((panel) => { const active = panel.dataset.panel === activeTab; panel.hidden = !active; panel.classList.toggle("active", active); });
-  document.querySelector(".transport").hidden = activeTab === "spider";
+  document.querySelector(".transport").hidden = activeTab === "spider" || activeTab === "metrics";
   if (activeTab === "scene") void ensureSceneViewer();
   if (activeTab === "spider") { stopPlayback(); updateSpider(); }
   else setFrame(currentFrame, false, true);

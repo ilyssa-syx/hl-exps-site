@@ -113,6 +113,21 @@ h1 { margin: 8px 0 7px; font-size: clamp(28px, 4vw, 45px); line-height: 1; lette
 .transport span { color: #8996a9; font: 500 10px "DM Mono"; }
 input[type="range"] { width: 100%; accent-color: var(--mint); }
 
+.metrics-panel { padding: 18px; }
+.metric-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+.metric-table { width: 100%; min-width: 1180px; border-collapse: collapse; color: #dbe3ee; background: #0b111a; font: 500 11px "DM Mono"; }
+.metric-table th, .metric-table td { padding: 14px 13px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+.metric-table tr:last-child th, .metric-table tr:last-child td { border-bottom: 0; }
+.metric-table th:last-child, .metric-table td:last-child { border-right: 0; }
+.metric-table thead th { color: #8f9db1; background: #121b28; font-size: 9px; text-transform: uppercase; letter-spacing: .045em; vertical-align: bottom; }
+.metric-table thead th:first-child, .metric-table tbody th { position: sticky; left: 0; z-index: 1; text-align: left; }
+.metric-table thead th:first-child { z-index: 2; }
+.metric-table thead small { display: block; margin-top: 5px; color: #617087; font-size: 8px; }
+.metric-table tbody th { min-width: 260px; color: #edf2f8; background: #0d1520; }
+.metric-table tbody th i { display: inline-block; width: 8px; height: 8px; margin-right: 9px; border-radius: 50%; background: var(--baseline); box-shadow: 0 0 10px color-mix(in srgb, var(--baseline) 70%, transparent); }
+.metric-table td.best { color: var(--mint); background: rgba(98,224,197,.065); font-weight: 700; }
+.metric-note { margin: 13px 3px 1px; color: #68768b; font: 400 9px/1.6 "DM Mono"; }
+
 @media (max-width: 900px) {
   #app { grid-template-columns: 1fr; }
   .sidebar { position: static; width: 100%; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 18px; }
@@ -129,6 +144,7 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
   .spider-head { align-items: flex-start; flex-direction: column; }
   .spider-media { grid-template-columns: 1fr; }
   .scene-controls span { display: none; }
+  .metrics-panel { padding: 10px; }
 }
 
 .catalog { grid-column: 1 / -1; width: min(1380px, calc(100% - 64px)); margin: 0 auto; padding: 70px 0; }

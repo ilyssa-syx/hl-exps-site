@@ -13,6 +13,15 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_DATA = ROOT / "public/data"
 REQUIRED = {"schemaVersion", "id", "label", "fps", "frameCount", "baselines", "split"}
 SAFE_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+METRIC_KEYS = {
+    "addAligned",
+    "objectAmodalIou",
+    "handAmodalIou",
+    "cdH",
+    "objRel",
+    "wristTranslation",
+    "wristRotation",
+}
 COLLECTIONS = (
     {
         "config_dir": ROOT / "configs/examples",
@@ -92,6 +101,12 @@ def export_collection(collection: dict) -> int:
         baseline_ids = [item.get("id") for item in payload["baselines"]]
         if baseline_ids not in collection["expected_baselines"]:
             raise ValueError(f"{path}: unexpected baselines {baseline_ids}")
+        for baseline in payload["baselines"]:
+            metrics = baseline.get("metrics")
+            if not isinstance(metrics, dict) or set(metrics) != METRIC_KEYS:
+                raise ValueError(
+                    f"{path}: {baseline.get('id')} has invalid per-sequence metrics"
+                )
         seen.add(payload["id"])
         examples.append(payload)
         page = collection["samples_dir"] / payload["id"] / "index.html"
