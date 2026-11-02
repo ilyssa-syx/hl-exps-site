@@ -8,6 +8,8 @@
   "objectName": "006_mustard_bottle",
   "fps": 30,
   "frameCount": 898,
+  "metricLabel": "Evaluation v1",
+  "metricNote": "Per-sequence means from HO3D evaluation v1. Missing eligible hand predictions score 0 in scored metrics; raw means include evaluated frames only.",
   "baselines": [
     {
       "id": "input",

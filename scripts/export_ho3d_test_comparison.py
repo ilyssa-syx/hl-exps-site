@@ -147,6 +147,11 @@ def main() -> None:
             "objectName": groundtruth["object"]["name"],
             "fps": 30,
             "frameCount": int(groundtruth["frame_count"]),
+            "metricLabel": "Evaluation v1",
+            "metricNote": (
+                "Per-sequence means from HO3D evaluation v1. Missing eligible hand "
+                "predictions score 0 in scored metrics; raw means include evaluated frames only."
+            ),
             "baselines": baselines,
         }
         (config_root / f"{sample_id}.json").write_text(

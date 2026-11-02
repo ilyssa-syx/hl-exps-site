@@ -19,8 +19,13 @@ const card = (sample, index) => {
   </a>`;
 };
 
-const testExamples = manifest.examples.filter((sample) => sample.split === "test");
-const sections = `<section class="catalog-section"><div class="section-title"><h2>${catalog.sectionTitle || "test"}</h2><span>${testExamples.length} samples</span></div><div class="sample-grid">${testExamples.map(card).join("")}</div></section>`;
+const sectionConfigs = catalog.sections || [{ title: catalog.sectionTitle || "test" }];
+const sections = sectionConfigs.map((section) => {
+  const examples = manifest.examples.filter((sample) =>
+    sample.split === "test" && (!section.dataset || sample.dataset === section.dataset)
+  );
+  return `<section class="catalog-section"><div class="section-title"><h2>${section.title}</h2><span>${examples.length} samples</span></div><div class="sample-grid">${examples.map(card).join("")}</div></section>`;
+}).join("");
 const related = (catalog.relatedCatalogs || []).map((item) =>
   `<a class="catalog-link" href="${base}${item.url}">${item.label}</a>`
 ).join("");
