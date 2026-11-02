@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200903-subject-04__20200903_112428__836212060125",
   "label": "20200903-subject-04 / 20200903_112428 / 836212060125",
-  "description": "DexYCB sequence comparing the scaled input baseline with exp4 and exp5.",
+  "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "025_mug",
@@ -10,8 +10,8 @@
   "frameCount": 72,
   "baselines": [
     {
-      "id": "scaled-input-20261029",
-      "label": "scaled input-20261029",
+      "id": "input",
+      "label": "input",
       "color": "#fb923c",
       "metrics": {
         "objectAmodalScoredMeanIou": 0.6273524095821712,
@@ -35,8 +35,8 @@
       }
     },
     {
-      "id": "exp4-20261029",
-      "label": "exp4-20261029",
+      "id": "cd-iou-fourth-run-20261029",
+      "label": "cd-iou-fourth-run-20261029",
       "color": "#22d3ee",
       "metrics": {
         "objectAmodalScoredMeanIou": 0.7170458883047104,
@@ -56,31 +56,6 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp4-20261029/reconstruction/reconstruction.json"
-        }
-      }
-    },
-    {
-      "id": "exp5-20261029",
-      "label": "exp5-20261029",
-      "color": "#ef4444",
-      "metrics": {
-        "objectAmodalScoredMeanIou": 0.7018889234297805,
-        "objectAmodalEvaluatedFrames": 72,
-        "objectAmodalEligibleFrames": 72,
-        "handAmodalScoredMeanIou": 0.3551384278556757,
-        "handAmodalEvaluatedFrames": 57,
-        "handAmodalEligibleFrames": 57
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp5-20261029/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp5-20261029/reconstruction/reconstruction.json"
         }
       }
     }

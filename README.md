@@ -1,29 +1,20 @@
 # HL Experiment Viewer
 
-Static, sequence-level viewer for HOI reconstruction outputs and their SPIDER
-retargeting results. The catalog contains 20 DexYCB validation samples and 10
-test samples. Each sample has one shareable page containing:
+Static, sequence-level viewer for HOI reconstruction outputs. The catalog contains
+all 20 test sequences from `dexycb_hl_v3_100_20_20`. Each sample compares the
+dataset's scaled `input/final` reconstruction, displayed simply as `input`, with
+the CD-IoU fourth-run checkpoint at epoch 5 / iteration 4. Each sample has one
+shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
-- per-sequence input/refined WA-MPJPE, coverage-penalized CD-H, and SPIDER ADD-AUC10 metrics;
-- independently toggleable input and `refined-20261023` overlays in 2D and 3D;
-- a rendered SPIDER MJWP/physics rollout and metrics when evaluation succeeds;
+- available per-sequence reconstruction and amodal-IoU metrics;
+- independently toggleable `input` and `cd-iou-fourth-run-20261029` overlays
+  in 2D and 3D;
 - one shared sequence timeline.
 
 All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame
-camera-space transforms. A SPIDER tab is intentionally omitted for a baseline
-when that sample's SPIDER evaluation failed.
-
-The original input/refined/SPIDER release remains at the site root. The additive
-three-checkpoint CD-H/amodal-IoU comparison is published under
-`/experiments/cd-iou-20261026/`; it has independent configs, manifest, and sample
-URLs so neither release replaces the other.
-
-The primary catalog also mixes in `scaled input-20261029`, `exp4-20261029`,
-and `exp5-20261029` on the 8 common validation and 20 new test sequences. The
-17 sequences already present retain their legacy baselines on the same page;
-the other 11 test sequences are added directly to the primary catalog.
+camera-space transforms.
 
 ## Development
 
@@ -73,8 +64,6 @@ https://ilyssa-syx.github.io/hl-exps-site/samples/<sample-id>/
 Generated videos and geometry bundles belong in object storage, not Git.
 `scripts/export_reconstruction.py` converts `hand_results.npz`, the object mesh,
 camera intrinsics, and object poses into browser-readable typed-array buffers.
-`scripts/export_eval_run.py` regenerates the dated 30-sample release, including
-browser geometry and MP4 renders of successful `trajectory_mjwp.npz` rollouts.
 
 `baselines[].views.overlay2d.rgb` is required for real samples. It points to either a
 published input RGB video or, in a future schema revision, an RGB image
