@@ -93,7 +93,6 @@ document.querySelector("#app").innerHTML = `
       <div class="tabs" role="tablist" aria-label="Visualization type">
         <button class="tab active" data-tab="overlay" role="tab">2D overlay</button>
         <button class="tab" data-tab="scene" role="tab">3D reconstruction</button>
-        <button class="tab" data-tab="metrics" role="tab">Metrics</button>
         ${spiderCards ? `<button class="tab" data-tab="spider" role="tab">SPIDER</button>` : ""}
       </div>
       <div class="panel active" data-panel="overlay">
@@ -111,9 +110,12 @@ document.querySelector("#app").innerHTML = `
         </div>
         <div class="layer-row baseline-legend">${layerChips}</div>
       </div>
-      <div class="panel metrics-panel" data-panel="metrics" hidden>${metricTable}</div>
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
+      <div class="metrics-inline">
+        <div class="metrics-heading"><div><div class="eyebrow">Evaluation v12</div><h2>Per-sequence metrics</h2></div><p>Mean performance for this sequence across the selected baselines.</p></div>
+        ${metricTable}
+      </div>
     </section>
   </main>`;
 
@@ -177,7 +179,7 @@ tabs.forEach((tab) => tab.addEventListener("click", () => {
   activeTab = tab.dataset.tab;
   tabs.forEach((item) => item.classList.toggle("active", item === tab));
   panels.forEach((panel) => { const active = panel.dataset.panel === activeTab; panel.hidden = !active; panel.classList.toggle("active", active); });
-  document.querySelector(".transport").hidden = activeTab === "spider" || activeTab === "metrics";
+  document.querySelector(".transport").hidden = activeTab === "spider";
   if (activeTab === "scene") void ensureSceneViewer();
   if (activeTab === "spider") { stopPlayback(); updateSpider(); }
   else setFrame(currentFrame, false, true);
