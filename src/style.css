@@ -171,6 +171,11 @@ input[type="range"] { width: 100%; accent-color: var(--mint); }
 .sample-card p { min-height: 50px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 .sample-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
 .sample-meta span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; color: #9da9ba; font: 500 9px "DM Mono"; }
+.sequence-overview .catalog-head { margin-bottom: 28px; }
+.sequence-overview .sequence-metrics { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.segment-card { min-height: 150px; }
+.segment-card h2 { margin-top: 12px; }
+.segment-card p { min-height: 0; }
 @media (max-width: 760px) {
   .catalog { width: min(100% - 28px, 680px); padding: 38px 0; }
   .sample-grid { grid-template-columns: 1fr; }

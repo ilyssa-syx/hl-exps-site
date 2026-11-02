@@ -35,6 +35,10 @@ The site is deployed from `main` by `.github/workflows/pages.yml`.
 The main catalog presents `dexycb-test` and `HO3D_v3-TEST` as two sections with
 the same card and per-sample comparison format.
 
+HO3D sequence pages contain full-sequence metrics and links to independently
+loadable five-second visualization pages. Segment pages keep the shared 2D/3D
+baseline controls while loading only that segment's RGB and reconstruction data.
+
 ## R2 assets
 
 Production visualization assets use the `hl-exps-site` Cloudflare R2 bucket.

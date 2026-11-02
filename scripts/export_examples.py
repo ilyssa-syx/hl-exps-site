@@ -62,9 +62,13 @@ COLLECTIONS = (
 )
 
 
-def sample_html(sample_id: str, label: str, manifest_path: str, catalog_path: str) -> str:
+def sample_html(
+    sample_id: str, label: str, manifest_path: str, catalog_path: str,
+    segment_id: str | None = None,
+) -> str:
     escaped_id = sample_id.replace("&", "&amp;").replace('"', "&quot;")
     escaped_label = label.replace("&", "&amp;").replace("<", "&lt;")
+    segment_attr = f' data-segment-id="{segment_id}"' if segment_id else ""
     return f'''<!doctype html>
 <html lang="en">
   <head>
@@ -73,9 +77,28 @@ def sample_html(sample_id: str, label: str, manifest_path: str, catalog_path: st
     <meta name="description" content="HOI reconstruction sample {escaped_label}" />
     <title>{escaped_label} · HL Experiments</title>
   </head>
-  <body data-sample-id="{escaped_id}" data-manifest="{manifest_path}" data-catalog="{catalog_path}">
+  <body data-sample-id="{escaped_id}"{segment_attr} data-manifest="{manifest_path}" data-catalog="{catalog_path}">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+'''
+
+
+def sequence_html(sample_id: str, label: str, manifest_path: str, catalog_path: str) -> str:
+    escaped_id = sample_id.replace("&", "&amp;").replace('"', "&quot;")
+    escaped_label = label.replace("&", "&amp;").replace("<", "&lt;")
+    return f'''<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HOI reconstruction sequence {escaped_label}" />
+    <title>{escaped_label} · HL Experiments</title>
+  </head>
+  <body data-sample-id="{escaped_id}" data-manifest="{manifest_path}" data-catalog="{catalog_path}">
+    <div id="app"></div>
+    <script type="module" src="/src/sequence.js"></script>
   </body>
 </html>
 '''
@@ -137,9 +160,32 @@ def export_collection(collection: dict) -> int:
             examples.append(payload)
             page = collection["samples_dir"] / payload["id"] / "index.html"
             page.parent.mkdir(parents=True, exist_ok=True)
-            page.write_text(sample_html(
-                payload["id"], payload["label"], collection["manifest_path"], collection["catalog_path"],
-            ), encoding="utf-8")
+            if payload.get("segments"):
+                page.write_text(sequence_html(
+                    payload["id"], payload["label"], collection["manifest_path"], collection["catalog_path"],
+                ), encoding="utf-8")
+                segments_dir = page.parent / "segments"
+                segment_ids = set()
+                for segment in payload["segments"]:
+                    segment_id = segment.get("id")
+                    if not isinstance(segment_id, str) or not SAFE_ID.fullmatch(segment_id):
+                        raise ValueError(f"{path}: segment id is not URL-safe")
+                    if segment_id in segment_ids:
+                        raise ValueError(f"{path}: duplicate segment {segment_id!r}")
+                    segment_ids.add(segment_id)
+                    segment_page = segments_dir / segment_id / "index.html"
+                    segment_page.parent.mkdir(parents=True, exist_ok=True)
+                    segment_page.write_text(sample_html(
+                        payload["id"], f"{payload['label']} · {segment['label']}",
+                        collection["manifest_path"], collection["catalog_path"], segment_id,
+                    ), encoding="utf-8")
+                for segment_page in segments_dir.glob("*/index.html"):
+                    if segment_page.parent.name not in segment_ids:
+                        shutil.rmtree(segment_page.parent)
+            else:
+                page.write_text(sample_html(
+                    payload["id"], payload["label"], collection["manifest_path"], collection["catalog_path"],
+                ), encoding="utf-8")
     if not examples:
         raise ValueError("no example configs found")
     for page in collection["samples_dir"].glob("*/index.html"):

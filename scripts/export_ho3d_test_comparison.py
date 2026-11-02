@@ -21,6 +21,9 @@ MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 RELEASE = "20261102-ho3d-v3-test"
 SPLIT = "test"
 EXPECTED_COUNT = 13
+SEGMENT_SECONDS = 5
+FPS = 30
+SEGMENT_FRAMES = SEGMENT_SECONDS * FPS
 BASELINES = (
     {
         "id": "input",
@@ -107,6 +110,56 @@ def ensure_faststart_video(source: Path, output: Path) -> None:
     temporary.replace(output)
 
 
+def ensure_segment_video(
+    source: Path, output: Path, start_frame: int, frame_count: int,
+) -> None:
+    if output.exists():
+        return
+    output.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run([
+        str(FFMPEG), "-hide_banner", "-loglevel", "error", "-y",
+        "-ss", f"{start_frame / FPS:.6f}", "-i", str(source),
+        "-frames:v", str(frame_count), "-an", "-c:v", "libx264",
+        "-preset", "veryfast", "-crf", "23", "-pix_fmt", "yuv420p",
+        "-movflags", "+faststart", str(output),
+    ], check=True)
+
+
+def ensure_segment_reconstruction(
+    source: Path, output: Path, start_frame: int, end_frame: int,
+) -> None:
+    manifest_path = output / "reconstruction.json"
+    if manifest_path.exists():
+        return
+    metadata = json.loads((source / "reconstruction.json").read_text())
+    frame_count = end_frame - start_frame
+    if not 0 <= start_frame < end_frame <= metadata["frameCount"]:
+        raise ValueError(f"invalid segment {start_frame}:{end_frame} for {source}")
+    output.mkdir(parents=True, exist_ok=True)
+
+    hand_stride = metadata["hand"]["vertexCount"] * 3 * 4
+    pose_stride = 16 * 4
+    hand_source = (source / metadata["hand"]["vertices"]).read_bytes()
+    pose_source = (source / metadata["object"]["poses"]).read_bytes()
+    (output / "hand-vertices.bin").write_bytes(
+        hand_source[start_frame * hand_stride:end_frame * hand_stride]
+    )
+    (output / "object-poses.bin").write_bytes(
+        pose_source[start_frame * pose_stride:end_frame * pose_stride]
+    )
+
+    metadata["frameCount"] = frame_count
+    metadata["intrinsics"] = metadata["intrinsics"][start_frame:end_frame]
+    metadata["hand"]["valid"] = metadata["hand"]["valid"][start_frame:end_frame]
+    metadata["object"]["valid"] = metadata["object"]["valid"][start_frame:end_frame]
+    metadata["hand"]["vertices"] = "hand-vertices.bin"
+    metadata["hand"]["faces"] = "../../../reconstruction/hand-faces.bin"
+    metadata["object"]["vertices"] = "../../../reconstruction/object-vertices.bin"
+    metadata["object"]["faces"] = "../../../reconstruction/object-faces.bin"
+    metadata["object"]["poses"] = "object-poses.bin"
+    manifest_path.write_text(json.dumps(metadata, separators=(",", ":")) + "\n")
+
+
 def main() -> None:
     config_root = ROOT / "configs/HO3D_v3-TEST/examples"
     config_root.mkdir(parents=True, exist_ok=True)
@@ -133,9 +186,11 @@ def main() -> None:
         )
 
         baselines = []
+        reconstruction_by_baseline = {}
         for item in BASELINES:
             reconstruction = asset_root / sample_id / item["asset_id"] / "reconstruction"
             ensure_reconstruction(item["source"](sample_id), reconstruction, groundtruth["hand"]["side"])
+            reconstruction_by_baseline[item["id"]] = reconstruction
             reconstruction_url = (
                 f"experiments/{RELEASE}/{sample_id}/{item['asset_id']}"
                 "/reconstruction/reconstruction.json"
@@ -152,6 +207,55 @@ def main() -> None:
                 },
             })
 
+        frame_count = int(groundtruth["frame_count"])
+        segments = []
+        for segment_index, start_frame in enumerate(range(0, frame_count, SEGMENT_FRAMES)):
+            end_frame = min(frame_count, start_frame + SEGMENT_FRAMES)
+            segment_id = f"{segment_index:03d}"
+            segment_rgb = asset_root / sample_id / "segments" / segment_id / "input-rgb.mp4"
+            ensure_segment_video(rgb, segment_rgb, start_frame, end_frame - start_frame)
+            segment_baselines = []
+            for item in BASELINES:
+                segment_reconstruction = (
+                    asset_root / sample_id / item["asset_id"] / "segments"
+                    / segment_id / "reconstruction"
+                )
+                ensure_segment_reconstruction(
+                    reconstruction_by_baseline[item["id"]], segment_reconstruction,
+                    start_frame, end_frame,
+                )
+                reconstruction_url = (
+                    f"experiments/{RELEASE}/{sample_id}/{item['asset_id']}"
+                    f"/segments/{segment_id}/reconstruction/reconstruction.json"
+                )
+                segment_baselines.append({
+                    "id": item["id"],
+                    "views": {
+                        "overlay2d": {
+                            "rgb": {
+                                "type": "video",
+                                "url": (
+                                    f"experiments/{RELEASE}/{sample_id}/segments/"
+                                    f"{segment_id}/input-rgb.mp4"
+                                ),
+                            },
+                            "reconstruction": reconstruction_url,
+                        },
+                        "scene3d": {"reconstruction": reconstruction_url},
+                    },
+                })
+            segments.append({
+                "id": segment_id,
+                "label": (
+                    f"{start_frame / FPS:.0f}s–{end_frame / FPS:.0f}s"
+                ),
+                "startFrame": start_frame,
+                "endFrame": end_frame,
+                "frameCount": end_frame - start_frame,
+                "fps": FPS,
+                "baselines": segment_baselines,
+            })
+
         config = {
             "schemaVersion": 2,
             "id": sample_id,
@@ -163,14 +267,15 @@ def main() -> None:
             "dataset": "HO3D v3",
             "split": "test",
             "objectName": groundtruth["object"]["name"],
-            "fps": 30,
-            "frameCount": int(groundtruth["frame_count"]),
+            "fps": FPS,
+            "frameCount": frame_count,
             "metricLabel": "Evaluation v1",
             "metricNote": (
                 "Per-sequence means from HO3D evaluation v1. Missing eligible hand "
                 "predictions score 0 in scored metrics; raw means include evaluated frames only."
             ),
             "baselines": baselines,
+            "segments": segments,
         }
         (config_root / f"{sample_id}.json").write_text(
             json.dumps(config, indent=2) + "\n", encoding="utf-8"

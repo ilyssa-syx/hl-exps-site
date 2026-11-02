@@ -5,16 +5,6 @@ import { defineConfig } from "vite";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const samplesRoot = path.join(root, "samples");
-const sampleInputs = fs.existsSync(samplesRoot)
-  ? Object.fromEntries(
-      fs.readdirSync(samplesRoot, { withFileTypes: true })
-        .filter((entry) => entry.isDirectory())
-        .map((entry) => [
-          `sample-${entry.name}`,
-          path.join(samplesRoot, entry.name, "index.html"),
-        ]),
-    )
-  : {};
 
 function htmlInputsBelow(directory, prefix) {
   if (!fs.existsSync(directory)) return {};
@@ -34,6 +24,7 @@ function htmlInputsBelow(directory, prefix) {
 }
 
 const experimentInputs = htmlInputsBelow(path.join(root, "experiments"), "experiment");
+const sampleInputs = htmlInputsBelow(samplesRoot, "sample");
 
 export default defineConfig({
   base: "/hl-exps-site/",

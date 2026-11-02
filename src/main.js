@@ -11,8 +11,22 @@ const catalogPath = document.body.dataset.catalog || "";
 const response = await fetch(versionedAsset(manifestPath), { cache: "no-store" });
 if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`);
 const manifest = await response.json();
-const example = manifest.examples.find((item) => item.id === document.body.dataset.sampleId);
-if (!example) throw new Error(`Unknown sample page: ${document.body.dataset.sampleId}`);
+const sourceExample = manifest.examples.find((item) => item.id === document.body.dataset.sampleId);
+if (!sourceExample) throw new Error(`Unknown sample page: ${document.body.dataset.sampleId}`);
+const segmentId = document.body.dataset.segmentId;
+const segment = segmentId ? sourceExample.segments?.find((item) => item.id === segmentId) : null;
+if (segmentId && !segment) throw new Error(`Unknown segment page: ${sourceExample.id}/${segmentId}`);
+const example = segment ? {
+  ...sourceExample,
+  ...segment,
+  label: `${sourceExample.label} · ${segment.label}`,
+  description: `${sourceExample.description} Segment frames ${segment.startFrame}–${segment.endFrame - 1}.`,
+  baselines: segment.baselines.map((item) => ({
+    ...sourceExample.baselines.find((baseline) => baseline.id === item.id),
+    ...item,
+  })),
+} : sourceExample;
+const isSegment = Boolean(segment);
 
 const catalog = manifest.catalog || {};
 const palette = ["#55a7ff", "#ff6f91", "#62e0c5", "#f6c85f"];
@@ -34,6 +48,13 @@ const rgbUrl = experimentAsset(example.baselines[0].views.overlay2d.rgb.url);
 const exampleIndex = manifest.examples.findIndex((item) => item.id === example.id);
 const neighbor = (offset) => manifest.examples[(exampleIndex + offset + manifest.examples.length) % manifest.examples.length];
 const sampleHref = (sample) => `${base}${catalog.sampleRoot || "samples"}/${encodeURIComponent(sample.id)}/`;
+const sequenceHref = `${base}${catalog.sampleRoot || "samples"}/${encodeURIComponent(sourceExample.id)}/`;
+const segmentIndex = isSegment ? sourceExample.segments.findIndex((item) => item.id === segment.id) : -1;
+const segmentNeighborHref = (offset) => {
+  const segments = sourceExample.segments;
+  const item = segments[(segmentIndex + offset + segments.length) % segments.length];
+  return `${sequenceHref}segments/${encodeURIComponent(item.id)}/`;
+};
 
 const baselineControls = example.baselines.map((item) => `
   <button class="baseline-toggle" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}">
@@ -86,7 +107,7 @@ document.querySelector("#app").innerHTML = `
     <a class="repo-link" href="https://github.com/ilyssa-syx/hl-exps-site">GitHub repository ↗</a>
   </aside>
   <main>
-    <div class="sample-nav"><a href="${base}${catalogPath}">← all samples</a><span><a href="${sampleHref(neighbor(-1))}">← previous</a><a href="${sampleHref(neighbor(1))}">next →</a></span></div>
+    <div class="sample-nav"><a href="${isSegment ? sequenceHref : `${base}${catalogPath}`}">← ${isSegment ? "sequence metrics" : "all samples"}</a><span><a href="${isSegment ? segmentNeighborHref(-1) : sampleHref(neighbor(-1))}">← previous</a><a href="${isSegment ? segmentNeighborHref(1) : sampleHref(neighbor(1))}">next →</a></span></div>
     <header class="topbar">
       <div><div class="eyebrow">${example.dataset} / ${example.split} / baseline comparison</div><h1>${example.label}</h1><p>${example.description}</p></div>
       <div class="meta"><span><small>object</small>${example.objectName}</span><span><small>frames</small>${example.frameCount}</span><span><small>fps</small>${example.fps}</span></div>
@@ -114,10 +135,10 @@ document.querySelector("#app").innerHTML = `
       </div>
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
-      <div class="metrics-inline">
+      ${isSegment ? "" : `<div class="metrics-inline">
         <div class="metrics-heading"><div><div class="eyebrow">${example.metricLabel || catalog.metricLabel || "Evaluation v12"}</div><h2>Per-sequence metrics</h2></div><p>Mean performance for this sequence across the selected baselines.</p></div>
         ${metricTable}
-      </div>
+      </div>`}
     </section>
   </main>`;
 

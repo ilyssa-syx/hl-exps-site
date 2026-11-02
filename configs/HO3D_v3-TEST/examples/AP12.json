@@ -167,5 +167,612 @@
         }
       }
     }
+  ],
+  "segments": [
+    {
+      "id": "000",
+      "label": "0s\u20135s",
+      "startFrame": 0,
+      "endFrame": 150,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/000/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/000/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/000/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/000/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/000/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/000/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/000/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/000/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/000/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "001",
+      "label": "5s\u201310s",
+      "startFrame": 150,
+      "endFrame": 300,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/001/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/001/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/001/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/001/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/001/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/001/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/001/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/001/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/001/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "002",
+      "label": "10s\u201315s",
+      "startFrame": 300,
+      "endFrame": 450,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/002/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/002/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/002/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/002/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/002/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/002/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/002/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/002/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/002/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "003",
+      "label": "15s\u201320s",
+      "startFrame": 450,
+      "endFrame": 600,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/003/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/003/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/003/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/003/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/003/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/003/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/003/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/003/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/003/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "004",
+      "label": "20s\u201325s",
+      "startFrame": 600,
+      "endFrame": 750,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/004/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/004/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/004/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/004/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/004/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/004/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/004/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/004/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/004/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "005",
+      "label": "25s\u201330s",
+      "startFrame": 750,
+      "endFrame": 900,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/005/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/005/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/005/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/005/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/005/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/005/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/005/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/005/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/005/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "006",
+      "label": "30s\u201335s",
+      "startFrame": 900,
+      "endFrame": 1050,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/006/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/006/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/006/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/006/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/006/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/006/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/006/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/006/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/006/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "007",
+      "label": "35s\u201340s",
+      "startFrame": 1050,
+      "endFrame": 1200,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/007/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/007/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/007/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/007/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/007/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/007/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/007/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/007/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/007/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "008",
+      "label": "40s\u201345s",
+      "startFrame": 1200,
+      "endFrame": 1350,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/008/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/008/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/008/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/008/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/008/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/008/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/008/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/008/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/008/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "009",
+      "label": "45s\u201350s",
+      "startFrame": 1350,
+      "endFrame": 1500,
+      "frameCount": 150,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/009/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/009/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/009/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/009/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/009/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/009/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/009/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/009/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/009/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "010",
+      "label": "50s\u201354s",
+      "startFrame": 1500,
+      "endFrame": 1616,
+      "frameCount": 116,
+      "fps": 30,
+      "baselines": [
+        {
+          "id": "input",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/010/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/scaled-input/segments/010/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "cd-iou-fourth-run-20261029",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/010/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/cd-iou-fourth-run-20261029/segments/010/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261102-ho3d-v3-test/AP12/segments/010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/010/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261102-ho3d-v3-test/AP12/successful-differentiable-first-run/segments/010/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    }
   ]
 }
