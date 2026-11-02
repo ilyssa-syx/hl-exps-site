@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "id": "AP10",
+  "label": "AP10",
+  "description": "HO3D v3 test sequence comparing scaled input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run.",
+  "dataset": "HO3D v3",
+  "split": "test",
+  "objectName": "019_pitcher_base",
+  "fps": 30,
+  "frameCount": 1616,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "color": "#fb923c",
+      "metrics": {
+        "addAligned": {
+          "count": 1607,
+          "mean": 9.086523732785935,
+          "median": 7.421192646026611
+        },
+        "objectAmodalIou": {
+          "count": 1607,
+          "mean": 0.6418613972328951,
+          "median": 0.7102401852607727,
+          "scoredMean": 0.6418613972328951
+        },
+        "handAmodalIou": {
+          "count": 1607,
+          "mean": 0.6288092853344963,
+          "median": 0.6438968777656555,
+          "scoredMean": 0.6288092853344963
+        },
+        "cdH": {
+          "count": 1607,
+          "mean": 22.068794004503214,
+          "median": 4.3590168952941895,
+          "scoredMean": 22.068794004503214
+        },
+        "objRel": {
+          "count": 1606,
+          "mean": 18.46823321978746,
+          "median": 17.389812469482422
+        },
+        "wristTranslation": {
+          "count": 1607,
+          "mean": 46.95809246459657,
+          "median": 46.584537506103516
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261102-ho3d-v3-test/AP10/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261102-ho3d-v3-test/AP10/scaled-input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261102-ho3d-v3-test/AP10/scaled-input/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "cd-iou-fourth-run-20261029",
+      "label": "cd-iou-fourth-run-20261029",
+      "color": "#22d3ee",
+      "metrics": {
+        "addAligned": {
+          "count": 1607,
+          "mean": 6.332152013832097,
+          "median": 4.855997085571289
+        },
+        "objectAmodalIou": {
+          "count": 1607,
+          "mean": 0.7545796656690181,
+          "median": 0.8755823969841003,
+          "scoredMean": 0.7545796656690181
+        },
+        "handAmodalIou": {
+          "count": 1607,
+          "mean": 0.6288092853344963,
+          "median": 0.6438968777656555,
+          "scoredMean": 0.6288092853344963
+        },
+        "cdH": {
+          "count": 1607,
+          "mean": 14.750241494727714,
+          "median": 6.047616481781006,
+          "scoredMean": 14.750241494727714
+        },
+        "objRel": {
+          "count": 1606,
+          "mean": 13.590723021204118,
+          "median": 12.341073989868164
+        },
+        "wristTranslation": {
+          "count": 1607,
+          "mean": 46.95809246459657,
+          "median": 46.584537506103516
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261102-ho3d-v3-test/AP10/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261102-ho3d-v3-test/AP10/cd-iou-fourth-run-20261029/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261102-ho3d-v3-test/AP10/cd-iou-fourth-run-20261029/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "successful-differentiable-first-run",
+      "label": "successful-differentiable-first-run",
+      "color": "#a78bfa",
+      "metrics": {
+        "addAligned": {
+          "count": 1607,
+          "mean": 1.04838367137541,
+          "median": 0.8933653831481934
+        },
+        "objectAmodalIou": {
+          "count": 1607,
+          "mean": 0.8918662189918048,
+          "median": 0.9060631394386292,
+          "scoredMean": 0.8918662189918048
+        },
+        "handAmodalIou": {
+          "count": 1607,
+          "mean": 0.7971870215063742,
+          "median": 0.8113524317741394,
+          "scoredMean": 0.7971870215063742
+        },
+        "cdH": {
+          "count": 1607,
+          "mean": 2.878334292953031,
+          "median": 2.439882516860962,
+          "scoredMean": 2.878334292953031
+        },
+        "objRel": {
+          "count": 1606,
+          "mean": 3.3463039355698143,
+          "median": 2.114539861679077
+        },
+        "wristTranslation": {
+          "count": 1607,
+          "mean": 17.375735649798475,
+          "median": 14.970333099365234
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261102-ho3d-v3-test/AP10/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261102-ho3d-v3-test/AP10/successful-differentiable-first-run/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261102-ho3d-v3-test/AP10/successful-differentiable-first-run/reconstruction/reconstruction.json"
+        }
+      }
+    }
+  ]
+}

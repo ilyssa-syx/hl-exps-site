@@ -34,6 +34,7 @@ function htmlInputsBelow(directory, prefix) {
 }
 
 const experimentInputs = htmlInputsBelow(path.join(root, "experiments"), "experiment");
+const ho3dInputs = htmlInputsBelow(path.join(root, "HO3D_v3-TEST"), "ho3d");
 
 export default defineConfig({
   base: "/hl-exps-site/",
@@ -48,6 +49,7 @@ export default defineConfig({
         index: path.join(root, "index.html"),
         ...sampleInputs,
         ...experimentInputs,
+        ...ho3dInputs,
       },
     },
   },

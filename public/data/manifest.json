@@ -4,8 +4,14 @@
     "eyebrow": "DexYCB \u00b7 input vs. two refined runs",
     "title": "Experiment samples",
     "description": "20 test sequences \u00b7 input, CD-IoU fourth run, and differentiable first run \u00b7 per-sequence 2D/3D comparison",
+    "sectionTitle": "dexycb-test",
     "sampleRoot": "samples",
-    "relatedCatalogs": []
+    "relatedCatalogs": [
+      {
+        "label": "HO3D_v3-TEST",
+        "url": "HO3D_v3-TEST/"
+      }
+    ]
   },
   "examples": [
     {

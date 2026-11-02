@@ -1,7 +1,8 @@
 # HL Experiment Viewer
 
-Static, sequence-level viewer for HOI reconstruction outputs. The catalog contains
-all 20 test sequences from `dexycb_hl_v3_100_20_20`. Each sample compares the
+Static, sequence-level viewer for HOI reconstruction outputs. The catalogs contain
+all 20 test sequences from `dexycb_hl_v3_100_20_20` and all 13 sequences from
+`HO3D_v3-TEST`. Each sample compares the
 dataset's scaled `input/final` reconstruction, displayed simply as `input`, with
 the CD-IoU fourth-run checkpoint at epoch 5 / iteration 4 and the successful
 differentiable-first-run checkpoint. Each sample has one shareable page containing:
@@ -30,6 +31,9 @@ npm run build
 ```
 
 The site is deployed from `main` by `.github/workflows/pages.yml`.
+
+The HO3D catalog is published at `/HO3D_v3-TEST/`; both catalog pages link to
+one another.
 
 ## R2 assets
 

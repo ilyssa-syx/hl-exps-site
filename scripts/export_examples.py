@@ -22,6 +22,7 @@ METRIC_KEYS = {
     "wristTranslation",
     "wristRotation",
 }
+OPTIONAL_METRIC_KEYS = {"wristRotation"}
 COLLECTIONS = (
     {
         "config_dir": ROOT / "configs/examples",
@@ -38,8 +39,35 @@ COLLECTIONS = (
             "eyebrow": "DexYCB · input vs. two refined runs",
             "title": "Experiment samples",
             "description": "20 test sequences · input, CD-IoU fourth run, and differentiable first run · per-sequence 2D/3D comparison",
+            "sectionTitle": "dexycb-test",
             "sampleRoot": "samples",
-            "relatedCatalogs": [],
+            "relatedCatalogs": [
+                {"label": "HO3D_v3-TEST", "url": "HO3D_v3-TEST/"},
+            ],
+        },
+    },
+    {
+        "config_dir": ROOT / "configs/HO3D_v3-TEST/examples",
+        "output": PUBLIC_DATA / "HO3D_v3-TEST/manifest.json",
+        "samples_dir": ROOT / "HO3D_v3-TEST/samples",
+        "manifest_path": "data/HO3D_v3-TEST/manifest.json",
+        "catalog_path": "HO3D_v3-TEST/",
+        "expected_baselines": ([
+            "input",
+            "cd-iou-fourth-run-20261029",
+            "successful-differentiable-first-run",
+        ],),
+        "catalog": {
+            "eyebrow": "HO3D v3 · input vs. two refined runs",
+            "title": "HO3D_v3-TEST",
+            "description": "13 test sequences · scaled input, CD-IoU fourth run, and successful differentiable first run · per-sequence 2D/3D comparison",
+            "sectionTitle": "HO3D_v3-TEST",
+            "sampleRoot": "HO3D_v3-TEST/samples",
+            "metricLabel": "Evaluation v1",
+            "metricNote": "Per-sequence means from HO3D evaluation v1. Missing eligible hand predictions score 0 in scored metrics; raw means include evaluated frames only.",
+            "relatedCatalogs": [
+                {"label": "DexYCB test", "url": ""},
+            ],
         },
     },
 )
@@ -103,7 +131,12 @@ def export_collection(collection: dict) -> int:
             raise ValueError(f"{path}: unexpected baselines {baseline_ids}")
         for baseline in payload["baselines"]:
             metrics = baseline.get("metrics")
-            if not isinstance(metrics, dict) or set(metrics) != METRIC_KEYS:
+            metric_keys = set(metrics) if isinstance(metrics, dict) else set()
+            if (
+                not isinstance(metrics, dict)
+                or not METRIC_KEYS - OPTIONAL_METRIC_KEYS <= metric_keys
+                or metric_keys - METRIC_KEYS
+            ):
                 raise ValueError(
                     f"{path}: {baseline.get('id')} has invalid per-sequence metrics"
                 )

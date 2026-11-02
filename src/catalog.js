@@ -7,17 +7,20 @@ if (!response.ok) throw new Error(`Could not load manifest: ${response.status}`)
 const manifest = await response.json();
 const catalog = manifest.catalog || {};
 const card = (sample, index) => {
-  const [subject, sequence, camera] = sample.label.split(" / ");
+  const labelParts = sample.label.split(" / ");
+  const [subject, sequence, camera] = labelParts.length >= 3
+    ? labelParts
+    : [sample.dataset, sample.label, null];
   return `<a class="sample-card" href="${base}${catalog.sampleRoot || "samples"}/${encodeURIComponent(sample.id)}/">
     <div class="card-number">${String(index + 1).padStart(2, "0")}</div>
     <div class="eyebrow">${sample.dataset} / ${sample.split} / ${subject}</div>
-    <h2>${sequence}</h2><p class="camera-id">camera ${camera}</p>
+    <h2>${sequence}</h2>${camera ? `<p class="camera-id">camera ${camera}</p>` : ""}
     <div class="sample-meta"><span>${sample.objectName}</span><span>${sample.frameCount} frames</span><span>${sample.baselines.length} baselines</span></div>
   </a>`;
 };
 
 const testExamples = manifest.examples.filter((sample) => sample.split === "test");
-const sections = `<section class="catalog-section"><div class="section-title"><h2>dexycb-test</h2><span>${testExamples.length} samples</span></div><div class="sample-grid">${testExamples.map(card).join("")}</div></section>`;
+const sections = `<section class="catalog-section"><div class="section-title"><h2>${catalog.sectionTitle || "test"}</h2><span>${testExamples.length} samples</span></div><div class="sample-grid">${testExamples.map(card).join("")}</div></section>`;
 const related = (catalog.relatedCatalogs || []).map((item) =>
   `<a class="catalog-link" href="${base}${item.url}">${item.label}</a>`
 ).join("");

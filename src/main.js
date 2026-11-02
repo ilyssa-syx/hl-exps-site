@@ -61,7 +61,9 @@ const metricColumns = [
   { label: "Obj-rel", unit: "cm", direction: "min", value: (m) => m.objRel.mean },
   { label: "Wrist trans.", unit: "mm", direction: "min", value: (m) => m.wristTranslation.mean },
   { label: "Wrist rot.", unit: "deg", direction: "min", value: (m) => m.wristRotation.mean },
-];
+].filter((metric) => example.baselines.every((item) => {
+  try { return Number.isFinite(metric.value(item.metrics)); } catch { return false; }
+}));
 const metricBest = metricColumns.map((metric) => {
   const values = example.baselines.map((item) => metric.value(item.metrics));
   return metric.direction === "max" ? Math.max(...values) : Math.min(...values);
@@ -73,7 +75,7 @@ const metricTable = `<div class="metric-scroll"><table class="metric-table">
       const value = metric.value(item.metrics);
       return `<td class="${value === metricBest[index] ? "best" : ""}">${value.toFixed(metric.digits ?? 3)}</td>`;
     }).join("")}</tr>`).join("")}</tbody>
-</table></div><p class="metric-note">Per-sequence means from evaluation v12. Missing eligible hand predictions score 0 in scored metrics; raw means include evaluated frames only.</p>`;
+</table></div><p class="metric-note">${catalog.metricNote || "Per-sequence means from evaluation v12. Missing eligible hand predictions score 0 in scored metrics; raw means include evaluated frames only."}</p>`;
 
 document.querySelector("#app").innerHTML = `
   <aside class="sidebar">
@@ -113,7 +115,7 @@ document.querySelector("#app").innerHTML = `
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
       <div class="metrics-inline">
-        <div class="metrics-heading"><div><div class="eyebrow">Evaluation v12</div><h2>Per-sequence metrics</h2></div><p>Mean performance for this sequence across the selected baselines.</p></div>
+        <div class="metrics-heading"><div><div class="eyebrow">${catalog.metricLabel || "Evaluation v12"}</div><h2>Per-sequence metrics</h2></div><p>Mean performance for this sequence across the selected baselines.</p></div>
         ${metricTable}
       </div>
     </section>
