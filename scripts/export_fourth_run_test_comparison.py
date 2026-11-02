@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import csv
 import json
 from pathlib import Path
 import shutil
@@ -37,28 +36,6 @@ BASELINES = (
 )
 
 
-def read_metrics(path: Path) -> dict[str, dict[str, str]]:
-    with path.open(newline="", encoding="utf-8") as handle:
-        rows = list(csv.DictReader(handle))
-    result = {row["sequence_id"]: row for row in rows}
-    if len(result) != len(rows):
-        raise ValueError(f"{path}: duplicate sequence_id")
-    return result
-
-
-def metrics_payload(row: dict[str, str]) -> dict[str, float | int]:
-    object_count = int(row["object_amodal_count"])
-    hand_count = int(row["hand_amodal_count"])
-    return {
-        "objectAmodalScoredMeanIou": float(row["object_amodal_scored_mean_iou"]),
-        "objectAmodalEvaluatedFrames": object_count,
-        "objectAmodalEligibleFrames": object_count,
-        "handAmodalScoredMeanIou": float(row["hand_amodal_scored_mean_iou"]),
-        "handAmodalEvaluatedFrames": hand_count,
-        "handAmodalEligibleFrames": hand_count,
-    }
-
-
 def result_dir(result_id: str, sample_id: str) -> Path:
     if result_id == "scaled":
         # This compatibility copy only adds the derived joints_camera cache. The
@@ -84,15 +61,12 @@ def main() -> None:
     if len(dataset_ids) != EXPECTED_COUNT:
         raise ValueError(f"expected {EXPECTED_COUNT} test sequences, found {len(dataset_ids)}")
 
-    metrics_by_id = {
-        item["id"]: read_metrics(
-            RESULTS / f"metrics_final/{item['result_id']}/{SPLIT}/per_sequence.csv"
-        )
-        for item in BASELINES
-    }
-    for baseline_id, metrics in metrics_by_id.items():
-        if sorted(metrics) != dataset_ids:
-            raise ValueError(f"{baseline_id}: metrics sequence set differs from dataset test split")
+    fourth_result_ids = sorted(
+        path.name for path in (RESULTS / "predictions/old/test/test").iterdir()
+        if path.is_dir()
+    )
+    if fourth_result_ids != dataset_ids:
+        raise ValueError("fourth-run result sequence set differs from dataset test split")
 
     for sample_id in dataset_ids:
         source_root = DATA / SPLIT / sample_id
@@ -118,7 +92,6 @@ def main() -> None:
                 "id": item["id"],
                 "label": item["label"],
                 "color": item["color"],
-                "metrics": metrics_payload(metrics_by_id[item["id"]][sample_id]),
                 "views": {
                     "overlay2d": {
                         "rgb": {

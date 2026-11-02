@@ -13,14 +13,6 @@
       "id": "input",
       "label": "input",
       "color": "#fb923c",
-      "metrics": {
-        "objectAmodalScoredMeanIou": 0.5804749125161687,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.34917295206752086,
-        "handAmodalEvaluatedFrames": 53,
-        "handAmodalEligibleFrames": 53
-      },
       "views": {
         "overlay2d": {
           "rgb": {
@@ -38,14 +30,6 @@
       "id": "cd-iou-fourth-run-20261029",
       "label": "cd-iou-fourth-run-20261029",
       "color": "#22d3ee",
-      "metrics": {
-        "objectAmodalScoredMeanIou": 0.5801409033907426,
-        "objectAmodalEvaluatedFrames": 74,
-        "objectAmodalEligibleFrames": 74,
-        "handAmodalScoredMeanIou": 0.38990548970522704,
-        "handAmodalEvaluatedFrames": 54,
-        "handAmodalEligibleFrames": 54
-      },
       "views": {
         "overlay2d": {
           "rgb": {

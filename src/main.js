@@ -15,7 +15,6 @@ const example = manifest.examples.find((item) => item.id === document.body.datas
 if (!example) throw new Error(`Unknown sample page: ${document.body.dataset.sampleId}`);
 
 const catalog = manifest.catalog || {};
-const cdIou = catalog.metricSet === "cd-iou";
 const palette = ["#55a7ff", "#ff6f91", "#62e0c5", "#f6c85f"];
 const colors = Object.fromEntries(example.baselines.map((item, index) => [
   item.id, item.color || palette[index % palette.length],
@@ -35,27 +34,6 @@ const rgbUrl = experimentAsset(example.baselines[0].views.overlay2d.rgb.url);
 const exampleIndex = manifest.examples.findIndex((item) => item.id === example.id);
 const neighbor = (offset) => manifest.examples[(exampleIndex + offset + manifest.examples.length) % manifest.examples.length];
 const sampleHref = (sample) => `${base}${catalog.sampleRoot || "samples"}/${encodeURIComponent(sample.id)}/`;
-const formatMetric = (value, suffix = "") => value == null ? "—" : `${Number(value).toFixed(3)}${suffix}`;
-const formatSpiderMetric = (metrics) => metrics.spiderStatus === "evaluated" && metrics.spiderAddAuc10 != null
-  ? Number(metrics.spiderAddAuc10).toFixed(3)
-  : `<span class="metric-failed">${metrics.spiderStatus || "not evaluated"}</span>`;
-const reconstructionMetrics = example.baselines.map((item) => {
-  const metrics = item.metrics ?? {};
-  const hasAmodalIou = metrics.objectAmodalScoredMeanIou != null;
-  const values = hasAmodalIou
-    ? `<span><small>CD-H ↓</small>${formatMetric(metrics.cdHScoredMeanCm, " cm")}<em>${metrics.cdHEvaluatedFrames ?? "—"} / ${metrics.cdHEligibleFrames ?? "—"} evaluated</em></span>
-      <span><small>Object amodal IoU ↑</small>${formatMetric(metrics.objectAmodalScoredMeanIou)}<em>${metrics.objectAmodalEvaluatedFrames ?? "—"} / ${metrics.objectAmodalEligibleFrames ?? "—"} evaluated</em></span>
-      <span><small>Hand amodal IoU ↑</small>${formatMetric(metrics.handAmodalScoredMeanIou)}<em>${metrics.handAmodalEvaluatedFrames ?? "—"} / ${metrics.handAmodalEligibleFrames ?? "—"} evaluated</em></span>`
-    : `<span><small>WA-MPJPE ↓</small>${formatMetric(metrics.waMpjpeMeanMm, " mm")}<em>${metrics.waMpjpeEvaluatedFrames ?? "—"} evaluated frames</em></span>
-      <span><small>CD-H ↓</small>${formatMetric(metrics.cdHScoredMeanCm, " cm")}<em>${metrics.cdHEvaluatedFrames ?? "—"} / ${metrics.cdHEligibleFrames ?? "—"} evaluated</em></span>
-      <span><small>SPIDER ADD-AUC10 ↑</small>${formatSpiderMetric(metrics)}<em>${metrics.spiderStatus || "not evaluated"}</em></span>`;
-  return `<article class="sequence-metric" style="--baseline:${colors[item.id]}">
-    <div class="metric-baseline"><i></i><strong>${item.label}</strong></div>
-    <div class="metric-values">${values}</div>
-  </article>`;
-}).join("");
-const hasMixedMetrics = example.baselines.some((item) => item.metrics?.spiderStatus != null)
-  && example.baselines.some((item) => item.metrics?.objectAmodalScoredMeanIou != null);
 
 const baselineControls = example.baselines.map((item) => `
   <button class="baseline-toggle" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}">
@@ -68,7 +46,6 @@ const spiderCards = example.baselines.filter((item) => item.views.spider).map((i
   return `<article class="spider-run" data-baseline="${item.id}" style="--baseline:${colors[item.id]}">
     <div class="spider-head">
       <div><i class="baseline-dot"></i><strong>${item.label}</strong><span class="status evaluated">evaluated</span><small>${spider.robot} · ${spider.embodiment}</small></div>
-      <div class="metrics"><span><small>ADD-AUC10</small>${formatMetric(spider.metrics.addAuc10)}</span><span><small>position error</small>${formatMetric(spider.metrics.positionErrorMeters, " m")}</span><span><small>rotation error</small>${formatMetric(spider.metrics.rotationErrorRadians, " rad")}</span></div>
     </div>
     <video class="spider-video" data-src="${experimentAsset(spider.video)}" controls muted playsinline preload="none"></video>
   </article>`;
@@ -76,7 +53,7 @@ const spiderCards = example.baselines.filter((item) => item.views.spider).map((i
 
 document.querySelector("#app").innerHTML = `
   <aside class="sidebar">
-    <a class="brand" href="${base}${catalogPath}"><span class="brand-mark">HL</span><span><strong>Experiments</strong><small>${cdIou ? "checkpoint comparison" : "reconstruction → retargeting"}</small></span></a>
+    <a class="brand" href="${base}${catalogPath}"><span class="brand-mark">HL</span><span><strong>Experiments</strong><small>test comparison</small></span></a>
     <div class="sidebar-label">Visible baselines</div>
     <nav class="baseline-controls">${baselineControls}</nav>
     <p class="sidebar-hint">${example.baselines.length > 2 ? "Toggle baselines to compare any combination." : "Select either baseline or show both together."}</p>
@@ -111,11 +88,6 @@ document.querySelector("#app").innerHTML = `
       </div>
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
-    </section>
-    <section class="sequence-metrics" aria-labelledby="sequence-metrics-title">
-      <div class="sequence-metrics-head"><div><div class="eyebrow">Sequence evaluation</div><h2 id="sequence-metrics-title">${cdIou ? "Reconstruction metrics" : "Reconstruction & retargeting metrics"}</h2></div><p>${hasMixedMetrics ? "CD-H ↓ · WA-MPJPE / IoU / SPIDER" : cdIou ? "CD-H ↓ · amodal IoU ↑" : "WA-MPJPE / CD-H ↓ · SPIDER ↑"}</p></div>
-      <div class="sequence-metric-grid">${reconstructionMetrics}</div>
-      <p class="metric-note">${hasMixedMetrics ? "Legacy baselines retain their available WA-MPJPE, CD-H, and SPIDER results. Checkpoint and scaled-input baselines show object and hand amodal IoU from their recorded evaluator runs." : cdIou ? "CD-H is the coverage-penalized wrist-relative object Chamfer mean. Object and hand IoU use independently rendered amodal silhouettes; missing eligible predictions score zero." : "WA-MPJPE is the evaluated-frame wrist-aligned mean. CD-H is the coverage-penalized wrist-relative object Chamfer mean. SPIDER reports object-translation ADD-AUC10; failed rollouts remain marked as failed rather than scored as zero."}</p>
     </section>
   </main>`;
 

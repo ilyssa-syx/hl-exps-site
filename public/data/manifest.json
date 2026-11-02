@@ -4,7 +4,6 @@
     "eyebrow": "DexYCB \u00b7 input vs. CD-IoU fourth run",
     "title": "Experiment samples",
     "description": "20 test sequences \u00b7 input vs. cd-iou-fourth-run-20261029 \u00b7 per-sequence 2D/3D comparison",
-    "metricSet": "cd-iou",
     "sampleRoot": "samples",
     "relatedCatalogs": []
   },
@@ -24,14 +23,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7942981977720518,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5301117435903162,
-            "handAmodalEvaluatedFrames": 74,
-            "handAmodalEligibleFrames": 74
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -49,14 +40,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7958220734789565,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5722644009904282,
-            "handAmodalEvaluatedFrames": 74,
-            "handAmodalEligibleFrames": 74
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -87,14 +70,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6476826112012606,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5114574437601525,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -112,14 +87,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6547459335745992,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5136798079076567,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -150,14 +117,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6273524095821712,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.35323717379779146,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -175,14 +134,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7170458883047104,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.38817006114282104,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -213,14 +164,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7352604310254793,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.4422735519825466,
-            "handAmodalEvaluatedFrames": 63,
-            "handAmodalEligibleFrames": 63
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -238,14 +181,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7366242368479032,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5029219880936637,
-            "handAmodalEvaluatedFrames": 63,
-            "handAmodalEligibleFrames": 63
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -276,14 +211,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.46530317152674133,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5174577361329408,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -301,14 +228,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.46530317152674133,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5035659481408232,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -339,14 +258,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6412845858045526,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.22699810478738264,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -364,14 +275,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7790491049354141,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.22929388972554812,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -402,14 +305,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6923597471134083,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.3248604626978858,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -427,14 +322,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6905559373868478,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5506176834894438,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -465,14 +352,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.563016405782184,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.6806796369916301,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -490,14 +369,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.563016405782184,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.655444379580223,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -528,14 +399,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7946634139563586,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.09798305876565312,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -553,14 +416,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.849514243570534,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.0955823947800111,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -591,14 +446,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.8373752767975265,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.6083366759752823,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -616,14 +463,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.8432432823889965,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.622683034104816,
-            "handAmodalEvaluatedFrames": 59,
-            "handAmodalEligibleFrames": 59
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -654,14 +493,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6800440336401398,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.4017478318975704,
-            "handAmodalEvaluatedFrames": 66,
-            "handAmodalEligibleFrames": 66
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -679,14 +510,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7652435077203287,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.41990733486326304,
-            "handAmodalEvaluatedFrames": 68,
-            "handAmodalEligibleFrames": 68
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -717,14 +540,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.8395653201474084,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.5691693151990572,
-            "handAmodalEvaluatedFrames": 72,
-            "handAmodalEligibleFrames": 72
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -742,14 +557,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.8387149895230929,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.6525586588929096,
-            "handAmodalEvaluatedFrames": 72,
-            "handAmodalEligibleFrames": 72
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -780,14 +587,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7179258167743683,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.3412322183000067,
-            "handAmodalEvaluatedFrames": 61,
-            "handAmodalEligibleFrames": 61
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -805,14 +604,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7828466207594484,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.32750762994429783,
-            "handAmodalEvaluatedFrames": 61,
-            "handAmodalEligibleFrames": 61
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -843,14 +634,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.2692937009371628,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.34723143956877967,
-            "handAmodalEvaluatedFrames": 34,
-            "handAmodalEligibleFrames": 34
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -868,14 +651,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.27056115142123244,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.3517311228100549,
-            "handAmodalEvaluatedFrames": 38,
-            "handAmodalEligibleFrames": 38
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -906,14 +681,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7685654734571775,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.4988314054078526,
-            "handAmodalEvaluatedFrames": 72,
-            "handAmodalEligibleFrames": 72
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -931,14 +698,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7843578002519078,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.5404947402162684,
-            "handAmodalEvaluatedFrames": 72,
-            "handAmodalEligibleFrames": 72
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -969,14 +728,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.4777259687220471,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.7230111413142261,
-            "handAmodalEvaluatedFrames": 51,
-            "handAmodalEligibleFrames": 51
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -994,14 +745,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.4885011130374753,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.7631790515254525,
-            "handAmodalEvaluatedFrames": 51,
-            "handAmodalEligibleFrames": 51
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1032,14 +775,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7591656624443002,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.25265362182337986,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1057,14 +792,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.7595081250700686,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.23066800491391118,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1095,14 +822,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6146491895520335,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.47729826234934625,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1120,14 +839,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.6484307294077654,
-            "objectAmodalEvaluatedFrames": 72,
-            "objectAmodalEligibleFrames": 72,
-            "handAmodalScoredMeanIou": 0.5359142150795251,
-            "handAmodalEvaluatedFrames": 57,
-            "handAmodalEligibleFrames": 57
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1158,14 +869,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.5804749125161687,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.34917295206752086,
-            "handAmodalEvaluatedFrames": 53,
-            "handAmodalEligibleFrames": 53
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1183,14 +886,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.5801409033907426,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.38990548970522704,
-            "handAmodalEvaluatedFrames": 54,
-            "handAmodalEligibleFrames": 54
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1221,14 +916,6 @@
           "id": "input",
           "label": "input",
           "color": "#fb923c",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.4976717660555968,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.5969999064098704,
-            "handAmodalEvaluatedFrames": 55,
-            "handAmodalEligibleFrames": 55
-          },
           "views": {
             "overlay2d": {
               "rgb": {
@@ -1246,14 +933,6 @@
           "id": "cd-iou-fourth-run-20261029",
           "label": "cd-iou-fourth-run-20261029",
           "color": "#22d3ee",
-          "metrics": {
-            "objectAmodalScoredMeanIou": 0.5180432730027147,
-            "objectAmodalEvaluatedFrames": 74,
-            "objectAmodalEligibleFrames": 74,
-            "handAmodalScoredMeanIou": 0.6881535410881042,
-            "handAmodalEvaluatedFrames": 55,
-            "handAmodalEligibleFrames": 55
-          },
           "views": {
             "overlay2d": {
               "rgb": {

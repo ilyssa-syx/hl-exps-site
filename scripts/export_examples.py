@@ -25,7 +25,7 @@ COLLECTIONS = (
             "eyebrow": "DexYCB · input vs. CD-IoU fourth run",
             "title": "Experiment samples",
             "description": "20 test sequences · input vs. cd-iou-fourth-run-20261029 · per-sequence 2D/3D comparison",
-            "metricSet": "cd-iou", "sampleRoot": "samples",
+            "sampleRoot": "samples",
             "relatedCatalogs": [],
         },
     },

@@ -8,7 +8,6 @@ shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
-- available per-sequence reconstruction and amodal-IoU metrics;
 - independently toggleable `input` and `cd-iou-fourth-run-20261029` overlays
   in 2D and 3D;
 - one shared sequence timeline.
