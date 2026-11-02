@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200918-subject-06__20200918_114929__840412060917",
   "label": "20200918-subject-06 / 20200918_114929 / 840412060917",
-  "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+  "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "010_potted_meat_can",
@@ -40,6 +40,23 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp4-20261029/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "successful-differentiable-first-run-20261102",
+      "label": "successful-differentiable-first-run-20261102",
+      "color": "#a78bfa",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp7-20261102/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp7-20261102/reconstruction/reconstruction.json"
         }
       }
     }

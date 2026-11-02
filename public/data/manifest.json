@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "catalog": {
-    "eyebrow": "DexYCB \u00b7 input vs. CD-IoU fourth run",
+    "eyebrow": "DexYCB \u00b7 input vs. two refined runs",
     "title": "Experiment samples",
-    "description": "20 test sequences \u00b7 input vs. cd-iou-fourth-run-20261029 \u00b7 per-sequence 2D/3D comparison",
+    "description": "20 test sequences \u00b7 input, CD-IoU fourth run, and differentiable first run \u00b7 per-sequence 2D/3D comparison",
     "sampleRoot": "samples",
     "relatedCatalogs": []
   },
@@ -12,7 +12,7 @@
       "schemaVersion": 2,
       "id": "20200820-subject-03__20200820_135810__841412060263",
       "label": "20200820-subject-03 / 20200820_135810 / 841412060263",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "003_cracker_box",
@@ -52,6 +52,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -59,7 +76,7 @@
       "schemaVersion": 2,
       "id": "20200820-subject-03__20200820_145113__932122062010",
       "label": "20200820-subject-03 / 20200820_145113 / 932122062010",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "052_extra_large_clamp",
@@ -99,6 +116,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -106,7 +140,7 @@
       "schemaVersion": 2,
       "id": "20200903-subject-04__20200903_112428__836212060125",
       "label": "20200903-subject-04 / 20200903_112428 / 836212060125",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "025_mug",
@@ -146,6 +180,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -153,7 +204,7 @@
       "schemaVersion": 2,
       "id": "20200908-subject-05__20200908_152221__932122060861",
       "label": "20200908-subject-05 / 20200908_152221 / 932122060861",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "040_large_marker",
@@ -193,6 +244,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -200,7 +268,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_114258__841412060263",
       "label": "20200918-subject-06 / 20200918_114258 / 841412060263",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "007_tuna_fish_can",
@@ -240,6 +308,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -247,7 +332,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_114717__932122061900",
       "label": "20200918-subject-06 / 20200918_114717 / 932122061900",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "009_gelatin_box",
@@ -287,6 +372,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -294,7 +396,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_114929__840412060917",
       "label": "20200918-subject-06 / 20200918_114929 / 840412060917",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "010_potted_meat_can",
@@ -334,6 +436,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -341,7 +460,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_120513__841412060263",
       "label": "20200918-subject-06 / 20200918_120513 / 841412060263",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "036_wood_block",
@@ -381,6 +500,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -388,7 +524,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_143500__932122061900",
       "label": "20200928-subject-07 / 20200928_143500 / 932122061900",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "002_master_chef_can",
@@ -428,6 +564,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -435,7 +588,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_143944__932122062010",
       "label": "20200928-subject-07 / 20200928_143944 / 932122062010",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "004_sugar_box",
@@ -475,6 +628,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -482,7 +652,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_145204__932122060861",
       "label": "20200928-subject-07 / 20200928_145204 / 932122060861",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "008_pudding_box",
@@ -522,6 +692,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -529,7 +716,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_153953__839512060362",
       "label": "20200928-subject-07 / 20200928_153953 / 839512060362",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "019_pitcher_base",
@@ -569,6 +756,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -576,7 +780,7 @@
       "schemaVersion": 2,
       "id": "20201002-subject-08__20201002_105534__932122061900",
       "label": "20201002-subject-08 / 20201002_105534 / 932122061900",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "005_tomato_soup_can",
@@ -616,6 +820,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -623,7 +844,7 @@
       "schemaVersion": 2,
       "id": "20201002-subject-08__20201002_113227__932122060857",
       "label": "20201002-subject-08 / 20201002_113227 / 932122060857",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "061_foam_brick",
@@ -663,6 +884,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -670,7 +908,7 @@
       "schemaVersion": 2,
       "id": "20201015-subject-09__20201015_143825__840412060917",
       "label": "20201015-subject-09 / 20201015_143825 / 840412060917",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "006_mustard_bottle",
@@ -710,6 +948,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -717,7 +972,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_112834__839512060362",
       "label": "20201022-subject-10 / 20201022_112834 / 839512060362",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "011_banana",
@@ -757,6 +1012,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -764,7 +1036,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113235__932122060857",
       "label": "20201022-subject-10 / 20201022_113235 / 932122060857",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "021_bleach_cleanser",
@@ -804,6 +1076,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -811,7 +1100,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113502__836212060125",
       "label": "20201022-subject-10 / 20201022_113502 / 836212060125",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "024_bowl",
@@ -851,6 +1140,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -858,7 +1164,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113909__840412060917",
       "label": "20201022-subject-10 / 20201022_113909 / 840412060917",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "035_power_drill",
@@ -898,6 +1204,23 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp4-20261029/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -905,7 +1228,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_114306__932122062010",
       "label": "20201022-subject-10 / 20201022_114306 / 932122062010",
-      "description": "DexYCB test sequence comparing input with cd-iou-fourth-run-20261029.",
+      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "037_scissors",
@@ -943,6 +1266,23 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp4-20261029/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "successful-differentiable-first-run-20261102",
+          "label": "successful-differentiable-first-run-20261102",
+          "color": "#a78bfa",
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp7-20261102/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
         }

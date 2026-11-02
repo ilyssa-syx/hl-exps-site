@@ -20,11 +20,15 @@ COLLECTIONS = (
         "samples_dir": ROOT / "samples",
         "manifest_path": "data/manifest.json",
         "catalog_path": "",
-        "expected_baselines": (["input", "cd-iou-fourth-run-20261029"],),
+        "expected_baselines": ([
+            "input",
+            "cd-iou-fourth-run-20261029",
+            "successful-differentiable-first-run-20261102",
+        ],),
         "catalog": {
-            "eyebrow": "DexYCB · input vs. CD-IoU fourth run",
+            "eyebrow": "DexYCB · input vs. two refined runs",
             "title": "Experiment samples",
-            "description": "20 test sequences · input vs. cd-iou-fourth-run-20261029 · per-sequence 2D/3D comparison",
+            "description": "20 test sequences · input, CD-IoU fourth run, and differentiable first run · per-sequence 2D/3D comparison",
             "sampleRoot": "samples",
             "relatedCatalogs": [],
         },

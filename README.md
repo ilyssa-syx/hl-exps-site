@@ -3,13 +3,13 @@
 Static, sequence-level viewer for HOI reconstruction outputs. The catalog contains
 all 20 test sequences from `dexycb_hl_v3_100_20_20`. Each sample compares the
 dataset's scaled `input/final` reconstruction, displayed simply as `input`, with
-the CD-IoU fourth-run checkpoint at epoch 5 / iteration 4. Each sample has one
-shareable page containing:
+the CD-IoU fourth-run checkpoint at epoch 5 / iteration 4 and the successful
+differentiable-first-run checkpoint. Each sample has one shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
-- independently toggleable `input` and `cd-iou-fourth-run-20261029` overlays
-  in 2D and 3D;
+- independently toggleable `input`, `cd-iou-fourth-run-20261029`, and
+  `successful-differentiable-first-run-20261102` overlays in 2D and 3D;
 - one shared sequence timeline.
 
 All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame

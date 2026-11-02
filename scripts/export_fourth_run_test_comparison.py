@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the 20-sample scaled-input vs. CD-IoU fourth-run comparison."""
+"""Export the 20-sample input vs. refined-run comparison."""
 
 from __future__ import annotations
 
@@ -13,6 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 HOI_ROOT = Path("/home/ilyssa_syx/models/hoi-recon-hl")
 DATA = HOI_ROOT / "data/dexycb_hl_v3_100_20_20"
 FOURTH_RESULTS = HOI_ROOT / "eval_runs/cd-iou-fourth-run-0005-0004-dexycb-test"
+DIFF_FIRST_RESULTS = (
+    HOI_ROOT
+    / "eval_runs/successful-differentiable-first-run-0002-0001-dexycb-test/test"
+)
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 RELEASE = "20261029-amodal-iou"
@@ -33,6 +37,13 @@ BASELINES = (
         "asset_id": "exp4-20261029",
         "color": "#22d3ee",
     },
+    {
+        "id": "successful-differentiable-first-run-20261102",
+        "label": "successful-differentiable-first-run-20261102",
+        "result_id": "diff-first",
+        "asset_id": "exp7-20261102",
+        "color": "#a78bfa",
+    },
 )
 
 
@@ -41,7 +52,11 @@ def result_dir(result_id: str, sample_id: str) -> Path:
         # This compatibility copy only adds the derived joints_camera cache. The
         # exporter reads the unchanged MANO parameters from input/final.
         return DATA / SPLIT / sample_id / "input/final"
-    return FOURTH_RESULTS / sample_id
+    if result_id == "old":
+        return FOURTH_RESULTS / sample_id
+    if result_id == "diff-first":
+        return DIFF_FIRST_RESULTS / sample_id
+    raise ValueError(f"unknown result ID: {result_id}")
 
 
 def ensure_reconstruction(source: Path, output: Path, hand_side: str) -> None:
@@ -67,6 +82,14 @@ def main() -> None:
     )
     if fourth_result_ids != dataset_ids:
         raise ValueError("fourth-run result sequence set differs from dataset test split")
+    diff_first_result_ids = sorted(
+        path.name for path in DIFF_FIRST_RESULTS.iterdir()
+        if path.is_dir()
+    )
+    if diff_first_result_ids != dataset_ids:
+        raise ValueError(
+            "differentiable-first-run result sequence set differs from dataset test split"
+        )
 
     for sample_id in dataset_ids:
         source_root = DATA / SPLIT / sample_id
@@ -109,8 +132,8 @@ def main() -> None:
             "id": sample_id,
             "label": sample_id.replace("__", " / "),
             "description": (
-                "DexYCB test sequence comparing input with "
-                "cd-iou-fourth-run-20261029."
+                "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, "
+                "and successful-differentiable-first-run-20261102."
             ),
             "dataset": "DexYCB",
             "split": "test",
