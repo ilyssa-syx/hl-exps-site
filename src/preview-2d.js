@@ -195,7 +195,9 @@ export class Preview2D {
       if (!layer?.data || !layer.hand || !layer.object) continue;
       const { metadata, handVertices, objectPoses } = layer.data;
       const frame = Math.min(metadata.frameCount - 1, Math.round(this.progress * (metadata.frameCount - 1)));
-      const intrinsics = metadata.intrinsics[Math.min(frame, metadata.intrinsics.length - 1)];
+      // The evaluator renders every reconstructed frame with the prediction's
+      // first-frame intrinsics, so the website must use the same projection.
+      const intrinsics = metadata.intrinsics[0];
       gl.uniform4f(this.locations.intrinsics, intrinsics[0][0], intrinsics[1][1], intrinsics[0][2], intrinsics[1][2]);
       gl.uniform2f(this.locations.imageSize, metadata.imageWidth, metadata.imageHeight);
 
