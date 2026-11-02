@@ -16,6 +16,7 @@ DATA = HOI_ROOT / "data/ho3d_test"
 FOURTH_RESULTS = HOI_ROOT / "eval_runs/cd-iou-fourth-run-0005-0004-ho3d-test/test"
 DIFF_FIRST_RESULTS = HOI_ROOT / "eval_runs/successful-differentiable-first-run-0002-0001-ho3d-test/test"
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
+FFMPEG = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/ffmpeg")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 RELEASE = "20261102-ho3d-v3-test"
 SPLIT = "test"
@@ -89,6 +90,23 @@ def ensure_reconstruction(source: Path, output: Path, hand_side: str) -> None:
     ], check=True)
 
 
+def ensure_faststart_video(source: Path, output: Path) -> None:
+    """Copy the RGB video and put its MP4 index before media payloads."""
+    output.parent.mkdir(parents=True, exist_ok=True)
+    if not output.exists():
+        shutil.copy2(source, output)
+    payload = output.read_bytes()
+    if payload.find(b"moov") < payload.find(b"mdat"):
+        return
+    temporary = output.with_suffix(".faststart.mp4")
+    subprocess.run([
+        str(FFMPEG), "-hide_banner", "-loglevel", "error", "-y",
+        "-i", str(output), "-codec", "copy", "-movflags", "+faststart",
+        str(temporary),
+    ], check=True)
+    temporary.replace(output)
+
+
 def main() -> None:
     config_root = ROOT / "configs/HO3D_v3-TEST/examples"
     config_root.mkdir(parents=True, exist_ok=True)
@@ -110,9 +128,9 @@ def main() -> None:
         source_root = DATA / SPLIT / sample_id
         groundtruth = json.loads((source_root / "groundtruth/manifest.json").read_text())
         rgb = asset_root / sample_id / "input-rgb.mp4"
-        rgb.parent.mkdir(parents=True, exist_ok=True)
-        if not rgb.exists():
-            shutil.copy2(source_root / f"input/dyn_hamr/videos/{sample_id}.mp4", rgb)
+        ensure_faststart_video(
+            source_root / f"input/dyn_hamr/videos/{sample_id}.mp4", rgb,
+        )
 
         baselines = []
         for item in BASELINES:

@@ -83,6 +83,10 @@ export class Preview2D {
       colorRgb: rgb(layer.color), pose: new Float32Array(16),
     }]));
     this.visible = new Set(layers.map((layer) => layer.id));
+    // Long HO3D sequences contain about 15 MB of hand vertices per baseline.
+    // Preserve layer order so the input reconstruction becomes interactive
+    // before the two comparison runs consume bandwidth in the background.
+    this.loadQueue = Promise.resolve();
     this.progress = 0;
     this.gl = canvas.getContext("webgl", { alpha: true, antialias: true, premultipliedAlpha: true });
     if (!this.gl) throw new Error("WebGL is required for the 2D overlay viewer");
@@ -131,7 +135,11 @@ export class Preview2D {
 
   ensureLayer(layer) {
     if (!layer.loading) {
-      layer.loading = layer.load().then((data) => this.buildLayer(layer, data)).catch((error) => console.error(error));
+      layer.loading = this.loadQueue
+        .then(() => layer.load())
+        .then((data) => this.buildLayer(layer, data))
+        .catch((error) => console.error(error));
+      this.loadQueue = layer.loading;
     }
   }
 
