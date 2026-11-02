@@ -143,7 +143,16 @@ document.querySelector("#app").innerHTML = `
   </main>`;
 
 const inputRgb = document.querySelector("#input-rgb");
-const preview2d = new Preview2D(document.querySelector("#overlay-canvas"), inputRgb, layers);
+const overlayCanvas = document.querySelector("#overlay-canvas");
+let preview2d;
+try {
+  preview2d = new Preview2D(overlayCanvas, inputRgb, layers);
+} catch (error) {
+  console.error(error);
+  overlayCanvas.hidden = true;
+  document.querySelector(".overlay-stage .stage-tag").textContent = "INPUT RGB · WEBGL OVERLAY UNAVAILABLE";
+  preview2d = { setVisible() {}, setProgress() {}, dispose() {} };
+}
 let sceneViewer = null;
 let sceneLoading = null;
 let activeTab = "overlay";
