@@ -16,10 +16,8 @@ const card = (sample, index) => {
   </a>`;
 };
 
-const sections = ["val", "test"].map((split) => {
-  const examples = manifest.examples.filter((sample) => sample.split === split);
-  return `<section class="catalog-section"><div class="section-title"><h2>${split}</h2><span>${examples.length} samples</span></div><div class="sample-grid">${examples.map(card).join("")}</div></section>`;
-}).join("");
+const testExamples = manifest.examples.filter((sample) => sample.split === "test");
+const sections = `<section class="catalog-section"><div class="section-title"><h2>dexycb-test</h2><span>${testExamples.length} samples</span></div><div class="sample-grid">${testExamples.map(card).join("")}</div></section>`;
 const related = (catalog.relatedCatalogs || []).map((item) =>
   `<a class="catalog-link" href="${base}${item.url}">${item.label}</a>`
 ).join("");

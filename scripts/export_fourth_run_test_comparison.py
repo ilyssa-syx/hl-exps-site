@@ -12,7 +12,7 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 HOI_ROOT = Path("/home/ilyssa_syx/models/hoi-recon-hl")
 DATA = HOI_ROOT / "data/dexycb_hl_v3_100_20_20"
-RESULTS = HOI_ROOT / "legendary_analysis/analysis_results/amodal_iou_comparison_reviewed"
+FOURTH_RESULTS = HOI_ROOT / "eval_runs/cd-iou-fourth-run-0005-0004-dexycb-test"
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 RELEASE = "20261029-amodal-iou"
@@ -41,7 +41,7 @@ def result_dir(result_id: str, sample_id: str) -> Path:
         # This compatibility copy only adds the derived joints_camera cache. The
         # exporter reads the unchanged MANO parameters from input/final.
         return DATA / SPLIT / sample_id / "input/final"
-    return RESULTS / "predictions/old/test/test" / sample_id
+    return FOURTH_RESULTS / sample_id
 
 
 def ensure_reconstruction(source: Path, output: Path, hand_side: str) -> None:
@@ -62,7 +62,7 @@ def main() -> None:
         raise ValueError(f"expected {EXPECTED_COUNT} test sequences, found {len(dataset_ids)}")
 
     fourth_result_ids = sorted(
-        path.name for path in (RESULTS / "predictions/old/test/test").iterdir()
+        path.name for path in FOURTH_RESULTS.iterdir()
         if path.is_dir()
     )
     if fourth_result_ids != dataset_ids:
