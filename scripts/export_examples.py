@@ -30,8 +30,9 @@ COLLECTIONS = (
                 "config_dir": ROOT / "configs/examples",
                 "expected_baselines": ([
                     "input",
-                    "cd-iou-fourth-run-20261029",
-                    "successful-differentiable-first-run-20261102",
+                    "exp-4",
+                    "exp-7",
+                    "exp-8-latest",
                 ],),
             },
             {
@@ -48,9 +49,9 @@ COLLECTIONS = (
         "manifest_path": "data/manifest.json",
         "catalog_path": "",
         "catalog": {
-            "eyebrow": "DexYCB + HO3D v3 · input vs. two refined runs",
+            "eyebrow": "DexYCB + HO3D v3 · input vs. refined experiments",
             "title": "Experiment samples",
-            "description": "33 test sequences · input, CD-IoU fourth run, and differentiable first run · per-sequence 2D/3D comparison",
+            "description": "33 test sequences · Exp 4, Exp 7, and the latest Exp 8 on DexYCB · per-sequence 2D/3D comparison",
             "sampleRoot": "samples",
             "sections": [
                 {"dataset": "DexYCB", "title": "dexycb-test"},

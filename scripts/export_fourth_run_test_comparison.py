@@ -18,6 +18,10 @@ DIFF_FIRST_RESULTS = (
     HOI_ROOT
     / "eval_runs/successful-differentiable-first-run-0002-0001-dexycb-test/test"
 )
+EXP8_LATEST_RESULTS = (
+    HOI_ROOT
+    / "eval_runs/run-20261106-latest-e0011-i0001-dexycb-test-pred/test"
+)
 INPUT_METRICS = (
     HOI_ROOT
     / "eval_runs/dexycb-hl-v3-100-20-20-cleaned-test-input-eval-v12/per_sequence.csv"
@@ -29,6 +33,10 @@ FOURTH_METRICS = (
 DIFF_FIRST_METRICS = (
     HOI_ROOT
     / "eval_runs/successful-differentiable-first-run-0002-0001-dexycb-test-eval-v12/per_sequence.csv"
+)
+EXP8_LATEST_METRICS = (
+    HOI_ROOT
+    / "eval_runs/run-20261106-latest-e0011-i0001-dexycb-test-metrics/per_sequence.csv"
 )
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
@@ -45,20 +53,28 @@ BASELINES = (
         "metrics": INPUT_METRICS,
     },
     {
-        "id": "cd-iou-fourth-run-20261029",
-        "label": "cd-iou-fourth-run-20261029",
+        "id": "exp-4",
+        "label": "Exp 4",
         "result_id": "old",
         "asset_id": "exp4-20261029",
         "color": "#22d3ee",
         "metrics": FOURTH_METRICS,
     },
     {
-        "id": "successful-differentiable-first-run-20261102",
-        "label": "successful-differentiable-first-run-20261102",
+        "id": "exp-7",
+        "label": "Exp 7",
         "result_id": "diff-first",
         "asset_id": "exp7-20261102",
         "color": "#a78bfa",
         "metrics": DIFF_FIRST_METRICS,
+    },
+    {
+        "id": "exp-8-latest",
+        "label": "Exp 8 (latest)",
+        "result_id": "exp8-latest",
+        "asset_id": "exp8-latest-20261106",
+        "color": "#34d399",
+        "metrics": EXP8_LATEST_METRICS,
     },
 )
 
@@ -115,6 +131,8 @@ def result_dir(result_id: str, sample_id: str) -> Path:
         return FOURTH_RESULTS / sample_id
     if result_id == "diff-first":
         return DIFF_FIRST_RESULTS / sample_id
+    if result_id == "exp8-latest":
+        return EXP8_LATEST_RESULTS / sample_id
     raise ValueError(f"unknown result ID: {result_id}")
 
 
@@ -149,6 +167,12 @@ def main() -> None:
         raise ValueError(
             "differentiable-first-run result sequence set differs from dataset test split"
         )
+    exp8_latest_result_ids = sorted(
+        path.name for path in EXP8_LATEST_RESULTS.iterdir()
+        if path.is_dir()
+    )
+    if exp8_latest_result_ids != dataset_ids:
+        raise ValueError("Exp 8 latest result sequence set differs from dataset test split")
     metrics_by_baseline = {
         item["id"]: load_metrics(item["metrics"])
         for item in BASELINES
@@ -201,8 +225,8 @@ def main() -> None:
             "id": sample_id,
             "label": sample_id.replace("__", " / "),
             "description": (
-                "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, "
-                "and successful-differentiable-first-run-20261102."
+                "DexYCB test sequence comparing input, Exp 4, Exp 7, and "
+                "Exp 8 (latest)."
             ),
             "dataset": "DexYCB",
             "split": "test",

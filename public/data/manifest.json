@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
   "catalog": {
-    "eyebrow": "DexYCB + HO3D v3 \u00b7 input vs. two refined runs",
+    "eyebrow": "DexYCB + HO3D v3 \u00b7 input vs. refined experiments",
     "title": "Experiment samples",
-    "description": "33 test sequences \u00b7 input, CD-IoU fourth run, and differentiable first run \u00b7 per-sequence 2D/3D comparison",
+    "description": "33 test sequences \u00b7 Exp 4, Exp 7, and the latest Exp 8 on DexYCB \u00b7 per-sequence 2D/3D comparison",
     "sampleRoot": "samples",
     "sections": [
       {
@@ -22,7 +22,7 @@
       "schemaVersion": 2,
       "id": "20200820-subject-03__20200820_135810__841412060263",
       "label": "20200820-subject-03 / 20200820_135810 / 841412060263",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "003_cracker_box",
@@ -87,8 +87,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -144,8 +144,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -199,6 +199,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 1.259147659346864,
+              "median": 1.2163613438606262
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.799746223398157,
+              "median": 0.8042041957378387,
+              "scoredMean": 0.799746223398157
+            },
+            "handAmodalIou": {
+              "count": 74,
+              "mean": 0.7397722831448993,
+              "median": 0.76441290974617,
+              "scoredMean": 0.7397722831448993
+            },
+            "cdH": {
+              "count": 74,
+              "mean": 9.267710659954998,
+              "median": 6.482044458389282,
+              "scoredMean": 9.267710659954998
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 2.475315264643055,
+              "median": 2.2099642753601074
+            },
+            "wristTranslation": {
+              "count": 74,
+              "mean": 22.896946649293643,
+              "median": 18.79521083831787
+            },
+            "wristRotation": {
+              "count": 74,
+              "mean": 10.821961562375765,
+              "median": 11.59726095199585
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -206,7 +263,7 @@
       "schemaVersion": 2,
       "id": "20200820-subject-03__20200820_145113__932122062010",
       "label": "20200820-subject-03 / 20200820_145113 / 932122062010",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "052_extra_large_clamp",
@@ -271,8 +328,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -328,8 +385,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -383,6 +440,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 0.8659205823331266,
+              "median": 0.6795148849487305
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.7122689775518469,
+              "median": 0.7017763257026672,
+              "scoredMean": 0.7122689775518469
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.7702351222958481,
+              "median": 0.7859161496162415,
+              "scoredMean": 0.7702351222958481
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 2.3066467423188057,
+              "median": 1.912689208984375,
+              "scoredMean": 2.3066467423188057
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 1.5549587417547017,
+              "median": 1.0433735847473145
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 30.8275265589095,
+              "median": 31.910446166992188
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 7.495469553428784,
+              "median": 6.669430732727051
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_145113__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -390,7 +504,7 @@
       "schemaVersion": 2,
       "id": "20200903-subject-04__20200903_112428__836212060125",
       "label": "20200903-subject-04 / 20200903_112428 / 836212060125",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "025_mug",
@@ -455,8 +569,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -512,8 +626,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -567,6 +681,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 1.2174853334824245,
+              "median": 1.0941544771194458
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.7586143753594823,
+              "median": 0.803707629442215,
+              "scoredMean": 0.7586143753594823
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.6136641439638639,
+              "median": 0.6108546257019043,
+              "scoredMean": 0.6136641439638639
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 6.195173349296837,
+              "median": 5.274023056030273,
+              "scoredMean": 6.195173349296837
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 2.92327507448868,
+              "median": 0.5833077430725098
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 28.812464889727142,
+              "median": 25.37640380859375
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 6.270786567738182,
+              "median": 5.990015029907227
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200903-subject-04__20200903_112428__836212060125/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -574,7 +745,7 @@
       "schemaVersion": 2,
       "id": "20200908-subject-05__20200908_152221__932122060861",
       "label": "20200908-subject-05 / 20200908_152221 / 932122060861",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "040_large_marker",
@@ -639,8 +810,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -696,8 +867,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -751,6 +922,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 1.58664568976776,
+              "median": 0.9376989603042603
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.7812140382624961,
+              "median": 0.8061714768409729,
+              "scoredMean": 0.7812140382624961
+            },
+            "handAmodalIou": {
+              "count": 63,
+              "mean": 0.7799117451622373,
+              "median": 0.7889312505722046,
+              "scoredMean": 0.7799117451622373
+            },
+            "cdH": {
+              "count": 63,
+              "mean": 3.711300774226113,
+              "median": 3.1067073345184326,
+              "scoredMean": 3.711300774226113
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 3.4762598521599215,
+              "median": 2.8598341941833496
+            },
+            "wristTranslation": {
+              "count": 63,
+              "mean": 27.407702527348956,
+              "median": 30.434968948364258
+            },
+            "wristRotation": {
+              "count": 63,
+              "mean": 5.821151854499938,
+              "median": 5.3420538902282715
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200908-subject-05__20200908_152221__932122060861/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -758,7 +986,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_114258__841412060263",
       "label": "20200918-subject-06 / 20200918_114258 / 841412060263",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "007_tuna_fish_can",
@@ -823,8 +1051,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -880,8 +1108,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -935,6 +1163,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 8.888869575552038,
+              "median": 8.107242107391357
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.524641187408486,
+              "median": 0.47734344005584717,
+              "scoredMean": 0.524641187408486
+            },
+            "handAmodalIou": {
+              "count": 59,
+              "mean": 0.7223174203250368,
+              "median": 0.7269916534423828,
+              "scoredMean": 0.7223174203250368
+            },
+            "cdH": {
+              "count": 59,
+              "mean": 17.17120802604546,
+              "median": 13.419261932373047,
+              "scoredMean": 17.17120802604546
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 9.77287707365539,
+              "median": 7.629611492156982
+            },
+            "wristTranslation": {
+              "count": 59,
+              "mean": 35.31922729944779,
+              "median": 33.04098129272461
+            },
+            "wristRotation": {
+              "count": 59,
+              "mean": 6.988499368651438,
+              "median": 6.735999584197998
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114258__841412060263/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -942,7 +1227,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_114717__932122061900",
       "label": "20200918-subject-06 / 20200918_114717 / 932122061900",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "009_gelatin_box",
@@ -1007,8 +1292,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -1064,8 +1349,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -1119,6 +1404,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 1.108565143636755,
+              "median": 1.0062882900238037
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.8241617663486583,
+              "median": 0.835997462272644,
+              "scoredMean": 0.8241617663486583
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.7217488790813246,
+              "median": 0.7231234908103943,
+              "scoredMean": 0.7217488790813246
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 2.9925739106379057,
+              "median": 2.4049675464630127,
+              "scoredMean": 2.9925739106379057
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 2.1885115608368833,
+              "median": 2.079444646835327
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 33.92922637337133,
+              "median": 34.20441436767578
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 5.728876967179148,
+              "median": 4.957589149475098
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -1126,7 +1468,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_114929__840412060917",
       "label": "20200918-subject-06 / 20200918_114929 / 840412060917",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "010_potted_meat_can",
@@ -1191,8 +1533,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -1248,8 +1590,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -1303,6 +1645,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 5.730209168550131,
+              "median": 6.3097920417785645
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.7694301826728357,
+              "median": 0.8693450689315796,
+              "scoredMean": 0.7694301826728357
+            },
+            "handAmodalIou": {
+              "count": 59,
+              "mean": 0.6494163027254202,
+              "median": 0.6648910641670227,
+              "scoredMean": 0.6494163027254202
+            },
+            "cdH": {
+              "count": 59,
+              "mean": 12.67902257078785,
+              "median": 10.558040618896484,
+              "scoredMean": 12.67902257078785
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 8.781044317536974,
+              "median": 6.227570056915283
+            },
+            "wristTranslation": {
+              "count": 59,
+              "mean": 29.47860468848277,
+              "median": 24.649282455444336
+            },
+            "wristRotation": {
+              "count": 59,
+              "mean": 8.789374798031176,
+              "median": 8.60339069366455
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114929__840412060917/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -1310,7 +1709,7 @@
       "schemaVersion": 2,
       "id": "20200918-subject-06__20200918_120513__841412060263",
       "label": "20200918-subject-06 / 20200918_120513 / 841412060263",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "036_wood_block",
@@ -1375,8 +1774,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -1432,8 +1831,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -1487,6 +1886,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 6.622418977118827,
+              "median": 5.926044225692749
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.6275653577334172,
+              "median": 0.4891556352376938,
+              "scoredMean": 0.6275653577334172
+            },
+            "handAmodalIou": {
+              "count": 59,
+              "mean": 0.7496545345096265,
+              "median": 0.7233250737190247,
+              "scoredMean": 0.7496545345096265
+            },
+            "cdH": {
+              "count": 59,
+              "mean": 11.383977138389975,
+              "median": 9.172259330749512,
+              "scoredMean": 11.383977138389975
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 15.60819091377397,
+              "median": 15.265231132507324
+            },
+            "wristTranslation": {
+              "count": 59,
+              "mean": 41.06492857205666,
+              "median": 41.65270233154297
+            },
+            "wristRotation": {
+              "count": 59,
+              "mean": 6.654137771008378,
+              "median": 6.314438343048096
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_120513__841412060263/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -1494,7 +1950,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_143500__932122061900",
       "label": "20200928-subject-07 / 20200928_143500 / 932122061900",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "002_master_chef_can",
@@ -1559,8 +2015,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -1616,8 +2072,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -1671,6 +2127,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 1.3891702535990123,
+              "median": 0.9371533095836639
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.8632741224121403,
+              "median": 0.925771027803421,
+              "scoredMean": 0.8632741224121403
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.6892777681350708,
+              "median": 0.6844687461853027,
+              "scoredMean": 0.6892777681350708
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 3.8163269015780665,
+              "median": 3.537135601043701,
+              "scoredMean": 3.8163269015780665
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 4.849210751995648,
+              "median": 6.618751049041748
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 43.79809766066702,
+              "median": 37.535057067871094
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 6.25778773793003,
+              "median": 5.976792335510254
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143500__932122061900/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -1678,7 +2191,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_143944__932122062010",
       "label": "20200928-subject-07 / 20200928_143944 / 932122062010",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "004_sugar_box",
@@ -1743,8 +2256,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -1800,8 +2313,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -1855,6 +2368,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 2.519288761390222,
+              "median": 1.885128676891327
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.8870429839636829,
+              "median": 0.9197833836078644,
+              "scoredMean": 0.8870429839636829
+            },
+            "handAmodalIou": {
+              "count": 59,
+              "mean": 0.7448138867394399,
+              "median": 0.7487002015113831,
+              "scoredMean": 0.7448138867394399
+            },
+            "cdH": {
+              "count": 59,
+              "mean": 6.881755145929628,
+              "median": 5.7701849937438965,
+              "scoredMean": 6.881755145929628
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 3.8156065448914487,
+              "median": 1.113229751586914
+            },
+            "wristTranslation": {
+              "count": 59,
+              "mean": 19.037017870757538,
+              "median": 16.01597785949707
+            },
+            "wristRotation": {
+              "count": 59,
+              "mean": 4.638634463488045,
+              "median": 4.34731912612915
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -1862,7 +2432,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_145204__932122060861",
       "label": "20200928-subject-07 / 20200928_145204 / 932122060861",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "008_pudding_box",
@@ -1927,8 +2497,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -1984,8 +2554,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -2039,6 +2609,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 4.682252980567314,
+              "median": 4.781840801239014
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.7940854816823393,
+              "median": 0.8113929331302643,
+              "scoredMean": 0.7940854816823393
+            },
+            "handAmodalIou": {
+              "count": 68,
+              "mean": 0.6852562749648795,
+              "median": 0.7219631373882294,
+              "scoredMean": 0.6852562749648795
+            },
+            "cdH": {
+              "count": 68,
+              "mean": 6.92664193055209,
+              "median": 6.470783472061157,
+              "scoredMean": 6.92664193055209
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 2.632287053927167,
+              "median": 2.05926513671875
+            },
+            "wristTranslation": {
+              "count": 68,
+              "mean": 29.50812609055463,
+              "median": 25.091236114501953
+            },
+            "wristRotation": {
+              "count": 68,
+              "mean": 7.005198196453207,
+              "median": 6.244929313659668
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_145204__932122060861/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -2046,7 +2673,7 @@
       "schemaVersion": 2,
       "id": "20200928-subject-07__20200928_153953__839512060362",
       "label": "20200928-subject-07 / 20200928_153953 / 839512060362",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "019_pitcher_base",
@@ -2111,8 +2738,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -2168,8 +2795,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -2223,6 +2850,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 1.6945971300204594,
+              "median": 0.8916992545127869
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.8857500760091676,
+              "median": 0.9337023496627808,
+              "scoredMean": 0.8857500760091676
+            },
+            "handAmodalIou": {
+              "count": 72,
+              "mean": 0.7171007005704774,
+              "median": 0.7198609709739685,
+              "scoredMean": 0.7171007005704774
+            },
+            "cdH": {
+              "count": 72,
+              "mean": 17.54153119193183,
+              "median": 15.627904415130615,
+              "scoredMean": 17.54153119193183
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 3.4671678177907435,
+              "median": 2.1838831901550293
+            },
+            "wristTranslation": {
+              "count": 72,
+              "mean": 22.98165033592118,
+              "median": 17.824254035949707
+            },
+            "wristRotation": {
+              "count": 72,
+              "mean": 10.09959884484609,
+              "median": 8.504131317138672
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_153953__839512060362/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -2230,7 +2914,7 @@
       "schemaVersion": 2,
       "id": "20201002-subject-08__20201002_105534__932122061900",
       "label": "20201002-subject-08 / 20201002_105534 / 932122061900",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "005_tomato_soup_can",
@@ -2295,8 +2979,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -2352,8 +3036,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -2407,6 +3091,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 1.2836690520918048,
+              "median": 0.7006818652153015
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.8350781927237639,
+              "median": 0.873015433549881,
+              "scoredMean": 0.8350781927237639
+            },
+            "handAmodalIou": {
+              "count": 61,
+              "mean": 0.6849737792718605,
+              "median": 0.686096727848053,
+              "scoredMean": 0.6849737792718605
+            },
+            "cdH": {
+              "count": 61,
+              "mean": 3.700607485458499,
+              "median": 3.20920467376709,
+              "scoredMean": 3.700607485458499
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 1.8253197886355936,
+              "median": 0.6681044101715088
+            },
+            "wristTranslation": {
+              "count": 61,
+              "mean": 28.471386018346568,
+              "median": 26.976716995239258
+            },
+            "wristRotation": {
+              "count": 61,
+              "mean": 8.730634048336842,
+              "median": 8.034089088439941
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -2414,7 +3155,7 @@
       "schemaVersion": 2,
       "id": "20201002-subject-08__20201002_113227__932122060857",
       "label": "20201002-subject-08 / 20201002_113227 / 932122060857",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "061_foam_brick",
@@ -2479,8 +3220,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -2536,8 +3277,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -2591,6 +3332,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 17.545081666997962,
+              "median": 19.20871353149414
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.5422628743422998,
+              "median": 0.5683477818965912,
+              "scoredMean": 0.5422628743422998
+            },
+            "handAmodalIou": {
+              "count": 44,
+              "mean": 0.4848411812298847,
+              "median": 0.5894908607006073,
+              "scoredMean": 0.4848411812298847
+            },
+            "cdH": {
+              "count": 44,
+              "mean": 30.383428736166522,
+              "median": 9.487386226654053,
+              "scoredMean": 30.383428736166522
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 10.719039657548683,
+              "median": 6.701776504516602
+            },
+            "wristTranslation": {
+              "count": 44,
+              "mean": 45.497600598768756,
+              "median": 44.603492736816406
+            },
+            "wristRotation": {
+              "count": 44,
+              "mean": 16.932949071580712,
+              "median": 12.325788974761963
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_113227__932122060857/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -2598,7 +3396,7 @@
       "schemaVersion": 2,
       "id": "20201015-subject-09__20201015_143825__840412060917",
       "label": "20201015-subject-09 / 20201015_143825 / 840412060917",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "006_mustard_bottle",
@@ -2663,8 +3461,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -2720,8 +3518,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -2775,6 +3573,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 3.260756202042103,
+              "median": 2.7920420169830322
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.8675594843096204,
+              "median": 0.8953969180583954,
+              "scoredMean": 0.8675594843096204
+            },
+            "handAmodalIou": {
+              "count": 72,
+              "mean": 0.7419887069198821,
+              "median": 0.7508097887039185,
+              "scoredMean": 0.7419887069198821
+            },
+            "cdH": {
+              "count": 72,
+              "mean": 15.44786595635944,
+              "median": 13.237080574035645,
+              "scoredMean": 15.44786595635944
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 4.86532697543292,
+              "median": 4.546827793121338
+            },
+            "wristTranslation": {
+              "count": 72,
+              "mean": 37.26213045914968,
+              "median": 35.94948387145996
+            },
+            "wristRotation": {
+              "count": 72,
+              "mean": 13.422831154531902,
+              "median": 14.938754558563232
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201015-subject-09__20201015_143825__840412060917/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -2782,7 +3637,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_112834__839512060362",
       "label": "20201022-subject-10 / 20201022_112834 / 839512060362",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "011_banana",
@@ -2847,8 +3702,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -2904,8 +3759,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -2959,6 +3814,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 3.152929075062275,
+              "median": 1.9864602088928223
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.6080488546027077,
+              "median": 0.692798376083374,
+              "scoredMean": 0.6080488546027077
+            },
+            "handAmodalIou": {
+              "count": 51,
+              "mean": 0.7781167147206325,
+              "median": 0.8049913048744202,
+              "scoredMean": 0.7781167147206325
+            },
+            "cdH": {
+              "count": 51,
+              "mean": 15.695963770735498,
+              "median": 7.472926139831543,
+              "scoredMean": 15.695963770735498
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 8.450986807614985,
+              "median": 6.134271144866943
+            },
+            "wristTranslation": {
+              "count": 51,
+              "mean": 32.3375768661499,
+              "median": 30.91748809814453
+            },
+            "wristRotation": {
+              "count": 51,
+              "mean": 9.849175513959398,
+              "median": 9.068034172058105
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_112834__839512060362/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -2966,7 +3878,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113235__932122060857",
       "label": "20201022-subject-10 / 20201022_113235 / 932122060857",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "021_bleach_cleanser",
@@ -3031,8 +3943,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -3088,8 +4000,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -3143,6 +4055,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 0.996596645977762,
+              "median": 0.8228745758533478
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.8190567447907395,
+              "median": 0.900206983089447,
+              "scoredMean": 0.8190567447907395
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.7050546104447883,
+              "median": 0.7266775965690613,
+              "scoredMean": 0.7050546104447883
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 3.3212490730118334,
+              "median": 2.8087687492370605,
+              "scoredMean": 3.3212490730118334
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 2.5795607195353845,
+              "median": 2.7830426692962646
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 34.183408134862,
+              "median": 31.9161376953125
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 6.651127247433913,
+              "median": 4.545455455780029
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113235__932122060857/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3150,7 +4119,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113502__836212060125",
       "label": "20201022-subject-10 / 20201022_113502 / 836212060125",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "024_bowl",
@@ -3215,8 +4184,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -3272,8 +4241,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -3327,6 +4296,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 1.6389160561892722,
+              "median": 1.145654320716858
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.7938439788089858,
+              "median": 0.8795735836029053,
+              "scoredMean": 0.7938439788089858
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.6662337048011914,
+              "median": 0.6515778303146362,
+              "scoredMean": 0.6662337048011914
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 16.811262373338664,
+              "median": 14.661097526550293,
+              "scoredMean": 16.811262373338664
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 3.9886166260276044,
+              "median": 2.6596720218658447
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 46.03408256329988,
+              "median": 43.34626388549805
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 6.569966063164828,
+              "median": 6.177151679992676
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113502__836212060125/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3334,7 +4360,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_113909__840412060917",
       "label": "20201022-subject-10 / 20201022_113909 / 840412060917",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "035_power_drill",
@@ -3399,8 +4425,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -3456,8 +4482,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -3511,6 +4537,63 @@
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp7-20261102/reconstruction/reconstruction.json"
             }
           }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 5.233100262848106,
+              "median": 5.9555957317352295
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.7004192354711326,
+              "median": 0.6623617708683014,
+              "scoredMean": 0.7004192354711326
+            },
+            "handAmodalIou": {
+              "count": 54,
+              "mean": 0.6397863913465429,
+              "median": 0.657686859369278,
+              "scoredMean": 0.6397863913465429
+            },
+            "cdH": {
+              "count": 54,
+              "mean": 13.812827852037218,
+              "median": 4.704206466674805,
+              "scoredMean": 13.812827852037218
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 12.647296482977803,
+              "median": 14.251687049865723
+            },
+            "wristTranslation": {
+              "count": 54,
+              "mean": 55.631790479024254,
+              "median": 51.352115631103516
+            },
+            "wristRotation": {
+              "count": 54,
+              "mean": 6.182981971237394,
+              "median": 6.416286468505859
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_113909__840412060917/exp8-latest-20261106/reconstruction/reconstruction.json"
+            }
+          }
         }
       ]
     },
@@ -3518,7 +4601,7 @@
       "schemaVersion": 2,
       "id": "20201022-subject-10__20201022_114306__932122062010",
       "label": "20201022-subject-10 / 20201022_114306 / 932122062010",
-      "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+      "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
       "dataset": "DexYCB",
       "split": "test",
       "objectName": "037_scissors",
@@ -3583,8 +4666,8 @@
           }
         },
         {
-          "id": "cd-iou-fourth-run-20261029",
-          "label": "cd-iou-fourth-run-20261029",
+          "id": "exp-4",
+          "label": "Exp 4",
           "color": "#22d3ee",
           "metrics": {
             "addAligned": {
@@ -3640,8 +4723,8 @@
           }
         },
         {
-          "id": "successful-differentiable-first-run-20261102",
-          "label": "successful-differentiable-first-run-20261102",
+          "id": "exp-7",
+          "label": "Exp 7",
           "color": "#a78bfa",
           "metrics": {
             "addAligned": {
@@ -3693,6 +4776,63 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp7-20261102/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "exp-8-latest",
+          "label": "Exp 8 (latest)",
+          "color": "#34d399",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 3.093307586135091,
+              "median": 1.5224950909614563
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.5953151450769322,
+              "median": 0.5899423360824585,
+              "scoredMean": 0.5953151450769322
+            },
+            "handAmodalIou": {
+              "count": 55,
+              "mean": 0.7591405846855858,
+              "median": 0.760603666305542,
+              "scoredMean": 0.7591405846855858
+            },
+            "cdH": {
+              "count": 55,
+              "mean": 9.43424542275342,
+              "median": 6.70644474029541,
+              "scoredMean": 9.43424542275342
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 4.782664094477484,
+              "median": 2.3205742835998535
+            },
+            "wristTranslation": {
+              "count": 55,
+              "mean": 28.976744417710737,
+              "median": 23.71596336364746
+            },
+            "wristRotation": {
+              "count": 55,
+              "mean": 12.094784760475159,
+              "median": 8.61672306060791
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261029-amodal-iou/20201022-subject-10__20201022_114306__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
             }
           }
         }

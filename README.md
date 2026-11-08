@@ -4,14 +4,14 @@ Static, sequence-level viewer for HOI reconstruction outputs. The catalog contai
 all 20 test sequences from `dexycb_hl_v3_100_20_20` and all 13 sequences from
 `HO3D_v3-TEST`. Each sample compares the
 dataset's scaled `input/final` reconstruction, displayed simply as `input`, with
-the CD-IoU fourth-run checkpoint at epoch 5 / iteration 4 and the successful
-differentiable-first-run checkpoint. Each sample has one shareable page containing:
+Exp 4 and Exp 7. DexYCB additionally includes the latest accepted Exp 8
+checkpoint (`run-20261106`, epoch 11 / iteration 1). Each sample has one
+shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
 - per-sequence evaluation-v12 metric tables for every baseline;
-- independently toggleable `input`, `cd-iou-fourth-run-20261029`, and
-  `successful-differentiable-first-run-20261102` overlays in 2D and 3D;
+- independently toggleable experiment overlays in 2D and 3D;
 - one shared sequence timeline.
 
 All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame

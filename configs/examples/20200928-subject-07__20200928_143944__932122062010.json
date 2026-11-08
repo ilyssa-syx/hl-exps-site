@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200928-subject-07__20200928_143944__932122062010",
   "label": "20200928-subject-07 / 20200928_143944 / 932122062010",
-  "description": "DexYCB test sequence comparing input, cd-iou-fourth-run-20261029, and successful-differentiable-first-run-20261102.",
+  "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "004_sugar_box",
@@ -67,8 +67,8 @@
       }
     },
     {
-      "id": "cd-iou-fourth-run-20261029",
-      "label": "cd-iou-fourth-run-20261029",
+      "id": "exp-4",
+      "label": "Exp 4",
       "color": "#22d3ee",
       "metrics": {
         "addAligned": {
@@ -124,8 +124,8 @@
       }
     },
     {
-      "id": "successful-differentiable-first-run-20261102",
-      "label": "successful-differentiable-first-run-20261102",
+      "id": "exp-7",
+      "label": "Exp 7",
       "color": "#a78bfa",
       "metrics": {
         "addAligned": {
@@ -177,6 +177,63 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp7-20261102/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "exp-8-latest",
+      "label": "Exp 8 (latest)",
+      "color": "#34d399",
+      "metrics": {
+        "addAligned": {
+          "count": 74,
+          "mean": 2.519288761390222,
+          "median": 1.885128676891327
+        },
+        "objectAmodalIou": {
+          "count": 74,
+          "mean": 0.8870429839636829,
+          "median": 0.9197833836078644,
+          "scoredMean": 0.8870429839636829
+        },
+        "handAmodalIou": {
+          "count": 59,
+          "mean": 0.7448138867394399,
+          "median": 0.7487002015113831,
+          "scoredMean": 0.7448138867394399
+        },
+        "cdH": {
+          "count": 59,
+          "mean": 6.881755145929628,
+          "median": 5.7701849937438965,
+          "scoredMean": 6.881755145929628
+        },
+        "objRel": {
+          "count": 73,
+          "mean": 3.8156065448914487,
+          "median": 1.113229751586914
+        },
+        "wristTranslation": {
+          "count": 59,
+          "mean": 19.037017870757538,
+          "median": 16.01597785949707
+        },
+        "wristRotation": {
+          "count": 59,
+          "mean": 4.638634463488045,
+          "median": 4.34731912612915
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp8-latest-20261106/reconstruction/reconstruction.json"
         }
       }
     }
