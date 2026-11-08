@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 2,
+  "id": "dexycb-validation--20200709-subject-01__20200709_153148__932122062010",
+  "label": "20200709-subject-01 / 20200709_153148 / 932122062010",
+  "description": "Curated DexYCB validation sequence with a clearly visible target and non-trivial reconstruction error. Compare input, Exp 4, Exp 7, and Exp 8 (latest).",
+  "dataset": "DexYCB",
+  "split": "validation",
+  "objectName": "052_extra_large_clamp",
+  "fps": 30,
+  "frameCount": 72,
+  "baselines": [
+    {
+      "id": "input",
+      "label": "input",
+      "color": "#fb923c",
+      "metrics": {
+        "addAligned": {
+          "count": 72,
+          "mean": 9.975766716731918,
+          "median": 9.084332942962646
+        },
+        "objectAmodalIou": {
+          "count": 72,
+          "mean": 0.566016547795799,
+          "median": 0.6184517443180084,
+          "scoredMean": 0.566016547795799
+        },
+        "handAmodalIou": {
+          "count": 72,
+          "mean": 0.6948785930871964,
+          "median": 0.7011971771717072,
+          "scoredMean": 0.6948785930871964
+        },
+        "cdH": {
+          "count": 72,
+          "mean": 15.086703297164705,
+          "median": 4.024847984313965,
+          "scoredMean": 15.086703297164705
+        },
+        "objRel": {
+          "count": 71,
+          "mean": 12.121828474209343,
+          "median": 3.021838426589966
+        },
+        "wristTranslation": {
+          "count": 72,
+          "mean": 45.09368658065796,
+          "median": 27.88090705871582
+        },
+        "wristRotation": {
+          "count": 72,
+          "mean": 3.925987981673744,
+          "median": 3.5446836948394775
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/input/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/input/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "exp-4",
+      "label": "Exp 4",
+      "color": "#22d3ee",
+      "metrics": {
+        "addAligned": {
+          "count": 72,
+          "mean": 9.975766696863705,
+          "median": 9.084332942962646
+        },
+        "objectAmodalIou": {
+          "count": 72,
+          "mean": 0.566016547795799,
+          "median": 0.6184517443180084,
+          "scoredMean": 0.566016547795799
+        },
+        "handAmodalIou": {
+          "count": 72,
+          "mean": 0.8114393014046881,
+          "median": 0.8164253830909729,
+          "scoredMean": 0.8114393014046881
+        },
+        "cdH": {
+          "count": 72,
+          "mean": 14.95971997247802,
+          "median": 3.2634979486465454,
+          "scoredMean": 14.95971997247802
+        },
+        "objRel": {
+          "count": 71,
+          "mean": 12.121828474209343,
+          "median": 3.021838426589966
+        },
+        "wristTranslation": {
+          "count": 72,
+          "mean": 40.75660170449151,
+          "median": 24.027365684509277
+        },
+        "wristRotation": {
+          "count": 72,
+          "mean": 3.925987981673744,
+          "median": 3.5446836948394775
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/exp-4/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/exp-4/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "exp-7",
+      "label": "Exp 7",
+      "color": "#a78bfa",
+      "metrics": {
+        "addAligned": {
+          "count": 72,
+          "mean": 1.3247976733578577,
+          "median": 1.1110888719558716
+        },
+        "objectAmodalIou": {
+          "count": 72,
+          "mean": 0.6895640711817477,
+          "median": 0.7145453691482544,
+          "scoredMean": 0.6895640711817477
+        },
+        "handAmodalIou": {
+          "count": 72,
+          "mean": 0.8037514049145911,
+          "median": 0.8091120719909668,
+          "scoredMean": 0.8037514049145911
+        },
+        "cdH": {
+          "count": 72,
+          "mean": 4.31488455997573,
+          "median": 3.3479716777801514,
+          "scoredMean": 4.31488455997573
+        },
+        "objRel": {
+          "count": 71,
+          "mean": 1.8446488262901843,
+          "median": 1.0602531433105469
+        },
+        "wristTranslation": {
+          "count": 72,
+          "mean": 23.9565602739652,
+          "median": 19.236382484436035
+        },
+        "wristRotation": {
+          "count": 72,
+          "mean": 4.300377217431863,
+          "median": 4.163388967514038
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/exp-7/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/exp-7/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "exp-8-latest",
+      "label": "Exp 8 (latest)",
+      "color": "#34d399",
+      "metrics": {
+        "addAligned": {
+          "count": 72,
+          "mean": 3.019589617020554,
+          "median": 1.2972126603126526
+        },
+        "objectAmodalIou": {
+          "count": 72,
+          "mean": 0.6337918883396519,
+          "median": 0.6625454127788544,
+          "scoredMean": 0.6337918883396519
+        },
+        "handAmodalIou": {
+          "count": 72,
+          "mean": 0.8117440748545859,
+          "median": 0.8191826045513153,
+          "scoredMean": 0.8117440748545859
+        },
+        "cdH": {
+          "count": 72,
+          "mean": 10.020458499590555,
+          "median": 4.350414752960205,
+          "scoredMean": 10.020458499590555
+        },
+        "objRel": {
+          "count": 71,
+          "mean": 5.003108539316855,
+          "median": 2.333833932876587
+        },
+        "wristTranslation": {
+          "count": 72,
+          "mean": 29.358901692761314,
+          "median": 21.61417007446289
+        },
+        "wristRotation": {
+          "count": 72,
+          "mean": 4.259092627300157,
+          "median": 4.255724191665649
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/exp-8-latest/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261108-dexycb-train-val-review/validation/20200709-subject-01__20200709_153148__932122062010/exp-8-latest/reconstruction/reconstruction.json"
+        }
+      }
+    }
+  ]
+}

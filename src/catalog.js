@@ -22,7 +22,8 @@ const card = (sample, index) => {
 const sectionConfigs = catalog.sections || [{ title: catalog.sectionTitle || "test" }];
 const sections = sectionConfigs.map((section) => {
   const examples = manifest.examples.filter((sample) =>
-    sample.split === "test" && (!section.dataset || sample.dataset === section.dataset)
+    (!section.split || sample.split === section.split)
+      && (!section.dataset || sample.dataset === section.dataset)
   );
   return `<section class="catalog-section"><div class="section-title"><h2>${section.title}</h2><span>${examples.length} samples</span></div><div class="sample-grid">${examples.map(card).join("")}</div></section>`;
 }).join("");

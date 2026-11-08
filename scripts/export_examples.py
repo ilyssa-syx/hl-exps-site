@@ -51,11 +51,13 @@ COLLECTIONS = (
         "catalog": {
             "eyebrow": "DexYCB + HO3D v3 · input vs. refined experiments",
             "title": "Experiment samples",
-            "description": "33 test sequences · Exp 4, Exp 7, and the latest Exp 8 on DexYCB · per-sequence 2D/3D comparison",
+            "description": "Curated DexYCB train/validation checks plus 33 held-out test sequences · per-sequence 2D/3D comparison",
             "sampleRoot": "samples",
             "sections": [
-                {"dataset": "DexYCB", "title": "dexycb-test"},
-                {"dataset": "HO3D v3", "title": "HO3D_v3-TEST"},
+                {"dataset": "DexYCB", "split": "train", "title": "dexycb-train · visible error cases"},
+                {"dataset": "DexYCB", "split": "validation", "title": "dexycb-validation · visible error cases"},
+                {"dataset": "DexYCB", "split": "test", "title": "dexycb-test"},
+                {"dataset": "HO3D v3", "split": "test", "title": "HO3D_v3-TEST"},
             ],
             "relatedCatalogs": [],
         },

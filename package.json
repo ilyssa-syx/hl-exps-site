@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "export": "python3 scripts/export_examples.py",
+    "export:dexycb-review": "python3 scripts/export_dexycb_train_val_review.py",
     "build": "npm run export && vite build",
     "preview": "vite preview"
   },
