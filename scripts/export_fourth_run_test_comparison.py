@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the 20-sample input vs. refined-run comparison."""
+"""Export the 20-sample DexYCB test comparison."""
 
 from __future__ import annotations
 
@@ -22,6 +22,10 @@ EXP8_LATEST_RESULTS = (
     HOI_ROOT
     / "eval_runs/run-20261106-latest-e0011-i0001-dexycb-test-pred/test"
 )
+FIVE_EXAMPLES_OVERFIT_RESULTS = (
+    HOI_ROOT
+    / "eval_runs/5-cases-q0154-dexycb-hl-v3-test/predictions/test"
+)
 INPUT_METRICS = (
     HOI_ROOT
     / "eval_runs/dexycb-hl-v3-100-20-20-cleaned-test-input-eval-v12/per_sequence.csv"
@@ -37,6 +41,10 @@ DIFF_FIRST_METRICS = (
 EXP8_LATEST_METRICS = (
     HOI_ROOT
     / "eval_runs/run-20261106-latest-e0011-i0001-dexycb-test-metrics/per_sequence.csv"
+)
+FIVE_EXAMPLES_OVERFIT_METRICS = (
+    HOI_ROOT
+    / "eval_runs/5-cases-q0154-dexycb-hl-v3-test/metrics/per_sequence.csv"
 )
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
@@ -75,6 +83,14 @@ BASELINES = (
         "asset_id": "exp8-latest-20261106",
         "color": "#34d399",
         "metrics": EXP8_LATEST_METRICS,
+    },
+    {
+        "id": "five-examples-overfit",
+        "label": "5 examples overfit",
+        "result_id": "five-examples-overfit",
+        "asset_id": "five-examples-overfit-q0154-20261114",
+        "color": "#f43f5e",
+        "metrics": FIVE_EXAMPLES_OVERFIT_METRICS,
     },
 )
 
@@ -133,6 +149,8 @@ def result_dir(result_id: str, sample_id: str) -> Path:
         return DIFF_FIRST_RESULTS / sample_id
     if result_id == "exp8-latest":
         return EXP8_LATEST_RESULTS / sample_id
+    if result_id == "five-examples-overfit":
+        return FIVE_EXAMPLES_OVERFIT_RESULTS / sample_id
     raise ValueError(f"unknown result ID: {result_id}")
 
 
@@ -173,6 +191,14 @@ def main() -> None:
     )
     if exp8_latest_result_ids != dataset_ids:
         raise ValueError("Exp 8 latest result sequence set differs from dataset test split")
+    five_examples_overfit_result_ids = sorted(
+        path.name for path in FIVE_EXAMPLES_OVERFIT_RESULTS.iterdir()
+        if path.is_dir()
+    )
+    if five_examples_overfit_result_ids != dataset_ids:
+        raise ValueError(
+            "5 examples overfit result sequence set differs from dataset test split"
+        )
     metrics_by_baseline = {
         item["id"]: load_metrics(item["metrics"])
         for item in BASELINES
@@ -225,8 +251,8 @@ def main() -> None:
             "id": sample_id,
             "label": sample_id.replace("__", " / "),
             "description": (
-                "DexYCB test sequence comparing input, Exp 4, Exp 7, and "
-                "Exp 8 (latest)."
+                "DexYCB test sequence comparing input, Exp 4, Exp 7, "
+                "Exp 8 (latest), and 5 examples overfit."
             ),
             "dataset": "DexYCB",
             "split": "test",
@@ -240,7 +266,12 @@ def main() -> None:
         )
 
     for old_config in config_root.glob("*.json"):
-        if old_config.stem not in dataset_ids:
+        payload = json.loads(old_config.read_text(encoding="utf-8"))
+        if (
+            payload.get("dataset") == "DexYCB"
+            and payload.get("split") == "test"
+            and old_config.stem not in dataset_ids
+        ):
             old_config.unlink()
     print(f"Exported {len(dataset_ids)} test configs using existing comparison assets")
 

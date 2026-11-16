@@ -5,7 +5,9 @@ all 20 test sequences from `dexycb_hl_v3_100_20_20` and all 13 sequences from
 `HO3D_v3-TEST`. Each sample compares the
 dataset's scaled `input/final` reconstruction, displayed simply as `input`, with
 Exp 4 and Exp 7. DexYCB additionally includes the latest accepted Exp 8
-checkpoint (`run-20261106`, epoch 11 / iteration 1). Each sample has one
+checkpoint (`run-20261106`, epoch 11 / iteration 1). The 20 DexYCB test pages
+also include **5 examples overfit**, optimized on five DexYCB train sequences
+and evaluated on the full held-out test split at query 154. Each sample has one
 shareable page containing:
 
 - calibrated 2D reconstruction overlays;

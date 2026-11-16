@@ -33,7 +33,13 @@ COLLECTIONS = (
                     "exp-4",
                     "exp-7",
                     "exp-8-latest",
-                ],),
+                ], [
+                    "input",
+                    "exp-4",
+                    "exp-7",
+                    "exp-8-latest",
+                    "five-examples-overfit",
+                ]),
             },
             {
                 "config_dir": ROOT / "configs/HO3D_v3-TEST/examples",

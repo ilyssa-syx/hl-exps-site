@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20201002-subject-08__20201002_105534__932122061900",
   "label": "20201002-subject-08 / 20201002_105534 / 932122061900",
-  "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, and Exp 8 (latest).",
+  "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, Exp 8 (latest), and 5 examples overfit.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "005_tomato_soup_can",
@@ -234,6 +234,63 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/exp8-latest-20261106/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "five-examples-overfit",
+      "label": "5 examples overfit",
+      "color": "#f43f5e",
+      "metrics": {
+        "addAligned": {
+          "count": 74,
+          "mean": 0.8505421876907349,
+          "median": 0.5470082461833954
+        },
+        "objectAmodalIou": {
+          "count": 74,
+          "mean": 0.8587001948743254,
+          "median": 0.9038110077381134,
+          "scoredMean": 0.8587001948743254
+        },
+        "handAmodalIou": {
+          "count": 61,
+          "mean": 0.7605984318451803,
+          "median": 0.7702798843383789,
+          "scoredMean": 0.7605984318451803
+        },
+        "cdH": {
+          "count": 61,
+          "mean": 4.8251581426526675,
+          "median": 5.322083473205566,
+          "scoredMean": 4.8251581426526675
+        },
+        "objRel": {
+          "count": 73,
+          "mean": 1.3579810225358553,
+          "median": 0.08089103549718857
+        },
+        "wristTranslation": {
+          "count": 61,
+          "mean": 17.466642543917796,
+          "median": 15.043352127075195
+        },
+        "wristRotation": {
+          "count": 61,
+          "mean": 8.440078592691265,
+          "median": 8.080643653869629
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/five-examples-overfit-q0154-20261114/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261029-amodal-iou/20201002-subject-08__20201002_105534__932122061900/five-examples-overfit-q0154-20261114/reconstruction/reconstruction.json"
         }
       }
     }
