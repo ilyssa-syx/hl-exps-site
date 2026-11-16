@@ -46,6 +46,11 @@ COLLECTIONS = (
                     "exp-8-latest",
                     "five-examples-overfit",
                     "exp-11",
+                ], [
+                    "input",
+                    "exp-8",
+                    "five-examples-overfit",
+                    "exp-11",
                 ]),
             },
             {
@@ -64,12 +69,13 @@ COLLECTIONS = (
         "catalog": {
             "eyebrow": "DexYCB + HO3D v3 · input vs. refined experiments",
             "title": "Experiment samples",
-            "description": "Curated DexYCB train/validation checks plus 33 held-out test sequences · per-sequence 2D/3D comparison",
+            "description": "Curated DexYCB train/validation checks plus 53 held-out test sequences · per-sequence 2D/3D comparison",
             "sampleRoot": "samples",
             "sections": [
                 {"dataset": "DexYCB", "split": "train", "title": "dexycb-train · visible error cases"},
                 {"dataset": "DexYCB", "split": "validation", "title": "dexycb-validation · visible error cases"},
                 {"dataset": "DexYCB", "split": "test", "title": "dexycb-test"},
+                {"dataset": "OakInk", "split": "test", "title": "oakink-sp0-test-sample20"},
                 {"dataset": "HO3D v3", "split": "test", "title": "HO3D_v3-TEST"},
             ],
             "relatedCatalogs": [],

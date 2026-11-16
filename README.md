@@ -1,8 +1,8 @@
 # HL Experiment Viewer
 
 Static, sequence-level viewer for HOI reconstruction outputs. The catalog contains
-all 20 test sequences from `dexycb_hl_v3_100_20_20` and all 13 sequences from
-`HO3D_v3-TEST`. Each sample compares the
+all 20 test sequences from `dexycb_hl_v3_100_20_20`, a balanced 20-sequence
+OakInk SP0 test sample, and all 13 sequences from `HO3D_v3-TEST`. Each sample compares the
 dataset's scaled `input/final` reconstruction, displayed simply as `input`, with
 Exp 4 and Exp 7. DexYCB additionally includes the latest accepted Exp 8
 checkpoint (`run-20261106`, epoch 11 / iteration 1). The 20 DexYCB test pages
@@ -20,6 +20,10 @@ containing:
 All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame
 camera-space transforms.
 
+The 20 OakInk pages compare their shared `input` reconstruction with **exp8**,
+**5 examples overfit**, and **exp11**, using the same sequence timeline and the
+OakInk evaluator's per-sequence metrics.
+
 ## Development
 
 ```bash
@@ -35,7 +39,7 @@ npm run build
 
 The site is deployed from `main` by `.github/workflows/pages.yml`.
 
-The main catalog presents `dexycb-test` and `HO3D_v3-TEST` as two sections with
+The main catalog presents DexYCB, OakInk, and `HO3D_v3-TEST` sections with
 the same card and per-sample comparison format.
 
 HO3D sequence pages contain full-sequence metrics and links to independently
