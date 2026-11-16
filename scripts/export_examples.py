@@ -39,6 +39,13 @@ COLLECTIONS = (
                     "exp-7",
                     "exp-8-latest",
                     "five-examples-overfit",
+                ], [
+                    "input",
+                    "exp-4",
+                    "exp-7",
+                    "exp-8-latest",
+                    "five-examples-overfit",
+                    "exp-11",
                 ]),
             },
             {

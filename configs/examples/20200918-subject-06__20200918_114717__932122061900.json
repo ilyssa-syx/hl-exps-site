@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200918-subject-06__20200918_114717__932122061900",
   "label": "20200918-subject-06 / 20200918_114717 / 932122061900",
-  "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, Exp 8 (latest), and 5 examples overfit.",
+  "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, Exp 8 (latest), 5 examples overfit, and exp11.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "009_gelatin_box",
@@ -291,6 +291,63 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/five-examples-overfit-q0154-20261114/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "exp-11",
+      "label": "exp11",
+      "color": "#3b82f6",
+      "metrics": {
+        "addAligned": {
+          "count": 74,
+          "mean": 0.9375208678680498,
+          "median": 0.5146514773368835
+        },
+        "objectAmodalIou": {
+          "count": 74,
+          "mean": 0.8295927019538106,
+          "median": 0.864188551902771,
+          "scoredMean": 0.8295927019538106
+        },
+        "handAmodalIou": {
+          "count": 57,
+          "mean": 0.748396821189345,
+          "median": 0.75641930103302,
+          "scoredMean": 0.748396821189345
+        },
+        "cdH": {
+          "count": 57,
+          "mean": 2.878620475007777,
+          "median": 2.3230671882629395,
+          "scoredMean": 2.878620475007777
+        },
+        "objRel": {
+          "count": 73,
+          "mean": 2.180898748032034,
+          "median": 1.53635835647583
+        },
+        "wristTranslation": {
+          "count": 57,
+          "mean": 22.84258417079323,
+          "median": 20.62291717529297
+        },
+        "wristRotation": {
+          "count": 57,
+          "mean": 5.667620566853306,
+          "median": 4.8488593101501465
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp11-e0000-i0010-20261115/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261029-amodal-iou/20200918-subject-06__20200918_114717__932122061900/exp11-e0000-i0010-20261115/reconstruction/reconstruction.json"
         }
       }
     }

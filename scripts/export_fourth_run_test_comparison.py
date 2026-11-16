@@ -26,6 +26,10 @@ FIVE_EXAMPLES_OVERFIT_RESULTS = (
     HOI_ROOT
     / "eval_runs/5-cases-q0154-dexycb-hl-v3-test/predictions/test"
 )
+EXP11_RESULTS = (
+    HOI_ROOT
+    / "eval_runs/linear-batch-3-e0000-i0010-dexycb-test/predictions/test"
+)
 INPUT_METRICS = (
     HOI_ROOT
     / "eval_runs/dexycb-hl-v3-100-20-20-cleaned-test-input-eval-v12/per_sequence.csv"
@@ -45,6 +49,10 @@ EXP8_LATEST_METRICS = (
 FIVE_EXAMPLES_OVERFIT_METRICS = (
     HOI_ROOT
     / "eval_runs/5-cases-q0154-dexycb-hl-v3-test/metrics/per_sequence.csv"
+)
+EXP11_METRICS = (
+    HOI_ROOT
+    / "eval_runs/linear-batch-3-e0000-i0010-dexycb-test/metrics/per_sequence.csv"
 )
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
@@ -91,6 +99,14 @@ BASELINES = (
         "asset_id": "five-examples-overfit-q0154-20261114",
         "color": "#f43f5e",
         "metrics": FIVE_EXAMPLES_OVERFIT_METRICS,
+    },
+    {
+        "id": "exp-11",
+        "label": "exp11",
+        "result_id": "exp-11",
+        "asset_id": "exp11-e0000-i0010-20261115",
+        "color": "#3b82f6",
+        "metrics": EXP11_METRICS,
     },
 )
 
@@ -151,6 +167,8 @@ def result_dir(result_id: str, sample_id: str) -> Path:
         return EXP8_LATEST_RESULTS / sample_id
     if result_id == "five-examples-overfit":
         return FIVE_EXAMPLES_OVERFIT_RESULTS / sample_id
+    if result_id == "exp-11":
+        return EXP11_RESULTS / sample_id
     raise ValueError(f"unknown result ID: {result_id}")
 
 
@@ -199,6 +217,12 @@ def main() -> None:
         raise ValueError(
             "5 examples overfit result sequence set differs from dataset test split"
         )
+    exp11_result_ids = sorted(
+        path.name for path in EXP11_RESULTS.iterdir()
+        if path.is_dir()
+    )
+    if exp11_result_ids != dataset_ids:
+        raise ValueError("exp11 result sequence set differs from dataset test split")
     metrics_by_baseline = {
         item["id"]: load_metrics(item["metrics"])
         for item in BASELINES
@@ -252,7 +276,7 @@ def main() -> None:
             "label": sample_id.replace("__", " / "),
             "description": (
                 "DexYCB test sequence comparing input, Exp 4, Exp 7, "
-                "Exp 8 (latest), and 5 examples overfit."
+                "Exp 8 (latest), 5 examples overfit, and exp11."
             ),
             "dataset": "DexYCB",
             "split": "test",
