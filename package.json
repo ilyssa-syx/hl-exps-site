@@ -7,6 +7,7 @@
     "dev": "vite",
     "export": "python3 scripts/export_examples.py",
     "export:dexycb-review": "python3 scripts/export_dexycb_train_val_review.py",
+    "export:five-examples-train-overfit": "python3 scripts/export_five_examples_train_overfit.py",
     "build": "npm run export && vite build",
     "preview": "vite preview"
   },

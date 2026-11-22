@@ -24,6 +24,10 @@ The 20 OakInk pages compare their shared `input` reconstruction with **exp8**,
 **5 examples overfit**, and **exp11**, using the same sequence timeline and the
 OakInk evaluator's per-sequence metrics.
 
+The catalog also has a dedicated **5 examples train overfit** section for the
+five fixed DexYCB training sequences from `run-20261113-five-case-from-zero`.
+Those pages intentionally compare only `input` with query/iteration 150.
+
 ## Development
 
 ```bash

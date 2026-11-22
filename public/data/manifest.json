@@ -8,6 +8,11 @@
     "sections": [
       {
         "dataset": "DexYCB",
+        "split": "5 examples train overfit",
+        "title": "5 examples train overfit"
+      },
+      {
+        "dataset": "DexYCB",
         "split": "train",
         "title": "dexycb-train \u00b7 visible error cases"
       },
@@ -11990,6 +11995,641 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261116-oakink-sample20/Y03021_0001_0000__2021-10-03-15-17-19__north_east/exp11/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "dexycb-five-examples-train-overfit--20200709-subject-01__20200709_141931__932122060861",
+      "label": "20200709-subject-01 / 20200709_141931 / 932122060861",
+      "description": "One of the five fixed DexYCB train-overfit examples, comparing input with 5 examples overfitting refinement (iter 150).",
+      "dataset": "DexYCB",
+      "split": "5 examples train overfit",
+      "objectName": "002_master_chef_can",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "color": "#fb923c",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 7.159706771373749,
+              "median": 7.750101804733276
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.6829053776131736,
+              "median": 0.7090571522712708,
+              "scoredMean": 0.6829053776131736
+            },
+            "handAmodalIou": {
+              "count": 72,
+              "mean": 0.6547459620568488,
+              "median": 0.6566981077194214,
+              "scoredMean": 0.6547459620568488
+            },
+            "cdH": {
+              "count": 72,
+              "mean": 8.520691997475094,
+              "median": 8.34761381149292,
+              "scoredMean": 8.520691997475094
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 17.16030412765456,
+              "median": 17.819286346435547
+            },
+            "wristTranslation": {
+              "count": 72,
+              "mean": 63.435605420006645,
+              "median": 74.66202545166016
+            },
+            "wristRotation": {
+              "count": 72,
+              "mean": 3.9048002229796515,
+              "median": 3.6219704151153564
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200709-subject-01__20200709_141931__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200709-subject-01__20200709_141931__932122060861/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200709-subject-01__20200709_141931__932122060861/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "iteration-150",
+          "label": "5 examples overfitting refinement (iter 150)",
+          "color": "#f43f5e",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 0.8733884733584192,
+              "median": 0.958538144826889
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.8952790507011943,
+              "median": 0.9186881482601166,
+              "scoredMean": 0.8952790507011943
+            },
+            "handAmodalIou": {
+              "count": 72,
+              "mean": 0.7858414385053847,
+              "median": 0.7948096096515656,
+              "scoredMean": 0.7858414385053847
+            },
+            "cdH": {
+              "count": 72,
+              "mean": 6.093285063902537,
+              "median": 5.5833024978637695,
+              "scoredMean": 6.093285063902537
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 2.6412895049368568,
+              "median": 2.591395616531372
+            },
+            "wristTranslation": {
+              "count": 72,
+              "mean": 25.889185825983684,
+              "median": 27.48050594329834
+            },
+            "wristRotation": {
+              "count": 72,
+              "mean": 3.8102499917149544,
+              "median": 3.5299806594848633
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200709-subject-01__20200709_141931__932122060861/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200709-subject-01__20200709_141931__932122060861/iteration-150/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200709-subject-01__20200709_141931__932122060861/iteration-150/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "dexycb-five-examples-train-overfit--20200813-subject-02__20200813_154917__932122060857",
+      "label": "20200813-subject-02 / 20200813_154917 / 932122060857",
+      "description": "One of the five fixed DexYCB train-overfit examples, comparing input with 5 examples overfitting refinement (iter 150).",
+      "dataset": "DexYCB",
+      "split": "5 examples train overfit",
+      "objectName": "037_scissors",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "color": "#fb923c",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 8.88471510923571,
+              "median": 8.4823899269104
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.425695469809903,
+              "median": 0.4141455143690109,
+              "scoredMean": 0.425695469809903
+            },
+            "handAmodalIou": {
+              "count": 72,
+              "mean": 0.5805563239587678,
+              "median": 0.5962617099285126,
+              "scoredMean": 0.5805563239587678
+            },
+            "cdH": {
+              "count": 72,
+              "mean": 5.9197615716192455,
+              "median": 4.01762056350708,
+              "scoredMean": 5.9197615716192455
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 11.920169614360367,
+              "median": 8.391356468200684
+            },
+            "wristTranslation": {
+              "count": 72,
+              "mean": 75.50207353962793,
+              "median": 71.67681884765625
+            },
+            "wristRotation": {
+              "count": 72,
+              "mean": 6.09939677019914,
+              "median": 5.442475080490112
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200813-subject-02__20200813_154917__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200813-subject-02__20200813_154917__932122060857/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200813-subject-02__20200813_154917__932122060857/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "iteration-150",
+          "label": "5 examples overfitting refinement (iter 150)",
+          "color": "#f43f5e",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 1.535725272571047,
+              "median": 1.5737263560295105
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.6058428457213773,
+              "median": 0.5914649367332458,
+              "scoredMean": 0.6058428457213773
+            },
+            "handAmodalIou": {
+              "count": 72,
+              "mean": 0.7318045596281687,
+              "median": 0.719327449798584,
+              "scoredMean": 0.7318045596281687
+            },
+            "cdH": {
+              "count": 72,
+              "mean": 2.2227946950329676,
+              "median": 1.9787508249282837,
+              "scoredMean": 2.2227946950329676
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 1.964967024158424,
+              "median": 2.033984899520874
+            },
+            "wristTranslation": {
+              "count": 72,
+              "mean": 26.50984636280272,
+              "median": 25.94346332550049
+            },
+            "wristRotation": {
+              "count": 72,
+              "mean": 6.933296021487978,
+              "median": 6.447723865509033
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200813-subject-02__20200813_154917__932122060857/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200813-subject-02__20200813_154917__932122060857/iteration-150/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200813-subject-02__20200813_154917__932122060857/iteration-150/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "dexycb-five-examples-train-overfit--20200820-subject-03__20200820_145035__932122062010",
+      "label": "20200820-subject-03 / 20200820_145035 / 932122062010",
+      "description": "One of the five fixed DexYCB train-overfit examples, comparing input with 5 examples overfitting refinement (iter 150).",
+      "dataset": "DexYCB",
+      "split": "5 examples train overfit",
+      "objectName": "052_extra_large_clamp",
+      "fps": 30,
+      "frameCount": 72,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "color": "#fb923c",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 25.103798349698383,
+              "median": 24.70954704284668
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.33348947013210917,
+              "median": 0.14424102753400803,
+              "scoredMean": 0.33348947013210917
+            },
+            "handAmodalIou": {
+              "count": 59,
+              "mean": 0.6000940567356045,
+              "median": 0.5854229927062988,
+              "scoredMean": 0.6000940567356045
+            },
+            "cdH": {
+              "count": 59,
+              "mean": 65.2852070008294,
+              "median": 88.86405181884766,
+              "scoredMean": 65.2852070008294
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 35.20380555355633,
+              "median": 53.25802993774414
+            },
+            "wristTranslation": {
+              "count": 59,
+              "mean": 71.84287569886547,
+              "median": 58.202423095703125
+            },
+            "wristRotation": {
+              "count": 59,
+              "mean": 7.637184644149522,
+              "median": 7.236539363861084
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200820-subject-03__20200820_145035__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200820-subject-03__20200820_145035__932122062010/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200820-subject-03__20200820_145035__932122062010/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "iteration-150",
+          "label": "5 examples overfitting refinement (iter 150)",
+          "color": "#f43f5e",
+          "metrics": {
+            "addAligned": {
+              "count": 72,
+              "mean": 2.726091915534602,
+              "median": 2.562684655189514
+            },
+            "objectAmodalIou": {
+              "count": 72,
+              "mean": 0.7351774283581309,
+              "median": 0.718946784734726,
+              "scoredMean": 0.7351774283581309
+            },
+            "handAmodalIou": {
+              "count": 59,
+              "mean": 0.7739874518523782,
+              "median": 0.7799907326698303,
+              "scoredMean": 0.7739874518523782
+            },
+            "cdH": {
+              "count": 59,
+              "mean": 2.725911540500188,
+              "median": 1.9644488096237183,
+              "scoredMean": 2.725911540500188
+            },
+            "objRel": {
+              "count": 71,
+              "mean": 7.208779737956717,
+              "median": 9.754094123840332
+            },
+            "wristTranslation": {
+              "count": 59,
+              "mean": 26.935783321574583,
+              "median": 24.115489959716797
+            },
+            "wristRotation": {
+              "count": 59,
+              "mean": 6.921310396517738,
+              "median": 6.5012006759643555
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200820-subject-03__20200820_145035__932122062010/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200820-subject-03__20200820_145035__932122062010/iteration-150/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200820-subject-03__20200820_145035__932122062010/iteration-150/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "dexycb-five-examples-train-overfit--20200903-subject-04__20200903_103749__839512060362",
+      "label": "20200903-subject-04 / 20200903_103749 / 839512060362",
+      "description": "One of the five fixed DexYCB train-overfit examples, comparing input with 5 examples overfitting refinement (iter 150).",
+      "dataset": "DexYCB",
+      "split": "5 examples train overfit",
+      "objectName": "002_master_chef_can",
+      "fps": 30,
+      "frameCount": 70,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "color": "#fb923c",
+          "metrics": {
+            "addAligned": {
+              "count": 70,
+              "mean": 0.8438496742929731,
+              "median": 0.7318192422389984
+            },
+            "objectAmodalIou": {
+              "count": 70,
+              "mean": 0.8468253476279123,
+              "median": 0.8492609262466431,
+              "scoredMean": 0.8468253476279123
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.6660571600261488,
+              "median": 0.6600816249847412,
+              "scoredMean": 0.6660571600261488
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 9.745261836470219,
+              "median": 7.921870708465576,
+              "scoredMean": 9.745261836470219
+            },
+            "objRel": {
+              "count": 69,
+              "mean": 2.3369774900484774,
+              "median": 2.365328073501587
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 40.59588527261165,
+              "median": 39.93606185913086
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 4.108392699768669,
+              "median": 3.721557140350342
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200903-subject-04__20200903_103749__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200903-subject-04__20200903_103749__839512060362/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200903-subject-04__20200903_103749__839512060362/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "iteration-150",
+          "label": "5 examples overfitting refinement (iter 150)",
+          "color": "#f43f5e",
+          "metrics": {
+            "addAligned": {
+              "count": 70,
+              "mean": 0.4891335998262678,
+              "median": 0.4546426683664322
+            },
+            "objectAmodalIou": {
+              "count": 70,
+              "mean": 0.9625669964722224,
+              "median": 0.9674215316772461,
+              "scoredMean": 0.9625669964722224
+            },
+            "handAmodalIou": {
+              "count": 57,
+              "mean": 0.8032542801739877,
+              "median": 0.8069081902503967,
+              "scoredMean": 0.8032542801739877
+            },
+            "cdH": {
+              "count": 57,
+              "mean": 2.1231844927135266,
+              "median": 2.113266944885254,
+              "scoredMean": 2.1231844927135266
+            },
+            "objRel": {
+              "count": 69,
+              "mean": 0.2154541869590437,
+              "median": 0.05271032452583313
+            },
+            "wristTranslation": {
+              "count": 57,
+              "mean": 22.751069654498185,
+              "median": 21.79265594482422
+            },
+            "wristRotation": {
+              "count": 57,
+              "mean": 4.207463098199744,
+              "median": 3.748255491256714
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200903-subject-04__20200903_103749__839512060362/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200903-subject-04__20200903_103749__839512060362/iteration-150/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200903-subject-04__20200903_103749__839512060362/iteration-150/reconstruction/reconstruction.json"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 2,
+      "id": "dexycb-five-examples-train-overfit--20200918-subject-06__20200918_113441__932122061900",
+      "label": "20200918-subject-06 / 20200918_113441 / 932122061900",
+      "description": "One of the five fixed DexYCB train-overfit examples, comparing input with 5 examples overfitting refinement (iter 150).",
+      "dataset": "DexYCB",
+      "split": "5 examples train overfit",
+      "objectName": "004_sugar_box",
+      "fps": 30,
+      "frameCount": 74,
+      "baselines": [
+        {
+          "id": "input",
+          "label": "input",
+          "color": "#fb923c",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 4.51380925404059,
+              "median": 3.4626247882843018
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.8079286644587645,
+              "median": 0.8437729477882385,
+              "scoredMean": 0.8079286644587645
+            },
+            "handAmodalIou": {
+              "count": 63,
+              "mean": 0.5624948749466548,
+              "median": 0.5972474813461304,
+              "scoredMean": 0.5624948749466548
+            },
+            "cdH": {
+              "count": 63,
+              "mean": 8.960436688529121,
+              "median": 6.613706111907959,
+              "scoredMean": 8.960436688529121
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 7.2243147110694075,
+              "median": 1.2028043270111084
+            },
+            "wristTranslation": {
+              "count": 63,
+              "mean": 81.25012091984824,
+              "median": 90.38422393798828
+            },
+            "wristRotation": {
+              "count": 63,
+              "mean": 4.095132402011326,
+              "median": 3.652357816696167
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200918-subject-06__20200918_113441__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200918-subject-06__20200918_113441__932122061900/input/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200918-subject-06__20200918_113441__932122061900/input/reconstruction/reconstruction.json"
+            }
+          }
+        },
+        {
+          "id": "iteration-150",
+          "label": "5 examples overfitting refinement (iter 150)",
+          "color": "#f43f5e",
+          "metrics": {
+            "addAligned": {
+              "count": 74,
+              "mean": 0.4666709879765639,
+              "median": 0.3929106742143631
+            },
+            "objectAmodalIou": {
+              "count": 74,
+              "mean": 0.9029976443664448,
+              "median": 0.9123753905296326,
+              "scoredMean": 0.9029976443664448
+            },
+            "handAmodalIou": {
+              "count": 63,
+              "mean": 0.6891636621384394,
+              "median": 0.6935925483703613,
+              "scoredMean": 0.6891636621384394
+            },
+            "cdH": {
+              "count": 63,
+              "mean": 4.779819365531679,
+              "median": 2.4339287281036377,
+              "scoredMean": 4.779819365531679
+            },
+            "objRel": {
+              "count": 73,
+              "mean": 0.5723108751220909,
+              "median": 0.4555605351924896
+            },
+            "wristTranslation": {
+              "count": 63,
+              "mean": 35.05054414083087,
+              "median": 23.33591079711914
+            },
+            "wristRotation": {
+              "count": 63,
+              "mean": 4.056802668268719,
+              "median": 3.3893325328826904
+            }
+          },
+          "views": {
+            "overlay2d": {
+              "rgb": {
+                "type": "video",
+                "url": "experiments/20261122-five-examples-train-overfit-q0150/20200918-subject-06__20200918_113441__932122061900/input-rgb.mp4"
+              },
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200918-subject-06__20200918_113441__932122061900/iteration-150/reconstruction/reconstruction.json"
+            },
+            "scene3d": {
+              "reconstruction": "experiments/20261122-five-examples-train-overfit-q0150/20200918-subject-06__20200918_113441__932122061900/iteration-150/reconstruction/reconstruction.json"
             }
           }
         }

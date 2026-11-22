@@ -30,6 +30,9 @@ COLLECTIONS = (
                 "config_dir": ROOT / "configs/examples",
                 "expected_baselines": ([
                     "input",
+                    "iteration-150",
+                ], [
+                    "input",
                     "exp-4",
                     "exp-7",
                     "exp-8-latest",
@@ -72,6 +75,7 @@ COLLECTIONS = (
             "description": "Curated DexYCB train/validation checks plus 53 held-out test sequences · per-sequence 2D/3D comparison",
             "sampleRoot": "samples",
             "sections": [
+                {"dataset": "DexYCB", "split": "5 examples train overfit", "title": "5 examples train overfit"},
                 {"dataset": "DexYCB", "split": "train", "title": "dexycb-train · visible error cases"},
                 {"dataset": "DexYCB", "split": "validation", "title": "dexycb-validation · visible error cases"},
                 {"dataset": "DexYCB", "split": "test", "title": "dexycb-test"},
