@@ -2,81 +2,24 @@
   "schemaVersion": 2,
   "id": "O24001_0001_0009__2021-10-04-15-51-45__south_west",
   "label": "O24001_0001_0009 / 2021-10-04-15-51-45 / south_west",
-  "description": "OakInk SP0 test sequence comparing shared input, exp8, 5 examples overfit, exp11, exp13, and 5 examples overfitting reconstruction.",
+  "description": "OakInk SP0 GT-texture held-out test sequence comparing the six finalized methods.",
   "dataset": "OakInk",
-  "split": "GT-texture 11 test",
+  "split": "test",
   "objectName": "O24001",
   "fps": 30,
   "frameCount": 71,
   "metricLabel": "OakInk evaluation",
-  "metricNote": "Per-sequence OakInk metrics. No visible-segmentation eligibility filter; missing hand predictions score 0 in scored metrics.",
+  "metricNote": "Per-sequence OakInk metrics on the shared GT-texture 11 test set.",
   "baselines": [
     {
-      "id": "input",
-      "label": "input",
-      "color": "#fb923c",
-      "metrics": {
-        "addAligned": {
-          "count": 71,
-          "mean": 8.306059056604413,
-          "median": 8.544495582580566
-        },
-        "objectAmodalIou": {
-          "count": 71,
-          "mean": 0.7443016578613872,
-          "median": 0.8302040696144104,
-          "scoredMean": 0.7443016578613872
-        },
-        "handAmodalIou": {
-          "count": 71,
-          "mean": 0.7948593031352674,
-          "median": 0.8264679908752441,
-          "scoredMean": 0.7948593031352674
-        },
-        "cdH": {
-          "count": 71,
-          "mean": 14.659631910458417,
-          "median": 4.730658054351807,
-          "scoredMean": 14.659631910458417
-        },
-        "objRel": {
-          "count": 70,
-          "mean": 9.312555946995104,
-          "median": 1.4168347120285034
-        },
-        "wristTranslation": {
-          "count": 71,
-          "mean": 35.81131466677491,
-          "median": 33.796234130859375
-        },
-        "wristRotation": {
-          "count": 71,
-          "mean": 10.491919322752617,
-          "median": 10.618242263793945
-        }
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261116-oakink-sample20/O24001_0001_0009__2021-10-04-15-51-45__south_west/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261116-oakink-sample20/O24001_0001_0009__2021-10-04-15-51-45__south_west/input/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261116-oakink-sample20/O24001_0001_0009__2021-10-04-15-51-45__south_west/input/reconstruction/reconstruction.json"
-        }
-      }
-    },
-    {
-      "id": "exp-8",
-      "label": "exp8",
+      "id": "baseline",
+      "label": "baseline",
       "color": "#34d399",
       "metrics": {
         "addAligned": {
           "count": 71,
-          "mean": 5.0270209387994145,
-          "median": 4.946805000305176
+          "mean": 5.027020985811529,
+          "median": 4.946804046630859
         },
         "objectAmodalIou": {
           "count": 71,
@@ -92,19 +35,19 @@
         },
         "cdH": {
           "count": 71,
-          "mean": 7.710311191182741,
-          "median": 2.8730340003967285,
-          "scoredMean": 7.710311191182741
+          "mean": 7.7103110115293045,
+          "median": 2.873035192489624,
+          "scoredMean": 7.7103110115293045
         },
         "objRel": {
           "count": 70,
-          "mean": 6.336219824105501,
-          "median": 1.0454860627651215
+          "mean": 6.3362208228558305,
+          "median": 1.0454865097999573
         },
         "wristTranslation": {
           "count": 71,
-          "mean": 20.271746863781566,
-          "median": 18.7994327545166
+          "mean": 20.271734922704564,
+          "median": 18.799474716186523
         },
         "wristRotation": {
           "count": 71,
@@ -126,13 +69,13 @@
       }
     },
     {
-      "id": "five-examples-overfit",
-      "label": "5 examples overfit",
+      "id": "five-examples-overfitting-refinement",
+      "label": "5 examples overfitting refinement",
       "color": "#f43f5e",
       "metrics": {
         "addAligned": {
           "count": 71,
-          "mean": 4.3157063756190555,
+          "mean": 4.3157066325066795,
           "median": 4.568119525909424
         },
         "objectAmodalIou": {
@@ -149,19 +92,19 @@
         },
         "cdH": {
           "count": 71,
-          "mean": 7.918193739904484,
+          "mean": 7.918193961533023,
           "median": 4.42190408706665,
-          "scoredMean": 7.918193739904484
+          "scoredMean": 7.918193961533023
         },
         "objRel": {
           "count": 70,
-          "mean": 6.234069911284106,
-          "median": 2.8903825283050537
+          "mean": 6.2340724932295934,
+          "median": 2.890385150909424
         },
         "wristTranslation": {
           "count": 71,
-          "mean": 25.00200177582217,
-          "median": 18.417049407958984
+          "mean": 25.001992534583724,
+          "median": 18.417036056518555
         },
         "wristRotation": {
           "count": 71,
@@ -183,8 +126,8 @@
       }
     },
     {
-      "id": "exp-11",
-      "label": "exp11",
+      "id": "baseline-lower-batch",
+      "label": "baseline + lower batch",
       "color": "#3b82f6",
       "metrics": {
         "addAligned": {
@@ -240,8 +183,8 @@
       }
     },
     {
-      "id": "exp-13",
-      "label": "exp13",
+      "id": "baseline-lower-batch-batch-inference",
+      "label": "baseline + lower batch + batch inference",
       "color": "#e879f9",
       "metrics": {
         "addAligned": {
@@ -297,7 +240,7 @@
       }
     },
     {
-      "id": "five-examples-overfit-reconstruction",
+      "id": "five-examples-overfitting-reconstruction",
       "label": "5 examples overfitting reconstruction",
       "color": "#14b8a6",
       "metrics": {
@@ -350,6 +293,63 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261116-oakink-sample20/O24001_0001_0009__2021-10-04-15-51-45__south_west/five-examples-overfit-reconstruction-q0154-20261123/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "baseline-lower-batch-reconstruction",
+      "label": "baseline + lower batch + reconstruction",
+      "color": "#f59e0b",
+      "metrics": {
+        "addAligned": {
+          "count": 71,
+          "mean": 1.2084284093178495,
+          "median": 1.141653060913086
+        },
+        "objectAmodalIou": {
+          "count": 71,
+          "mean": 0.35878515306492925,
+          "median": 0.29564258456230164,
+          "scoredMean": 0.35878515306492925
+        },
+        "handAmodalIou": {
+          "count": 71,
+          "mean": 0.8157193098269718,
+          "median": 0.8220701217651367,
+          "scoredMean": 0.8157193098269718
+        },
+        "cdH": {
+          "count": 71,
+          "mean": 5.110154269446789,
+          "median": 4.246631622314453,
+          "scoredMean": 5.110154269446789
+        },
+        "objRel": {
+          "count": 70,
+          "mean": 2.6340706793724427,
+          "median": 2.8164325952529907
+        },
+        "wristTranslation": {
+          "count": 71,
+          "mean": 29.41684053985166,
+          "median": 22.176063537597656
+        },
+        "wristRotation": {
+          "count": 71,
+          "mean": 12.514820072012888,
+          "median": 12.557343482971191
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261116-oakink-sample20/O24001_0001_0009__2021-10-04-15-51-45__south_west/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261116-oakink-sample20/O24001_0001_0009__2021-10-04-15-51-45__south_west/baseline-lower-batch-reconstruction-e0000-i0029-20261123/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261116-oakink-sample20/O24001_0001_0009__2021-10-04-15-51-45__south_west/baseline-lower-batch-reconstruction-e0000-i0029-20261123/reconstruction/reconstruction.json"
         }
       }
     }

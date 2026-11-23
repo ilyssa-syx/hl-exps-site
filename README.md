@@ -1,18 +1,20 @@
 # HL Experiment Viewer
 
-Static, sequence-level viewer for HOI reconstruction outputs. The catalog contains
-all 20 test sequences from `dexycb_hl_v3_100_20_20`, a balanced 20-sequence
-OakInk SP0 test sample, and all 13 sequences from `HO3D_v3-TEST`. Each sample compares the
-dataset's scaled `input/final` reconstruction, displayed simply as `input`, with
-Exp 4 and Exp 7. DexYCB additionally includes the latest accepted Exp 8
-checkpoint (`run-20261106`, epoch 11 / iteration 1). The 20 DexYCB test pages
-also include **5 examples overfit**, optimized on five DexYCB train sequences
-and evaluated on the full held-out test split at query 154, plus **exp11**
-(`linear-batch-3`, 30 completed iterations; accepted epoch 0 / iteration 28), and
-**exp13** (`linear-bs3 batch-v1`, first-30 validation incumbent at epoch 0 /
-iteration 24), and **5 examples overfitting reconstruction** (stitched query
-154). Each sample has one shareable page
-containing:
+Static, sequence-level viewer for HOI reconstruction outputs. The finalized test
+catalog contains all 20 DexYCB test sequences, the 11-sequence OakInk SP0
+GT-texture test set, and all 13 sequences from `HO3D_v3-TEST`. DexYCB and OakInk
+use the same six-method comparison:
+
+- **baseline** (`run-20261106`, up to validation attempt 30; epoch 5 / iteration 3);
+- **5 examples overfitting refinement** (query 154);
+- **baseline + lower batch** (epoch 0 / iteration 28);
+- **baseline + lower batch + batch inference** (epoch 0 / iteration 24);
+- **5 examples overfitting reconstruction** (stitched query 154);
+- **baseline + lower batch + reconstruction** (epoch 0 / iteration 29).
+
+The obsolete `input`, Exp 4, Exp 7, and later Exp 8 comparison entries are not
+shown on the finalized DexYCB and OakInk test pages. Each sample has one
+shareable page containing:
 
 - calibrated 2D reconstruction overlays;
 - a free-camera 3D reconstruction view;
@@ -23,11 +25,9 @@ containing:
 All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame
 camera-space transforms.
 
-The 20 OakInk pages compare their shared `input` reconstruction with **exp8**,
-**5 examples overfit**, **exp11**, and **exp13**, using the same sequence timeline
-and the OakInk evaluator's per-sequence metrics. The 11 sequences with textured
-ground-truth meshes additionally show **5 examples overfitting reconstruction**
-and are grouped as **GT-texture 11 test** in the catalog.
+The OakInk pages are restricted to the same 11-sequence GT-texture test set used
+by the frozen final evaluator, so all six methods share identical inputs and
+targets.
 
 The catalog also has a dedicated **5 examples train overfit** section for the
 five fixed DexYCB training sequences from `run-20261113-five-case-from-zero`,
