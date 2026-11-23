@@ -7,6 +7,7 @@ import argparse
 import json
 import pickle
 from pathlib import Path
+import shutil
 import sys
 import types
 
@@ -150,6 +151,23 @@ def main() -> None:
     for name, array in assets.items():
         (output / name).write_bytes(array.tobytes(order="C"))
 
+    object_texture = None
+    object_uv = getattr(object_mesh.visual, "uv", None)
+    texture_source = result_dir / "object_mesh" / "texture_map.png"
+    if object_uv is not None and texture_source.is_file():
+        object_uv = np.asarray(object_uv, dtype="<f4")
+        if object_uv.shape != (len(object_vertices), 2):
+            raise ValueError(
+                f"object UV shape {object_uv.shape} does not match "
+                f"{len(object_vertices)} vertices"
+            )
+        (output / "object-uv.bin").write_bytes(object_uv.tobytes(order="C"))
+        shutil.copy2(texture_source, output / "object-texture.png")
+        object_texture = {
+            "uv": "object-uv.bin",
+            "image": "object-texture.png",
+        }
+
     height, width = 480, 640
     metadata = {
         "schemaVersion": 1,
@@ -174,6 +192,8 @@ def main() -> None:
             "valid": object_valid.tolist(),
         },
     }
+    if object_texture is not None:
+        metadata["object"]["texture"] = object_texture
     (output / "reconstruction.json").write_text(json.dumps(metadata, separators=(",", ":")) + "\n")
     print(f"Exported {len(hand_vertices)} frames to {output}")
 

@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200820-subject-03__20200820_135810__841412060263",
   "label": "20200820-subject-03 / 20200820_135810 / 841412060263",
-  "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, Exp 8 (latest), 5 examples overfit, and exp11.",
+  "description": "DexYCB test sequence comparing input, Exp 4, Exp 7, Exp 8 (latest), 5 examples overfit, exp11, exp13, and 5 examples overfitting reconstruction.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "003_cracker_box",
@@ -301,36 +301,36 @@
       "metrics": {
         "addAligned": {
           "count": 74,
-          "mean": 2.5075548919471533,
-          "median": 2.208462953567505
+          "mean": 2.2271760412164636,
+          "median": 2.0331850051879883
         },
         "objectAmodalIou": {
           "count": 74,
-          "mean": 0.7406033744683137,
-          "median": 0.765209823846817,
-          "scoredMean": 0.7406033744683137
+          "mean": 0.7452453769542076,
+          "median": 0.7698742151260376,
+          "scoredMean": 0.7452453769542076
         },
         "handAmodalIou": {
           "count": 74,
-          "mean": 0.7311478237042556,
-          "median": 0.7569064199924469,
-          "scoredMean": 0.7311478237042556
+          "mean": 0.7314024048077093,
+          "median": 0.7554876208305359,
+          "scoredMean": 0.7314024048077093
         },
         "cdH": {
           "count": 74,
-          "mean": 7.031565633980003,
-          "median": 6.806423187255859,
-          "scoredMean": 7.031565633980003
+          "mean": 4.6644314092558785,
+          "median": 3.833051085472107,
+          "scoredMean": 4.6644314092558785
         },
         "objRel": {
           "count": 73,
-          "mean": 8.620394241319945,
-          "median": 6.519406318664551
+          "mean": 8.49953979253769,
+          "median": 6.653576374053955
         },
         "wristTranslation": {
           "count": 74,
-          "mean": 19.085816731324066,
-          "median": 16.764060974121094
+          "mean": 16.52907166609893,
+          "median": 15.092209339141846
         },
         "wristRotation": {
           "count": 74,
@@ -344,10 +344,124 @@
             "type": "video",
             "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp11-e0000-i0010-20261115/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp11-e0000-i0028-20261123/reconstruction/reconstruction.json"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp11-e0000-i0010-20261115/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp11-e0000-i0028-20261123/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "exp-13",
+      "label": "exp13",
+      "color": "#e879f9",
+      "metrics": {
+        "addAligned": {
+          "count": 74,
+          "mean": 1.7503488047702893,
+          "median": 1.3477261066436768
+        },
+        "objectAmodalIou": {
+          "count": 74,
+          "mean": 0.7526239382254111,
+          "median": 0.7572028934955597,
+          "scoredMean": 0.7526239382254111
+        },
+        "handAmodalIou": {
+          "count": 74,
+          "mean": 0.7383168102116198,
+          "median": 0.765303373336792,
+          "scoredMean": 0.7383168102116198
+        },
+        "cdH": {
+          "count": 74,
+          "mean": 3.9447800162676216,
+          "median": 2.420135259628296,
+          "scoredMean": 3.9447800162676216
+        },
+        "objRel": {
+          "count": 73,
+          "mean": 5.966674208245559,
+          "median": 5.0869669914245605
+        },
+        "wristTranslation": {
+          "count": 74,
+          "mean": 20.814614489271833,
+          "median": 17.848254203796387
+        },
+        "wristRotation": {
+          "count": 74,
+          "mean": 12.401651979700938,
+          "median": 12.378645896911621
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp13-e0000-i0024-batch-v1-20261123/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/exp13-e0000-i0024-batch-v1-20261123/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "five-examples-overfit-reconstruction",
+      "label": "5 examples overfitting reconstruction",
+      "color": "#14b8a6",
+      "metrics": {
+        "addAligned": {
+          "count": 74,
+          "mean": 1.295122372943002,
+          "median": 1.4810668230056763
+        },
+        "objectAmodalIou": {
+          "count": 74,
+          "mean": 0.8080302984327883,
+          "median": 0.8114648759365082,
+          "scoredMean": 0.8080302984327883
+        },
+        "handAmodalIou": {
+          "count": 74,
+          "mean": 0.7576767618994455,
+          "median": 0.7881028950214386,
+          "scoredMean": 0.7576767618994455
+        },
+        "cdH": {
+          "count": 74,
+          "mean": 3.017878770828247,
+          "median": 3.1125705242156982,
+          "scoredMean": 3.017878770828247
+        },
+        "objRel": {
+          "count": 73,
+          "mean": 2.749157533253709,
+          "median": 3.5091147422790527
+        },
+        "wristTranslation": {
+          "count": 74,
+          "mean": 23.388441743077458,
+          "median": 20.0858793258667
+        },
+        "wristRotation": {
+          "count": 74,
+          "mean": 10.362714440435976,
+          "median": 11.152623176574707
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/five-examples-overfit-reconstruction-q0154-20261123/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261029-amodal-iou/20200820-subject-03__20200820_135810__841412060263/five-examples-overfit-reconstruction-q0154-20261123/reconstruction/reconstruction.json"
         }
       }
     }

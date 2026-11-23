@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "id": "A01008_0001_0002__2021-10-12-17-10-54__south_west",
   "label": "A01008_0001_0002 / 2021-10-12-17-10-54 / south_west",
-  "description": "OakInk SP0 test sequence comparing shared input, exp8, 5 examples overfit, and exp11.",
+  "description": "OakInk SP0 test sequence comparing shared input, exp8, 5 examples overfit, exp11, exp13, and 5 examples overfitting reconstruction.",
   "dataset": "OakInk",
-  "split": "test",
+  "split": "GT-texture 11 test",
   "objectName": "A01008",
   "fps": 30,
   "frameCount": 73,
@@ -189,36 +189,36 @@
       "metrics": {
         "addAligned": {
           "count": 73,
-          "mean": 1.2091808849818086,
-          "median": 1.0843573808670044
+          "mean": 1.1713673945975631,
+          "median": 1.0980689525604248
         },
         "objectAmodalIou": {
           "count": 73,
-          "mean": 0.8026262660549112,
-          "median": 0.8232669830322266,
-          "scoredMean": 0.8026262660549112
+          "mean": 0.8022923412388319,
+          "median": 0.8255813717842102,
+          "scoredMean": 0.8022923412388319
         },
         "handAmodalIou": {
           "count": 73,
-          "mean": 0.721818891290116,
-          "median": 0.7252487540245056,
-          "scoredMean": 0.721818891290116
+          "mean": 0.7225021442321882,
+          "median": 0.7237409949302673,
+          "scoredMean": 0.7225021442321882
         },
         "cdH": {
           "count": 73,
-          "mean": 3.0060305317787277,
-          "median": 2.9443023204803467,
-          "scoredMean": 3.0060305317787277
+          "mean": 3.0052074030654072,
+          "median": 2.9134347438812256,
+          "scoredMean": 3.0052074030654072
         },
         "objRel": {
           "count": 72,
-          "mean": 1.779552082841595,
-          "median": 1.316832184791565
+          "mean": 1.6848979755822155,
+          "median": 1.1196525692939758
         },
         "wristTranslation": {
           "count": 73,
-          "mean": 27.569753620722523,
-          "median": 26.585201263427734
+          "mean": 26.964034459362292,
+          "median": 26.536453247070312
         },
         "wristRotation": {
           "count": 73,
@@ -232,10 +232,124 @@
             "type": "video",
             "url": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/exp11/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/exp11-e0000-i0028-20261123/reconstruction/reconstruction.json"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/exp11/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/exp11-e0000-i0028-20261123/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "exp-13",
+      "label": "exp13",
+      "color": "#e879f9",
+      "metrics": {
+        "addAligned": {
+          "count": 73,
+          "mean": 1.3366038815615928,
+          "median": 1.1284576654434204
+        },
+        "objectAmodalIou": {
+          "count": 73,
+          "mean": 0.8019568952795577,
+          "median": 0.8277577757835388,
+          "scoredMean": 0.8019568952795577
+        },
+        "handAmodalIou": {
+          "count": 73,
+          "mean": 0.7137183195924106,
+          "median": 0.7146636247634888,
+          "scoredMean": 0.7137183195924106
+        },
+        "cdH": {
+          "count": 73,
+          "mean": 5.1888152801827205,
+          "median": 5.022119045257568,
+          "scoredMean": 5.1888152801827205
+        },
+        "objRel": {
+          "count": 72,
+          "mean": 2.1110964992193555,
+          "median": 1.6587979197502136
+        },
+        "wristTranslation": {
+          "count": 73,
+          "mean": 30.964122902857113,
+          "median": 31.042217254638672
+        },
+        "wristRotation": {
+          "count": 73,
+          "mean": 10.546345246981268,
+          "median": 9.707818984985352
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/exp13-e0000-i0024-batch-v1-20261123/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/exp13-e0000-i0024-batch-v1-20261123/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "five-examples-overfit-reconstruction",
+      "label": "5 examples overfitting reconstruction",
+      "color": "#14b8a6",
+      "metrics": {
+        "addAligned": {
+          "count": 73,
+          "mean": 2.6887674597028184,
+          "median": 2.5805938243865967
+        },
+        "objectAmodalIou": {
+          "count": 73,
+          "mean": 0.8129152043225014,
+          "median": 0.8320350646972656,
+          "scoredMean": 0.8129152043225014
+        },
+        "handAmodalIou": {
+          "count": 73,
+          "mean": 0.767177502586417,
+          "median": 0.7644818425178528,
+          "scoredMean": 0.767177502586417
+        },
+        "cdH": {
+          "count": 73,
+          "mean": 4.20246663158887,
+          "median": 2.437929153442383,
+          "scoredMean": 4.20246663158887
+        },
+        "objRel": {
+          "count": 72,
+          "mean": 4.17592164026832,
+          "median": 1.1716843247413635
+        },
+        "wristTranslation": {
+          "count": 73,
+          "mean": 34.289083774775676,
+          "median": 29.249380111694336
+        },
+        "wristRotation": {
+          "count": 73,
+          "mean": 15.376191217605381,
+          "median": 14.960179328918457
+        }
+      },
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/five-examples-overfit-reconstruction-q0154-20261123/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261116-oakink-sample20/A01008_0001_0002__2021-10-12-17-10-54__south_west/five-examples-overfit-reconstruction-q0154-20261123/reconstruction/reconstruction.json"
         }
       }
     }

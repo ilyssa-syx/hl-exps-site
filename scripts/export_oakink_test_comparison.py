@@ -15,11 +15,15 @@ DATA = HOI_ROOT / "data/oakink1_sp0_sample20"
 INPUT_RESULTS = HOI_ROOT / "eval_runs/input-baseline-oakink-test/predictions/test"
 EXP8_RESULTS = HOI_ROOT / "eval_runs/linear-batch-20-e0005-i0003-oakink-test/predictions/test"
 OVERFIT_RESULTS = HOI_ROOT / "eval_runs/5-cases-q0154-oakink-test/predictions/test"
-EXP11_RESULTS = HOI_ROOT / "eval_runs/linear-batch-3-e0000-i0010-oakink-test/predictions/test"
+EXP11_RESULTS = HOI_ROOT / "eval_runs/linear-batch-3-e0000-i0028-oakink-test/predictions/test"
+EXP13_RESULTS = HOI_ROOT / "eval_runs/linear-bs3-batch-v1-e0000-i0024-oakink-test/predictions/test"
+RECONSTRUCTION_RESULTS = HOI_ROOT / "eval_runs/5-examples-overfit-reconstruction-q0154-oakink-test/predictions/test"
 INPUT_METRICS = HOI_ROOT / "eval_runs/input-baseline-oakink-test/metrics/per_sequence.csv"
 EXP8_METRICS = HOI_ROOT / "eval_runs/linear-batch-20-e0005-i0003-oakink-test/metrics/per_sequence.csv"
 OVERFIT_METRICS = HOI_ROOT / "eval_runs/5-cases-q0154-oakink-test/metrics/per_sequence.csv"
-EXP11_METRICS = HOI_ROOT / "eval_runs/linear-batch-3-e0000-i0010-oakink-test/metrics/per_sequence.csv"
+EXP11_METRICS = HOI_ROOT / "eval_runs/linear-batch-3-e0000-i0028-oakink-test/metrics/per_sequence.csv"
+EXP13_METRICS = HOI_ROOT / "eval_runs/linear-bs3-batch-v1-e0000-i0024-oakink-test/metrics/per_sequence.csv"
+RECONSTRUCTION_METRICS = HOI_ROOT / "eval_runs/5-examples-overfit-reconstruction-q0154-oakink-test/metrics/per_sequence.csv"
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 FFMPEG = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/ffmpeg")
 MANO = HOI_ROOT / "assets/mano"
@@ -31,8 +35,17 @@ BASELINES = (
     {"id": "input", "label": "input", "color": "#fb923c", "results": INPUT_RESULTS, "metrics": INPUT_METRICS, "asset": "input"},
     {"id": "exp-8", "label": "exp8", "color": "#34d399", "results": EXP8_RESULTS, "metrics": EXP8_METRICS, "asset": "exp8"},
     {"id": "five-examples-overfit", "label": "5 examples overfit", "color": "#f43f5e", "results": OVERFIT_RESULTS, "metrics": OVERFIT_METRICS, "asset": "five-examples-overfit"},
-    {"id": "exp-11", "label": "exp11", "color": "#3b82f6", "results": EXP11_RESULTS, "metrics": EXP11_METRICS, "asset": "exp11"},
+    {"id": "exp-11", "label": "exp11", "color": "#3b82f6", "results": EXP11_RESULTS, "metrics": EXP11_METRICS, "asset": "exp11-e0000-i0028-20261123"},
+    {"id": "exp-13", "label": "exp13", "color": "#e879f9", "results": EXP13_RESULTS, "metrics": EXP13_METRICS, "asset": "exp13-e0000-i0024-batch-v1-20261123"},
 )
+RECONSTRUCTION = {
+    "id": "five-examples-overfit-reconstruction",
+    "label": "5 examples overfitting reconstruction",
+    "color": "#14b8a6",
+    "results": RECONSTRUCTION_RESULTS,
+    "metrics": RECONSTRUCTION_METRICS,
+    "asset": "five-examples-overfit-reconstruction-q0154-20261123",
+}
 
 
 def stat(row: dict[str, str], prefix: str, unit: str, *, scored: bool = False) -> dict:
@@ -98,6 +111,15 @@ def main() -> None:
             raise ValueError(f"{item['label']} result sequence set differs from OakInk sample20")
         if sorted(metrics[item["id"]]) != sorted(sequence_ids):
             raise ValueError(f"{item['label']} metric sequence set differs from OakInk sample20")
+    reconstruction_ids = sorted(
+        path.name for path in RECONSTRUCTION_RESULTS.iterdir() if path.is_dir()
+    )
+    reconstruction_metrics = load_metrics(RECONSTRUCTION_METRICS)
+    if reconstruction_ids != sorted(reconstruction_metrics):
+        raise ValueError("reconstruction result and metric sequence sets differ")
+    if not set(reconstruction_ids) < set(sequence_ids):
+        raise ValueError("reconstruction sequence set must be a proper subset of sample20")
+    metrics[RECONSTRUCTION["id"]] = reconstruction_metrics
 
     asset_root = ROOT / "r2_assets/experiments" / RELEASE
     config_root = ROOT / "configs/examples"
@@ -107,7 +129,8 @@ def main() -> None:
         rgb = asset_root / sequence_id / "input-rgb.mp4"
         ensure_rgb(source / "rgb", rgb)
         baselines = []
-        for item in BASELINES:
+        page_baselines = BASELINES + ((RECONSTRUCTION,) if sequence_id in reconstruction_metrics else ())
+        for item in page_baselines:
             reconstruction = asset_root / sequence_id / item["asset"] / "reconstruction"
             ensure_reconstruction(item["results"] / sequence_id, reconstruction)
             reconstruction_url = (
@@ -129,8 +152,14 @@ def main() -> None:
             "schemaVersion": 2,
             "id": sequence_id,
             "label": sequence_id.replace("__", " / "),
-            "description": "OakInk SP0 test sequence comparing shared input, exp8, 5 examples overfit, and exp11.",
-            "dataset": "OakInk", "split": SPLIT,
+            "description": (
+                "OakInk SP0 test sequence comparing shared input, exp8, 5 examples "
+                "overfit, exp11, exp13, and 5 examples overfitting reconstruction."
+                if sequence_id in reconstruction_metrics else
+                "OakInk SP0 test sequence comparing shared input, exp8, 5 examples overfit, exp11, and exp13."
+            ),
+            "dataset": "OakInk",
+            "split": "GT-texture 11 test" if sequence_id in reconstruction_metrics else SPLIT,
             "objectName": row["object_id"], "fps": FPS,
             "frameCount": int(row["frame_count"]),
             "metricLabel": "OakInk evaluation",

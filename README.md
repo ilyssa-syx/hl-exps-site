@@ -8,7 +8,10 @@ Exp 4 and Exp 7. DexYCB additionally includes the latest accepted Exp 8
 checkpoint (`run-20261106`, epoch 11 / iteration 1). The 20 DexYCB test pages
 also include **5 examples overfit**, optimized on five DexYCB train sequences
 and evaluated on the full held-out test split at query 154, plus **exp11**
-(`linear-batch-3`, epoch 0 / iteration 10). Each sample has one shareable page
+(`linear-batch-3`, 30 completed iterations; accepted epoch 0 / iteration 28), and
+**exp13** (`linear-bs3 batch-v1`, first-30 validation incumbent at epoch 0 /
+iteration 24), and **5 examples overfitting reconstruction** (stitched query
+154). Each sample has one shareable page
 containing:
 
 - calibrated 2D reconstruction overlays;
@@ -21,12 +24,16 @@ All samples use their real input RGB, MANO hand mesh, object mesh, and per-frame
 camera-space transforms.
 
 The 20 OakInk pages compare their shared `input` reconstruction with **exp8**,
-**5 examples overfit**, and **exp11**, using the same sequence timeline and the
-OakInk evaluator's per-sequence metrics.
+**5 examples overfit**, **exp11**, and **exp13**, using the same sequence timeline
+and the OakInk evaluator's per-sequence metrics. The 11 sequences with textured
+ground-truth meshes additionally show **5 examples overfitting reconstruction**
+and are grouped as **GT-texture 11 test** in the catalog.
 
 The catalog also has a dedicated **5 examples train overfit** section for the
-five fixed DexYCB training sequences from `run-20261113-five-case-from-zero`.
-Those pages intentionally compare only `input` with query/iteration 150.
+five fixed DexYCB training sequences from `run-20261113-five-case-from-zero`,
+alongside the textured reconstruction result from the stitched query 154 run.
+Those pages compare `input`, refinement query/iteration 150, and the textured
+reconstruction result.
 
 ## Development
 

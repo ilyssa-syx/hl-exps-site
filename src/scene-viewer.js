@@ -57,6 +57,17 @@ export class SceneViewer {
     return new THREE.MeshStandardMaterial({ color, roughness: 0.42, metalness: 0.08, side: THREE.DoubleSide, transparent: true, opacity, depthWrite: opacity > 0.7 });
   }
 
+  objectMaterial(layer, data) {
+    if (!data.objectTextureUrl || !data.objectUv) return this.material(layer.color, 0.48);
+    const texture = new THREE.TextureLoader().load(data.objectTextureUrl, () => this.render());
+    texture.colorSpace = THREE.SRGBColorSpace;
+    layer.objectTexture = texture;
+    return new THREE.MeshStandardMaterial({
+      map: texture, roughness: 0.62, metalness: 0.02, side: THREE.DoubleSide,
+      transparent: true, opacity: 0.82, depthWrite: true,
+    });
+  }
+
   ensureLayer(layer) {
     if (!layer.loading) layer.loading = layer.load().then((data) => this.buildLayer(layer, data)).catch((error) => console.error(error));
   }
@@ -71,9 +82,10 @@ export class SceneViewer {
     layer.group.add(layer.hand);
     const objectGeometry = new THREE.BufferGeometry();
     objectGeometry.setAttribute("position", new THREE.BufferAttribute(new Float32Array(data.objectVertices), 3));
+    if (data.objectUv) objectGeometry.setAttribute("uv", new THREE.BufferAttribute(data.objectUv, 2));
     objectGeometry.setIndex(new THREE.BufferAttribute(data.objectFaces, 1));
     objectGeometry.computeVertexNormals();
-    layer.object = new THREE.Mesh(objectGeometry, this.material(layer.color, 0.48));
+    layer.object = new THREE.Mesh(objectGeometry, this.objectMaterial(layer, data));
     layer.object.matrixAutoUpdate = false;
     layer.group.add(layer.object);
     layer.group.visible = this.visible.has(layer.id);
@@ -177,6 +189,7 @@ export class SceneViewer {
     for (const layer of this.layers.values()) {
       layer.hand?.geometry.dispose(); layer.hand?.material.dispose();
       layer.object?.geometry.dispose(); layer.object?.material.dispose();
+      layer.objectTexture?.dispose();
     }
     this.renderer.dispose();
   }

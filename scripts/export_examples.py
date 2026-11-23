@@ -31,6 +31,7 @@ COLLECTIONS = (
                 "expected_baselines": ([
                     "input",
                     "iteration-150",
+                    "five-examples-overfit-reconstruction",
                 ], [
                     "input",
                     "exp-4",
@@ -49,11 +50,21 @@ COLLECTIONS = (
                     "exp-8-latest",
                     "five-examples-overfit",
                     "exp-11",
+                    "exp-13",
+                    "five-examples-overfit-reconstruction",
                 ], [
                     "input",
                     "exp-8",
                     "five-examples-overfit",
                     "exp-11",
+                    "exp-13",
+                ], [
+                    "input",
+                    "exp-8",
+                    "five-examples-overfit",
+                    "exp-11",
+                    "exp-13",
+                    "five-examples-overfit-reconstruction",
                 ]),
             },
             {
@@ -80,6 +91,7 @@ COLLECTIONS = (
                 {"dataset": "DexYCB", "split": "validation", "title": "dexycb-validation · visible error cases"},
                 {"dataset": "DexYCB", "split": "test", "title": "dexycb-test"},
                 {"dataset": "OakInk", "split": "test", "title": "oakink-sp0-test-sample20"},
+                {"dataset": "OakInk", "split": "GT-texture 11 test", "title": "oakink-sp0-GT-texture-11-test"},
                 {"dataset": "HO3D v3", "split": "test", "title": "HO3D_v3-TEST"},
             ],
             "relatedCatalogs": [],

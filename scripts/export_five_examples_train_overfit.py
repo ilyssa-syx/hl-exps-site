@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the five DexYCB train-overfit examples at query/iteration 150."""
+"""Export the five DexYCB train-overfit refinement and reconstruction examples."""
 
 from __future__ import annotations
 
@@ -18,6 +18,12 @@ ITERATION = 150
 ITERATION_ROOT = RUN / f"queries/{ITERATION:04d}/results/train"
 INPUT_METRICS = HOI_ROOT / "runs/run-20261106/baseline/results/train/per_sequence.csv"
 ITERATION_METRICS = ITERATION_ROOT / "per_sequence.csv"
+RECONSTRUCTION_ROOT = (
+    HOI_ROOT
+    / "runs/run-20261121-five-case-rgb-unitless-textured-mesh-adapt-v1"
+    / "queries/0040/results/train"
+)
+RECONSTRUCTION_METRICS = RECONSTRUCTION_ROOT / "per_sequence.csv"
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 RELEASE = "20261122-five-examples-train-overfit-q0150"
@@ -35,6 +41,11 @@ BASELINES = (
         "id": "iteration-150",
         "label": "5 examples overfitting refinement (iter 150)",
         "color": "#f43f5e",
+    },
+    {
+        "id": "five-examples-overfit-reconstruction",
+        "label": "5 examples overfitting reconstruction",
+        "color": "#14b8a6",
     },
 )
 
@@ -109,6 +120,7 @@ def main() -> None:
     metrics = {
         "input": load_metrics(INPUT_METRICS),
         "iteration-150": load_metrics(ITERATION_METRICS),
+        "five-examples-overfit-reconstruction": load_metrics(RECONSTRUCTION_METRICS),
     }
     exported_ids = set()
 
@@ -132,7 +144,12 @@ def main() -> None:
         baselines = []
         for baseline in BASELINES:
             baseline_id = baseline["id"]
-            source = source_root / "input/final" if baseline_id == "input" else result_root
+            if baseline_id == "input":
+                source = source_root / "input/final"
+            elif baseline_id == "iteration-150":
+                source = result_root
+            else:
+                source = RECONSTRUCTION_ROOT / sequence_id
             reconstruction = sample_assets / baseline_id / "reconstruction"
             ensure_reconstruction(source, reconstruction, groundtruth["hand"]["side"])
             reconstruction_url = (
@@ -160,7 +177,8 @@ def main() -> None:
             "label": sequence_id.replace("__", " / "),
             "description": (
                 "One of the five fixed DexYCB train-overfit examples, comparing "
-                "input with 5 examples overfitting refinement (iter 150)."
+                "input with 5 examples overfitting refinement (iter 150) and "
+                "5 examples overfitting reconstruction."
             ),
             "dataset": "DexYCB",
             "split": CATALOG_SPLIT,
