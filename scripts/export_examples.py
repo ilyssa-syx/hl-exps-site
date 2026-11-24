@@ -33,12 +33,9 @@ COLLECTIONS = (
                     "iteration-150",
                     "five-examples-overfit-reconstruction",
                 ], [
-                    "baseline",
-                    "five-examples-overfitting-refinement",
-                    "baseline-lower-batch",
-                    "baseline-lower-batch-batch-inference",
-                    "five-examples-overfitting-reconstruction",
-                    "baseline-lower-batch-reconstruction",
+                    "adadex",
+                    "experiment-1",
+                    "experiment-2",
                 ], [
                     "input",
                     "exp-4",

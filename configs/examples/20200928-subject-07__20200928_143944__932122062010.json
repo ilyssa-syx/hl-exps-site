@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "20200928-subject-07__20200928_143944__932122062010",
   "label": "20200928-subject-07 / 20200928_143944 / 932122062010",
-  "description": "DexYCB held-out test sequence comparing the six finalized methods.",
+  "description": "DexYCB held-out test sequence comparing AdaDex, Experiment 1, and Experiment 2.",
   "dataset": "DexYCB",
   "split": "test",
   "objectName": "004_sugar_box",
@@ -10,47 +10,47 @@
   "frameCount": 74,
   "baselines": [
     {
-      "id": "baseline",
-      "label": "baseline",
-      "color": "#34d399",
+      "id": "adadex",
+      "label": "AdaDex",
+      "color": "#fb923c",
       "metrics": {
         "addAligned": {
           "count": 74,
-          "mean": 2.463657372706645,
-          "median": 1.770416021347046
+          "mean": 5.2805305356914936,
+          "median": 4.3848960399627686
         },
         "objectAmodalIou": {
           "count": 74,
-          "mean": 0.8880649378170838,
-          "median": 0.9178753197193146,
-          "scoredMean": 0.8880649378170838
+          "mean": 0.8373752767975265,
+          "median": 0.8939407467842102,
+          "scoredMean": 0.8373752767975265
         },
         "handAmodalIou": {
           "count": 59,
-          "mean": 0.7440379817607039,
-          "median": 0.7468277812004089,
-          "scoredMean": 0.7440379817607039
+          "mean": 0.7480649746070474,
+          "median": 0.7565320730209351,
+          "scoredMean": 0.7480649746070474
         },
         "cdH": {
           "count": 59,
-          "mean": 6.717306856381691,
-          "median": 5.752953052520752,
-          "scoredMean": 6.717306856381691
+          "mean": 7.529797527749659,
+          "median": 2.446166515350342,
+          "scoredMean": 7.529797527749659
         },
         "objRel": {
           "count": 73,
-          "mean": 3.8741197102282143,
-          "median": 1.0676745176315308
+          "mean": 8.238956172580588,
+          "median": 5.462852954864502
         },
         "wristTranslation": {
           "count": 59,
-          "mean": 19.161138793169442,
-          "median": 15.358485221862793
+          "mean": 31.360836974645064,
+          "median": 18.75221061706543
         },
         "wristRotation": {
           "count": 59,
-          "mean": 4.624568850307141,
-          "median": 4.300300121307373
+          "mean": 4.648975315740553,
+          "median": 4.29769229888916
         }
       },
       "views": {
@@ -59,73 +59,16 @@
             "type": "video",
             "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
           },
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/baseline-e0005-i0003-up-to-30-20261123/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
         },
         "scene3d": {
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/baseline-e0005-i0003-up-to-30-20261123/reconstruction/reconstruction.json"
+          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/scaled-input-20261029/reconstruction/reconstruction.json"
         }
       }
     },
     {
-      "id": "five-examples-overfitting-refinement",
-      "label": "5 examples overfitting refinement",
-      "color": "#f43f5e",
-      "metrics": {
-        "addAligned": {
-          "count": 74,
-          "mean": 1.6525192703749683,
-          "median": 1.14899343252182
-        },
-        "objectAmodalIou": {
-          "count": 74,
-          "mean": 0.9071350033218796,
-          "median": 0.9349808394908905,
-          "scoredMean": 0.9071350033218796
-        },
-        "handAmodalIou": {
-          "count": 59,
-          "mean": 0.760184132446677,
-          "median": 0.7505617737770081,
-          "scoredMean": 0.760184132446677
-        },
-        "cdH": {
-          "count": 59,
-          "mean": 3.8388817229513394,
-          "median": 3.3161561489105225,
-          "scoredMean": 3.8388817229513394
-        },
-        "objRel": {
-          "count": 73,
-          "mean": 2.6461993159904873,
-          "median": 0.9995629191398621
-        },
-        "wristTranslation": {
-          "count": 59,
-          "mean": 20.37011370416415,
-          "median": 19.266992568969727
-        },
-        "wristRotation": {
-          "count": 59,
-          "mean": 4.384449776956591,
-          "median": 3.893406867980957
-        }
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/five-examples-overfit-q0154-20261114/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/five-examples-overfit-q0154-20261114/reconstruction/reconstruction.json"
-        }
-      }
-    },
-    {
-      "id": "baseline-lower-batch",
-      "label": "baseline + lower batch",
+      "id": "experiment-1",
+      "label": "Experiment 1",
       "color": "#3b82f6",
       "metrics": {
         "addAligned": {
@@ -181,65 +124,8 @@
       }
     },
     {
-      "id": "baseline-lower-batch-batch-inference",
-      "label": "baseline + lower batch + batch inference",
-      "color": "#e879f9",
-      "metrics": {
-        "addAligned": {
-          "count": 74,
-          "mean": 1.2209896541930534,
-          "median": 0.5413801074028015
-        },
-        "objectAmodalIou": {
-          "count": 74,
-          "mean": 0.8792309426778072,
-          "median": 0.9199697375297546,
-          "scoredMean": 0.8792309426778072
-        },
-        "handAmodalIou": {
-          "count": 59,
-          "mean": 0.7280690942780447,
-          "median": 0.7269610166549683,
-          "scoredMean": 0.7280690942780447
-        },
-        "cdH": {
-          "count": 59,
-          "mean": 3.8769859863539873,
-          "median": 2.52698016166687,
-          "scoredMean": 3.8769859863539873
-        },
-        "objRel": {
-          "count": 73,
-          "mean": 2.039867890114443,
-          "median": 0.4431418478488922
-        },
-        "wristTranslation": {
-          "count": 59,
-          "mean": 28.58230481713505,
-          "median": 24.247365951538086
-        },
-        "wristRotation": {
-          "count": 59,
-          "mean": 4.648974770206516,
-          "median": 4.297699928283691
-        }
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp13-e0000-i0024-batch-v1-20261123/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/exp13-e0000-i0024-batch-v1-20261123/reconstruction/reconstruction.json"
-        }
-      }
-    },
-    {
-      "id": "five-examples-overfitting-reconstruction",
-      "label": "5 examples overfitting reconstruction",
+      "id": "experiment-2",
+      "label": "Experiment 2",
       "color": "#14b8a6",
       "metrics": {
         "addAligned": {
@@ -291,63 +177,6 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/five-examples-overfit-reconstruction-q0154-20261123/reconstruction/reconstruction.json"
-        }
-      }
-    },
-    {
-      "id": "baseline-lower-batch-reconstruction",
-      "label": "baseline + lower batch + reconstruction",
-      "color": "#f59e0b",
-      "metrics": {
-        "addAligned": {
-          "count": 74,
-          "mean": 4.068008264979801,
-          "median": 3.647638440132141
-        },
-        "objectAmodalIou": {
-          "count": 74,
-          "mean": 0.6037251189653132,
-          "median": 0.7194560468196869,
-          "scoredMean": 0.6037251189653132
-        },
-        "handAmodalIou": {
-          "count": 59,
-          "mean": 0.8130413081686375,
-          "median": 0.8175036907196045,
-          "scoredMean": 0.8130413081686375
-        },
-        "cdH": {
-          "count": 59,
-          "mean": 8.694018638740152,
-          "median": 8.559083938598633,
-          "scoredMean": 8.694018638740152
-        },
-        "objRel": {
-          "count": 73,
-          "mean": 4.326213450965229,
-          "median": 0.24567680060863495
-        },
-        "wristTranslation": {
-          "count": 59,
-          "mean": 15.288572408385196,
-          "median": 15.364827156066895
-        },
-        "wristRotation": {
-          "count": 59,
-          "mean": 4.3934450270765915,
-          "median": 3.786417007446289
-        }
-      },
-      "views": {
-        "overlay2d": {
-          "rgb": {
-            "type": "video",
-            "url": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/input-rgb.mp4"
-          },
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/baseline-lower-batch-reconstruction-e0000-i0029-20261123/reconstruction/reconstruction.json"
-        },
-        "scene3d": {
-          "reconstruction": "experiments/20261029-amodal-iou/20200928-subject-07__20200928_143944__932122062010/baseline-lower-batch-reconstruction-e0000-i0029-20261123/reconstruction/reconstruction.json"
         }
       }
     }

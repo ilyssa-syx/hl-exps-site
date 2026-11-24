@@ -16,6 +16,10 @@ DEXYCB_DATA = HOI_ROOT / "data/dexycb_hl_v3_100_20_20"
 OAKINK_DATA = HOI_ROOT / "data/oakink1_sp0_sample11_rgb_unitless_textured_mesh_first_mask_v1"
 DEXYCB_RELEASE = "20261029-amodal-iou"
 OAKINK_RELEASE = "20261116-oakink-sample20"
+DEXYCB_INPUT_METRICS = (
+    HOI_ROOT
+    / "eval_runs/dexycb-hl-v3-100-20-20-cleaned-test-input-eval-v12/per_sequence.csv"
+)
 
 
 def method(
@@ -37,66 +41,41 @@ def method(
 
 
 DEXYCB_METHODS = (
+    {
+        "id": "adadex",
+        "label": "AdaDex",
+        "color": "#fb923c",
+        "results": DEXYCB_DATA / "test",
+        "result_suffix": Path("input/final"),
+        "metrics": DEXYCB_INPUT_METRICS,
+        "asset": "scaled-input-20261029",
+    },
     method(
-        "baseline", "baseline", "#34d399",
-        "exp8-e0005-i0003-dexycb-test",
-        "baseline-e0005-i0003-up-to-30-20261123",
-    ),
-    method(
-        "five-examples-overfitting-refinement", "5 examples overfitting refinement", "#f43f5e",
-        "5-cases-q0154-dexycb-hl-v3-test",
-        "five-examples-overfit-q0154-20261114",
-    ),
-    method(
-        "baseline-lower-batch", "baseline + lower batch", "#3b82f6",
+        "experiment-1", "Experiment 1", "#3b82f6",
         "linear-batch-3-e0000-i0028-dexycb-test",
         "exp11-e0000-i0028-20261123",
     ),
     method(
-        "baseline-lower-batch-batch-inference", "baseline + lower batch + batch inference", "#e879f9",
-        "linear-bs3-batch-v1-e0000-i0024-dexycb-test",
-        "exp13-e0000-i0024-batch-v1-20261123",
-    ),
-    method(
-        "five-examples-overfitting-reconstruction", "5 examples overfitting reconstruction", "#14b8a6",
+        "experiment-2", "Experiment 2", "#14b8a6",
         "5-examples-overfit-reconstruction-q0154-dexycb-test",
         "five-examples-overfit-reconstruction-q0154-20261123",
-    ),
-    method(
-        "baseline-lower-batch-reconstruction", "baseline + lower batch + reconstruction", "#f59e0b",
-        "linear-bs3-reconstruction-e0000-i0029-dexycb-test",
-        "baseline-lower-batch-reconstruction-e0000-i0029-20261123",
     ),
 )
 
 
 OAKINK_METHODS = (
     method(
-        "baseline", "baseline", "#34d399",
-        "baseline-e0005-i0003-oakink-test", "exp8",
+        "adadex", "AdaDex", "#fb923c",
+        "input-baseline-oakink-test", "input",
     ),
     method(
-        "five-examples-overfitting-refinement", "5 examples overfitting refinement", "#f43f5e",
-        "5-examples-overfitting-refinement-q0154-oakink-test", "five-examples-overfit",
-    ),
-    method(
-        "baseline-lower-batch", "baseline + lower batch", "#3b82f6",
+        "experiment-1", "Experiment 1", "#3b82f6",
         "linear-batch-3-e0000-i0028-oakink-test", "exp11-e0000-i0028-20261123",
     ),
     method(
-        "baseline-lower-batch-batch-inference", "baseline + lower batch + batch inference", "#e879f9",
-        "baseline-lower-batch-batch-inference-e0000-i0024-oakink-test",
-        "exp13-e0000-i0024-batch-v1-20261123",
-    ),
-    method(
-        "five-examples-overfitting-reconstruction", "5 examples overfitting reconstruction", "#14b8a6",
+        "experiment-2", "Experiment 2", "#14b8a6",
         "5-examples-overfit-reconstruction-q0154-oakink-test",
         "five-examples-overfit-reconstruction-q0154-20261123",
-    ),
-    method(
-        "baseline-lower-batch-reconstruction", "baseline + lower batch + reconstruction", "#f59e0b",
-        "linear-bs3-reconstruction-e0000-i0029-oakink-test",
-        "baseline-lower-batch-reconstruction-e0000-i0029-20261123",
     ),
 )
 
@@ -198,7 +177,7 @@ def export_dexycb() -> set[str]:
         baselines = []
         for item in DEXYCB_METHODS:
             ensure_reconstruction(
-                item["results"] / sequence_id,
+                item["results"] / sequence_id / item.get("result_suffix", Path()),
                 asset_root / sequence_id / item["asset"] / "reconstruction",
                 mano,
                 groundtruth["hand"]["side"],
@@ -208,7 +187,7 @@ def export_dexycb() -> set[str]:
             "schemaVersion": 2,
             "id": sequence_id,
             "label": sequence_id.replace("__", " / "),
-            "description": "DexYCB held-out test sequence comparing the six finalized methods.",
+            "description": "DexYCB held-out test sequence comparing AdaDex, Experiment 1, and Experiment 2.",
             "dataset": "DexYCB",
             "split": "test",
             "objectName": groundtruth["objects"]["target_name"],
@@ -249,7 +228,7 @@ def export_oakink() -> set[str]:
             "schemaVersion": 2,
             "id": sequence_id,
             "label": sequence_id.replace("__", " / "),
-            "description": "OakInk SP0 GT-texture held-out test sequence comparing the six finalized methods.",
+            "description": "OakInk SP0 GT-texture held-out test sequence comparing AdaDex, Experiment 1, and Experiment 2.",
             "dataset": "OakInk",
             "split": "test",
             "objectName": row["object_id"],

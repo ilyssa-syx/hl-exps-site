@@ -3,17 +3,14 @@
 Static, sequence-level viewer for HOI reconstruction outputs. The finalized test
 catalog contains all 20 DexYCB test sequences, the 11-sequence OakInk SP0
 GT-texture test set, and all 13 sequences from `HO3D_v3-TEST`. DexYCB and OakInk
-use the same six-method comparison:
+use the same three-method comparison:
 
-- **baseline** (`run-20261106`, up to validation attempt 30; epoch 5 / iteration 3);
-- **5 examples overfitting refinement** (query 154);
-- **baseline + lower batch** (epoch 0 / iteration 28);
-- **baseline + lower batch + batch inference** (epoch 0 / iteration 24);
-- **5 examples overfitting reconstruction** (stitched query 154);
-- **baseline + lower batch + reconstruction** (epoch 0 / iteration 29).
+- **AdaDex** (dataset-provided input reconstruction);
+- **Experiment 1** (formerly baseline + lower batch; epoch 0 / iteration 28);
+- **Experiment 2** (formerly 5 examples overfitting reconstruction; stitched query 154).
 
-The obsolete `input`, Exp 4, Exp 7, and later Exp 8 comparison entries are not
-shown on the finalized DexYCB and OakInk test pages. Each sample has one
+All other methods are omitted from the finalized DexYCB and OakInk test pages.
+Each sample has one
 shareable page containing:
 
 - calibrated 2D reconstruction overlays;
