@@ -41,7 +41,9 @@ shown as context rather than as a protocol-matched comparison.
 Two additional report-test sections keep newly rerun sequences separate from
 the legacy test galleries:
 
-- **DexYCB report test** contains 20 RGB-only sequences with R1, R2, and R3;
+- **DexYCB report test** contains 20 RGB-only sequences with A1–A3 and the
+  train-GT-assisted B1–B3 repeats. B3 has frozen predictions for 18 sequences;
+  its two missing predictions are shown as unavailable rather than synthesized;
 - **HO3D report test · stride 5** contains 18 RGB-only sequences with R1, R2,
   and R3, exporting only every fifth source frame while playing the sampled
   timeline at 30 FPS.

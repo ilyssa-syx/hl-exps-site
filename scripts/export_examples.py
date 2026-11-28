@@ -86,6 +86,15 @@ COLLECTIONS = (
                     "rgb-only-overfit-r1",
                     "rgb-only-overfit-r2",
                     "rgb-only-overfit-r3",
+                    "rgb-only-train-gt-assisted-overfit-r1",
+                    "rgb-only-train-gt-assisted-overfit-r2",
+                    "rgb-only-train-gt-assisted-overfit-r3",
+                ], [
+                    "rgb-only-overfit-r1",
+                    "rgb-only-overfit-r2",
+                    "rgb-only-overfit-r3",
+                    "rgb-only-train-gt-assisted-overfit-r1",
+                    "rgb-only-train-gt-assisted-overfit-r2",
                 ],),
             },
             {
@@ -205,6 +214,15 @@ def export_collection(collection: dict) -> int:
             baseline_ids = [item.get("id") for item in payload["baselines"]]
             if baseline_ids not in group["expected_baselines"]:
                 raise ValueError(f"{path}: unexpected baselines {baseline_ids}")
+            unavailable_ids = [
+                item.get("id") for item in payload.get("unavailableBaselines", [])
+            ]
+            if unavailable_ids:
+                complete_ids = list(group["expected_baselines"][0])
+                if baseline_ids + unavailable_ids != complete_ids:
+                    raise ValueError(
+                        f"{path}: unavailable baselines do not complete {complete_ids}"
+                    )
             for baseline in payload["baselines"]:
                 metrics = baseline.get("metrics")
                 metric_keys = set(metrics) if isinstance(metrics, dict) else set()

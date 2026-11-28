@@ -59,6 +59,9 @@ const segmentNeighborHref = (offset) => {
 const baselineControls = example.baselines.map((item) => `
   <button class="baseline-toggle" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}">
     <i></i><span>${item.label}</span><small>${item.views.spider ? "2D · 3D · SPIDER" : "2D · 3D"}</small>
+  </button>`).join("") + (example.unavailableBaselines || []).map((item) => `
+  <button class="baseline-toggle" disabled aria-pressed="false" style="--baseline:${item.color}" title="${item.reason}">
+    <i></i><span>${item.label}</span><small>UNAVAILABLE</small>
   </button>`).join("");
 const layerChips = example.baselines.map((item) => `
   <button class="layer-chip" data-baseline="${item.id}" aria-pressed="true" style="--baseline:${colors[item.id]}"><i></i>${item.label}</button>`).join("");
@@ -96,7 +99,7 @@ const metricTable = `<div class="metric-scroll"><table class="metric-table">
       const value = metric.value(item.metrics);
       return `<td class="${value === metricBest[index] ? "best" : ""}">${value.toFixed(metric.digits ?? 3)}</td>`;
     }).join("")}</tr>`).join("")}</tbody>
-</table></div><p class="metric-note">${example.metricNote || catalog.metricNote || "Per-sequence means from evaluation v12. Missing eligible hand predictions score 0 in scored metrics; raw means include evaluated frames only."}</p>`;
+</table></div><p class="metric-note">${example.metricNote || catalog.metricNote || "Per-sequence means from evaluation v12. Missing eligible hand predictions score 0 in scored metrics; raw means include evaluated frames only."}${example.unavailableBaselines?.length ? ` Unavailable: ${example.unavailableBaselines.map((item) => item.label).join(", ")}.` : ""}</p>`;
 
 document.querySelector("#app").innerHTML = `
   <aside class="sidebar">

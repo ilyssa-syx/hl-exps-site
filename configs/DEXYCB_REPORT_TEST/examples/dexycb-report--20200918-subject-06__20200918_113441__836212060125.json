@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "dexycb-report--20200918-subject-06__20200918_113441__836212060125",
   "label": "20200918-subject-06 / 20200918_113441 / 836212060125",
-  "description": "DexYCB report test sequence comparing three independently optimized RGB-only five-case overfit runs.",
+  "description": "DexYCB report test sequence comparing A1\u2013A3 RGB-only repeats with B1\u2013B3 train-GT-assisted RGB-only repeats.",
   "dataset": "DexYCB report",
   "split": "report test",
   "objectName": "004_sugar_box",
@@ -11,7 +11,7 @@
   "baselines": [
     {
       "id": "rgb-only-overfit-r1",
-      "label": "RGB-only overfit R1",
+      "label": "A1",
       "color": "#f43f5e",
       "views": {
         "overlay2d": {
@@ -68,7 +68,7 @@
     },
     {
       "id": "rgb-only-overfit-r2",
-      "label": "RGB-only overfit R2",
+      "label": "A2",
       "color": "#14b8a6",
       "views": {
         "overlay2d": {
@@ -125,7 +125,7 @@
     },
     {
       "id": "rgb-only-overfit-r3",
-      "label": "RGB-only overfit R3",
+      "label": "A3",
       "color": "#3b82f6",
       "views": {
         "overlay2d": {
@@ -179,8 +179,179 @@
           "median": 2.875969409942627
         }
       }
+    },
+    {
+      "id": "rgb-only-train-gt-assisted-overfit-r1",
+      "label": "B1",
+      "color": "#a855f7",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-train-gt-assisted-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/rgb-only-train-gt-assisted-overfit-r1/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-train-gt-assisted-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/rgb-only-train-gt-assisted-overfit-r1/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 15,
+          "mean": 2.5737555503845213,
+          "median": 2.21048903465271
+        },
+        "objectAmodalIou": {
+          "count": 15,
+          "mean": 0.8826032241185506,
+          "median": 0.8825616836547852,
+          "scoredMean": 0.8826032241185506
+        },
+        "handAmodalIou": {
+          "count": 12,
+          "mean": 0.7805652618408203,
+          "median": 0.7869153916835785,
+          "scoredMean": 0.7805652618408203
+        },
+        "cdH": {
+          "count": 12,
+          "mean": 2.4571377336978912,
+          "median": 2.072347640991211,
+          "scoredMean": 2.4571377336978912
+        },
+        "objRel": {
+          "count": 14,
+          "mean": 0.9324267954964723,
+          "median": 0.5962851345539093
+        },
+        "wristTranslation": {
+          "count": 12,
+          "mean": 14.752616186936697,
+          "median": 9.702570915222168
+        },
+        "wristRotation": {
+          "count": 12,
+          "mean": 2.702787031730016,
+          "median": 2.4386703968048096
+        }
+      }
+    },
+    {
+      "id": "rgb-only-train-gt-assisted-overfit-r2",
+      "label": "B2",
+      "color": "#f59e0b",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-train-gt-assisted-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/rgb-only-train-gt-assisted-overfit-r2/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-train-gt-assisted-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/rgb-only-train-gt-assisted-overfit-r2/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 15,
+          "mean": 1.8785709857940673,
+          "median": 1.7758527994155884
+        },
+        "objectAmodalIou": {
+          "count": 15,
+          "mean": 0.8268448988596598,
+          "median": 0.8272755742073059,
+          "scoredMean": 0.8268448988596598
+        },
+        "handAmodalIou": {
+          "count": 12,
+          "mean": 0.7147847165664037,
+          "median": 0.6851154267787933,
+          "scoredMean": 0.7147847165664037
+        },
+        "cdH": {
+          "count": 12,
+          "mean": 20.328874071439106,
+          "median": 20.486958503723145,
+          "scoredMean": 20.328874071439106
+        },
+        "objRel": {
+          "count": 14,
+          "mean": 1.2314350376171725,
+          "median": 0.8869214355945587
+        },
+        "wristTranslation": {
+          "count": 12,
+          "mean": 17.68548561135928,
+          "median": 11.521270275115967
+        },
+        "wristRotation": {
+          "count": 12,
+          "mean": 2.7257471084594727,
+          "median": 2.396787405014038
+        }
+      }
+    },
+    {
+      "id": "rgb-only-train-gt-assisted-overfit-r3",
+      "label": "B3",
+      "color": "#84cc16",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-train-gt-assisted-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/rgb-only-train-gt-assisted-overfit-r3/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-train-gt-assisted-repeats-dexycb-report20/20200918-subject-06__20200918_113441__836212060125/rgb-only-train-gt-assisted-overfit-r3/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 15,
+          "mean": 1.2671332756678264,
+          "median": 0.9748412370681763
+        },
+        "objectAmodalIou": {
+          "count": 15,
+          "mean": 0.8765379349390666,
+          "median": 0.8884290456771851,
+          "scoredMean": 0.8765379349390666
+        },
+        "handAmodalIou": {
+          "count": 12,
+          "mean": 0.7993130932251612,
+          "median": 0.8240820169448853,
+          "scoredMean": 0.7993130932251612
+        },
+        "cdH": {
+          "count": 12,
+          "mean": 16.145275513331097,
+          "median": 15.588656902313232,
+          "scoredMean": 16.145275513331097
+        },
+        "objRel": {
+          "count": 14,
+          "mean": 1.3748809044648493,
+          "median": 0.9118044376373291
+        },
+        "wristTranslation": {
+          "count": 12,
+          "mean": 12.563320517539978,
+          "median": 8.667983770370483
+        },
+        "wristRotation": {
+          "count": 12,
+          "mean": 2.783386468887329,
+          "median": 2.613771080970764
+        }
+      }
     }
   ],
   "metricLabel": "RGB-only report evaluation",
-  "metricNote": "Per-sequence means from each frozen DexYCB report-test evaluator output."
+  "metricNote": "Per-sequence means from each frozen DexYCB report-test evaluator output. Unavailable runs have no frozen prediction for this sequence."
 }
