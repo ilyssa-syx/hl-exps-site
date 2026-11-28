@@ -75,7 +75,7 @@ function edgeIndices(faces) {
 }
 
 export class Preview2D {
-  constructor(canvas, video, layers) {
+  constructor(canvas, video, layers, onError = null) {
     this.canvas = canvas;
     this.video = video;
     this.layers = new Map(layers.map((layer) => [layer.id, {
@@ -83,6 +83,7 @@ export class Preview2D {
       colorRgb: rgb(layer.color), pose: new Float32Array(16),
     }]));
     this.visible = new Set(layers.map((layer) => layer.id));
+    this.onError = onError;
     // Long HO3D sequences contain about 15 MB of hand vertices per baseline.
     // Preserve layer order so the input reconstruction becomes interactive
     // before the two comparison runs consume bandwidth in the background.
@@ -138,7 +139,11 @@ export class Preview2D {
       layer.loading = this.loadQueue
         .then(() => layer.load())
         .then((data) => this.buildLayer(layer, data))
-        .catch((error) => console.error(error));
+        .catch((error) => {
+          console.error(error);
+          layer.error = error;
+          this.onError?.(error, layer);
+        });
       this.loadQueue = layer.loading;
     }
   }
@@ -205,7 +210,12 @@ export class Preview2D {
       const frame = Math.min(metadata.frameCount - 1, Math.round(this.progress * (metadata.frameCount - 1)));
       // The evaluator renders every reconstructed frame with the prediction's
       // first-frame intrinsics, so the website must use the same projection.
-      const intrinsics = metadata.intrinsics[0];
+      const intrinsics = typeof metadata.intrinsics?.[0]?.[0] === "number"
+        ? metadata.intrinsics
+        : metadata.intrinsics?.[0];
+      if (!intrinsics || typeof intrinsics[0]?.[0] !== "number") {
+        throw new Error(`Invalid reconstruction intrinsics for ${layer.label}`);
+      }
       gl.uniform4f(this.locations.intrinsics, intrinsics[0][0], intrinsics[1][1], intrinsics[0][2], intrinsics[1][2]);
       gl.uniform2f(this.locations.imageSize, metadata.imageWidth, metadata.imageHeight);
 

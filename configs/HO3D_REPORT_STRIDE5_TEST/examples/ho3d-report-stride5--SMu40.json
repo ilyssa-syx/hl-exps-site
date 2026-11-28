@@ -6,7 +6,7 @@
   "dataset": "HO3D report stride-5",
   "split": "report test stride-5",
   "objectName": "025_mug",
-  "fps": 6,
+  "fps": 30,
   "frameCount": 205,
   "baselines": [
     {
@@ -23,6 +23,41 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu40/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 205,
+          "mean": 13.567388062070055,
+          "median": 10.65329647064209
+        },
+        "objectAmodalIou": {
+          "count": 205,
+          "mean": 0.0851965337142202,
+          "median": 0.07389131933450699,
+          "scoredMean": 0.0851965337142202
+        },
+        "handAmodalIou": {
+          "count": 205,
+          "mean": 0.6481535495781316,
+          "median": 0.6352400779724121,
+          "scoredMean": 0.6481535495781316
+        },
+        "cdH": {
+          "count": 205,
+          "mean": 37.453819819194514,
+          "median": 27.12544822692871,
+          "scoredMean": 37.453819819194514
+        },
+        "objRel": {
+          "count": 204,
+          "mean": 23.07498142649146,
+          "median": 19.704734802246094
+        },
+        "wristTranslation": {
+          "count": 205,
+          "mean": 20.062368005659522,
+          "median": 16.769119262695312
         }
       }
     },
@@ -41,6 +76,41 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu40/rgb-only-overfit-r2/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 205,
+          "mean": 8.987445226529749,
+          "median": 8.47557544708252
+        },
+        "objectAmodalIou": {
+          "count": 205,
+          "mean": 0.017984533212704885,
+          "median": 0.0024376597721129656,
+          "scoredMean": 0.017984533212704885
+        },
+        "handAmodalIou": {
+          "count": 205,
+          "mean": 0.659581748741429,
+          "median": 0.6594755053520203,
+          "scoredMean": 0.659581748741429
+        },
+        "cdH": {
+          "count": 205,
+          "mean": 72.2241677633146,
+          "median": 72.21043395996094,
+          "scoredMean": 72.2241677633146
+        },
+        "objRel": {
+          "count": 204,
+          "mean": 9.922365510580587,
+          "median": 9.90298080444336
+        },
+        "wristTranslation": {
+          "count": 205,
+          "mean": 11.920312097595959,
+          "median": 11.104708671569824
+        }
       }
     },
     {
@@ -58,8 +128,44 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu40/rgb-only-overfit-r3/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 205,
+          "mean": 8.797936065022538,
+          "median": 8.546570777893066
+        },
+        "objectAmodalIou": {
+          "count": 205,
+          "mean": 0.020423632283164784,
+          "median": 0.00041034899186342955,
+          "scoredMean": 0.020423632283164784
+        },
+        "handAmodalIou": {
+          "count": 205,
+          "mean": 0.7249882070029654,
+          "median": 0.7145214676856995,
+          "scoredMean": 0.7249882070029654
+        },
+        "cdH": {
+          "count": 205,
+          "mean": 103.93176533768816,
+          "median": 104.43983459472656,
+          "scoredMean": 103.93176533768816
+        },
+        "objRel": {
+          "count": 204,
+          "mean": 9.562837202174991,
+          "median": 9.724587440490723
+        },
+        "wristTranslation": {
+          "count": 205,
+          "mean": 18.289492356486438,
+          "median": 16.077392578125
+        }
       }
     }
   ],
-  "hideMetrics": true
+  "metricLabel": "RGB-only report evaluation",
+  "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
 }

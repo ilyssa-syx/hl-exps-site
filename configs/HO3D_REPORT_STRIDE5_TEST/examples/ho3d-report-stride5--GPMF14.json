@@ -6,7 +6,7 @@
   "dataset": "HO3D report stride-5",
   "split": "report test stride-5",
   "objectName": "010_potted_meat_can",
-  "fps": 6,
+  "fps": 30,
   "frameCount": 205,
   "baselines": [
     {
@@ -23,6 +23,41 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF14/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 199,
+          "mean": 2.851751192430755,
+          "median": 2.181718587875366
+        },
+        "objectAmodalIou": {
+          "count": 199,
+          "mean": 0.1304182527380897,
+          "median": 0.1300758719444275,
+          "scoredMean": 0.1304182527380897
+        },
+        "handAmodalIou": {
+          "count": 199,
+          "mean": 0.5816786193368423,
+          "median": 0.5637720227241516,
+          "scoredMean": 0.5816786193368423
+        },
+        "cdH": {
+          "count": 199,
+          "mean": 9.965937919952163,
+          "median": 9.465803146362305,
+          "scoredMean": 9.965937919952163
+        },
+        "objRel": {
+          "count": 198,
+          "mean": 10.252780665239,
+          "median": 10.442073345184326
+        },
+        "wristTranslation": {
+          "count": 199,
+          "mean": 29.565489596457937,
+          "median": 29.3270263671875
         }
       }
     },
@@ -41,6 +76,41 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF14/rgb-only-overfit-r2/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 199,
+          "mean": 1.608924686908722,
+          "median": 1.3979977369308472
+        },
+        "objectAmodalIou": {
+          "count": 199,
+          "mean": 0.5887140751484051,
+          "median": 0.6153445839881897,
+          "scoredMean": 0.5887140751484051
+        },
+        "handAmodalIou": {
+          "count": 199,
+          "mean": 0.5461565697911995,
+          "median": 0.5434614419937134,
+          "scoredMean": 0.5461565697911995
+        },
+        "cdH": {
+          "count": 199,
+          "mean": 4.019500232821134,
+          "median": 3.8109548091888428,
+          "scoredMean": 4.019500232821134
+        },
+        "objRel": {
+          "count": 198,
+          "mean": 7.1257468505828365,
+          "median": 7.659493446350098
+        },
+        "wristTranslation": {
+          "count": 199,
+          "mean": 29.610833776656108,
+          "median": 29.67979621887207
+        }
       }
     },
     {
@@ -58,8 +128,44 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF14/rgb-only-overfit-r3/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 199,
+          "mean": 4.639960444752296,
+          "median": 4.060383319854736
+        },
+        "objectAmodalIou": {
+          "count": 199,
+          "mean": 0.18036700923103446,
+          "median": 0.1339154988527298,
+          "scoredMean": 0.18036700923103446
+        },
+        "handAmodalIou": {
+          "count": 199,
+          "mean": 0.7219233487419148,
+          "median": 0.7462102770805359,
+          "scoredMean": 0.7219233487419148
+        },
+        "cdH": {
+          "count": 199,
+          "mean": 11.456447038219203,
+          "median": 11.875833511352539,
+          "scoredMean": 11.456447038219203
+        },
+        "objRel": {
+          "count": 198,
+          "mean": 16.88635129014952,
+          "median": 17.527774810791016
+        },
+        "wristTranslation": {
+          "count": 199,
+          "mean": 21.651025470177732,
+          "median": 18.97780990600586
+        }
       }
     }
   ],
-  "hideMetrics": true
+  "metricLabel": "RGB-only report evaluation",
+  "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
 }

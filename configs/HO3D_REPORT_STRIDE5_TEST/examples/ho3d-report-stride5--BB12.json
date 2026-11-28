@@ -6,7 +6,7 @@
   "dataset": "HO3D report stride-5",
   "split": "report test stride-5",
   "objectName": "011_banana",
-  "fps": 6,
+  "fps": 30,
   "frameCount": 205,
   "baselines": [
     {
@@ -23,6 +23,41 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 192,
+          "mean": 9.735776888827482,
+          "median": 8.642895698547363
+        },
+        "objectAmodalIou": {
+          "count": 192,
+          "mean": 0.004532955410051424,
+          "median": 0.0,
+          "scoredMean": 0.004532955410051424
+        },
+        "handAmodalIou": {
+          "count": 192,
+          "mean": 0.548366920867314,
+          "median": 0.5417579710483551,
+          "scoredMean": 0.548366920867314
+        },
+        "cdH": {
+          "count": 192,
+          "mean": 335.25974074999493,
+          "median": 298.2142333984375,
+          "scoredMean": 335.25974074999493
+        },
+        "objRel": {
+          "count": 191,
+          "mean": 27.336133101847782,
+          "median": 30.73311424255371
+        },
+        "wristTranslation": {
+          "count": 192,
+          "mean": 29.47074467440446,
+          "median": 26.588995933532715
         }
       }
     },
@@ -41,6 +76,41 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 192,
+          "mean": 2.7106349462022385,
+          "median": 2.43760085105896
+        },
+        "objectAmodalIou": {
+          "count": 192,
+          "mean": 0.3146708319739749,
+          "median": 0.2604690194129944,
+          "scoredMean": 0.3146708319739749
+        },
+        "handAmodalIou": {
+          "count": 192,
+          "mean": 0.47442570282146335,
+          "median": 0.43164463341236115,
+          "scoredMean": 0.47442570282146335
+        },
+        "cdH": {
+          "count": 192,
+          "mean": 13.686369232833385,
+          "median": 13.082806587219238,
+          "scoredMean": 13.686369232833385
+        },
+        "objRel": {
+          "count": 191,
+          "mean": 8.348142850968538,
+          "median": 9.04876708984375
+        },
+        "wristTranslation": {
+          "count": 192,
+          "mean": 25.307790370037157,
+          "median": 23.48734951019287
+        }
       }
     },
     {
@@ -58,8 +128,44 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 192,
+          "mean": 3.5048231802259884,
+          "median": 2.2547731399536133
+        },
+        "objectAmodalIou": {
+          "count": 192,
+          "mean": 0.1999937917595768,
+          "median": 0.13202497363090515,
+          "scoredMean": 0.1999937917595768
+        },
+        "handAmodalIou": {
+          "count": 192,
+          "mean": 0.6916693874324361,
+          "median": 0.6945874989032745,
+          "scoredMean": 0.6916693874324361
+        },
+        "cdH": {
+          "count": 192,
+          "mean": 12.823354038099447,
+          "median": 8.003021001815796,
+          "scoredMean": 12.823354038099447
+        },
+        "objRel": {
+          "count": 191,
+          "mean": 29.659864708391158,
+          "median": 31.112892150878906
+        },
+        "wristTranslation": {
+          "count": 192,
+          "mean": 25.054001013437908,
+          "median": 22.471725463867188
+        }
       }
     }
   ],
-  "hideMetrics": true
+  "metricLabel": "RGB-only report evaluation",
+  "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
 }

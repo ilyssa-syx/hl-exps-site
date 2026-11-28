@@ -7,12 +7,14 @@ import csv
 import json
 from pathlib import Path
 import subprocess
+from fractions import Fraction
 
 
 ROOT = Path(__file__).resolve().parents[1]
 HOI_ROOT = Path("/home/ilyssa_syx/models/hoi-recon-hl")
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 FFMPEG = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/ffmpeg")
+FFPROBE = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/ffprobe")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
 
 RUNS = (
@@ -61,8 +63,8 @@ DATASETS = (
         "id_prefix": "ho3d-report-stride5--",
         "config_root": ROOT / "configs/HO3D_REPORT_STRIDE5_TEST/examples",
         "release": "20261128-rgb-only-repeats-ho3d-report18-stride5",
-        "fps": 6,
-        "hide_metrics": True,
+        "fps": 30,
+        "hide_metrics": False,
     },
 )
 
@@ -81,23 +83,31 @@ def stat(row: dict[str, str], prefix: str, unit: str, *, scored: bool = False) -
 def load_metrics(path: Path) -> dict[str, dict]:
     with path.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
-    return {
-        row["sequence_id"]: {
+    result = {}
+    for row in rows:
+        metrics = {
             "addAligned": stat(row, "add_aligned", "cm"),
             "objectAmodalIou": stat(row, "object_amodal", "iou", scored=True),
             "handAmodalIou": stat(row, "hand_amodal", "iou", scored=True),
             "cdH": stat(row, "cd_h", "cm", scored=True),
             "objRel": stat(row, "obj_rel", "cm"),
             "wristTranslation": stat(row, "wrist_pose_translation", "mm"),
-            "wristRotation": stat(row, "wrist_pose_rotation", "deg"),
         }
-        for row in rows
-    }
+        if "wrist_pose_rotation_count" in row:
+            metrics["wristRotation"] = stat(row, "wrist_pose_rotation", "deg")
+        result[row["sequence_id"]] = metrics
+    return result
 
 
 def ensure_video(source: Path, output: Path, fps: int) -> None:
     if output.is_file():
-        return
+        frame_rate = subprocess.check_output([
+            str(FFPROBE), "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=r_frame_rate",
+            "-of", "default=nokey=1:noprint_wrappers=1", str(output),
+        ], text=True).strip()
+        if Fraction(frame_rate) == fps:
+            return
     output.parent.mkdir(parents=True, exist_ok=True)
     subprocess.run([
         str(FFMPEG), "-hide_banner", "-loglevel", "error", "-y",
@@ -231,9 +241,15 @@ def export_dataset(dataset: dict) -> int:
             config["hideMetrics"] = True
         else:
             config["metricLabel"] = "RGB-only report evaluation"
-            config["metricNote"] = (
-                "Per-sequence means from each frozen DexYCB report-test evaluator output."
-            )
+            if dataset["key"] == "dexycb":
+                config["metricNote"] = (
+                    "Per-sequence means from each frozen DexYCB report-test evaluator output."
+                )
+            else:
+                config["metricNote"] = (
+                    "Per-sequence means from the completed 18-sequence HO3D "
+                    "release-full-coverage evaluations on stride-5 predictions."
+                )
         (config_root / f"{page_id}.json").write_text(
             json.dumps(config, indent=2) + "\n", encoding="utf-8",
         )

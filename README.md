@@ -43,7 +43,8 @@ the legacy test galleries:
 
 - **DexYCB report test** contains 20 RGB-only sequences with R1, R2, and R3;
 - **HO3D report test · stride 5** contains 18 RGB-only sequences with R1, R2,
-  and R3, exporting only every fifth source frame at 6 FPS.
+  and R3, exporting only every fifth source frame while playing the sampled
+  timeline at 30 FPS.
 
 These RGB-only datasets have no initial reconstruction, so their pages use the
 input RGB as the visualization background and expose only the three run results

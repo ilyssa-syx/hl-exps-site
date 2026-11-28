@@ -22596,7 +22596,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "021_bleach_cleanser",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -22613,6 +22613,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ABF12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 178,
+              "mean": 6.250253069099416,
+              "median": 5.794584274291992
+            },
+            "objectAmodalIou": {
+              "count": 178,
+              "mean": 0.0027459207753810426,
+              "median": 0.0,
+              "scoredMean": 0.0027459207753810426
+            },
+            "handAmodalIou": {
+              "count": 178,
+              "mean": 0.4234676634830036,
+              "median": 0.40262436866760254,
+              "scoredMean": 0.4234676634830036
+            },
+            "cdH": {
+              "count": 178,
+              "mean": 24.649943282095233,
+              "median": 24.913838386535645,
+              "scoredMean": 24.649943282095233
+            },
+            "objRel": {
+              "count": 177,
+              "mean": 8.628957639222092,
+              "median": 6.62965202331543
+            },
+            "wristTranslation": {
+              "count": 178,
+              "mean": 26.89891657400667,
+              "median": 27.186388969421387
             }
           }
         },
@@ -22631,6 +22666,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ABF12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 178,
+              "mean": 4.815555030040526,
+              "median": 5.062886476516724
+            },
+            "objectAmodalIou": {
+              "count": 178,
+              "mean": 0.37981817719861444,
+              "median": 0.37170086801052094,
+              "scoredMean": 0.37981817719861444
+            },
+            "handAmodalIou": {
+              "count": 178,
+              "mean": 0.36158499490009266,
+              "median": 0.34206385910511017,
+              "scoredMean": 0.36158499490009266
+            },
+            "cdH": {
+              "count": 178,
+              "mean": 9.944523844826087,
+              "median": 9.143275737762451,
+              "scoredMean": 9.944523844826087
+            },
+            "objRel": {
+              "count": 177,
+              "mean": 8.16926892632145,
+              "median": 8.885610580444336
+            },
+            "wristTranslation": {
+              "count": 178,
+              "mean": 26.29109740525149,
+              "median": 26.426584243774414
+            }
           }
         },
         {
@@ -22648,10 +22718,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ABF12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 178,
+              "mean": 3.0060558469777696,
+              "median": 1.7126012444496155
+            },
+            "objectAmodalIou": {
+              "count": 178,
+              "mean": 0.04654468853403343,
+              "median": 0.04264144040644169,
+              "scoredMean": 0.04654468853403343
+            },
+            "handAmodalIou": {
+              "count": 178,
+              "mean": 0.4766006286392051,
+              "median": 0.4866069406270981,
+              "scoredMean": 0.4766006286392051
+            },
+            "cdH": {
+              "count": 178,
+              "mean": 14.813593451896411,
+              "median": 11.586181163787842,
+              "scoredMean": 14.813593451896411
+            },
+            "objRel": {
+              "count": 177,
+              "mean": 9.923911269270095,
+              "median": 8.616164207458496
+            },
+            "wristTranslation": {
+              "count": 178,
+              "mean": 26.401147941525064,
+              "median": 24.615901947021484
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -22661,7 +22767,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "021_bleach_cleanser",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -22678,6 +22784,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ABF14/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 178,
+              "mean": 10.999627497758759,
+              "median": 10.49122667312622
+            },
+            "objectAmodalIou": {
+              "count": 178,
+              "mean": 0.22545264661880282,
+              "median": 0.17743131518363953,
+              "scoredMean": 0.22545264661880282
+            },
+            "handAmodalIou": {
+              "count": 178,
+              "mean": 0.5111009311140253,
+              "median": 0.5159828364849091,
+              "scoredMean": 0.5111009311140253
+            },
+            "cdH": {
+              "count": 178,
+              "mean": 40.76441794566894,
+              "median": 21.068044662475586,
+              "scoredMean": 40.76441794566894
+            },
+            "objRel": {
+              "count": 177,
+              "mean": 19.345878002670524,
+              "median": 23.008760452270508
+            },
+            "wristTranslation": {
+              "count": 178,
+              "mean": 39.350189442045235,
+              "median": 40.31138801574707
             }
           }
         },
@@ -22696,6 +22837,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ABF14/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 178,
+              "mean": 1.4720734907000252,
+              "median": 1.367918074131012
+            },
+            "objectAmodalIou": {
+              "count": 178,
+              "mean": 0.2984363440884633,
+              "median": 0.2752782702445984,
+              "scoredMean": 0.2984363440884633
+            },
+            "handAmodalIou": {
+              "count": 178,
+              "mean": 0.5187143233050121,
+              "median": 0.5058943629264832,
+              "scoredMean": 0.5187143233050121
+            },
+            "cdH": {
+              "count": 178,
+              "mean": 7.231313619720802,
+              "median": 6.904018878936768,
+              "scoredMean": 7.231313619720802
+            },
+            "objRel": {
+              "count": 177,
+              "mean": 7.565743423114388,
+              "median": 8.44900131225586
+            },
+            "wristTranslation": {
+              "count": 178,
+              "mean": 37.116191033566935,
+              "median": 39.80708694458008
+            }
           }
         },
         {
@@ -22713,10 +22889,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ABF14/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 178,
+              "mean": 1.9635369821210926,
+              "median": 1.221060335636139
+            },
+            "objectAmodalIou": {
+              "count": 178,
+              "mean": 0.061183302940570575,
+              "median": 0.03971235826611519,
+              "scoredMean": 0.061183302940570575
+            },
+            "handAmodalIou": {
+              "count": 178,
+              "mean": 0.6382026612088921,
+              "median": 0.6449553370475769,
+              "scoredMean": 0.6382026612088921
+            },
+            "cdH": {
+              "count": 178,
+              "mean": 29.820372846689118,
+              "median": 28.65295696258545,
+              "scoredMean": 29.820372846689118
+            },
+            "objRel": {
+              "count": 177,
+              "mean": 13.453162598576249,
+              "median": 15.302665710449219
+            },
+            "wristTranslation": {
+              "count": 178,
+              "mean": 31.47082099485933,
+              "median": 31.109868049621582
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -22726,7 +22938,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "011_banana",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -22743,6 +22955,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 192,
+              "mean": 9.735776888827482,
+              "median": 8.642895698547363
+            },
+            "objectAmodalIou": {
+              "count": 192,
+              "mean": 0.004532955410051424,
+              "median": 0.0,
+              "scoredMean": 0.004532955410051424
+            },
+            "handAmodalIou": {
+              "count": 192,
+              "mean": 0.548366920867314,
+              "median": 0.5417579710483551,
+              "scoredMean": 0.548366920867314
+            },
+            "cdH": {
+              "count": 192,
+              "mean": 335.25974074999493,
+              "median": 298.2142333984375,
+              "scoredMean": 335.25974074999493
+            },
+            "objRel": {
+              "count": 191,
+              "mean": 27.336133101847782,
+              "median": 30.73311424255371
+            },
+            "wristTranslation": {
+              "count": 192,
+              "mean": 29.47074467440446,
+              "median": 26.588995933532715
             }
           }
         },
@@ -22761,6 +23008,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 192,
+              "mean": 2.7106349462022385,
+              "median": 2.43760085105896
+            },
+            "objectAmodalIou": {
+              "count": 192,
+              "mean": 0.3146708319739749,
+              "median": 0.2604690194129944,
+              "scoredMean": 0.3146708319739749
+            },
+            "handAmodalIou": {
+              "count": 192,
+              "mean": 0.47442570282146335,
+              "median": 0.43164463341236115,
+              "scoredMean": 0.47442570282146335
+            },
+            "cdH": {
+              "count": 192,
+              "mean": 13.686369232833385,
+              "median": 13.082806587219238,
+              "scoredMean": 13.686369232833385
+            },
+            "objRel": {
+              "count": 191,
+              "mean": 8.348142850968538,
+              "median": 9.04876708984375
+            },
+            "wristTranslation": {
+              "count": 192,
+              "mean": 25.307790370037157,
+              "median": 23.48734951019287
+            }
           }
         },
         {
@@ -22778,10 +23060,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 192,
+              "mean": 3.5048231802259884,
+              "median": 2.2547731399536133
+            },
+            "objectAmodalIou": {
+              "count": 192,
+              "mean": 0.1999937917595768,
+              "median": 0.13202497363090515,
+              "scoredMean": 0.1999937917595768
+            },
+            "handAmodalIou": {
+              "count": 192,
+              "mean": 0.6916693874324361,
+              "median": 0.6945874989032745,
+              "scoredMean": 0.6916693874324361
+            },
+            "cdH": {
+              "count": 192,
+              "mean": 12.823354038099447,
+              "median": 8.003021001815796,
+              "scoredMean": 12.823354038099447
+            },
+            "objRel": {
+              "count": 191,
+              "mean": 29.659864708391158,
+              "median": 31.112892150878906
+            },
+            "wristTranslation": {
+              "count": 192,
+              "mean": 25.054001013437908,
+              "median": 22.471725463867188
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -22791,7 +23109,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "011_banana",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -22808,6 +23126,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB13/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 192,
+              "mean": 10.770642844339212,
+              "median": 10.610568523406982
+            },
+            "objectAmodalIou": {
+              "count": 192,
+              "mean": 0.0001170004276597562,
+              "median": 0.0,
+              "scoredMean": 0.0001170004276597562
+            },
+            "handAmodalIou": {
+              "count": 192,
+              "mean": 0.7488427877736589,
+              "median": 0.7621891796588898,
+              "scoredMean": 0.7488427877736589
+            },
+            "cdH": {
+              "count": 192,
+              "mean": 94.89239116509755,
+              "median": 94.30315399169922,
+              "scoredMean": 94.89239116509755
+            },
+            "objRel": {
+              "count": 191,
+              "mean": 11.277680641498554,
+              "median": 11.763461112976074
+            },
+            "wristTranslation": {
+              "count": 192,
+              "mean": 21.047882333397865,
+              "median": 18.312114715576172
             }
           }
         },
@@ -22826,6 +23179,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB13/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 192,
+              "mean": 2.450712738248209,
+              "median": 2.5141100883483887
+            },
+            "objectAmodalIou": {
+              "count": 192,
+              "mean": 0.41551863130492467,
+              "median": 0.3611166626214981,
+              "scoredMean": 0.41551863130492467
+            },
+            "handAmodalIou": {
+              "count": 192,
+              "mean": 0.7602418398795029,
+              "median": 0.7708399891853333,
+              "scoredMean": 0.7602418398795029
+            },
+            "cdH": {
+              "count": 192,
+              "mean": 6.348224163676302,
+              "median": 6.678552865982056,
+              "scoredMean": 6.348224163676302
+            },
+            "objRel": {
+              "count": 191,
+              "mean": 7.412866928580544,
+              "median": 8.110098838806152
+            },
+            "wristTranslation": {
+              "count": 192,
+              "mean": 15.84356602281332,
+              "median": 13.971228122711182
+            }
           }
         },
         {
@@ -22843,10 +23231,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/BB13/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 192,
+              "mean": 2.8056188207119703,
+              "median": 2.422222137451172
+            },
+            "objectAmodalIou": {
+              "count": 192,
+              "mean": 0.49359514517709613,
+              "median": 0.5234028398990631,
+              "scoredMean": 0.49359514517709613
+            },
+            "handAmodalIou": {
+              "count": 192,
+              "mean": 0.8546489643243452,
+              "median": 0.867427259683609,
+              "scoredMean": 0.8546489643243452
+            },
+            "cdH": {
+              "count": 192,
+              "mean": 8.084924148395658,
+              "median": 7.5726001262664795,
+              "scoredMean": 8.084924148395658
+            },
+            "objRel": {
+              "count": 191,
+              "mean": 8.056342434216075,
+              "median": 8.80795669555664
+            },
+            "wristTranslation": {
+              "count": 192,
+              "mean": 19.66977102868259,
+              "median": 14.437602996826172
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -22856,7 +23280,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "010_potted_meat_can",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -22873,6 +23297,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 199,
+              "mean": 4.728608933525469,
+              "median": 3.5806336402893066
+            },
+            "objectAmodalIou": {
+              "count": 199,
+              "mean": 0.4097999462661282,
+              "median": 0.42611363530158997,
+              "scoredMean": 0.4097999462661282
+            },
+            "handAmodalIou": {
+              "count": 199,
+              "mean": 0.4575855213793079,
+              "median": 0.45338159799575806,
+              "scoredMean": 0.4575855213793079
+            },
+            "cdH": {
+              "count": 199,
+              "mean": 38.699656505680565,
+              "median": 26.641136169433594,
+              "scoredMean": 38.699656505680565
+            },
+            "objRel": {
+              "count": 198,
+              "mean": 22.42054679511924,
+              "median": 25.650920867919922
+            },
+            "wristTranslation": {
+              "count": 199,
+              "mean": 23.89851359027115,
+              "median": 22.15181541442871
             }
           }
         },
@@ -22891,6 +23350,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 199,
+              "mean": 1.454696414159171,
+              "median": 1.0580317974090576
+            },
+            "objectAmodalIou": {
+              "count": 199,
+              "mean": 0.5694841535846192,
+              "median": 0.5992065668106079,
+              "scoredMean": 0.5694841535846192
+            },
+            "handAmodalIou": {
+              "count": 199,
+              "mean": 0.48488327651167634,
+              "median": 0.47486335039138794,
+              "scoredMean": 0.48488327651167634
+            },
+            "cdH": {
+              "count": 199,
+              "mean": 4.445390257404078,
+              "median": 3.9585721492767334,
+              "scoredMean": 4.445390257404078
+            },
+            "objRel": {
+              "count": 198,
+              "mean": 9.145600447374763,
+              "median": 9.67503309249878
+            },
+            "wristTranslation": {
+              "count": 199,
+              "mean": 21.831218477469594,
+              "median": 21.825685501098633
+            }
           }
         },
         {
@@ -22908,10 +23402,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 199,
+              "mean": 8.13606000545636,
+              "median": 7.9943695068359375
+            },
+            "objectAmodalIou": {
+              "count": 199,
+              "mean": 0.0,
+              "median": 0.0,
+              "scoredMean": 0.0
+            },
+            "handAmodalIou": {
+              "count": 199,
+              "mean": 0.5750494580247894,
+              "median": 0.5833883285522461,
+              "scoredMean": 0.5750494580247894
+            },
+            "cdH": {
+              "count": 199,
+              "mean": 19.372121734235755,
+              "median": 18.99004364013672,
+              "scoredMean": 19.372121734235755
+            },
+            "objRel": {
+              "count": 198,
+              "mean": 9.685787573381505,
+              "median": 9.839512348175049
+            },
+            "wristTranslation": {
+              "count": 199,
+              "mean": 20.598967858894387,
+              "median": 19.6862850189209
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -22921,7 +23451,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "010_potted_meat_can",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -22938,6 +23468,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF14/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 199,
+              "mean": 2.851751192430755,
+              "median": 2.181718587875366
+            },
+            "objectAmodalIou": {
+              "count": 199,
+              "mean": 0.1304182527380897,
+              "median": 0.1300758719444275,
+              "scoredMean": 0.1304182527380897
+            },
+            "handAmodalIou": {
+              "count": 199,
+              "mean": 0.5816786193368423,
+              "median": 0.5637720227241516,
+              "scoredMean": 0.5816786193368423
+            },
+            "cdH": {
+              "count": 199,
+              "mean": 9.965937919952163,
+              "median": 9.465803146362305,
+              "scoredMean": 9.965937919952163
+            },
+            "objRel": {
+              "count": 198,
+              "mean": 10.252780665239,
+              "median": 10.442073345184326
+            },
+            "wristTranslation": {
+              "count": 199,
+              "mean": 29.565489596457937,
+              "median": 29.3270263671875
             }
           }
         },
@@ -22956,6 +23521,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF14/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 199,
+              "mean": 1.608924686908722,
+              "median": 1.3979977369308472
+            },
+            "objectAmodalIou": {
+              "count": 199,
+              "mean": 0.5887140751484051,
+              "median": 0.6153445839881897,
+              "scoredMean": 0.5887140751484051
+            },
+            "handAmodalIou": {
+              "count": 199,
+              "mean": 0.5461565697911995,
+              "median": 0.5434614419937134,
+              "scoredMean": 0.5461565697911995
+            },
+            "cdH": {
+              "count": 199,
+              "mean": 4.019500232821134,
+              "median": 3.8109548091888428,
+              "scoredMean": 4.019500232821134
+            },
+            "objRel": {
+              "count": 198,
+              "mean": 7.1257468505828365,
+              "median": 7.659493446350098
+            },
+            "wristTranslation": {
+              "count": 199,
+              "mean": 29.610833776656108,
+              "median": 29.67979621887207
+            }
           }
         },
         {
@@ -22973,10 +23573,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GPMF14/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 199,
+              "mean": 4.639960444752296,
+              "median": 4.060383319854736
+            },
+            "objectAmodalIou": {
+              "count": 199,
+              "mean": 0.18036700923103446,
+              "median": 0.1339154988527298,
+              "scoredMean": 0.18036700923103446
+            },
+            "handAmodalIou": {
+              "count": 199,
+              "mean": 0.7219233487419148,
+              "median": 0.7462102770805359,
+              "scoredMean": 0.7219233487419148
+            },
+            "cdH": {
+              "count": 199,
+              "mean": 11.456447038219203,
+              "median": 11.875833511352539,
+              "scoredMean": 11.456447038219203
+            },
+            "objRel": {
+              "count": 198,
+              "mean": 16.88635129014952,
+              "median": 17.527774810791016
+            },
+            "wristTranslation": {
+              "count": 199,
+              "mean": 21.651025470177732,
+              "median": 18.97780990600586
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -22986,7 +23622,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "037_scissors",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23003,6 +23639,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF13/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 7.564805416799173,
+              "median": 8.563494682312012
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.016974731804320315,
+              "median": 0.0,
+              "scoredMean": 0.016974731804320315
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.7407301992904849,
+              "median": 0.7476758360862732,
+              "scoredMean": 0.7407301992904849
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 249.75662238888623,
+              "median": 241.83592224121094,
+              "scoredMean": 249.75662238888623
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 15.185025725002383,
+              "median": 14.690366268157959
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 28.54248063855055,
+              "median": 20.920557022094727
             }
           }
         },
@@ -23021,6 +23692,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF13/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 2.859185827069166,
+              "median": 2.55351185798645
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.2867086016186854,
+              "median": 0.2628858983516693,
+              "scoredMean": 0.2867086016186854
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.7925001629968969,
+              "median": 0.8247867226600647,
+              "scoredMean": 0.7925001629968969
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 8.07267213216642,
+              "median": 6.6758856773376465,
+              "scoredMean": 8.07267213216642
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 8.730904424015213,
+              "median": 8.13225793838501
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 16.010460046442542,
+              "median": 12.55586051940918
+            }
           }
         },
         {
@@ -23038,10 +23744,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF13/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 4.597603303630177,
+              "median": 2.9027295112609863
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.3569968770189983,
+              "median": 0.35958173871040344,
+              "scoredMean": 0.3569968770189983
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.8459454065415918,
+              "median": 0.8539522290229797,
+              "scoredMean": 0.8459454065415918
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 11.664481706154056,
+              "median": 7.598477363586426,
+              "scoredMean": 11.664481706154056
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 11.201268061411147,
+              "median": 9.338255882263184
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 15.997718273721091,
+              "median": 11.152193069458008
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23051,7 +23793,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "037_scissors",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23068,6 +23810,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF14/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 4.292645580012624,
+              "median": 2.639188528060913
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.38846209049224856,
+              "median": 0.3407803177833557,
+              "scoredMean": 0.38846209049224856
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.6278608025574103,
+              "median": 0.6384070515632629,
+              "scoredMean": 0.6278608025574103
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 11.298218496834359,
+              "median": 8.714489936828613,
+              "scoredMean": 11.298218496834359
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 6.672750098886443,
+              "median": 5.691699504852295
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 38.806148426707196,
+              "median": 35.69401550292969
             }
           }
         },
@@ -23086,6 +23863,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF14/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 6.091589875337554,
+              "median": 6.005108833312988
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.014506252242107422,
+              "median": 0.0,
+              "scoredMean": 0.014506252242107422
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.6007693532036572,
+              "median": 0.5843650698661804,
+              "scoredMean": 0.6007693532036572
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 31.49197423981457,
+              "median": 29.41560173034668,
+              "scoredMean": 31.49197423981457
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 9.729924258063821,
+              "median": 9.910133361816406
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 40.750427190268915,
+              "median": 38.01003646850586
+            }
           }
         },
         {
@@ -23103,10 +23915,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF14/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 4.788766527175904,
+              "median": 4.219423770904541
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.384123924083826,
+              "median": 0.3722513020038605,
+              "scoredMean": 0.384123924083826
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.7483530355662834,
+              "median": 0.7734794616699219,
+              "scoredMean": 0.7483530355662834
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 9.746468353271485,
+              "median": 7.9377336502075195,
+              "scoredMean": 9.746468353271485
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 8.361415397887136,
+              "median": 7.235960960388184
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 30.59309448614353,
+              "median": 27.104656219482422
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23116,7 +23964,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "003_cracker_box",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 180,
       "baselines": [
         {
@@ -23133,6 +23981,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MC1/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 164,
+              "mean": 4.643491979779267,
+              "median": 4.683988332748413
+            },
+            "objectAmodalIou": {
+              "count": 164,
+              "mean": 0.2872978863874223,
+              "median": 0.1720166578888893,
+              "scoredMean": 0.2872978863874223
+            },
+            "handAmodalIou": {
+              "count": 164,
+              "mean": 0.6921766423961011,
+              "median": 0.6822429299354553,
+              "scoredMean": 0.6921766423961011
+            },
+            "cdH": {
+              "count": 164,
+              "mean": 21.20550286188358,
+              "median": 19.625924110412598,
+              "scoredMean": 21.20550286188358
+            },
+            "objRel": {
+              "count": 163,
+              "mean": 12.481667852109195,
+              "median": 12.478766441345215
+            },
+            "wristTranslation": {
+              "count": 164,
+              "mean": 31.983750837605175,
+              "median": 30.000490188598633
             }
           }
         },
@@ -23151,6 +24034,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MC1/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 164,
+              "mean": 1.7537698625791363,
+              "median": 1.603721797466278
+            },
+            "objectAmodalIou": {
+              "count": 164,
+              "mean": 0.09394249243934344,
+              "median": 0.09120727702975273,
+              "scoredMean": 0.09394249243934344
+            },
+            "handAmodalIou": {
+              "count": 164,
+              "mean": 0.6813655946312881,
+              "median": 0.6799297034740448,
+              "scoredMean": 0.6813655946312881
+            },
+            "cdH": {
+              "count": 164,
+              "mean": 15.22309353293442,
+              "median": 12.980284690856934,
+              "scoredMean": 15.22309353293442
+            },
+            "objRel": {
+              "count": 163,
+              "mean": 13.54370257020728,
+              "median": 13.443979263305664
+            },
+            "wristTranslation": {
+              "count": 164,
+              "mean": 19.51708373063948,
+              "median": 17.19339370727539
+            }
           }
         },
         {
@@ -23168,10 +24086,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MC1/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 164,
+              "mean": 2.909578454203722,
+              "median": 2.7163000106811523
+            },
+            "objectAmodalIou": {
+              "count": 164,
+              "mean": 0.6821385994553566,
+              "median": 0.6957204043865204,
+              "scoredMean": 0.6821385994553566
+            },
+            "handAmodalIou": {
+              "count": 164,
+              "mean": 0.7344383917203764,
+              "median": 0.7457941770553589,
+              "scoredMean": 0.7344383917203764
+            },
+            "cdH": {
+              "count": 164,
+              "mean": 6.733884775057072,
+              "median": 6.593362808227539,
+              "scoredMean": 6.733884775057072
+            },
+            "objRel": {
+              "count": 163,
+              "mean": 9.583890878349726,
+              "median": 9.986634254455566
+            },
+            "wristTranslation": {
+              "count": 164,
+              "mean": 29.034588438708607,
+              "median": 26.260875701904297
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23181,7 +24135,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "003_cracker_box",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 180,
       "baselines": [
         {
@@ -23198,6 +24152,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MC4/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 180,
+              "mean": 6.724497805370225,
+              "median": 6.662354946136475
+            },
+            "objectAmodalIou": {
+              "count": 180,
+              "mean": 0.009503445272922463,
+              "median": 0.011220186948776245,
+              "scoredMean": 0.009503445272922463
+            },
+            "handAmodalIou": {
+              "count": 180,
+              "mean": 0.6313963207933638,
+              "median": 0.6161844432353973,
+              "scoredMean": 0.6313963207933638
+            },
+            "cdH": {
+              "count": 180,
+              "mean": 42.903561475541856,
+              "median": 28.59014892578125,
+              "scoredMean": 42.903561475541856
+            },
+            "objRel": {
+              "count": 179,
+              "mean": 28.65559752427,
+              "median": 32.926570892333984
+            },
+            "wristTranslation": {
+              "count": 180,
+              "mean": 39.554445097181535,
+              "median": 37.292030334472656
             }
           }
         },
@@ -23216,6 +24205,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MC4/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 180,
+              "mean": 2.674320927593443,
+              "median": 2.5969223976135254
+            },
+            "objectAmodalIou": {
+              "count": 180,
+              "mean": 0.5369073513481352,
+              "median": 0.5405718982219696,
+              "scoredMean": 0.5369073513481352
+            },
+            "handAmodalIou": {
+              "count": 180,
+              "mean": 0.6968946256571346,
+              "median": 0.6929931640625,
+              "scoredMean": 0.6968946256571346
+            },
+            "cdH": {
+              "count": 180,
+              "mean": 6.1463916394445635,
+              "median": 5.731109142303467,
+              "scoredMean": 6.1463916394445635
+            },
+            "objRel": {
+              "count": 179,
+              "mean": 12.91493131569977,
+              "median": 13.764693260192871
+            },
+            "wristTranslation": {
+              "count": 180,
+              "mean": 23.56270167562697,
+              "median": 22.37318992614746
+            }
           }
         },
         {
@@ -23233,10 +24257,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MC4/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 180,
+              "mean": 5.671831463111771,
+              "median": 2.63383150100708
+            },
+            "objectAmodalIou": {
+              "count": 180,
+              "mean": 0.03300439113223143,
+              "median": 0.030570995062589645,
+              "scoredMean": 0.03300439113223143
+            },
+            "handAmodalIou": {
+              "count": 180,
+              "mean": 0.5429532646305031,
+              "median": 0.5703312158584595,
+              "scoredMean": 0.5429532646305031
+            },
+            "cdH": {
+              "count": 180,
+              "mean": 21.561215331819323,
+              "median": 14.451938152313232,
+              "scoredMean": 21.561215331819323
+            },
+            "objRel": {
+              "count": 179,
+              "mean": 16.34464060823178,
+              "median": 17.149084091186523
+            },
+            "wristTranslation": {
+              "count": 180,
+              "mean": 40.91665490468343,
+              "median": 39.14676284790039
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23246,7 +24306,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "035_power_drill",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23263,6 +24323,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MDF12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 197,
+              "mean": 2.0688357035520717,
+              "median": 0.7776678800582886
+            },
+            "objectAmodalIou": {
+              "count": 197,
+              "mean": 0.17264869164788935,
+              "median": 0.18843160569667816,
+              "scoredMean": 0.17264869164788935
+            },
+            "handAmodalIou": {
+              "count": 197,
+              "mean": 0.6179238979889051,
+              "median": 0.6255602836608887,
+              "scoredMean": 0.6179238979889051
+            },
+            "cdH": {
+              "count": 197,
+              "mean": 14.644476200723407,
+              "median": 8.967316627502441,
+              "scoredMean": 14.644476200723407
+            },
+            "objRel": {
+              "count": 196,
+              "mean": 11.548449828080377,
+              "median": 9.924872875213623
+            },
+            "wristTranslation": {
+              "count": 197,
+              "mean": 17.0860997626019,
+              "median": 16.100078582763672
             }
           }
         },
@@ -23281,6 +24376,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MDF12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 197,
+              "mean": 3.1254808476128555,
+              "median": 3.0678963661193848
+            },
+            "objectAmodalIou": {
+              "count": 197,
+              "mean": 0.20211709275614792,
+              "median": 0.19427061080932617,
+              "scoredMean": 0.20211709275614792
+            },
+            "handAmodalIou": {
+              "count": 197,
+              "mean": 0.5377852783590404,
+              "median": 0.5471466779708862,
+              "scoredMean": 0.5377852783590404
+            },
+            "cdH": {
+              "count": 197,
+              "mean": 29.605176983751015,
+              "median": 29.239221572875977,
+              "scoredMean": 29.605176983751015
+            },
+            "objRel": {
+              "count": 196,
+              "mean": 12.278442200349302,
+              "median": 11.121771812438965
+            },
+            "wristTranslation": {
+              "count": 197,
+              "mean": 13.729866399377736,
+              "median": 11.698209762573242
+            }
           }
         },
         {
@@ -23298,10 +24428,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MDF12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 197,
+              "mean": 5.115244827294712,
+              "median": 5.070667266845703
+            },
+            "objectAmodalIou": {
+              "count": 197,
+              "mean": 0.040633573274315465,
+              "median": 0.015247478149831295,
+              "scoredMean": 0.040633573274315465
+            },
+            "handAmodalIou": {
+              "count": 197,
+              "mean": 0.6656056585045635,
+              "median": 0.6668419241905212,
+              "scoredMean": 0.6656056585045635
+            },
+            "cdH": {
+              "count": 197,
+              "mean": 227.27290502054439,
+              "median": 248.7648468017578,
+              "scoredMean": 227.27290502054439
+            },
+            "objRel": {
+              "count": 196,
+              "mean": 20.031869417094455,
+              "median": 20.859756469726562
+            },
+            "wristTranslation": {
+              "count": 197,
+              "mean": 18.288566366670096,
+              "median": 16.225980758666992
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23311,7 +24477,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "035_power_drill",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23328,6 +24494,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MDF14/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 197,
+              "mean": 7.735937246513851,
+              "median": 6.205256938934326
+            },
+            "objectAmodalIou": {
+              "count": 197,
+              "mean": 0.02215782608132931,
+              "median": 0.010863864794373512,
+              "scoredMean": 0.02215782608132931
+            },
+            "handAmodalIou": {
+              "count": 197,
+              "mean": 0.6607202938970576,
+              "median": 0.6609039306640625,
+              "scoredMean": 0.6607202938970576
+            },
+            "cdH": {
+              "count": 197,
+              "mean": 22.385012643591402,
+              "median": 18.873676300048828,
+              "scoredMean": 22.385012643591402
+            },
+            "objRel": {
+              "count": 196,
+              "mean": 22.405745793970265,
+              "median": 19.208295822143555
+            },
+            "wristTranslation": {
+              "count": 197,
+              "mean": 25.961999133153615,
+              "median": 23.940778732299805
             }
           }
         },
@@ -23346,6 +24547,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MDF14/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 197,
+              "mean": 2.1228391162029983,
+              "median": 2.1298913955688477
+            },
+            "objectAmodalIou": {
+              "count": 197,
+              "mean": 0.3660944173027416,
+              "median": 0.34289810061454773,
+              "scoredMean": 0.3660944173027416
+            },
+            "handAmodalIou": {
+              "count": 197,
+              "mean": 0.6704251273029347,
+              "median": 0.6697782278060913,
+              "scoredMean": 0.6704251273029347
+            },
+            "cdH": {
+              "count": 197,
+              "mean": 12.32974146344335,
+              "median": 11.692890167236328,
+              "scoredMean": 12.32974146344335
+            },
+            "objRel": {
+              "count": 196,
+              "mean": 8.83065345180126,
+              "median": 9.546592712402344
+            },
+            "wristTranslation": {
+              "count": 197,
+              "mean": 20.594113306345672,
+              "median": 20.519302368164062
+            }
           }
         },
         {
@@ -23363,10 +24599,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/MDF14/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 197,
+              "mean": 2.8424583376966757,
+              "median": 2.5392510890960693
+            },
+            "objectAmodalIou": {
+              "count": 197,
+              "mean": 0.4531502576195044,
+              "median": 0.4779169261455536,
+              "scoredMean": 0.4531502576195044
+            },
+            "handAmodalIou": {
+              "count": 197,
+              "mean": 0.7608258954159499,
+              "median": 0.7803848385810852,
+              "scoredMean": 0.7608258954159499
+            },
+            "cdH": {
+              "count": 197,
+              "mean": 6.9990066683231875,
+              "median": 6.893629550933838,
+              "scoredMean": 6.9990066683231875
+            },
+            "objRel": {
+              "count": 196,
+              "mean": 7.092760363479658,
+              "median": 5.5710813999176025
+            },
+            "wristTranslation": {
+              "count": 197,
+              "mean": 25.95028676115317,
+              "median": 26.202680587768555
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23376,7 +24648,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "006_mustard_bottle",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 180,
       "baselines": [
         {
@@ -23393,6 +24665,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SM2/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 180,
+              "mean": 3.596551685863071,
+              "median": 2.731819748878479
+            },
+            "objectAmodalIou": {
+              "count": 180,
+              "mean": 0.38658117829925487,
+              "median": 0.4075365215539932,
+              "scoredMean": 0.38658117829925487
+            },
+            "handAmodalIou": {
+              "count": 180,
+              "mean": 0.724983629087607,
+              "median": 0.7493200600147247,
+              "scoredMean": 0.724983629087607
+            },
+            "cdH": {
+              "count": 180,
+              "mean": 14.607810105217828,
+              "median": 10.780860900878906,
+              "scoredMean": 14.607810105217828
+            },
+            "objRel": {
+              "count": 179,
+              "mean": 13.178974727179085,
+              "median": 11.831473350524902
+            },
+            "wristTranslation": {
+              "count": 180,
+              "mean": 28.211405958069694,
+              "median": 24.794127464294434
             }
           }
         },
@@ -23411,6 +24718,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SM2/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 180,
+              "mean": 2.6913984391424393,
+              "median": 2.4903602600097656
+            },
+            "objectAmodalIou": {
+              "count": 180,
+              "mean": 0.4552477545208401,
+              "median": 0.40280161798000336,
+              "scoredMean": 0.4552477545208401
+            },
+            "handAmodalIou": {
+              "count": 180,
+              "mean": 0.7869194287392828,
+              "median": 0.8041583001613617,
+              "scoredMean": 0.7869194287392828
+            },
+            "cdH": {
+              "count": 180,
+              "mean": 25.97149393293593,
+              "median": 22.893335342407227,
+              "scoredMean": 25.97149393293593
+            },
+            "objRel": {
+              "count": 179,
+              "mean": 7.277286578656575,
+              "median": 6.825673580169678
+            },
+            "wristTranslation": {
+              "count": 180,
+              "mean": 14.27947368423144,
+              "median": 11.194180965423584
+            }
           }
         },
         {
@@ -23428,10 +24770,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SM2/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 180,
+              "mean": 1.4481357600953844,
+              "median": 0.8917182683944702
+            },
+            "objectAmodalIou": {
+              "count": 180,
+              "mean": 0.09741258285244435,
+              "median": 0.08874629810452461,
+              "scoredMean": 0.09741258285244435
+            },
+            "handAmodalIou": {
+              "count": 180,
+              "mean": 0.7278112325403425,
+              "median": 0.7517088055610657,
+              "scoredMean": 0.7278112325403425
+            },
+            "cdH": {
+              "count": 180,
+              "mean": 24.30235035419464,
+              "median": 24.304694175720215,
+              "scoredMean": 24.30235035419464
+            },
+            "objRel": {
+              "count": 179,
+              "mean": 11.14529726292168,
+              "median": 10.531558990478516
+            },
+            "wristTranslation": {
+              "count": 180,
+              "mean": 28.058055350515577,
+              "median": 24.157207489013672
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23441,7 +24819,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "006_mustard_bottle",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 180,
       "baselines": [
         {
@@ -23459,6 +24837,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SM4/rgb-only-overfit-r1/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 175,
+              "mean": 7.629645580564226,
+              "median": 6.042026519775391
+            },
+            "objectAmodalIou": {
+              "count": 175,
+              "mean": 0.22798953982336181,
+              "median": 0.22231139242649078,
+              "scoredMean": 0.22798953982336181
+            },
+            "handAmodalIou": {
+              "count": 175,
+              "mean": 0.7488709586007255,
+              "median": 0.7402748465538025,
+              "scoredMean": 0.7488709586007255
+            },
+            "cdH": {
+              "count": 175,
+              "mean": 22.10656930378505,
+              "median": 14.432936668395996,
+              "scoredMean": 22.10656930378505
+            },
+            "objRel": {
+              "count": 174,
+              "mean": 20.852322885017287,
+              "median": 23.708474159240723
+            },
+            "wristTranslation": {
+              "count": 175,
+              "mean": 25.126173456736975,
+              "median": 20.82436180114746
+            }
           }
         },
         {
@@ -23475,6 +24888,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SM4/rgb-only-overfit-r2/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 175,
+              "mean": 2.0460014840534755,
+              "median": 2.118328094482422
+            },
+            "objectAmodalIou": {
+              "count": 175,
+              "mean": 0.43205134860106875,
+              "median": 0.41785091161727905,
+              "scoredMean": 0.43205134860106875
+            },
+            "handAmodalIou": {
+              "count": 175,
+              "mean": 0.7853144298280988,
+              "median": 0.7804891467094421,
+              "scoredMean": 0.7853144298280988
+            },
+            "cdH": {
+              "count": 175,
+              "mean": 7.254925640651158,
+              "median": 7.218753337860107,
+              "scoredMean": 7.254925640651158
+            },
+            "objRel": {
+              "count": 174,
+              "mean": 9.646748331428944,
+              "median": 10.43946361541748
+            },
+            "wristTranslation": {
+              "count": 175,
+              "mean": 17.810802966526577,
+              "median": 16.487579345703125
             }
           }
         },
@@ -23493,10 +24941,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SM4/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 175,
+              "mean": 3.256097802434649,
+              "median": 3.110478162765503
+            },
+            "objectAmodalIou": {
+              "count": 175,
+              "mean": 0.536349829009601,
+              "median": 0.530076265335083,
+              "scoredMean": 0.536349829009601
+            },
+            "handAmodalIou": {
+              "count": 175,
+              "mean": 0.7359750131198338,
+              "median": 0.7324180006980896,
+              "scoredMean": 0.7359750131198338
+            },
+            "cdH": {
+              "count": 175,
+              "mean": 11.322295743397303,
+              "median": 7.467401027679443,
+              "scoredMean": 11.322295743397303
+            },
+            "objRel": {
+              "count": 174,
+              "mean": 7.197806569608463,
+              "median": 7.148744583129883
+            },
+            "wristTranslation": {
+              "count": 175,
+              "mean": 28.574209363119945,
+              "median": 27.878135681152344
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23506,7 +24990,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "025_mug",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23523,6 +25007,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu1/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 203,
+              "mean": 8.756800804232142,
+              "median": 7.667745113372803
+            },
+            "objectAmodalIou": {
+              "count": 203,
+              "mean": 0.11697315993567406,
+              "median": 0.1008293405175209,
+              "scoredMean": 0.11697315993567406
+            },
+            "handAmodalIou": {
+              "count": 203,
+              "mean": 0.6287495665655934,
+              "median": 0.6003573536872864,
+              "scoredMean": 0.6287495665655934
+            },
+            "cdH": {
+              "count": 203,
+              "mean": 101.0560369444598,
+              "median": 120.19847869873047,
+              "scoredMean": 101.0560369444598
+            },
+            "objRel": {
+              "count": 202,
+              "mean": 15.038415832094627,
+              "median": 18.240260124206543
+            },
+            "wristTranslation": {
+              "count": 203,
+              "mean": 20.48837265944833,
+              "median": 15.62703800201416
             }
           }
         },
@@ -23541,6 +25060,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu1/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 203,
+              "mean": 1.4341093184325495,
+              "median": 1.3016841411590576
+            },
+            "objectAmodalIou": {
+              "count": 203,
+              "mean": 0.6348824252929594,
+              "median": 0.6595615744590759,
+              "scoredMean": 0.6348824252929594
+            },
+            "handAmodalIou": {
+              "count": 203,
+              "mean": 0.657133122676699,
+              "median": 0.6525061130523682,
+              "scoredMean": 0.657133122676699
+            },
+            "cdH": {
+              "count": 203,
+              "mean": 5.199997004029786,
+              "median": 4.247446060180664,
+              "scoredMean": 5.199997004029786
+            },
+            "objRel": {
+              "count": 202,
+              "mean": 5.8065706445734095,
+              "median": 6.05577278137207
+            },
+            "wristTranslation": {
+              "count": 203,
+              "mean": 13.350114889332813,
+              "median": 12.136311531066895
+            }
           }
         },
         {
@@ -23558,10 +25112,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu1/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 203,
+              "mean": 1.1384513077183898,
+              "median": 1.1336779594421387
+            },
+            "objectAmodalIou": {
+              "count": 203,
+              "mean": 0.728028762516717,
+              "median": 0.7284255027770996,
+              "scoredMean": 0.728028762516717
+            },
+            "handAmodalIou": {
+              "count": 203,
+              "mean": 0.7314099557881285,
+              "median": 0.7271583080291748,
+              "scoredMean": 0.7314099557881285
+            },
+            "cdH": {
+              "count": 203,
+              "mean": 2.5204704371579174,
+              "median": 1.9637283086776733,
+              "scoredMean": 2.5204704371579174
+            },
+            "objRel": {
+              "count": 202,
+              "mean": 5.909128481614412,
+              "median": 6.213846683502197
+            },
+            "wristTranslation": {
+              "count": 203,
+              "mean": 22.203998046555544,
+              "median": 22.240556716918945
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23571,7 +25161,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "025_mug",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23588,6 +25178,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu40/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 13.567388062070055,
+              "median": 10.65329647064209
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.0851965337142202,
+              "median": 0.07389131933450699,
+              "scoredMean": 0.0851965337142202
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.6481535495781316,
+              "median": 0.6352400779724121,
+              "scoredMean": 0.6481535495781316
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 37.453819819194514,
+              "median": 27.12544822692871,
+              "scoredMean": 37.453819819194514
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 23.07498142649146,
+              "median": 19.704734802246094
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 20.062368005659522,
+              "median": 16.769119262695312
             }
           }
         },
@@ -23606,6 +25231,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu40/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 8.987445226529749,
+              "median": 8.47557544708252
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.017984533212704885,
+              "median": 0.0024376597721129656,
+              "scoredMean": 0.017984533212704885
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.659581748741429,
+              "median": 0.6594755053520203,
+              "scoredMean": 0.659581748741429
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 72.2241677633146,
+              "median": 72.21043395996094,
+              "scoredMean": 72.2241677633146
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 9.922365510580587,
+              "median": 9.90298080444336
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 11.920312097595959,
+              "median": 11.104708671569824
+            }
           }
         },
         {
@@ -23623,10 +25283,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/SMu40/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 205,
+              "mean": 8.797936065022538,
+              "median": 8.546570777893066
+            },
+            "objectAmodalIou": {
+              "count": 205,
+              "mean": 0.020423632283164784,
+              "median": 0.00041034899186342955,
+              "scoredMean": 0.020423632283164784
+            },
+            "handAmodalIou": {
+              "count": 205,
+              "mean": 0.7249882070029654,
+              "median": 0.7145214676856995,
+              "scoredMean": 0.7249882070029654
+            },
+            "cdH": {
+              "count": 205,
+              "mean": 103.93176533768816,
+              "median": 104.43983459472656,
+              "scoredMean": 103.93176533768816
+            },
+            "objRel": {
+              "count": 204,
+              "mean": 9.562837202174991,
+              "median": 9.724587440490723
+            },
+            "wristTranslation": {
+              "count": 205,
+              "mean": 18.289492356486438,
+              "median": 16.077392578125
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23636,7 +25332,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "004_sugar_box",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23653,6 +25349,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu10/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 194,
+              "mean": 3.047307268860414,
+              "median": 2.0297622680664062
+            },
+            "objectAmodalIou": {
+              "count": 194,
+              "mean": 0.0130515568635019,
+              "median": 0.0060500651597976685,
+              "scoredMean": 0.0130515568635019
+            },
+            "handAmodalIou": {
+              "count": 194,
+              "mean": 0.8120956147454449,
+              "median": 0.8174149692058563,
+              "scoredMean": 0.8120956147454449
+            },
+            "cdH": {
+              "count": 194,
+              "mean": 29.48599127641658,
+              "median": 27.813632011413574,
+              "scoredMean": 29.48599127641658
+            },
+            "objRel": {
+              "count": 193,
+              "mean": 10.997747992681715,
+              "median": 11.556658744812012
+            },
+            "wristTranslation": {
+              "count": 194,
+              "mean": 11.260477041460804,
+              "median": 8.647798538208008
             }
           }
         },
@@ -23671,6 +25402,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu10/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 194,
+              "mean": 1.4528416336811696,
+              "median": 1.4677494168281555
+            },
+            "objectAmodalIou": {
+              "count": 194,
+              "mean": 0.674216624541381,
+              "median": 0.7722399532794952,
+              "scoredMean": 0.674216624541381
+            },
+            "handAmodalIou": {
+              "count": 194,
+              "mean": 0.7725031867469709,
+              "median": 0.7822456061840057,
+              "scoredMean": 0.7725031867469709
+            },
+            "cdH": {
+              "count": 194,
+              "mean": 3.515533291801964,
+              "median": 3.429867148399353,
+              "scoredMean": 3.515533291801964
+            },
+            "objRel": {
+              "count": 193,
+              "mean": 5.201263685532185,
+              "median": 4.202114582061768
+            },
+            "wristTranslation": {
+              "count": 194,
+              "mean": 8.419288640169754,
+              "median": 7.37019419670105
+            }
           }
         },
         {
@@ -23688,10 +25454,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu10/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 194,
+              "mean": 1.7698679348242652,
+              "median": 1.6590015888214111
+            },
+            "objectAmodalIou": {
+              "count": 194,
+              "mean": 0.703600691765854,
+              "median": 0.7068538665771484,
+              "scoredMean": 0.703600691765854
+            },
+            "handAmodalIou": {
+              "count": 194,
+              "mean": 0.8027300760918057,
+              "median": 0.8056888580322266,
+              "scoredMean": 0.8027300760918057
+            },
+            "cdH": {
+              "count": 194,
+              "mean": 4.745054659769707,
+              "median": 4.198483467102051,
+              "scoredMean": 4.745054659769707
+            },
+            "objRel": {
+              "count": 193,
+              "mean": 5.320638079408537,
+              "median": 5.995182991027832
+            },
+            "wristTranslation": {
+              "count": 194,
+              "mean": 11.402199654235053,
+              "median": 9.537141799926758
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     },
     {
       "schemaVersion": 2,
@@ -23701,7 +25503,7 @@
       "dataset": "HO3D report stride-5",
       "split": "report test stride-5",
       "objectName": "004_sugar_box",
-      "fps": 6,
+      "fps": 30,
       "frameCount": 205,
       "baselines": [
         {
@@ -23718,6 +25520,41 @@
             },
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+            }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 194,
+              "mean": 2.6387632971571895,
+              "median": 1.9928861260414124
+            },
+            "objectAmodalIou": {
+              "count": 194,
+              "mean": 0.21346530206289205,
+              "median": 0.21657799184322357,
+              "scoredMean": 0.21346530206289205
+            },
+            "handAmodalIou": {
+              "count": 194,
+              "mean": 0.605092910300825,
+              "median": 0.6090281009674072,
+              "scoredMean": 0.605092910300825
+            },
+            "cdH": {
+              "count": 194,
+              "mean": 14.75480488895141,
+              "median": 10.918134689331055,
+              "scoredMean": 14.75480488895141
+            },
+            "objRel": {
+              "count": 193,
+              "mean": 12.05254111222807,
+              "median": 12.218711853027344
+            },
+            "wristTranslation": {
+              "count": 194,
+              "mean": 17.3096084195314,
+              "median": 15.925440311431885
             }
           }
         },
@@ -23736,6 +25573,41 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 194,
+              "mean": 1.1385380336918782,
+              "median": 1.0322474241256714
+            },
+            "objectAmodalIou": {
+              "count": 194,
+              "mean": 0.330732307867291,
+              "median": 0.2888505756855011,
+              "scoredMean": 0.330732307867291
+            },
+            "handAmodalIou": {
+              "count": 194,
+              "mean": 0.6673888539530567,
+              "median": 0.6764115393161774,
+              "scoredMean": 0.6673888539530567
+            },
+            "cdH": {
+              "count": 194,
+              "mean": 11.15837107982832,
+              "median": 11.05635690689087,
+              "scoredMean": 11.15837107982832
+            },
+            "objRel": {
+              "count": 193,
+              "mean": 6.759867431817895,
+              "median": 7.694011211395264
+            },
+            "wristTranslation": {
+              "count": 194,
+              "mean": 11.47812620511989,
+              "median": 9.342313766479492
+            }
           }
         },
         {
@@ -23753,10 +25625,46 @@
             "scene3d": {
               "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
             }
+          },
+          "metrics": {
+            "addAligned": {
+              "count": 194,
+              "mean": 6.03125374771885,
+              "median": 5.699219703674316
+            },
+            "objectAmodalIou": {
+              "count": 194,
+              "mean": 0.01403834100188554,
+              "median": 0.005847765831276774,
+              "scoredMean": 0.01403834100188554
+            },
+            "handAmodalIou": {
+              "count": 194,
+              "mean": 0.6495389565057361,
+              "median": 0.650220662355423,
+              "scoredMean": 0.6495389565057361
+            },
+            "cdH": {
+              "count": 194,
+              "mean": 60.72460695640328,
+              "median": 50.34977912902832,
+              "scoredMean": 60.72460695640328
+            },
+            "objRel": {
+              "count": 193,
+              "mean": 19.553955321484896,
+              "median": 16.930206298828125
+            },
+            "wristTranslation": {
+              "count": 194,
+              "mean": 20.451858594245518,
+              "median": 18.59360122680664
+            }
           }
         }
       ],
-      "hideMetrics": true
+      "metricLabel": "RGB-only report evaluation",
+      "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
     }
   ]
 }

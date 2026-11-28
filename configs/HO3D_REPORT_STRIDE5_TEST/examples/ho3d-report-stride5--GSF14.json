@@ -6,7 +6,7 @@
   "dataset": "HO3D report stride-5",
   "split": "report test stride-5",
   "objectName": "037_scissors",
-  "fps": 6,
+  "fps": 30,
   "frameCount": 205,
   "baselines": [
     {
@@ -23,6 +23,41 @@
         },
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF14/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 205,
+          "mean": 4.292645580012624,
+          "median": 2.639188528060913
+        },
+        "objectAmodalIou": {
+          "count": 205,
+          "mean": 0.38846209049224856,
+          "median": 0.3407803177833557,
+          "scoredMean": 0.38846209049224856
+        },
+        "handAmodalIou": {
+          "count": 205,
+          "mean": 0.6278608025574103,
+          "median": 0.6384070515632629,
+          "scoredMean": 0.6278608025574103
+        },
+        "cdH": {
+          "count": 205,
+          "mean": 11.298218496834359,
+          "median": 8.714489936828613,
+          "scoredMean": 11.298218496834359
+        },
+        "objRel": {
+          "count": 204,
+          "mean": 6.672750098886443,
+          "median": 5.691699504852295
+        },
+        "wristTranslation": {
+          "count": 205,
+          "mean": 38.806148426707196,
+          "median": 35.69401550292969
         }
       }
     },
@@ -41,6 +76,41 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF14/rgb-only-overfit-r2/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 205,
+          "mean": 6.091589875337554,
+          "median": 6.005108833312988
+        },
+        "objectAmodalIou": {
+          "count": 205,
+          "mean": 0.014506252242107422,
+          "median": 0.0,
+          "scoredMean": 0.014506252242107422
+        },
+        "handAmodalIou": {
+          "count": 205,
+          "mean": 0.6007693532036572,
+          "median": 0.5843650698661804,
+          "scoredMean": 0.6007693532036572
+        },
+        "cdH": {
+          "count": 205,
+          "mean": 31.49197423981457,
+          "median": 29.41560173034668,
+          "scoredMean": 31.49197423981457
+        },
+        "objRel": {
+          "count": 204,
+          "mean": 9.729924258063821,
+          "median": 9.910133361816406
+        },
+        "wristTranslation": {
+          "count": 205,
+          "mean": 40.750427190268915,
+          "median": 38.01003646850586
+        }
       }
     },
     {
@@ -58,8 +128,44 @@
         "scene3d": {
           "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/GSF14/rgb-only-overfit-r3/reconstruction/reconstruction.json"
         }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 205,
+          "mean": 4.788766527175904,
+          "median": 4.219423770904541
+        },
+        "objectAmodalIou": {
+          "count": 205,
+          "mean": 0.384123924083826,
+          "median": 0.3722513020038605,
+          "scoredMean": 0.384123924083826
+        },
+        "handAmodalIou": {
+          "count": 205,
+          "mean": 0.7483530355662834,
+          "median": 0.7734794616699219,
+          "scoredMean": 0.7483530355662834
+        },
+        "cdH": {
+          "count": 205,
+          "mean": 9.746468353271485,
+          "median": 7.9377336502075195,
+          "scoredMean": 9.746468353271485
+        },
+        "objRel": {
+          "count": 204,
+          "mean": 8.361415397887136,
+          "median": 7.235960960388184
+        },
+        "wristTranslation": {
+          "count": 205,
+          "mean": 30.59309448614353,
+          "median": 27.104656219482422
+        }
       }
     }
   ],
-  "hideMetrics": true
+  "metricLabel": "RGB-only report evaluation",
+  "metricNote": "Per-sequence means from the completed 18-sequence HO3D release-full-coverage evaluations on stride-5 predictions."
 }

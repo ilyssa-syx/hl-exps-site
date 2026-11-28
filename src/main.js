@@ -146,7 +146,10 @@ const inputRgb = document.querySelector("#input-rgb");
 const overlayCanvas = document.querySelector("#overlay-canvas");
 let preview2d;
 try {
-  preview2d = new Preview2D(overlayCanvas, inputRgb, layers);
+  preview2d = new Preview2D(overlayCanvas, inputRgb, layers, (_error, layer) => {
+    document.querySelector(".overlay-stage .stage-tag").textContent =
+      `OVERLAY LOAD ERROR · ${layer.label}`;
+  });
 } catch (error) {
   console.error(error);
   overlayCanvas.hidden = true;
