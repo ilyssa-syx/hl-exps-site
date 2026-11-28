@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the five DexYCB train-overfit refinement and reconstruction examples."""
+"""Export the five DexYCB RGB-only train-overfit run comparisons."""
 
 from __future__ import annotations
 
@@ -13,20 +13,33 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 HOI_ROOT = Path("/home/ilyssa_syx/models/hoi-recon-hl")
 DATA = HOI_ROOT / "data/dexycb_hl_v3_100_20_20_cleaned"
-RUN = HOI_ROOT / "runs/run-20261113-five-case-from-zero"
-ITERATION = 150
-ITERATION_ROOT = RUN / f"queries/{ITERATION:04d}/results/train"
 INPUT_METRICS = HOI_ROOT / "runs/run-20261106/baseline/results/train/per_sequence.csv"
-ITERATION_METRICS = ITERATION_ROOT / "per_sequence.csv"
-RECONSTRUCTION_ROOT = (
-    HOI_ROOT
-    / "runs/run-20261121-five-case-rgb-unitless-textured-mesh-adapt-v1"
-    / "queries/0040/results/train"
+RUNS = (
+    {
+        "id": "rgb-only-overfit-r1",
+        "label": "RGB-only overfit R1",
+        "color": "#f43f5e",
+        "run": "run-20261126-five-case-rgb-only-overfit-from-zero-7h-r1",
+        "query": 138,
+    },
+    {
+        "id": "rgb-only-overfit-r2",
+        "label": "RGB-only overfit R2",
+        "color": "#14b8a6",
+        "run": "run-20261126-five-case-rgb-only-overfit-from-zero-7h-r2",
+        "query": 162,
+    },
+    {
+        "id": "rgb-only-overfit-r3",
+        "label": "RGB-only overfit R3",
+        "color": "#3b82f6",
+        "run": "run-20261126-five-case-rgb-only-overfit-from-zero-7h-r3",
+        "query": 168,
+    },
 )
-RECONSTRUCTION_METRICS = RECONSTRUCTION_ROOT / "per_sequence.csv"
 PYTHON = Path("/home/ilyssa_syx/miniforge3/envs/dynhamr/bin/python")
 MANO = Path("/home/ilyssa_syx/models/hoi-from-rgb-d/mano_v1_2/models")
-RELEASE = "20261122-five-examples-train-overfit-q0150"
+RELEASE = "20261128-five-examples-rgb-only-overfit-r1-r2-r3"
 CATALOG_SPLIT = "5 examples train overfit"
 SEQUENCE_IDS = (
     "20200709-subject-01__20200709_141931__932122060861",
@@ -36,17 +49,11 @@ SEQUENCE_IDS = (
     "20200918-subject-06__20200918_113441__932122061900",
 )
 BASELINES = (
-    {"id": "input", "label": "input", "color": "#fb923c"},
-    {
-        "id": "iteration-150",
-        "label": "5 examples overfitting refinement (iter 150)",
-        "color": "#f43f5e",
-    },
-    {
-        "id": "five-examples-overfit-reconstruction",
-        "label": "5 examples overfitting reconstruction",
-        "color": "#14b8a6",
-    },
+    {"id": "input", "label": "Input", "color": "#fb923c"},
+    *(
+        {"id": item["id"], "label": item["label"], "color": item["color"]}
+        for item in RUNS
+    ),
 )
 
 
@@ -117,17 +124,24 @@ def ensure_rgb_video(source_root: Path, output: Path) -> None:
 def main() -> None:
     config_root = ROOT / "configs/examples"
     asset_root = ROOT / "r2_assets/experiments" / RELEASE
-    metrics = {
-        "input": load_metrics(INPUT_METRICS),
-        "iteration-150": load_metrics(ITERATION_METRICS),
-        "five-examples-overfit-reconstruction": load_metrics(RECONSTRUCTION_METRICS),
+    run_roots = {
+        item["id"]: HOI_ROOT / "runs" / item["run"]
+        / f"queries/{item['query']:04d}/results/train"
+        for item in RUNS
     }
+    metrics = {"input": load_metrics(INPUT_METRICS)}
+    metrics.update({
+        run_id: load_metrics(run_root / "per_sequence.csv")
+        for run_id, run_root in run_roots.items()
+    })
     exported_ids = set()
 
     for sequence_id in SEQUENCE_IDS:
         source_root = DATA / "train" / sequence_id
-        result_root = ITERATION_ROOT / sequence_id
-        if not source_root.is_dir() or not result_root.is_dir():
+        if not source_root.is_dir() or any(
+            not (run_root / sequence_id).is_dir()
+            for run_root in run_roots.values()
+        ):
             raise FileNotFoundError(sequence_id)
         for baseline_id, rows in metrics.items():
             if sequence_id not in rows:
@@ -146,10 +160,8 @@ def main() -> None:
             baseline_id = baseline["id"]
             if baseline_id == "input":
                 source = source_root / "input/final"
-            elif baseline_id == "iteration-150":
-                source = result_root
             else:
-                source = RECONSTRUCTION_ROOT / sequence_id
+                source = run_roots[baseline_id] / sequence_id
             reconstruction = sample_assets / baseline_id / "reconstruction"
             ensure_reconstruction(source, reconstruction, groundtruth["hand"]["side"])
             reconstruction_url = (
@@ -177,14 +189,20 @@ def main() -> None:
             "label": sequence_id.replace("__", " / "),
             "description": (
                 "One of the five fixed DexYCB train-overfit examples, comparing "
-                "input with 5 examples overfitting refinement (iter 150) and "
-                "5 examples overfitting reconstruction."
+                "input with the best candidates from three independent seven-hour "
+                "RGB-only overfit runs."
             ),
             "dataset": "DexYCB",
             "split": CATALOG_SPLIT,
             "objectName": groundtruth["objects"]["target_name"],
             "fps": 30,
             "frameCount": int(groundtruth["timeline"]["frame_count"]),
+            "metricLabel": "Train-set evaluation",
+            "metricNote": (
+                "R1, R2, and R3 share the same frozen RGB-only evaluator and scorer. "
+                "Input metrics come from the earlier refinement v12 evaluation and "
+                "are contextual rather than protocol-matched."
+            ),
             "baselines": baselines,
         }
         (config_root / f"{page_id}.json").write_text(

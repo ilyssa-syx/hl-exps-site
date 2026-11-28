@@ -26,11 +26,17 @@ The OakInk pages are restricted to the same 11-sequence GT-texture test set used
 by the frozen final evaluator, so all six methods share identical inputs and
 targets.
 
-The catalog also has a dedicated **5 examples train overfit** section for the
-five fixed DexYCB training sequences from `run-20261113-five-case-from-zero`,
-alongside the textured reconstruction result from the stitched query 154 run.
-Those pages compare `input`, refinement query/iteration 150, and the textured
-reconstruction result.
+The catalog also has a dedicated **5 examples train overfit** section for five
+fixed DexYCB training sequences. Those pages compare `Input` with the best
+candidates from three independent seven-hour RGB-only overfit runs:
+
+- **RGB-only overfit R1** (query 138);
+- **RGB-only overfit R2** (query 162);
+- **RGB-only overfit R3** (query 168).
+
+R1, R2, and R3 share the same frozen dataset, sequence set, evaluator, and
+scorer. Input metrics come from the earlier refinement-v12 evaluation and are
+shown as context rather than as a protocol-matched comparison.
 
 ## Development
 

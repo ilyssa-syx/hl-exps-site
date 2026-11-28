@@ -30,8 +30,9 @@ COLLECTIONS = (
                 "config_dir": ROOT / "configs/examples",
                 "expected_baselines": ([
                     "input",
-                    "iteration-150",
-                    "five-examples-overfit-reconstruction",
+                    "rgb-only-overfit-r1",
+                    "rgb-only-overfit-r2",
+                    "rgb-only-overfit-r3",
                 ], [
                     "adadex",
                     "experiment-1",
