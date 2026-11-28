@@ -76,7 +76,8 @@ def apply_handedness(vertices: np.ndarray, side: str) -> np.ndarray:
 
 
 def decode_hand(
-    result_dir: Path, mano_dir: Path, frame_count: int, hand_side: str | None,
+    result_dir: Path, mano_dir: Path, timeline_frame_indices: np.ndarray,
+    hand_side: str | None,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     import smplx
     from smplx.utils import Struct
@@ -110,9 +111,24 @@ def decode_hand(
             return_verts=True,
         )
     decoded = apply_handedness(output.vertices.cpu().numpy().astype("<f4"), side)
-    vertices = np.full((frame_count, decoded.shape[1], 3), np.nan, dtype="<f4")
-    frame_indices = np.asarray(source["frame_indices"], dtype=int)
-    vertices[frame_indices] = decoded
+    timeline_frame_indices = np.asarray(timeline_frame_indices, dtype=int)
+    if len(np.unique(timeline_frame_indices)) != len(timeline_frame_indices):
+        raise ValueError("scene frame_indices must be unique")
+    timeline_positions = {
+        source_index: dense_index
+        for dense_index, source_index in enumerate(timeline_frame_indices.tolist())
+    }
+    hand_frame_indices = np.asarray(source["frame_indices"], dtype=int)
+    missing = sorted(set(hand_frame_indices.tolist()) - set(timeline_positions))
+    if missing:
+        raise ValueError(f"hand frame indices are absent from scene timeline: {missing[:10]}")
+    dense_indices = np.asarray(
+        [timeline_positions[index] for index in hand_frame_indices.tolist()], dtype=int,
+    )
+    vertices = np.full(
+        (len(timeline_frame_indices), decoded.shape[1], 3), np.nan, dtype="<f4",
+    )
+    vertices[dense_indices] = decoded
     valid = np.isfinite(vertices).all(axis=(1, 2))
     return vertices, np.asarray(model.faces, dtype="<u2"), valid
 
@@ -130,9 +146,9 @@ def main() -> None:
 
     scene = np.load(result_dir / "scene.npz", allow_pickle=False)
     obj = np.load(result_dir / "object_results.npz", allow_pickle=False)
-    frame_count = len(scene["frame_indices"])
+    timeline_frame_indices = np.asarray(scene["frame_indices"], dtype=int)
     hand_vertices, hand_faces, hand_valid = decode_hand(
-        result_dir, args.mano_dir.resolve(), frame_count, args.hand_side,
+        result_dir, args.mano_dir.resolve(), timeline_frame_indices, args.hand_side,
     )
     object_path = result_dir / "object_mesh" / "mesh.obj"
     object_mesh = trimesh.load(object_path, force="mesh", process=False)
@@ -173,6 +189,7 @@ def main() -> None:
         "schemaVersion": 1,
         "coordinateConvention": "opencv-camera-x-right-y-down-z-forward-meters",
         "frameCount": int(len(hand_vertices)),
+        "sourceFrameIndices": timeline_frame_indices.tolist(),
         "imageWidth": width,
         "imageHeight": height,
         "intrinsics": np.asarray(scene["intrinsics"], dtype=float).tolist(),

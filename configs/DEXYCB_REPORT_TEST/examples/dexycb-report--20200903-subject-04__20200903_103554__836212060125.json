@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "id": "dexycb-report--20200903-subject-04__20200903_103554__836212060125",
+  "label": "20200903-subject-04 / 20200903_103554 / 836212060125",
+  "description": "DexYCB report test sequence comparing three independently optimized RGB-only five-case overfit runs.",
+  "dataset": "DexYCB report",
+  "split": "report test",
+  "objectName": "002_master_chef_can",
+  "fps": 30,
+  "frameCount": 74,
+  "baselines": [
+    {
+      "id": "rgb-only-overfit-r1",
+      "label": "RGB-only overfit R1",
+      "color": "#f43f5e",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 15,
+          "mean": 1.3394181887308756,
+          "median": 0.9625856876373291
+        },
+        "objectAmodalIou": {
+          "count": 15,
+          "mean": 0.06895279147817443,
+          "median": 0.07899480313062668,
+          "scoredMean": 0.06895279147817443
+        },
+        "handAmodalIou": {
+          "count": 12,
+          "mean": 0.7180951833724976,
+          "median": 0.7278352677822113,
+          "scoredMean": 0.7180951833724976
+        },
+        "cdH": {
+          "count": 12,
+          "mean": 24.932998816172283,
+          "median": 24.231891632080078,
+          "scoredMean": 24.932998816172283
+        },
+        "objRel": {
+          "count": 14,
+          "mean": 3.6066697128117085,
+          "median": 0.22433582320809364
+        },
+        "wristTranslation": {
+          "count": 12,
+          "mean": 21.818936347961426,
+          "median": 16.709092140197754
+        },
+        "wristRotation": {
+          "count": 12,
+          "mean": 5.071835068364938,
+          "median": 5.156922817230225
+        }
+      }
+    },
+    {
+      "id": "rgb-only-overfit-r2",
+      "label": "RGB-only overfit R2",
+      "color": "#14b8a6",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/rgb-only-overfit-r2/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/rgb-only-overfit-r2/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 74,
+          "mean": 0.8684933145303984,
+          "median": 0.6781269907951355
+        },
+        "objectAmodalIou": {
+          "count": 74,
+          "mean": 0.901494217080039,
+          "median": 0.9310690760612488,
+          "scoredMean": 0.901494217080039
+        },
+        "handAmodalIou": {
+          "count": 61,
+          "mean": 0.7468981459492543,
+          "median": 0.7647643089294434,
+          "scoredMean": 0.7468981459492543
+        },
+        "cdH": {
+          "count": 61,
+          "mean": 4.023020345656598,
+          "median": 4.217889308929443,
+          "scoredMean": 4.023020345656598
+        },
+        "objRel": {
+          "count": 73,
+          "mean": 1.219412435803001,
+          "median": 0.5626538395881653
+        },
+        "wristTranslation": {
+          "count": 61,
+          "mean": 14.453860267263945,
+          "median": 13.164888381958008
+        },
+        "wristRotation": {
+          "count": 61,
+          "mean": 4.975347609793554,
+          "median": 4.671318531036377
+        }
+      }
+    },
+    {
+      "id": "rgb-only-overfit-r3",
+      "label": "RGB-only overfit R3",
+      "color": "#3b82f6",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/rgb-only-overfit-r3/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-repeats-dexycb-report20/20200903-subject-04__20200903_103554__836212060125/rgb-only-overfit-r3/reconstruction/reconstruction.json"
+        }
+      },
+      "metrics": {
+        "addAligned": {
+          "count": 74,
+          "mean": 3.0192160332525098,
+          "median": 1.4066117405891418
+        },
+        "objectAmodalIou": {
+          "count": 74,
+          "mean": 0.7904917559510952,
+          "median": 0.8863807618618011,
+          "scoredMean": 0.7904917559510952
+        },
+        "handAmodalIou": {
+          "count": 61,
+          "mean": 0.7530292839300438,
+          "median": 0.7366640567779541,
+          "scoredMean": 0.7530292839300438
+        },
+        "cdH": {
+          "count": 61,
+          "mean": 11.45882984458423,
+          "median": 7.4193315505981445,
+          "scoredMean": 11.45882984458423
+        },
+        "objRel": {
+          "count": 73,
+          "mean": 4.651702694492798,
+          "median": 2.2594492435455322
+        },
+        "wristTranslation": {
+          "count": 61,
+          "mean": 20.853658089872265,
+          "median": 16.15902328491211
+        },
+        "wristRotation": {
+          "count": 61,
+          "mean": 5.288523287069602,
+          "median": 5.345735549926758
+        }
+      }
+    }
+  ],
+  "metricLabel": "RGB-only report evaluation",
+  "metricNote": "Per-sequence means from each frozen DexYCB report-test evaluator output."
+}

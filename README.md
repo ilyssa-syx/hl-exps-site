@@ -38,6 +38,17 @@ R1, R2, and R3 share the same frozen dataset, sequence set, evaluator, and
 scorer. Input metrics come from the earlier refinement-v12 evaluation and are
 shown as context rather than as a protocol-matched comparison.
 
+Two additional report-test sections keep newly rerun sequences separate from
+the legacy test galleries:
+
+- **DexYCB report test** contains 20 RGB-only sequences with R1, R2, and R3;
+- **HO3D report test · stride 5** contains 18 RGB-only sequences with R1, R2,
+  and R3, exporting only every fifth source frame at 6 FPS.
+
+These RGB-only datasets have no initial reconstruction, so their pages use the
+input RGB as the visualization background and expose only the three run results
+as toggleable reconstruction layers.
+
 ## Development
 
 ```bash

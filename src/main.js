@@ -135,7 +135,7 @@ document.querySelector("#app").innerHTML = `
       </div>
       ${spiderCards ? `<div class="panel" data-panel="spider" hidden><div class="spider-stack">${spiderCards}</div><p class="spider-empty" hidden>No successful SPIDER rollout for the selected baselines.</p></div>` : ""}
       <div class="transport"><button id="play" aria-label="Play sequence">▶</button><span id="frame">000 / ${String(example.frameCount - 1).padStart(3, "0")}</span><input id="timeline" type="range" min="0" max="${example.frameCount - 1}" value="0" aria-label="Sequence frame" /><span id="time">0.00 s</span></div>
-      ${isSegment ? "" : `<div class="metrics-inline">
+      ${isSegment || example.hideMetrics ? "" : `<div class="metrics-inline">
         <div class="metrics-heading"><div><div class="eyebrow">${example.metricLabel || catalog.metricLabel || "Evaluation v12"}</div><h2>Per-sequence metrics</h2></div><p>Mean performance for this sequence across the selected baselines.</p></div>
         ${metricTable}
       </div>`}

@@ -80,6 +80,22 @@ COLLECTIONS = (
                     "successful-differentiable-first-run",
                 ],),
             },
+            {
+                "config_dir": ROOT / "configs/DEXYCB_REPORT_TEST/examples",
+                "expected_baselines": ([
+                    "rgb-only-overfit-r1",
+                    "rgb-only-overfit-r2",
+                    "rgb-only-overfit-r3",
+                ],),
+            },
+            {
+                "config_dir": ROOT / "configs/HO3D_REPORT_STRIDE5_TEST/examples",
+                "expected_baselines": ([
+                    "rgb-only-overfit-r1",
+                    "rgb-only-overfit-r2",
+                    "rgb-only-overfit-r3",
+                ],),
+            },
         ),
         "output": PUBLIC_DATA / "manifest.json",
         "samples_dir": ROOT / "samples",
@@ -97,6 +113,8 @@ COLLECTIONS = (
                 {"dataset": "DexYCB", "split": "test", "title": "dexycb-test"},
                 {"dataset": "OakInk", "split": "test", "title": "oakink-sp0-GT-texture-11-test"},
                 {"dataset": "HO3D v3", "split": "test", "title": "HO3D_v3-TEST"},
+                {"dataset": "DexYCB report", "split": "report test", "title": "DexYCB report test · RGB-only repeats"},
+                {"dataset": "HO3D report stride-5", "split": "report test stride-5", "title": "HO3D report test · stride 5 · RGB-only repeats"},
             ],
             "relatedCatalogs": [],
         },
@@ -190,6 +208,8 @@ def export_collection(collection: dict) -> int:
             for baseline in payload["baselines"]:
                 metrics = baseline.get("metrics")
                 metric_keys = set(metrics) if isinstance(metrics, dict) else set()
+                if payload.get("hideMetrics") and metrics is None:
+                    continue
                 if (
                     not isinstance(metrics, dict)
                     or not METRIC_KEYS - OPTIONAL_METRIC_KEYS <= metric_keys

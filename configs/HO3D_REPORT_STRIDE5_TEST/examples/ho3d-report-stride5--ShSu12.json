@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "id": "ho3d-report-stride5--ShSu12",
+  "label": "ShSu12",
+  "description": "HO3D report test sequence comparing three independently optimized RGB-only five-case overfit runs on stride-5 frames.",
+  "dataset": "HO3D report stride-5",
+  "split": "report test stride-5",
+  "objectName": "004_sugar_box",
+  "fps": 6,
+  "frameCount": 205,
+  "baselines": [
+    {
+      "id": "rgb-only-overfit-r1",
+      "label": "RGB-only overfit R1",
+      "color": "#f43f5e",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r1/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "rgb-only-overfit-r2",
+      "label": "RGB-only overfit R2",
+      "color": "#14b8a6",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r2/reconstruction/reconstruction.json"
+        }
+      }
+    },
+    {
+      "id": "rgb-only-overfit-r3",
+      "label": "RGB-only overfit R3",
+      "color": "#3b82f6",
+      "views": {
+        "overlay2d": {
+          "rgb": {
+            "type": "video",
+            "url": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/input-rgb.mp4"
+          },
+          "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
+        },
+        "scene3d": {
+          "reconstruction": "experiments/20261128-rgb-only-repeats-ho3d-report18-stride5/ShSu12/rgb-only-overfit-r3/reconstruction/reconstruction.json"
+        }
+      }
+    }
+  ],
+  "hideMetrics": true
+}
